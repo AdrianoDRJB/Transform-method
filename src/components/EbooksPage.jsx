@@ -90,6 +90,7 @@ const EbooksPage = () => {
   const isPurchased = (ebookId) => purchasedEbooks.includes(ebookId);
 
   return (
+    <>
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Header */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16">
@@ -233,6 +234,7 @@ const EbooksPage = () => {
 
     {/* Contact Section */}
     <ContactSection />
+    </>
   );
 };
 
