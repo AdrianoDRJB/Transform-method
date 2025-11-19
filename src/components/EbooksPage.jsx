@@ -16,31 +16,40 @@ const EbooksPage = () => {
 
   const ebooks = [
     {
-      id: 'environment-habits',
-      title: 'Environment & Habits Mastery',
-      description: 'Learn how to design your environment to support your goals and build lasting habits that stick.',
-      file: '/ebooks/environment_habits_mastery.pdf',
-      price: 9.99,
-      pages: '45 pages',
-      topics: ['Environment Design', 'Habit Formation', 'Behavior Change']
+      id: 'environment-habits-tips',
+      title: 'Environment & Habits Mastery - Practical Tips',
+      description: 'Quick, actionable strategies to design your environment and build lasting habits.',
+      file: '/Environment_Habits_Mastery_Practical_Tips.pdf',
+      price: 4.99,
+      pages: '13 pages',
+      topics: ['Environment Design', 'Habit Formation', 'Quick Wins']
     },
     {
-      id: 'nutrition-myths',
-      title: 'Nutrition Myths Guide',
-      description: 'Debunk common nutrition myths and learn science-based principles for sustainable eating.',
-      file: '/ebooks/nutrition_myths_guide.pdf',
+      id: 'environment-habits-complete',
+      title: 'Environment & Habits Mastery - Complete Guide',
+      description: 'In-depth guide with science, strategies, and exercises to master your environment and habits.',
+      file: '/Environment_Habits_Mastery_Complete_Guide.pdf',
       price: 9.99,
-      pages: '38 pages',
-      topics: ['Nutrition Science', 'Myth Busting', 'Healthy Eating']
+      pages: '20 pages',
+      topics: ['Environment Design', 'Habit Formation', 'Behavior Change', 'Deep Dive']
     },
     {
-      id: 'resilient-mind',
-      title: 'Building Your Resilient Mind',
-      description: 'Develop mental toughness and resilience to overcome challenges and bounce back stronger.',
-      file: '/ebooks/building_resilient_mind.pdf',
+      id: 'resilient-mind-tips',
+      title: 'Building Your Resilient Mind - Practical Tips',
+      description: 'Essential strategies to develop mental toughness and resilience quickly.',
+      file: '/Building_Resilient_Mind_Practical_Tips.pdf',
+      price: 4.99,
+      pages: '13 pages',
+      topics: ['Mental Resilience', 'Stress Management', 'Quick Start']
+    },
+    {
+      id: 'resilient-mind-complete',
+      title: 'Building Your Resilient Mind - Complete Guide',
+      description: 'Comprehensive guide to building lasting mental strength with science-backed methods.',
+      file: '/Building_Resilient_Mind_Complete_Guide.pdf',
       price: 9.99,
-      pages: '42 pages',
-      topics: ['Mental Resilience', 'Stress Management', 'Growth Mindset']
+      pages: '36 pages',
+      topics: ['Mental Resilience', 'Growth Mindset', 'Neuroscience', 'Deep Dive']
     },
     {
       id: 'emotional-mastery',
