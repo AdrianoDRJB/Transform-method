@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { BookOpen, Lock, Download, CheckCircle } from 'lucide-react';
+import ContactSection from './ContactSection.jsx';
 
 const EbooksPage = () => {
   const [purchasedEbooks, setPurchasedEbooks] = useState([]);
@@ -228,22 +229,10 @@ const EbooksPage = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Transform?</h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Get instant access to science-based guides that will accelerate your transformation
-          </p>
-          <Button 
-            size="lg" 
-            className="bg-white text-blue-600 hover:bg-gray-100"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          >
-            View eBooks
-          </Button>
-        </div>
-      </div>
     </div>
+
+    {/* Contact Section */}
+    <ContactSection />
   );
 };
 

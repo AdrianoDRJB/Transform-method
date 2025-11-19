@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { ArrowRight, Brain, Target, TrendingUp, Users, Zap, CheckCircle2 } from 'lucide-react'
+import ContactSection from './ContactSection.jsx'
 
 function HomePage() {
   const transformSteps = [
@@ -154,18 +155,10 @@ function HomePage() {
         </Card>
       </div>
 
-      {/* Final CTA */}
-      <div className="text-center">
-        <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Life?</h2>
-        <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto">
-          Get the complete guide with detailed strategies, scientific insights, and practical tools 
-          to create lasting change.
-        </p>
-        <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-8">
-          Get the Book Now <ArrowRight className="ml-2 h-5 w-5" />
-        </Button>
-      </div>
     </div>
+
+    {/* Contact Section */}
+    <ContactSection />
   )
 }
 
