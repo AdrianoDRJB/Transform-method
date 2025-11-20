@@ -17,49 +17,31 @@ const EbooksPage = () => {
 
   const ebooks = [
     {
-      id: 'environment-habits-tips',
-      title: 'Environment & Habits Mastery - Practical Tips',
-      description: 'Quick, actionable strategies to design your environment and build lasting habits.',
-      file: '/Environment_Habits_Mastery_Practical_Tips.pdf',
-      price: 4.99,
-      pages: '13 pages',
-      topics: ['Environment Design', 'Habit Formation', 'Quick Wins']
-    },
-    {
       id: 'environment-habits-complete',
-      title: 'Environment & Habits Mastery - Complete Guide',
-      description: 'In-depth guide with science, strategies, and exercises to master your environment and habits.',
-      file: '/Environment_Habits_Mastery_Complete_Guide.pdf',
+      title: 'Environment & Habits Mastery',
+      description: 'Master your environment and build lasting habits through science-based strategies and practical exercises.',
+      file: '/pdfs/Environment_Habits_Mastery_Complete_Guide.pdf',
       price: 9.99,
-      pages: '20 pages',
-      topics: ['Environment Design', 'Habit Formation', 'Behavior Change', 'Deep Dive']
-    },
-    {
-      id: 'resilient-mind-tips',
-      title: 'Building Your Resilient Mind - Practical Tips',
-      description: 'Essential strategies to develop mental toughness and resilience quickly.',
-      file: '/Building_Resilient_Mind_Practical_Tips.pdf',
-      price: 4.99,
-      pages: '13 pages',
-      topics: ['Mental Resilience', 'Stress Management', 'Quick Start']
+      pages: '21 pages',
+      topics: ['Environment Design', 'Habit Formation', 'Behavior Change', 'Practical Exercises']
     },
     {
       id: 'resilient-mind-complete',
-      title: 'Building Your Resilient Mind - Complete Guide',
-      description: 'Comprehensive guide to building lasting mental strength with science-backed methods.',
-      file: '/Building_Resilient_Mind_Complete_Guide.pdf',
+      title: 'Building Your Resilient Mind',
+      description: 'Comprehensive guide to building lasting mental strength with science-backed methods and actionable strategies.',
+      file: '/pdfs/Building_Resilient_Mind_Complete_Guide.pdf',
       price: 9.99,
-      pages: '36 pages',
-      topics: ['Mental Resilience', 'Growth Mindset', 'Neuroscience', 'Deep Dive']
+      pages: '34 pages',
+      topics: ['Mental Resilience', 'Growth Mindset', 'Neuroscience', 'Stress Management']
     },
     {
       id: 'emotional-mastery',
       title: 'Emotional Mastery Guide',
-      description: 'Master your emotions, understand your triggers, and develop emotional intelligence.',
-      file: '/ebooks/emotional_mastery_guide.pdf',
+      description: 'Master your emotions, understand your triggers, and develop emotional intelligence for lasting transformation.',
+      file: '/pdfs/Emotional_Mastery_Guide.pdf',
       price: 9.99,
       pages: '52 pages',
-      topics: ['Emotional Intelligence', 'Self-Awareness', 'Regulation']
+      topics: ['Emotional Intelligence', 'Self-Awareness', 'Emotional Regulation', 'Trigger Management']
     }
   ];
 
@@ -114,7 +96,7 @@ const EbooksPage = () => {
               Special Bundle Offer
             </CardTitle>
             <CardDescription className="text-lg">
-              Get all 4 eBooks for just $29.99 (Save $10!)
+              Get all 3 eBooks for just $24.99 (Save $5!)
             </CardDescription>
           </CardHeader>
           <CardFooter>
@@ -123,7 +105,7 @@ const EbooksPage = () => {
               className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700"
               onClick={() => handlePurchase('bundle-all')}
             >
-              Buy Complete Bundle - $29.99
+              Buy Complete Bundle - $24.99
             </Button>
           </CardFooter>
         </Card>
@@ -131,7 +113,7 @@ const EbooksPage = () => {
 
       {/* eBooks Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {ebooks.map((ebook) => {
             const purchased = isPurchased(ebook.id);
             
