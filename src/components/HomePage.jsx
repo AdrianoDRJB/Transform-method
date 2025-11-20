@@ -19,9 +19,9 @@ function HomePage() {
   ]
 
   const scrollToTransformations = () => {
-    const element = document.getElementById('transformations-section')
+    const element = document.getElementById('proven-transformations')
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' })
     }
   }
 

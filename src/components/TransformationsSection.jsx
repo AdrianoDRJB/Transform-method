@@ -64,7 +64,7 @@ const TransformationsSection = () => {
         </div>
 
         {/* Transformations */}
-        <div>
+        <div id="proven-transformations">
           <div className="flex items-center justify-center mb-8">
             <TrendingUp className="w-6 h-6 text-purple-600 mr-2" />
             <h3 className="text-2xl font-bold text-gray-900">Proven Transformations</h3>
@@ -93,15 +93,15 @@ const TransformationsSection = () => {
             <Card className="overflow-hidden">
               <CardContent className="p-0">
                 <img 
-                  src="/images/antesdepois.jpg" 
+                  src="/images/primo-transformation.jpg" 
                   alt="Client transformation success story" 
                   className="w-full h-auto object-cover"
                 />
                 <div className="p-6">
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">Client Success</h4>
                   <p className="text-gray-600">
-                    Complete body transformation through sustainable habits and environment design. 
-                    No extreme diets, just science-based systems that work.
+                    Incredible transformation through sustainable nutrition and consistent habits. 
+                    Real results from science-based coaching.
                   </p>
                 </div>
               </CardContent>
