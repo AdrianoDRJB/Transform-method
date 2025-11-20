@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
-import { BookOpen, Lock, Download, CheckCircle } from 'lucide-react';
+import { BookOpen, Lock, Download, CheckCircle, Star } from 'lucide-react';
 import ContactSection from './ContactSection.jsx';
 
 const EbooksPage = () => {
@@ -15,7 +15,25 @@ const EbooksPage = () => {
     }
   }, []);
 
-  const ebooks = [
+  const mainEbook = {
+    id: 'transform-method-complete',
+    title: 'The Transform Method - Complete Guide',
+    description: 'The complete framework for total life transformation. Master all 9 steps of the Transform Method and learn how to integrate nutrition, habits, mindset, and environment for lasting change.',
+    file: '/pdfs/Transform_Method_Complete_Guide.pdf',
+    price: 19.99,
+    pages: '100+ pages',
+    topics: [
+      'Complete TRANSFORM Framework',
+      'Nutrition Fundamentals', 
+      'Habit Psychology',
+      'Environment Design',
+      'Mental Resilience',
+      'Sustainable Systems'
+    ],
+    featured: true
+  };
+
+  const deepDiveEbooks = [
     {
       id: 'environment-habits-complete',
       title: 'Environment & Habits Mastery',
@@ -71,6 +89,80 @@ const EbooksPage = () => {
 
   const isPurchased = (ebookId) => purchasedEbooks.includes(ebookId);
 
+  const EbookCard = ({ ebook, featured = false }) => {
+    const purchased = isPurchased(ebook.id);
+    
+    return (
+      <Card className={`flex flex-col hover:shadow-lg transition-shadow ${featured ? 'border-2 border-blue-500' : ''}`}>
+        <CardHeader>
+          <div className="flex items-start justify-between">
+            <div className="flex-1">
+              {featured && (
+                <div className="inline-flex items-center gap-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3">
+                  <Star className="w-4 h-4" />
+                  START HERE
+                </div>
+              )}
+              <CardTitle className={`${featured ? 'text-3xl' : 'text-2xl'} mb-2`}>{ebook.title}</CardTitle>
+              <CardDescription className="text-base">{ebook.description}</CardDescription>
+            </div>
+            {purchased ? (
+              <CheckCircle className="w-8 h-8 text-green-600 flex-shrink-0 ml-4" />
+            ) : (
+              <Lock className="w-8 h-8 text-gray-400 flex-shrink-0 ml-4" />
+            )}
+          </div>
+        </CardHeader>
+        
+        <CardContent className="flex-1">
+          <div className="space-y-4">
+            <div className="text-sm text-gray-600">
+              <strong>{ebook.pages}</strong>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-sm text-gray-700 mb-2">What you'll learn:</h4>
+              <ul className="space-y-1">
+                {ebook.topics.map((topic, index) => (
+                  <li key={index} className="text-sm text-gray-600 flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                    {topic}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </CardContent>
+        
+        <CardFooter className="flex items-center justify-between border-t pt-6">
+          <div className={`${featured ? 'text-3xl' : 'text-2xl'} font-bold text-gray-900`}>
+            ${ebook.price}
+          </div>
+          
+          {purchased ? (
+            <Button 
+              onClick={() => handleDownload(ebook)}
+              className="bg-green-600 hover:bg-green-700"
+              size={featured ? 'lg' : 'default'}
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Download PDF
+            </Button>
+          ) : (
+            <Button 
+              onClick={() => handlePurchase(ebook.id)}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+              size={featured ? 'lg' : 'default'}
+            >
+              <Lock className="w-4 h-4 mr-2" />
+              Purchase Now
+            </Button>
+          )}
+        </CardFooter>
+      </Card>
+    );
+  };
+
   return (
     <>
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -87,16 +179,37 @@ const EbooksPage = () => {
         </div>
       </div>
 
+      {/* Main eBook - Featured */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-12">
+        <EbookCard ebook={mainEbook} featured={true} />
+      </div>
+
+      {/* Deep Dive eBooks Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-2">Deep Dive Guides</h2>
+          <p className="text-lg text-gray-600">
+            Specialized guides for in-depth mastery of specific topics
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {deepDiveEbooks.map((ebook) => (
+            <EbookCard key={ebook.id} ebook={ebook} />
+          ))}
+        </div>
+      </div>
+
       {/* Bundle Offer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <Card className="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-200">
           <CardHeader>
             <CardTitle className="text-2xl flex items-center gap-2">
               <CheckCircle className="text-amber-600" />
-              Special Bundle Offer
+              Complete Bundle Offer
             </CardTitle>
             <CardDescription className="text-lg">
-              Get all 3 eBooks for just $24.99 (Save $5!)
+              Get all 4 eBooks (Complete Method + 3 Deep Dives) for just $39.99 (Save $10!)
             </CardDescription>
           </CardHeader>
           <CardFooter>
@@ -105,81 +218,10 @@ const EbooksPage = () => {
               className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700"
               onClick={() => handlePurchase('bundle-all')}
             >
-              Buy Complete Bundle - $24.99
+              Buy Complete Bundle - $39.99
             </Button>
           </CardFooter>
         </Card>
-      </div>
-
-      {/* eBooks Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {ebooks.map((ebook) => {
-            const purchased = isPurchased(ebook.id);
-            
-            return (
-              <Card key={ebook.id} className="flex flex-col hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <CardTitle className="text-2xl mb-2">{ebook.title}</CardTitle>
-                      <CardDescription className="text-base">{ebook.description}</CardDescription>
-                    </div>
-                    {purchased ? (
-                      <CheckCircle className="w-8 h-8 text-green-600 flex-shrink-0 ml-4" />
-                    ) : (
-                      <Lock className="w-8 h-8 text-gray-400 flex-shrink-0 ml-4" />
-                    )}
-                  </div>
-                </CardHeader>
-                
-                <CardContent className="flex-1">
-                  <div className="space-y-4">
-                    <div className="text-sm text-gray-600">
-                      <strong>{ebook.pages}</strong>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-semibold text-sm text-gray-700 mb-2">What you'll learn:</h4>
-                      <ul className="space-y-1">
-                        {ebook.topics.map((topic, index) => (
-                          <li key={index} className="text-sm text-gray-600 flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
-                            {topic}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-                
-                <CardFooter className="flex items-center justify-between border-t pt-6">
-                  <div className="text-2xl font-bold text-gray-900">
-                    ${ebook.price}
-                  </div>
-                  
-                  {purchased ? (
-                    <Button 
-                      onClick={() => handleDownload(ebook)}
-                      className="bg-green-600 hover:bg-green-700"
-                    >
-                      <Download className="w-4 h-4 mr-2" />
-                      Download PDF
-                    </Button>
-                  ) : (
-                    <Button 
-                      onClick={() => handlePurchase(ebook.id)}
-                      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-                    >
-                      <Lock className="w-4 h-4 mr-2" />
-                      Purchase Now
-                    </Button>
-                  )}
-                </CardFooter>
-              </Card>
-            );
-          })}
-        </div>
       </div>
 
       {/* FAQ Section */}
@@ -194,6 +236,11 @@ const EbooksPage = () => {
             </div>
             
             <div>
+              <h3 className="font-semibold text-lg mb-2">Should I start with the Complete Method or a Deep Dive?</h3>
+              <p className="text-gray-600">Start with the Complete Transform Method to understand the full framework, then deepen your knowledge with specialized Deep Dive guides on topics that interest you most.</p>
+            </div>
+            
+            <div>
               <h3 className="font-semibold text-lg mb-2">Can I access them after purchase?</h3>
               <p className="text-gray-600">Yes! Once purchased, you can download and access your eBooks anytime from this page.</p>
             </div>
@@ -201,11 +248,6 @@ const EbooksPage = () => {
             <div>
               <h3 className="font-semibold text-lg mb-2">Is there a money-back guarantee?</h3>
               <p className="text-gray-600">Yes, we offer a 30-day money-back guarantee. If you're not satisfied, contact us for a full refund.</p>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-lg mb-2">Do I need the main book to use these?</h3>
-              <p className="text-gray-600">No, each eBook is standalone. However, they complement the Transform Method beautifully.</p>
             </div>
           </div>
         </div>
