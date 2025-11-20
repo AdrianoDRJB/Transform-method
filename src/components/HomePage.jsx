@@ -18,9 +18,16 @@ function HomePage() {
     { letter: 'M', title: 'Master Your Identity', description: 'Become the person you aspire to be.' },
   ]
 
+  const scrollToTransformations = () => {
+    const element = document.getElementById('transformations-section')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   const benefits = [
     { icon: Brain, title: 'Science-Based', description: 'Nutrition Student (3rd year) • Precision Nutrition Certified • Change Psychology Specialist' },
-    { icon: Target, title: 'Proven Results', description: 'Real transformations: 30kg+ lost, sobriety achieved, lives changed' },
+    { icon: Target, title: 'Proven Results', description: 'Real transformations: 30kg+ lost, sobriety achieved, lives changed', clickable: true },
     { icon: TrendingUp, title: 'Sustainable Change', description: 'Build habits that last a lifetime' },
     { icon: Users, title: 'Community Support', description: 'Join others on their transformation journey' },
   ]
@@ -57,7 +64,13 @@ function HomePage() {
       {/* Benefits Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
         {benefits.map((benefit, index) => (
-          <Card key={index} className="border-2 hover:border-blue-500 transition-all hover:shadow-lg">
+          <Card 
+            key={index} 
+            className={`border-2 hover:border-blue-500 transition-all hover:shadow-lg ${
+              benefit.clickable ? 'cursor-pointer' : ''
+            }`}
+            onClick={benefit.clickable ? scrollToTransformations : undefined}
+          >
             <CardHeader>
               <div className="bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 p-3 rounded-lg w-fit mb-2">
                 <benefit.icon className="h-6 w-6 text-blue-600 dark:text-blue-400" />

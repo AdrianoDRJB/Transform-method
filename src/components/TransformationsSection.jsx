@@ -4,7 +4,7 @@ import { Award, TrendingUp } from 'lucide-react';
 
 const TransformationsSection = () => {
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-white py-20">
+    <div id="transformations-section" className="bg-gradient-to-b from-gray-50 to-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -70,7 +70,7 @@ const TransformationsSection = () => {
             <h3 className="text-2xl font-bold text-gray-900">Proven Transformations</h3>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {/* Adriano's Transformation */}
             <Card className="overflow-hidden">
               <CardContent className="p-0">
@@ -89,19 +89,37 @@ const TransformationsSection = () => {
               </CardContent>
             </Card>
 
-            {/* Cousin's Transformation */}
+            {/* Client Transformation 1 */}
             <Card className="overflow-hidden">
               <CardContent className="p-0">
                 <img 
-                  src="/transformations/cousin-transformation.jpg" 
+                  src="/images/antesdepois.jpg" 
                   alt="Client transformation success story" 
                   className="w-full h-auto object-cover"
                 />
                 <div className="p-6">
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">Client Success</h4>
                   <p className="text-gray-600">
-                    30+ kg lost through sustainable habits and environment design. 
+                    Complete body transformation through sustainable habits and environment design. 
                     No extreme diets, just science-based systems that work.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Client Transformation 2 */}
+            <Card className="overflow-hidden">
+              <CardContent className="p-0">
+                <img 
+                  src="/images/antesdps.jpg" 
+                  alt="Client transformation success story" 
+                  className="w-full h-auto object-cover"
+                />
+                <div className="p-6">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Client Success</h4>
+                  <p className="text-gray-600">
+                    30+ kg lost through consistent application of the Transform Method. 
+                    Real results from real science.
                   </p>
                 </div>
               </CardContent>
