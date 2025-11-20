@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { ArrowRight, Brain, Target, TrendingUp, Users, Zap, CheckCircle2 } from 'lucide-react'
 import ContactSection from './ContactSection.jsx'
+import TransformationsSection from './TransformationsSection.jsx'
 
 function HomePage() {
   const transformSteps = [
@@ -18,8 +19,8 @@ function HomePage() {
   ]
 
   const benefits = [
-    { icon: Brain, title: 'Science-Based', description: 'Grounded in neuroscience and behavioral psychology' },
-    { icon: Target, title: 'Proven Results', description: 'Tested through real-world transformation journeys' },
+    { icon: Brain, title: 'Science-Based', description: 'Nutrition Student (3rd year) • Precision Nutrition Certified • Change Psychology Specialist' },
+    { icon: Target, title: 'Proven Results', description: 'Real transformations: 30kg+ lost, sobriety achieved, lives changed' },
     { icon: TrendingUp, title: 'Sustainable Change', description: 'Build habits that last a lifetime' },
     { icon: Users, title: 'Community Support', description: 'Join others on their transformation journey' },
   ]
@@ -157,6 +158,9 @@ function HomePage() {
       </div>
 
     </div>
+
+    {/* Transformations & Certifications Section */}
+    <TransformationsSection />
 
     {/* Contact Section */}
     <ContactSection />
