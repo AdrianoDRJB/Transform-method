@@ -41,7 +41,7 @@ const PlansPage = () => {
         'Foundational training plan (by certified coach)',
         'Multi-channel support: WhatsApp, Email, Phone',
         '+1 MONTH FREE (130 days total)',
-        'BONUS: Chef-created recipes & cooking tips'
+        'BONUS: Meal examples & recipe ideas'
       ],
       stripeLink: 'https://buy.stripe.com/6oU14m37pcnl9hZ3131Jm0l',
       badge: 'MOST POPULAR',
@@ -59,12 +59,12 @@ const PlansPage = () => {
       features: [
         'Everything in Transform Plan, PLUS:',
         'Weekly 1:1 coaching sessions (14+ meetings)',
-        'Complete eBook library (all 7 eBooks)',
+        'Complete eBook library (ALL eBooks)',
         'Real 1:1 personalized attention throughout',
         'Priority support across all channels',
         'Advanced progress tracking',
         '🔥 BLACK FRIDAY: Pay 12 weeks, get 24 weeks!',
-        'BONUS: Exclusive recipes & meal prep strategies'
+        'BONUS: Chef-created recipes & cooking tips (exclusive)'
       ],
       stripeLink: 'https://buy.stripe.com/3cI8wO8rJ731fGnfNP1Jm0m',
       badge: 'PREMIUM',
