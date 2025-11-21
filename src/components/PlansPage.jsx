@@ -12,7 +12,7 @@ const PlansPage = () => {
       duration: '100 days',
       description: 'Basic self-guided transformation - best for highly self-motivated individuals',
       features: [
-        'Initial 1:1 video consultation (60 min)',
+        'Initial 1:1 video consultation (90 min)',
         'Personalized action plan',
         'Single follow-up check-in on day 45',
         '3 Premium eBooks: Transform Method, Nutrition Myths, Sleep Guide',
