@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -118,7 +119,13 @@ const FAQSection = () => {
             The choice is yours.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link 
+              to="/plans"
+              className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg"
+            >
+              Choose Your Plan Now
+            </Link>
             <a 
               href="https://wa.me/553299871422" 
               target="_blank" 
