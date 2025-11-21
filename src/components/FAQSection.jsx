@@ -27,56 +27,16 @@ const FAQSection = () => {
       answer: "The process is risk-free. You have my full support for 30 days, and if you don't like it, request your money back—no questions, no obstacles. That's how confident I am in what I'm doing."
     },
     {
-      question: "How long until I see results?",
-      answer: "Most clients see visible changes in 2-4 weeks. But results vary because each person is unique. The important thing: you'll feel the difference in the first 7 days—more energy, better sleep, less food anxiety. Weight loss is a consequence. Real transformation starts before the scale changes."
-    },
-    {
       question: "Do I need to go to the gym or do intense workouts?",
       answer: "No. Movement is important, but you don't need to become an athlete. Walking, climbing stairs, playing with kids—it all counts. We'll find the type of movement you enjoy and that fits your routine. If you already train, great. If you don't, also great. We'll start from where you are."
-    },
-    {
-      question: "Will I be hungry?",
-      answer: "Absolutely not. Hunger isn't sustainable and doesn't work long-term. The Transform Method teaches you to eat in a way that: leaves you satisfied, provides energy, and allows results. You'll eat smarter, not less."
-    },
-    {
-      question: "I have a very busy routine. Will it work for me?",
-      answer: "Yes. In fact, the method was created exactly for people with busy routines. I won't ask you to cook 5 meals a day or spend 2 hours at the gym. We'll work with the reality you have—work, family, commitments. Simplicity is the secret. The simpler, the more sustainable."
-    },
-    {
-      question: "Do I need to buy supplements or special products?",
-      answer: "No. You don't need to buy anything beyond real food. If supplements make sense for YOUR specific case (deficiencies, specific goals), I'll guide you. But it's not mandatory and I'll never push products on you."
-    },
-    {
-      question: "After reaching my goal, will I regain the weight?",
-      answer: "Not if you follow the method. The Transform Method isn't a temporary diet. It's a change in system and identity. You won't 'finish' and go back to old habits. You'll become a different person, with different habits, who naturally maintains results. That's why it works long-term."
-    },
-    {
-      question: "I have health conditions (diabetes, hypertension, etc.). Can I do this?",
-      answer: "Yes, but with medical supervision. I work with people with various health conditions. In fact, improving nutrition usually improves these conditions. But it's essential that you maintain follow-up with your doctor and inform me about your conditions so we can customize the plan appropriately."
-    },
-    {
-      question: "What's the difference between you and other nutritionists?",
-      answer: "Three main differences: 1) I don't work with ready-made diets. Each plan is 100% personalized for you. 2) Focus on systems, not motivation. I won't give you motivational speeches. I'll give you practical tools that work even when you're not motivated. 3) I lived this. I lost 84 lbs and kept it off for 3 years. It's not theory—it's real experience applied with scientific knowledge."
-    },
-    {
-      question: "How much does it cost?",
-      answer: "The investment varies according to the chosen plan. But think about it: How much do you spend per month on: food that harms you? Clothes that don't fit anymore? Medications for problems caused by poor nutrition? Frustrated attempts with diets that don't work? Investing in real transformation costs less than continuing the cycle of trial and error. Contact me to learn about plans and choose what makes sense for you."
-    },
-    {
-      question: "How does the follow-up work?",
-      answer: "Depends on the chosen plan, but generally includes: Complete initial assessment (habits, routine, goals), Personalized plan (nutrition + environment + habits), Regular check-ins (weekly or biweekly), WhatsApp support for daily questions, Continuous adjustments based on your results. You're never alone in the process."
     },
     {
       question: "Do I need to live near you?",
       answer: "No. All follow-up can be done online—video calls, WhatsApp, email. I work with clients in different cities and countries. Distance isn't a problem."
     },
     {
-      question: "I have a family. Will I have to cook separately?",
-      answer: "No. One of the Transform Method rules: what works for you, works for your family. We'll create a plan you can share with your family. Healthy food doesn't have to be 'diet food'. It can (and should) be tasty for everyone."
-    },
-    {
       question: "I don't know how to cook. Is that a problem?",
-      answer: "It's not a problem. We'll start from where you are. If you don't know how to cook, I'll teach you simple and quick recipes. If you don't have time to cook, we'll find practical alternatives. The method adapts to your skill level and availability."
+      answer: "It's not a problem at all. Actually, before becoming a nutritionist, I was a professional chef. As a bonus, you'll receive cooking tips and recipes that are simple, quick, and delicious. We'll start from where you are. If you don't have time to cook, we'll find practical alternatives. The method adapts to your skill level and availability."
     },
     {
       question: "Can I still go out with friends and eat out?",
@@ -84,7 +44,7 @@ const FAQSection = () => {
     },
     {
       question: "Will I have to give up my favorite foods?",
-      answer: "No. Prohibition creates compulsion. We'll find ways to include your favorite foods in a way that doesn't sabotage your results. Flexibility is part of the method. If you love chocolate, I won't forbid you from eating chocolate. I'll teach you to eat chocolate consciously and in a controlled way."
+      answer: "No. Prohibition creates compulsion. We'll find ways to include your favorite foods in a way that doesn't sabotage your results. Flexibility is part of the method. If you love chocolate, I won't forbid you from eating chocolate. I'll teach you to eat chocolate consciously and in a controlled way. Plus, with my chef background, I can show you how to make healthier versions of your favorite dishes that are just as delicious."
     },
     {
       question: "How do I know if I'm ready to start?",
