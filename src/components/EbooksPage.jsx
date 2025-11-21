@@ -199,21 +199,24 @@ const EbooksPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <Card className="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-200">
           <CardHeader>
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-bold mb-3">
+              🔥 LAUNCH SPECIAL - First 10 Clients Only!
+            </div>
             <CardTitle className="text-2xl flex items-center gap-2">
               <CheckCircle className="text-amber-600" />
               Complete Bundle Offer
             </CardTitle>
             <CardDescription className="text-lg">
-              Get all 4 eBooks (Complete Method + 3 Deep Dives) for just $29.99 (Save $7.97!)
+              Get all 4 eBooks (Complete Method + 3 Deep Dives) for just <span className="font-bold text-red-600">$24.96</span> <span className="line-through text-gray-500">$37.96</span> (Save $13!)
             </CardDescription>
           </CardHeader>
           <CardFooter>
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700"
+              className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700"
               onClick={() => handlePurchase('https://buy.stripe.com/00w7sKazRfzxgKrdFH1Jm0o')}
             >
-              Buy Complete Bundle - $29.99
+              🚀 Get Launch Special - $24.96
             </Button>
           </CardFooter>
         </Card>
