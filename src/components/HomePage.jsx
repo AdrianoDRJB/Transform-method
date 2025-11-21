@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
@@ -8,6 +8,8 @@ import TransformationsSection from './TransformationsSection.jsx'
 import FAQSection from './FAQSection.jsx'
 
 function HomePage() {
+  const [viewMode, setViewMode] = useState('detailed') // 'detailed' or 'phases'
+
   const transformSteps = [
     { letter: 'T', title: 'Track Your Reality', description: 'Understand where you are before you can change where you\'re going.' },
     { letter: 'R', title: 'Redesign Your Environment', description: 'Shape your surroundings to support your desired habits.' },
@@ -18,6 +20,37 @@ function HomePage() {
     { letter: 'O', title: 'Optimize Continuously', description: 'Make healthy behaviors automatic and sustainable.' },
     { letter: 'R', title: 'Reframe Your Mindset', description: 'Cultivate a growth mindset that embraces challenges.' },
     { letter: 'M', title: 'Master Your Identity', description: 'Become the person you aspire to be.' },
+  ]
+
+  const transformPhases = [
+    {
+      phase: 'DISCOVER',
+      title: 'Understand Your Current Reality',
+      description: 'Complete assessment, identify patterns, and analyze data',
+      steps: ['T'],
+      color: 'from-blue-600 to-blue-700'
+    },
+    {
+      phase: 'DESIGN',
+      title: 'Create Your Personalized Plan',
+      description: 'Environment redesign, obstacle strategies, and custom action plan',
+      steps: ['R', 'N'],
+      color: 'from-green-600 to-green-700'
+    },
+    {
+      phase: 'IMPLEMENT',
+      title: 'Put Systems Into Practice',
+      description: 'Daily micro-habits, habit stacking, and systems focus',
+      steps: ['A', 'S', 'F'],
+      color: 'from-orange-600 to-orange-700'
+    },
+    {
+      phase: 'TRANSFORM',
+      title: 'Evolve and Consolidate Changes',
+      description: 'Continuous optimization, identity shift, and permanent maintenance',
+      steps: ['O', 'R', 'M'],
+      color: 'from-purple-600 to-purple-700'
+    }
   ]
 
   const scrollToTransformations = () => {
@@ -90,32 +123,97 @@ function HomePage() {
 
       {/* TRANSFORM Method Section */}
       <div className="mb-20">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
             The TRANSFORM Method
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            A nine-step system designed to guide you through your transformation journey
+          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-6">
+            A complete system designed to guide you through your transformation journey
           </p>
+          
+          {/* View Switcher */}
+          <div className="flex justify-center gap-3 mb-8">
+            <button
+              onClick={() => setViewMode('detailed')}
+              className={`px-6 py-3 rounded-lg font-medium transition-all ${
+                viewMode === 'detailed'
+                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              9 Detailed Steps
+            </button>
+            <button
+              onClick={() => setViewMode('phases')}
+              className={`px-6 py-3 rounded-lg font-medium transition-all ${
+                viewMode === 'phases'
+                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              4 Implementation Phases
+            </button>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {transformSteps.map((step, index) => (
-            <Card key={index} className="group hover:shadow-xl transition-all hover:-translate-y-1">
-              <CardHeader>
-                <div className="flex items-center gap-4 mb-2">
-                  <div className="bg-gradient-to-br from-blue-600 to-purple-600 text-white font-bold text-2xl w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                    {step.letter}
+        {/* Detailed View (9 Steps) */}
+        {viewMode === 'detailed' && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {transformSteps.map((step, index) => (
+              <Card key={index} className="group hover:shadow-xl transition-all hover:-translate-y-1">
+                <CardHeader>
+                  <div className="flex items-center gap-4 mb-2">
+                    <div className="bg-gradient-to-br from-blue-600 to-purple-600 text-white font-bold text-2xl w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                      {step.letter}
+                    </div>
+                    <CardTitle className="text-lg">{step.title}</CardTitle>
                   </div>
-                  <CardTitle className="text-lg">{step.title}</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">{step.description}</CardDescription>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">{step.description}</CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
+
+        {/* Phases View (4 Phases) */}
+        {viewMode === 'phases' && (
+          <div className="space-y-6">
+            {transformPhases.map((phase, index) => (
+              <Card key={index} className="group hover:shadow-xl transition-all border-l-4">
+                <CardContent className="p-8">
+                  <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                    {/* Phase Number & Letters */}
+                    <div className="flex-shrink-0">
+                      <div className={`bg-gradient-to-r ${phase.color} text-white px-6 py-3 rounded-lg mb-3`}>
+                        <div className="text-sm font-semibold opacity-90">Phase {index + 1}</div>
+                        <div className="text-2xl font-bold">{phase.phase}</div>
+                      </div>
+                      <div className="flex gap-2 justify-center">
+                        {phase.steps.map((letter, i) => (
+                          <div key={i} className={`bg-gradient-to-r ${phase.color} text-white font-bold text-lg w-10 h-10 rounded flex items-center justify-center`}>
+                            {letter}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {/* Phase Content */}
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                        {phase.title}
+                      </h3>
+                      <p className="text-gray-600 dark:text-gray-400 text-lg">
+                        {phase.description}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Macro Tracker CTA */}
