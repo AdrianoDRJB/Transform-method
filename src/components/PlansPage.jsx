@@ -10,14 +10,17 @@ const PlansPage = () => {
       tagline: 'Start Your Journey',
       price: '$199',
       duration: '100 days',
-      description: 'Perfect for those ready to take the first step toward sustainable weight loss',
+      description: 'Basic self-guided transformation - best for highly self-motivated individuals',
       features: [
-        'Initial 1:1 video consultation (unlimited time)',
-        'Personalized action plan tailored to your goals',
-        'Monthly check-ins (3 total meetings)',
+        'Initial 1:1 video consultation (60 min)',
+        'Personalized action plan',
+        'Single follow-up check-in on day 45',
         '3 Premium eBooks: Transform Method, Nutrition Myths, Sleep Guide',
+        'Macro calculator access',
         '30-day money-back guarantee',
-        'Exclusive discount for program renewal'
+        '❌ No bi-weekly meetings',
+        '❌ No training plan',
+        '❌ No multi-channel support'
       ],
       stripeLink: 'https://buy.stripe.com/5kQ9ASfUbgDBdyf3131Jm0k',
       badge: null,
