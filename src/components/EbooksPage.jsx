@@ -21,6 +21,7 @@ const EbooksPage = () => {
     description: 'The complete framework for total life transformation. Master all 9 steps of the Transform Method and learn how to integrate nutrition, habits, mindset, and environment for lasting change.',
     file: '/pdfs/Transform_Method_Complete_Guide.pdf',
     price: 19.99,
+    stripeLink: 'https://buy.stripe.com/3cIfZg9vNdrpcub8ln1Jm0n',
     pages: '100+ pages',
     topics: [
       'Complete TRANSFORM Framework',
@@ -39,7 +40,8 @@ const EbooksPage = () => {
       title: 'Environment & Habits Mastery',
       description: 'Master your environment and build lasting habits through science-based strategies and practical exercises.',
       file: '/pdfs/Environment_Habits_Mastery_Complete_Guide.pdf',
-      price: 9.99,
+      price: 5.99,
+      stripeLink: 'https://buy.stripe.com/9B63cubDVbjh9hZ4571Jm0j',
       pages: '21 pages',
       topics: ['Environment Design', 'Habit Formation', 'Behavior Change', 'Practical Exercises']
     },
@@ -48,7 +50,8 @@ const EbooksPage = () => {
       title: 'Building Your Resilient Mind',
       description: 'Comprehensive guide to building lasting mental strength with science-backed methods and actionable strategies.',
       file: '/pdfs/Building_Resilient_Mind_Complete_Guide.pdf',
-      price: 9.99,
+      price: 5.99,
+      stripeLink: 'https://buy.stripe.com/7sYcN4azR5YXcubdFH1Jm0i',
       pages: '34 pages',
       topics: ['Mental Resilience', 'Growth Mindset', 'Neuroscience', 'Stress Management']
     },
@@ -57,24 +60,16 @@ const EbooksPage = () => {
       title: 'Emotional Mastery Guide',
       description: 'Master your emotions, understand your triggers, and develop emotional intelligence for lasting transformation.',
       file: '/pdfs/Emotional_Mastery_Guide.pdf',
-      price: 9.99,
+      price: 5.99,
+      stripeLink: 'https://buy.stripe.com/28E5kCbDV5YX9hZ6df1Jm0h',
       pages: '52 pages',
       topics: ['Emotional Intelligence', 'Self-Awareness', 'Emotional Regulation', 'Trigger Management']
     }
   ];
 
-  const handlePurchase = (ebookId) => {
-    // In production, this would redirect to Stripe Checkout
-    // For now, we'll simulate the purchase
-    const stripeUrl = `https://buy.stripe.com/test_XXXXXX?client_reference_id=${ebookId}`;
-    
-    // TODO: Replace with actual Stripe Payment Link
-    alert(`Stripe integration coming soon!\n\nIn production, you'll be redirected to:\n${stripeUrl}\n\nFor demo purposes, clicking OK will unlock this ebook.`);
-    
-    // Simulate successful purchase (remove this in production)
-    const newPurchased = [...purchasedEbooks, ebookId];
-    setPurchasedEbooks(newPurchased);
-    localStorage.setItem('purchasedEbooks', JSON.stringify(newPurchased));
+  const handlePurchase = (stripeLink) => {
+    // Redirect to Stripe Checkout
+    window.location.href = stripeLink;
   };
 
   const handleDownload = (ebook) => {
@@ -150,12 +145,12 @@ const EbooksPage = () => {
             </Button>
           ) : (
             <Button 
-              onClick={() => handlePurchase(ebook.id)}
+              onClick={() => handlePurchase(ebook.stripeLink)}
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
               size={featured ? 'lg' : 'default'}
             >
               <Lock className="w-4 h-4 mr-2" />
-              Purchase Now
+              Buy Now
             </Button>
           )}
         </CardFooter>
@@ -209,16 +204,16 @@ const EbooksPage = () => {
               Complete Bundle Offer
             </CardTitle>
             <CardDescription className="text-lg">
-              Get all 4 eBooks (Complete Method + 3 Deep Dives) for just $39.99 (Save $10!)
+              Get all 4 eBooks (Complete Method + 3 Deep Dives) for just $29.99 (Save $7.97!)
             </CardDescription>
           </CardHeader>
           <CardFooter>
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700"
-              onClick={() => handlePurchase('bundle-all')}
+              onClick={() => handlePurchase('https://buy.stripe.com/00w7sKazRfzxgKrdFH1Jm0o')}
             >
-              Buy Complete Bundle - $39.99
+              Buy Complete Bundle - $29.99
             </Button>
           </CardFooter>
         </Card>
