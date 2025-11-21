@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { ArrowRight, Brain, Target, TrendingUp, Users, Zap, CheckCircle2 } from 'lucide-react'
 import ContactSection from './ContactSection.jsx'
 import TransformationsSection from './TransformationsSection.jsx'
+import FAQSection from './FAQSection.jsx'
 
 function HomePage() {
   const transformSteps = [
@@ -174,6 +175,9 @@ function HomePage() {
 
     {/* Transformations & Certifications Section */}
     <TransformationsSection />
+
+    {/* FAQ Section */}
+    <FAQSection />
 
     {/* Contact Section */}
     <ContactSection />
