@@ -1,4 +1,5 @@
-import { Mail, Phone, MessageCircle, Instagram } from 'lucide-react';
+import { Mail, Phone, MessageCircle, Instagram, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function ContactSection() {
   return (
@@ -78,8 +79,14 @@ export default function ContactSection() {
 
         {/* Additional CTA */}
         <div className="mt-12">
-          <p className="text-white/80 text-lg">
-            Your transformation starts with a single message.
+          <Link to="/plans">
+            <button className="bg-white text-purple-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg text-lg transition-all shadow-lg hover:shadow-xl inline-flex items-center gap-2">
+              Choose Your Plan
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </Link>
+          <p className="text-white/80 text-lg mt-6">
+            Your transformation starts with a single decision.
           </p>
         </div>
       </div>
