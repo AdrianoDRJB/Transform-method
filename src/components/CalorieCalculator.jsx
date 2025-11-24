@@ -390,6 +390,164 @@ function CalorieCalculator() {
               </CardContent>
             </Card>
           )}
+
+          {/* Meal Plan Examples Section */}
+          <div className="mt-12">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl">Sample Meal Plans</CardTitle>
+                <CardDescription>
+                  Download complete one-day meal plan examples with balanced macros (30% Protein | 30% Fat | 40% Carbs)
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {/* 1500 Cal Plan */}
+                  <Card className="border-2 hover:border-green-500 transition-colors">
+                    <CardContent className="p-6">
+                      <div className="text-center mb-4">
+                        <Flame className="h-10 w-10 text-orange-500 mx-auto mb-2" />
+                        <h3 className="text-xl font-bold">1500 Calories</h3>
+                        <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Fat Loss</p>
+                      </div>
+                      <div className="space-y-2 text-sm mb-4">
+                        <div className="flex justify-between">
+                          <span className="text-slate-600 dark:text-slate-400">Protein:</span>
+                          <span className="font-semibold">112g</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-slate-600 dark:text-slate-400">Fat:</span>
+                          <span className="font-semibold">50g</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-slate-600 dark:text-slate-400">Carbs:</span>
+                          <span className="font-semibold">150g</span>
+                        </div>
+                      </div>
+                      <a 
+                        href="/meal-plans/Transform_Method_1500_Cal_Plan.pdf" 
+                        download
+                        className="block w-full"
+                      >
+                        <Button className="w-full bg-green-600 hover:bg-green-700">
+                          Download PDF
+                        </Button>
+                      </a>
+                    </CardContent>
+                  </Card>
+
+                  {/* 1800 Cal Plan */}
+                  <Card className="border-2 hover:border-green-500 transition-colors">
+                    <CardContent className="p-6">
+                      <div className="text-center mb-4">
+                        <Flame className="h-10 w-10 text-orange-500 mx-auto mb-2" />
+                        <h3 className="text-xl font-bold">1800 Calories</h3>
+                        <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Moderate Loss</p>
+                      </div>
+                      <div className="space-y-2 text-sm mb-4">
+                        <div className="flex justify-between">
+                          <span className="text-slate-600 dark:text-slate-400">Protein:</span>
+                          <span className="font-semibold">135g</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-slate-600 dark:text-slate-400">Fat:</span>
+                          <span className="font-semibold">60g</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-slate-600 dark:text-slate-400">Carbs:</span>
+                          <span className="font-semibold">180g</span>
+                        </div>
+                      </div>
+                      <a 
+                        href="/meal-plans/Transform_Method_1800_Cal_Plan.pdf" 
+                        download
+                        className="block w-full"
+                      >
+                        <Button className="w-full bg-green-600 hover:bg-green-700">
+                          Download PDF
+                        </Button>
+                      </a>
+                    </CardContent>
+                  </Card>
+
+                  {/* 2200 Cal Plan */}
+                  <Card className="border-2 hover:border-green-500 transition-colors">
+                    <CardContent className="p-6">
+                      <div className="text-center mb-4">
+                        <Flame className="h-10 w-10 text-orange-500 mx-auto mb-2" />
+                        <h3 className="text-xl font-bold">2200 Calories</h3>
+                        <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Maintenance</p>
+                      </div>
+                      <div className="space-y-2 text-sm mb-4">
+                        <div className="flex justify-between">
+                          <span className="text-slate-600 dark:text-slate-400">Protein:</span>
+                          <span className="font-semibold">165g</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-slate-600 dark:text-slate-400">Fat:</span>
+                          <span className="font-semibold">73g</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-slate-600 dark:text-slate-400">Carbs:</span>
+                          <span className="font-semibold">220g</span>
+                        </div>
+                      </div>
+                      <a 
+                        href="/meal-plans/Transform_Method_2200_Cal_Plan.pdf" 
+                        download
+                        className="block w-full"
+                      >
+                        <Button className="w-full bg-green-600 hover:bg-green-700">
+                          Download PDF
+                        </Button>
+                      </a>
+                    </CardContent>
+                  </Card>
+
+                  {/* 2500 Cal Plan */}
+                  <Card className="border-2 hover:border-green-500 transition-colors">
+                    <CardContent className="p-6">
+                      <div className="text-center mb-4">
+                        <Flame className="h-10 w-10 text-orange-500 mx-auto mb-2" />
+                        <h3 className="text-xl font-bold">2500 Calories</h3>
+                        <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Muscle Gain</p>
+                      </div>
+                      <div className="space-y-2 text-sm mb-4">
+                        <div className="flex justify-between">
+                          <span className="text-slate-600 dark:text-slate-400">Protein:</span>
+                          <span className="font-semibold">188g</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-slate-600 dark:text-slate-400">Fat:</span>
+                          <span className="font-semibold">83g</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-slate-600 dark:text-slate-400">Carbs:</span>
+                          <span className="font-semibold">250g</span>
+                        </div>
+                      </div>
+                      <a 
+                        href="/meal-plans/Transform_Method_2500_Cal_Plan.pdf" 
+                        download
+                        className="block w-full"
+                      >
+                        <Button className="w-full bg-green-600 hover:bg-green-700">
+                          Download PDF
+                        </Button>
+                      </a>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                  <p className="text-sm text-slate-700 dark:text-slate-300">
+                    <strong>Note:</strong> These meal plans use a balanced 30/30/40 macro distribution. 
+                    Each plan includes instructions on how to adjust based on your carb/fat preferences while maintaining results.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </div>
