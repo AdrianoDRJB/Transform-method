@@ -216,6 +216,13 @@ function HomePage() {
         )}
       </div>
 
+    </div>
+
+    {/* Transformations Section - Moved here */}
+    <TransformationsSection />
+
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
       {/* Macro Tracker CTA */}
       <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0 mb-20">
         <CardContent className="p-8 md:p-12">
@@ -273,9 +280,6 @@ function HomePage() {
       </div>
 
     </div>
-
-    {/* Transformations & Certifications Section */}
-    <TransformationsSection />
 
     {/* FAQ Section */}
     <FAQSection />
