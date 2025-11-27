@@ -9,6 +9,7 @@ import CalorieCalculator from './components/CalorieCalculator'
 import EbooksPage from './components/EbooksPage'
 import PlansPage from './components/PlansPage'
 import SuccessPage from './components/SuccessPage'
+import BlackFridayOffer from './components/BlackFridayOffer'
 import './App.css'
 
 function App() {
@@ -123,6 +124,7 @@ function App() {
           <Route path="/ebooks" element={<EbooksPage />} />
           <Route path="/plans" element={<PlansPage />} />
           <Route path="/success" element={<SuccessPage />} />
+          <Route path="/offer" element={<BlackFridayOffer />} />
         </Routes>
 
         {/* Footer */}
