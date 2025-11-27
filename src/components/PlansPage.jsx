@@ -47,7 +47,7 @@ const PlansPage = () => {
         'Priority access to new content & resources',
         'Quarterly progress reviews & strategy sessions',
         'Advanced habit-building frameworks',
-        'Lifetime access to all resources added during your program',
+        'Access to all new resources added during your 9 months',
         'Massive discount on renewal',
         '30-day money-back guarantee'
       ],
