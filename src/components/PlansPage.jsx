@@ -76,7 +76,7 @@ const PlansPage = () => {
         'Exclusive monthly 1-on-1 call (lifetime)',
         'First access to new programs & beta features',
         'VIP priority support across all channels',
-        'My personal gratitude for your trust 🙏',
+        'For those who trust me for a full year without knowing me yet',
         '30-day money-back guarantee'
       ],
       stripeLink: 'https://buy.stripe.com/5kQ28qeQ72ML1Px6df1Jm0r',
