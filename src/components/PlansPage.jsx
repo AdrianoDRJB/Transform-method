@@ -25,7 +25,7 @@ const PlansPage = () => {
         '🎁 BLACK FRIDAY: +1 MONTH FREE (4 months total)',
         '30-day money-back guarantee'
       ],
-      stripeLink: 'https://buy.stripe.com/6oU14m37pcnl9hZ3131Jm0l',
+      stripeLink: 'https://buy.stripe.com/6oU00i23l0EDcub8ln1Jm0p',
       badge: null,
       color: 'from-green-600 to-emerald-700',
       hoverColor: 'hover:from-green-700 hover:to-emerald-800'
@@ -51,7 +51,7 @@ const PlansPage = () => {
         'Massive discount on renewal',
         '30-day money-back guarantee'
       ],
-      stripeLink: 'https://buy.stripe.com/3cI8wO8rJ731fGnfNP1Jm0m',
+      stripeLink: 'https://buy.stripe.com/fZu14m37pbjh1Px8ln1Jm0q',
       badge: 'MOST POPULAR',
       badgeColor: 'bg-orange-500',
       color: 'from-blue-600 to-indigo-700',
@@ -79,7 +79,7 @@ const PlansPage = () => {
         'My personal gratitude for your trust 🙏',
         '30-day money-back guarantee'
       ],
-      stripeLink: 'https://buy.stripe.com/5kQ9ASfUbgDBdyf3131Jm0k',
+      stripeLink: 'https://buy.stripe.com/5kQ28qeQ72ML1Px6df1Jm0r',
       badge: 'BEST VALUE',
       badgeColor: 'bg-gradient-to-r from-purple-600 to-pink-600',
       color: 'from-purple-600 to-pink-700',
