@@ -49,23 +49,17 @@ function BlackFridayOffer() {
         {/* Video Section */}
         <Card className="mb-8 overflow-hidden">
           <CardContent className="p-0">
-            {/* Placeholder for Vimeo Video */}
-            <div className="relative bg-slate-900 aspect-video flex items-center justify-center">
-              <div className="text-center p-8">
-                <p className="text-white text-lg mb-4">
-                  📹 Your Vimeo video will be embedded here
-                </p>
-                <p className="text-slate-400 text-sm max-w-md mx-auto">
-                  After uploading your video to Vimeo, replace this section with the embed code from Vimeo's "Share" button.
-                </p>
-                <div className="mt-6 p-4 bg-slate-800 rounded-lg text-left max-w-xl mx-auto">
-                  <p className="text-xs text-slate-300 font-mono mb-2">Example embed code:</p>
-                  <code className="text-xs text-green-400">
-                    &lt;iframe src="https://player.vimeo.com/video/YOUR_VIDEO_ID" ...&gt;&lt;/iframe&gt;
-                  </code>
-                </div>
-              </div>
+            <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
+              <iframe 
+                src="https://player.vimeo.com/video/1141441478?h=cc0ec8797a&badge=0&autopause=0&player_id=0&app_id=58479" 
+                frameBorder="0" 
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
+                style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}} 
+                title="Transform Your Life: Join the 100-Day Challenge with Adriano"
+              />
             </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
           </CardContent>
         </Card>
 
