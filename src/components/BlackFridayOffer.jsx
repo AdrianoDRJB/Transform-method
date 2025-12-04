@@ -54,8 +54,16 @@ function BlackFridayOffer() {
               className="w-full"
               poster="/images/video-poster.jpg"
               preload="metadata"
+              crossOrigin="anonymous"
             >
               <source src="/transform-video.mp4" type="video/mp4" />
+              <track 
+                kind="subtitles" 
+                src="/transform-video-en.vtt" 
+                srcLang="en" 
+                label="English" 
+                default 
+              />
               Your browser does not support the video tag.
             </video>
 
