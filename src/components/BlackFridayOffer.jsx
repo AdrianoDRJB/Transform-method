@@ -40,7 +40,7 @@ function BlackFridayOffer() {
                 <Clock className="h-6 w-6 text-red-600" />
                 <div>
                   <p className="font-bold text-slate-900 dark:text-white">Limited Time Offer</p>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">Offer ends December 3rd, 2024</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">Limited spots remaining</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -165,7 +165,7 @@ function BlackFridayOffer() {
             <CardContent className="p-8">
               <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Life?</h2>
               <p className="text-blue-50 text-lg mb-6 max-w-2xl mx-auto">
-                Only 6 spots available. 2 per plan. This offer ends December 3rd, 2024.
+                Only 6 spots available. 2 per plan. Don't miss this opportunity!
               </p>
               <Link to="/plans">
                 <Button size="lg" variant="secondary" className="text-xl px-12 py-6 h-auto">
