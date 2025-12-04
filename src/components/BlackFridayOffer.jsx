@@ -1,10 +1,18 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent } from '@/components/ui/card.jsx'
 import { CheckCircle2, Clock, Users, ArrowRight } from 'lucide-react'
 
 function BlackFridayOffer() {
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 1.2
+    }
+  }, [])
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -50,6 +58,7 @@ function BlackFridayOffer() {
         <Card className="mb-8 overflow-hidden">
           <CardContent className="p-0">
             <video 
+              ref={videoRef}
               controls 
               className="w-full"
               poster="/images/video-poster.jpg"
