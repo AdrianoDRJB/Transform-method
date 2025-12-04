@@ -49,12 +49,13 @@ function BlackFridayOffer() {
         {/* Video Section */}
         <Card className="mb-8 overflow-hidden">
           <CardContent className="p-0">
-            <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
+            <div style={{position: 'relative', paddingBottom: '56.25%', height: 0}}>
               <iframe 
                 src="https://www.loom.com/embed/f6c42e2a3f284139b7a3926ea0b9a45e" 
                 frameBorder="0" 
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                referrerPolicy="strict-origin-when-cross-origin" 
+                webkitallowfullscreen="true"
+                mozallowfullscreen="true"
+                allowFullScreen={true}
                 style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}} 
                 title="Transform Your Life: Join the 100-Day Challenge with Adriano"
               />
