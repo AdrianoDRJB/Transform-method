@@ -10,7 +10,19 @@ function TheIdentity() {
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    
+    // Hide navbar and footer on mount
+    const nav = document.querySelector('nav')
+    const footer = document.querySelector('footer')
+    if (nav) nav.style.display = 'none'
+    if (footer) footer.style.display = 'none'
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      // Restore on unmount
+      if (nav) nav.style.display = ''
+      if (footer) footer.style.display = ''
+    }
   }, [])
 
   // Auto-scroll to video on page load
