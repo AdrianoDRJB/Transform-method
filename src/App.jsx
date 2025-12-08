@@ -11,16 +11,20 @@ import PlansPage from './components/PlansPage'
 import SuccessPage from './components/SuccessPage'
 import BlackFridayOffer from './components/BlackFridayOffer'
 import TheIdentity from './components/TheIdentity'
+import Transform2026 from './components/Transform2026'
 import './App.css'
 
 function AppContent() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const location = useLocation()
-  const isIdentityPage = location.pathname === '/identity'
+  const isIdentityPage = location.pathname === '/identity' || location.pathname === '/transform2026'
 
-  // If identity page, render ONLY the component without any wrapper
-  if (isIdentityPage) {
+  // If identity or transform2026 page, render ONLY the component without any wrapper
+  if (location.pathname === '/identity') {
     return <TheIdentity />
+  }
+  if (location.pathname === '/transform2026') {
+    return <Transform2026 />
   }
 
   // Normal pages with navbar and footer
@@ -182,6 +186,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/identity" element={<TheIdentity />} />
+        <Route path="/transform2026" element={<Transform2026 />} />
         <Route path="/*" element={<AppContent />} />
       </Routes>
     </Router>
