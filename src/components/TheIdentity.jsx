@@ -189,13 +189,13 @@ function TheIdentity() {
               See What You're Getting Into
             </h2>
           </div>
-          <div className="relative w-full" style={{ paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
+          <div className="w-full aspect-video">
             <iframe 
               src="https://www.loom.com/embed/3201bd36895a4db0b3974394130a2811?hide_owner=false&hide_share=false&hide_title=false&hideEmbedTopBar=false" 
               frameBorder="0" 
               allowFullScreen
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; microphone"
-              className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl"
+              className="w-full h-full rounded-lg shadow-2xl"
               title="The Identity - 100 Day Challenge"
             />
           </div>
