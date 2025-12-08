@@ -11,7 +11,6 @@ import PlansPage from './components/PlansPage'
 import SuccessPage from './components/SuccessPage'
 import BlackFridayOffer from './components/BlackFridayOffer'
 import TheIdentity from './components/TheIdentity'
-import Transform2026 from './components/Transform2026'
 import './App.css'
 
 function AppContent() {
@@ -186,7 +185,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/identity" element={<TheIdentity />} />
-        <Route path="/transform2026" element={<Transform2026 />} />
+        <Route path="/transform2026" element={<TheIdentity />} />
         <Route path="/*" element={<AppContent />} />
       </Routes>
     </Router>
