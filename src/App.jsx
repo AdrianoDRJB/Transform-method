@@ -128,7 +128,7 @@ function AppContent() {
 
         {/* Routes */}
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/method" element={<AboutMethod />} />
           <Route path="/calculator" element={<CalorieCalculator />} />
           <Route path="/tracker" element={<MacroTracker />} />
@@ -184,6 +184,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<TheIdentity />} />
         <Route path="/identity" element={<TheIdentity />} />
         <Route path="/transform2026" element={<TheIdentity />} />
         <Route path="/*" element={<AppContent />} />
