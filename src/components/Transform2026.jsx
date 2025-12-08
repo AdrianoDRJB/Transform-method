@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
-import { Check, Award, BookOpen, Users, Trophy, Target, Zap, Crown, CheckCircle2 } from 'lucide-react'
+import { Check, Award, BookOpen, Users, Trophy, Target, Zap, Crown } from 'lucide-react'
 
 function Transform2026() {
   const [scrollY, setScrollY] = useState(0)
@@ -158,19 +158,10 @@ function Transform2026() {
                 This is a complete transformation system designed to help you lose up to 20kg of fat, build lean muscle, and develop the mindset of an athlete.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg" 
-                  className="bg-red-600 hover:bg-red-700 text-white text-lg px-12 py-6 h-auto font-bold"
-                  onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                >
+                <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white text-lg px-12 py-6 h-auto font-bold">
                   START YOUR TRANSFORMATION
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-white text-white hover:bg-white hover:text-black text-lg px-12 py-6 h-auto font-bold"
-                  onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                >
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black text-lg px-12 py-6 h-auto font-bold">
                   LEARN MORE
                 </Button>
               </div>
@@ -349,7 +340,7 @@ function Transform2026() {
       </section>
 
       {/* Pricing Plans */}
-      <section id="pricing" className="py-20 bg-gradient-to-b from-black to-gray-900">
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black mb-6">
