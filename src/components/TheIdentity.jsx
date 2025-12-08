@@ -40,13 +40,13 @@ function TheIdentity() {
     {
       icon: BookOpen,
       title: "The eBook Starter Pack",
-      value: "$197",
+      value: "",
       description: "Complete eBooks distilling 10+ science-based books that would take months to read. Written by someone who read them AND lived them: Emotional Eating, Environment Design, Nutrition Myths, The TRANSFORM Method, and The Science of Sleep."
     },
     {
       icon: Users,
       title: "The Inner Circle Community",
-      value: "$497",
+      value: "",
       description: "Full access to my private Discord during the program. See my training videos, reading insights, my psychologist's reality checks, how I handle tough days. Live with an athlete who was obese, alcoholic, and a smoker - so YES, you can too."
     },
     {
@@ -81,7 +81,7 @@ function TheIdentity() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: 'url(/hero-bw.jpg)',
-            transform: `translateY(${scrollY * 0.5}px) scale(1.0)`,
+            transform: `translateY(${scrollY * 0.5}px) scale(0.85)`,
             transformOrigin: 'center 30%',
             filter: 'grayscale(100%) contrast(1.2)'
           }}
