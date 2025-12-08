@@ -76,22 +76,19 @@ function TheIdentity() {
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section - Renato Cariani Style */}
       <div className="relative h-screen overflow-hidden">
-        {/* Background Image */}
+        {/* Background Image - Zoomed Out */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: 'url(/hero-bw.jpg)',
-            transform: `translateY(${scrollY * 0.5}px)`,
+            transform: `translateY(${scrollY * 0.5}px) scale(1.15)`,
+            transformOrigin: 'center 30%',
             filter: 'grayscale(100%) contrast(1.2)'
           }}
         />
         
-        {/* Red Diagonal Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-red-600/80 via-red-700/60 to-transparent" 
-             style={{
-               clipPath: 'polygon(0 0, 100% 0, 70% 100%, 0% 100%)'
-             }}
-        />
+        {/* Dark Overlay Only */}
+        <div className="absolute inset-0 bg-black/50" />
         
         {/* Content */}
         <div className="relative z-10 h-full flex items-center">
