@@ -18,9 +18,12 @@ function AppContent() {
   const location = useLocation()
   const isIdentityPage = location.pathname === '/identity' || location.pathname === '/transform2026'
 
-  // If home, identity or transform2026 page, render ONLY the component without any wrapper
-  if (location.pathname === '/' || location.pathname === '/identity' || location.pathname === '/transform2026') {
+  // If identity or transform2026 page, render ONLY the component without any wrapper
+  if (location.pathname === '/identity') {
     return <TheIdentity />
+  }
+  if (location.pathname === '/transform2026') {
+    return <Transform2026 />
   }
 
   // Normal pages with navbar and footer
@@ -181,6 +184,9 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<TheIdentity />} />
+        <Route path="/identity" element={<TheIdentity />} />
+        <Route path="/transform2026" element={<TheIdentity />} />
         <Route path="/*" element={<AppContent />} />
       </Routes>
     </Router>
