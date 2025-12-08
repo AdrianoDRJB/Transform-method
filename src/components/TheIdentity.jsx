@@ -226,7 +226,7 @@ function TheIdentity() {
             </Card>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* What You Get */}
       <section className="py-20 bg-gray-900">
