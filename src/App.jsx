@@ -15,11 +15,14 @@ import './App.css'
 
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const location = window.location
+  const isIdentityPage = location.pathname === '/identity'
 
   return (
     <Router>
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
-        {/* Navigation */}
+        {/* Navigation - Hidden on /identity */}
+        {!isIdentityPage && (
         <nav className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
@@ -115,6 +118,7 @@ function App() {
             </div>
           )}
         </nav>
+        )}
 
         {/* Routes */}
         <Routes>
@@ -129,7 +133,8 @@ function App() {
           <Route path="/identity" element={<TheIdentity />} />
         </Routes>
 
-        {/* Footer */}
+        {/* Footer - Hidden on /identity */}
+        {!isIdentityPage && (
         <footer className="bg-slate-900 text-white mt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -167,6 +172,7 @@ function App() {
             </div>
           </div>
         </footer>
+        )}
       </div>
     </Router>
   )
