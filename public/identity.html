@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Identity - Transform Method</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: #fff;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Section -->
+    <div class="min-h-screen bg-black">
+        <div class="max-w-5xl mx-auto px-4 py-8">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
+                    Watch This First
+                </h1>
+                <p class="text-xl text-gray-300">
+                    See what you're getting into
+                </p>
+            </div>
+            
+            <!-- Loom Video -->
+            <div class="video-container mb-12 rounded-lg overflow-hidden shadow-2xl">
+                <iframe 
+                    src="https://www.loom.com/embed/3201bd36895a4db0b3974394130a2811?hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" 
+                    frameborder="0" 
+                    webkitallowfullscreen 
+                    mozallowfullscreen 
+                    allowfullscreen
+                    allow="autoplay; fullscreen; picture-in-picture"
+                ></iframe>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                <a href="#pricing" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-center text-lg transition">
+                    START FREE TRIAL
+                </a>
+                <a href="/" class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 px-8 rounded-lg text-center text-lg transition">
+                    EXPLORE THE SITE
+                </a>
+            </div>
+
+            <!-- Pricing Section -->
+            <div id="pricing" class="mt-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-4">Choose Your Transformation</h2>
+                <p class="text-center text-gray-400 mb-12">Start with a 30-day FREE trial • No payment required</p>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Trimestral -->
+                    <div class="bg-gray-900 rounded-lg p-6 border border-gray-800">
+                        <h3 class="text-2xl font-bold mb-2">TRIMESTRAL</h3>
+                        <p class="text-gray-400 mb-4">3 Months Program</p>
+                        <div class="text-4xl font-bold mb-4">$499</div>
+                        <p class="text-sm text-gray-500 mb-6">30-day FREE trial</p>
+                        <ul class="space-y-3 mb-6 text-sm">
+                            <li>✓ 100-Day Identity Shift System</li>
+                            <li>✓ Weekly 1-on-1 Coaching</li>
+                            <li>✓ Custom Nutrition & Training</li>
+                            <li>✓ Discord Community Access</li>
+                        </ul>
+                        <a href="https://buy.stripe.com/9B6eVc0Zh4UT8dV59b1Jm0v" class="block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-center transition">
+                            START FREE TRIAL
+                        </a>
+                    </div>
+
+                    <!-- Semestral -->
+                    <div class="bg-gray-900 rounded-lg p-6 border-2 border-blue-500 relative">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                            MOST POPULAR
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">SEMESTRAL</h3>
+                        <p class="text-gray-400 mb-4">6 Months + 3 Bonus</p>
+                        <div class="text-4xl font-bold mb-4">$999</div>
+                        <p class="text-sm text-gray-500 mb-6">30-day FREE trial • 9 months total</p>
+                        <ul class="space-y-3 mb-6 text-sm">
+                            <li>✓ Everything in Trimestral</li>
+                            <li>✓ + 3 Months FREE</li>
+                            <li>✓ Priority Support</li>
+                            <li>✓ Challenge Prize Pool Access</li>
+                        </ul>
+                        <a href="https://buy.stripe.com/cNicN4dM34UTeCjatv1Jm0w" class="block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-center transition">
+                            START FREE TRIAL
+                        </a>
+                    </div>
+
+                    <!-- Anual -->
+                    <div class="bg-gray-900 rounded-lg p-6 border border-gray-800">
+                        <div class="text-sm text-yellow-500 font-bold mb-2">BEST VALUE</div>
+                        <h3 class="text-2xl font-bold mb-2">ANUAL</h3>
+                        <p class="text-gray-400 mb-4">12 Months + 6 Bonus</p>
+                        <div class="text-4xl font-bold mb-4">$1,999</div>
+                        <p class="text-sm text-gray-500 mb-6">30-day FREE trial • 18 months total</p>
+                        <ul class="space-y-3 mb-6 text-sm">
+                            <li>✓ Everything in Semestral</li>
+                            <li>✓ + 6 Months FREE</li>
+                            <li>✓ FIRST 3 ONLY: Lifetime Benefits</li>
+                            <li>✓ 1 Monthly Session Forever (First 3)</li>
+                        </ul>
+                        <a href="https://buy.stripe.com/dRmdR88rJ7312TB8ln1Jm0x" class="block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-center transition">
+                            START FREE TRIAL
+                        </a>
+                    </div>
+                </div>
+
+                <p class="text-center text-gray-500 text-sm mt-8">
+                    ⚡ Only 15 spots available • First 3 annual members get lifetime benefits
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Auto-scroll to video on load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+            }, 100)
+        })
+    </script>
+</body>
+</html>
