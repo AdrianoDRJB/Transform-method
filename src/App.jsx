@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
 import { Button } from '@/components/ui/button.jsx'
 import { Menu, X, Dumbbell } from 'lucide-react'
 import HomePage from './components/HomePage'
@@ -13,13 +13,12 @@ import BlackFridayOffer from './components/BlackFridayOffer'
 import TheIdentity from './components/TheIdentity'
 import './App.css'
 
-function App() {
+function AppContent() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const location = window.location
+  const location = useLocation()
   const isIdentityPage = location.pathname === '/identity'
 
   return (
-    <Router>
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
         {/* Navigation - Hidden on /identity */}
         {!isIdentityPage && (
@@ -174,6 +173,13 @@ function App() {
         </footer>
         )}
       </div>
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   )
 }
