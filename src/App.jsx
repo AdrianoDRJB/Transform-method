@@ -18,11 +18,16 @@ function AppContent() {
   const location = useLocation()
   const isIdentityPage = location.pathname === '/identity'
 
+  // If identity page, render ONLY the component without any wrapper
+  if (isIdentityPage) {
+    return <TheIdentity />
+  }
+
+  // Normal pages with navbar and footer
   return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
-        {/* Navigation - Hidden on /identity */}
-        {!isIdentityPage && (
-        <nav className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm sticky top-0 z-50" style={isIdentityPage ? {display: 'none'} : {}}>
+        {/* Navigation */}
+        <nav className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               {/* Logo */}
@@ -117,7 +122,6 @@ function AppContent() {
             </div>
           )}
         </nav>
-        )}
 
         {/* Routes */}
         <Routes>
@@ -129,11 +133,9 @@ function AppContent() {
           <Route path="/plans" element={<PlansPage />} />
           <Route path="/success" element={<SuccessPage />} />
           <Route path="/offer" element={<BlackFridayOffer />} />
-          <Route path="/identity" element={<TheIdentity />} />
         </Routes>
 
-        {/* Footer - Hidden on /identity */}
-        {!isIdentityPage && (
+        {/* Footer */}
         <footer className="bg-slate-900 text-white mt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -171,7 +173,6 @@ function AppContent() {
             </div>
           </div>
         </footer>
-        )}
       </div>
   )
 }
@@ -179,11 +180,12 @@ function AppContent() {
 function App() {
   return (
     <Router>
-      <AppContent />
+      <Routes>
+        <Route path="/identity" element={<TheIdentity />} />
+        <Route path="/*" element={<AppContent />} />
+      </Routes>
     </Router>
   )
 }
 
 export default App
-
-
