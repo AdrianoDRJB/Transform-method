@@ -290,27 +290,150 @@ function TheIdentity() {
         </div>
       </section>
 
-      {/* 30-Day Trial */}
-      <section className="py-20 bg-red-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-black mb-6">
-            Try It For 30 Days
-          </h2>
-          <p className="text-2xl mb-8">
-            Join The Identity program for a full 30 days for just <span className="font-black text-5xl">$1</span>
-          </p>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            If at any point in those 30 days you don't feel like this is the right path for you, you can cancel with one click and you will not be charged another penny.
-          </p>
-          <p className="text-lg mb-12">
-            You only pay the full price if you decide to continue after the 30-day trial.
-          </p>
-          <Button size="lg" className="bg-black hover:bg-gray-900 text-white text-2xl px-16 py-8 h-auto font-black">
-            START YOUR $1 TRIAL NOW
-          </Button>
-          <p className="mt-6 text-sm">
-            ⚡ Only 15 spots available • First 3 annual members get lifetime benefits
-          </p>
+      {/* Pricing Plans */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black mb-6">
+              Choose Your <span className="text-red-500">Transformation</span>
+            </h2>
+            <p className="text-xl text-gray-400 mb-4">
+              Start with a 30-day trial for just $1
+            </p>
+            <p className="text-sm text-gray-500">
+              Cancel anytime during the trial • Full price only charged on day 31
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Trimestral */}
+            <Card className="bg-gray-900 border-gray-800 text-white hover:border-red-500 transition-all">
+              <CardHeader>
+                <CardTitle className="text-2xl font-black">TRIMESTRAL</CardTitle>
+                <CardDescription className="text-gray-400">3 Months Program</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="mb-6">
+                  <div className="text-5xl font-black text-white mb-2">$499</div>
+                  <div className="text-sm text-gray-400">30-day trial for $1</div>
+                </div>
+                <ul className="space-y-3 mb-8 text-sm text-gray-300">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span>100-Day Identity Shift System</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span>Weekly 1-on-1 Coaching</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span>Custom Nutrition & Training</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span>Discord Community Access</span>
+                  </li>
+                </ul>
+                <a href="https://buy.stripe.com/dRm28q0ZhfzxgKrcBD1Jm0s" target="_blank" rel="noopener noreferrer">
+                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
+                    START $1 TRIAL
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            {/* Semestral - Popular */}
+            <Card className="bg-gray-900 border-red-500 border-2 text-white relative">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-600 text-white px-4 py-1 rounded-full text-sm font-bold">
+                MOST POPULAR
+              </div>
+              <CardHeader>
+                <CardTitle className="text-2xl font-black">SEMESTRAL</CardTitle>
+                <CardDescription className="text-gray-400">6 Months + 3 Bonus</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="mb-6">
+                  <div className="text-5xl font-black text-white mb-2">$999</div>
+                  <div className="text-sm text-gray-400">30-day trial for $1</div>
+                  <div className="text-sm text-red-500 font-bold mt-1">9 months total</div>
+                </div>
+                <ul className="space-y-3 mb-8 text-sm text-gray-300">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span>Everything in Trimestral</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="font-bold text-red-500">+ 3 Months FREE</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span>Priority Support</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span>Challenge Prize Pool Access</span>
+                  </li>
+                </ul>
+                <a href="https://buy.stripe.com/eVq9AS5fxfzxam36df1Jm0t" target="_blank" rel="noopener noreferrer">
+                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
+                    START $1 TRIAL
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            {/* Anual - Best Value */}
+            <Card className="bg-gradient-to-br from-red-900 to-gray-900 border-red-500 text-white relative">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-black text-red-500 px-4 py-1 rounded-full text-sm font-bold border border-red-500">
+                BEST VALUE
+              </div>
+              <CardHeader>
+                <CardTitle className="text-2xl font-black">ANUAL</CardTitle>
+                <CardDescription className="text-gray-300">12 Months + 6 Bonus</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="mb-6">
+                  <div className="text-5xl font-black text-white mb-2">$1,999</div>
+                  <div className="text-sm text-gray-300">30-day trial for $1</div>
+                  <div className="text-sm text-red-400 font-bold mt-1">18 months total</div>
+                </div>
+                <ul className="space-y-3 mb-8 text-sm text-gray-200">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-red-400 mr-2 flex-shrink-0 mt-0.5" />
+                    <span>Everything in Semestral</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-red-400 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="font-bold text-red-400">+ 6 Months FREE</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Award className="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="font-bold text-yellow-500">FIRST 3 ONLY: Lifetime Benefits</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-red-400 mr-2 flex-shrink-0 mt-0.5" />
+                    <span>1 Monthly Session Forever (First 3)</span>
+                  </li>
+                </ul>
+                <a href="https://buy.stripe.com/cNi00i4bt2ML1Px3131Jm0u" target="_blank" rel="noopener noreferrer">
+                  <Button className="w-full bg-black hover:bg-gray-900 text-white font-bold py-6 border border-red-500">
+                    START $1 TRIAL
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-sm text-gray-500 mb-2">
+              ⚡ Only 15 spots available • First 3 annual members get lifetime benefits
+            </p>
+            <p className="text-xs text-gray-600">
+              All plans include 30-day trial period. Cancel anytime during trial with no charge.
+            </p>
+          </div>
         </div>
       </section>
 
