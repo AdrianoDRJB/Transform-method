@@ -85,7 +85,7 @@ function TheIdentity() {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white" data-page="identity">
       {/* Hero Section - Image Background */}
       <div className="relative h-screen overflow-hidden">
         {/* Background Image */}
