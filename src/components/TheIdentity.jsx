@@ -180,28 +180,6 @@ function TheIdentity() {
         </div>
       </div>
 
-      {/* Video Section */}
-      <div id="video-section" className="py-24 bg-black">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="text-red-500 font-bold text-xl tracking-wider uppercase">Watch This First</span>
-            <h2 className="text-3xl md:text-4xl font-black mt-4 mb-6 text-white">
-              See What You're Getting Into
-            </h2>
-          </div>
-          <div className="w-full aspect-video">
-            <iframe 
-              src="https://www.loom.com/embed/3201bd36895a4db0b3974394130a2811?hide_owner=false&hide_share=false&hide_title=false&hideEmbedTopBar=false" 
-              frameBorder="0" 
-              allowFullScreen
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; microphone"
-              className="w-full h-full rounded-lg shadow-2xl"
-              title="The Identity - 100 Day Challenge"
-            />
-          </div>
-        </div>
-      </div>
-
       {/* The Unique Mechanism */}
       <div className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
