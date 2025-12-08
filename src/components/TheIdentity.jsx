@@ -117,7 +117,7 @@ function TheIdentity() {
                 </Button>
               </div>
               <p className="mt-6 text-sm text-gray-400">
-                ⚡ Only 15 spots available • 30-day trial for $1
+                ⚡ Only 15 spots available • 30-day FREE trial
               </p>
             </div>
           </div>
@@ -298,10 +298,10 @@ function TheIdentity() {
               Choose Your <span className="text-red-500">Transformation</span>
             </h2>
             <p className="text-xl text-gray-400 mb-4">
-              Start with a 30-day trial for just $1
+              Start with a 30-day FREE trial
             </p>
             <p className="text-sm text-gray-500">
-              Cancel anytime during the trial • Full price only charged on day 31
+              No payment required • Cancel anytime before day 31
             </p>
           </div>
 
@@ -315,7 +315,7 @@ function TheIdentity() {
               <CardContent>
                 <div className="mb-6">
                   <div className="text-5xl font-black text-white mb-2">$499</div>
-                  <div className="text-sm text-gray-400">30-day trial for $1</div>
+                  <div className="text-sm text-gray-400">30-day FREE trial</div>
                 </div>
                 <ul className="space-y-3 mb-8 text-sm text-gray-300">
                   <li className="flex items-start">
@@ -335,9 +335,9 @@ function TheIdentity() {
                     <span>Discord Community Access</span>
                   </li>
                 </ul>
-                <a href="https://buy.stripe.com/dRm28q0ZhfzxgKrcBD1Jm0s" target="_blank" rel="noopener noreferrer">
+                <a href="https://buy.stripe.com/9B6eVc0Zh4UT8dV59b1Jm0v" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
-                    START $1 TRIAL
+                    START FREE TRIAL
                   </Button>
                 </a>
               </CardContent>
@@ -355,7 +355,7 @@ function TheIdentity() {
               <CardContent>
                 <div className="mb-6">
                   <div className="text-5xl font-black text-white mb-2">$999</div>
-                  <div className="text-sm text-gray-400">30-day trial for $1</div>
+                  <div className="text-sm text-gray-400">30-day FREE trial</div>
                   <div className="text-sm text-red-500 font-bold mt-1">9 months total</div>
                 </div>
                 <ul className="space-y-3 mb-8 text-sm text-gray-300">
@@ -376,9 +376,9 @@ function TheIdentity() {
                     <span>Challenge Prize Pool Access</span>
                   </li>
                 </ul>
-                <a href="https://buy.stripe.com/eVq9AS5fxfzxam36df1Jm0t" target="_blank" rel="noopener noreferrer">
+                <a href="https://buy.stripe.com/cNicN4dM34UTeCjatv1Jm0w" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
-                    START $1 TRIAL
+                    START FREE TRIAL
                   </Button>
                 </a>
               </CardContent>
@@ -396,7 +396,7 @@ function TheIdentity() {
               <CardContent>
                 <div className="mb-6">
                   <div className="text-5xl font-black text-white mb-2">$1,999</div>
-                  <div className="text-sm text-gray-300">30-day trial for $1</div>
+                  <div className="text-sm text-gray-300">30-day FREE trial</div>
                   <div className="text-sm text-red-400 font-bold mt-1">18 months total</div>
                 </div>
                 <ul className="space-y-3 mb-8 text-sm text-gray-200">
@@ -417,9 +417,9 @@ function TheIdentity() {
                     <span>1 Monthly Session Forever (First 3)</span>
                   </li>
                 </ul>
-                <a href="https://buy.stripe.com/cNi00i4bt2ML1Px3131Jm0u" target="_blank" rel="noopener noreferrer">
+                <a href="https://buy.stripe.com/dRmdR88rJ7312TB8ln1Jm0x" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full bg-black hover:bg-gray-900 text-white font-bold py-6 border border-red-500">
-                    START $1 TRIAL
+                    START FREE TRIAL
                   </Button>
                 </a>
               </CardContent>
