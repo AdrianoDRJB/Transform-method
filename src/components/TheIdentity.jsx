@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
-import { Check, Award, BookOpen, Users, Trophy, Target, Zap, Crown } from 'lucide-react'
+import { CheckCircle2, Trophy, Users, BookOpen, MessageCircle, Zap, Target, Award } from 'lucide-react'
 
 function TheIdentity() {
   const [scrollY, setScrollY] = useState(0)
@@ -10,56 +10,7 @@ function TheIdentity() {
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
     window.addEventListener('scroll', handleScroll)
-    
-    // NUCLEAR OPTION: Hide ALL nav and footer elements
-    const style = document.createElement('style')
-    style.id = 'identity-page-styles'
-    style.innerHTML = `
-      nav,
-      header,
-      [class*="nav"],
-      [class*="Nav"],
-      [class*="header"],
-      [class*="Header"] {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        height: 0 !important;
-        overflow: hidden !important;
-        position: absolute !important;
-        top: -9999px !important;
-      }
-      footer,
-      [class*="footer"],
-      [class*="Footer"] {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        height: 0 !important;
-        overflow: hidden !important;
-      }
-      body {
-        padding-top: 0 !important;
-        margin-top: 0 !important;
-      }
-    `
-    document.head.appendChild(style)
-    
-    // Also try to remove nav elements from DOM
-    setTimeout(() => {
-      const navs = document.querySelectorAll('nav, header')
-      navs.forEach(nav => {
-        if (nav && !nav.closest('[data-page="identity"]')) {
-          nav.style.cssText = 'display: none !important; visibility: hidden !important; height: 0 !important; overflow: hidden !important;'
-        }
-      })
-    }, 100)
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-      const styleEl = document.getElementById('identity-page-styles')
-      if (styleEl) document.head.removeChild(styleEl)
-    }
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const deliverables = [
@@ -122,10 +73,10 @@ function TheIdentity() {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white" data-page="identity">
-      {/* Hero Section - Image Background */}
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section - Renato Cariani Style */}
       <div className="relative h-screen overflow-hidden">
-        {/* Background Image */}
+        {/* Background Image - Zoomed Out */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -136,7 +87,7 @@ function TheIdentity() {
           }}
         />
         
-        {/* Dark Overlay */}
+        {/* Dark Overlay Only */}
         <div className="absolute inset-0 bg-black/50" />
         
         {/* Content */}
@@ -166,7 +117,7 @@ function TheIdentity() {
                 </Button>
               </div>
               <p className="mt-6 text-sm text-gray-400">
-                ⚡ Only 15 spots available • 30-day FREE trial
+                ⚡ Only 15 spots available • 30-day trial for $1
               </p>
             </div>
           </div>
@@ -181,7 +132,7 @@ function TheIdentity() {
       </div>
 
       {/* The Unique Mechanism */}
-      <div className="py-24 bg-black">
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-red-500 font-bold text-sm tracking-wider uppercase">The Difference</span>
@@ -226,7 +177,7 @@ function TheIdentity() {
             </Card>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* What You Get */}
       <section className="py-20 bg-gray-900">
@@ -339,150 +290,27 @@ function TheIdentity() {
         </div>
       </section>
 
-      {/* Pricing Plans */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-6">
-              Choose Your <span className="text-red-500">Transformation</span>
-            </h2>
-            <p className="text-xl text-gray-400 mb-4">
-              Start with a 30-day FREE trial
-            </p>
-            <p className="text-sm text-gray-500">
-              No payment required • Cancel anytime before day 31
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Trimestral */}
-            <Card className="bg-gray-900 border-gray-800 text-white hover:border-red-500 transition-all">
-              <CardHeader>
-                <CardTitle className="text-2xl font-black">TRIMESTRAL</CardTitle>
-                <CardDescription className="text-gray-400">3 Months Program</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="mb-6">
-                  <div className="text-5xl font-black text-white mb-2">$499</div>
-                  <div className="text-sm text-gray-400">30-day FREE trial</div>
-                </div>
-                <ul className="space-y-3 mb-8 text-sm text-gray-300">
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span>100-Day Identity Shift System</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span>Weekly 1-on-1 Coaching</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span>Custom Nutrition & Training</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span>Discord Community Access</span>
-                  </li>
-                </ul>
-                <a href="https://buy.stripe.com/9B6eVc0Zh4UT8dV59b1Jm0v" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
-                    START FREE TRIAL
-                  </Button>
-                </a>
-              </CardContent>
-            </Card>
-
-            {/* Semestral - Popular */}
-            <Card className="bg-gray-900 border-red-500 border-2 text-white relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-600 text-white px-4 py-1 rounded-full text-sm font-bold">
-                MOST POPULAR
-              </div>
-              <CardHeader>
-                <CardTitle className="text-2xl font-black">SEMESTRAL</CardTitle>
-                <CardDescription className="text-gray-400">6 Months + 3 Bonus</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="mb-6">
-                  <div className="text-5xl font-black text-white mb-2">$999</div>
-                  <div className="text-sm text-gray-400">30-day FREE trial</div>
-                  <div className="text-sm text-red-500 font-bold mt-1">9 months total</div>
-                </div>
-                <ul className="space-y-3 mb-8 text-sm text-gray-300">
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span>Everything in Trimestral</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="font-bold text-red-500">+ 3 Months FREE</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span>Priority Support</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span>Challenge Prize Pool Access</span>
-                  </li>
-                </ul>
-                <a href="https://buy.stripe.com/cNicN4dM34UTeCjatv1Jm0w" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
-                    START FREE TRIAL
-                  </Button>
-                </a>
-              </CardContent>
-            </Card>
-
-            {/* Anual - Best Value */}
-            <Card className="bg-gradient-to-br from-red-900 to-gray-900 border-red-500 text-white relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-black text-red-500 px-4 py-1 rounded-full text-sm font-bold border border-red-500">
-                BEST VALUE
-              </div>
-              <CardHeader>
-                <CardTitle className="text-2xl font-black">ANUAL</CardTitle>
-                <CardDescription className="text-gray-300">12 Months + 6 Bonus</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="mb-6">
-                  <div className="text-5xl font-black text-white mb-2">$1,999</div>
-                  <div className="text-sm text-gray-300">30-day FREE trial</div>
-                  <div className="text-sm text-red-400 font-bold mt-1">18 months total</div>
-                </div>
-                <ul className="space-y-3 mb-8 text-sm text-gray-200">
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-red-400 mr-2 flex-shrink-0 mt-0.5" />
-                    <span>Everything in Semestral</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-red-400 mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="font-bold text-red-400">+ 6 Months FREE</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Award className="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="font-bold text-yellow-500">FIRST 3 ONLY: Lifetime Benefits</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-red-400 mr-2 flex-shrink-0 mt-0.5" />
-                    <span>1 Monthly Session Forever (First 3)</span>
-                  </li>
-                </ul>
-                <a href="https://buy.stripe.com/dRmdR88rJ7312TB8ln1Jm0x" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full bg-black hover:bg-gray-900 text-white font-bold py-6 border border-red-500">
-                    START FREE TRIAL
-                  </Button>
-                </a>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-sm text-gray-500 mb-2">
-              ⚡ Only 15 spots available • First 3 annual members get lifetime benefits
-            </p>
-            <p className="text-xs text-gray-600">
-              All plans include 30-day trial period. Cancel anytime during trial with no charge.
-            </p>
-          </div>
+      {/* 30-Day Trial */}
+      <section className="py-20 bg-red-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-black mb-6">
+            Try It For 30 Days
+          </h2>
+          <p className="text-2xl mb-8">
+            Join The Identity program for a full 30 days for just <span className="font-black text-5xl">$1</span>
+          </p>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            If at any point in those 30 days you don't feel like this is the right path for you, you can cancel with one click and you will not be charged another penny.
+          </p>
+          <p className="text-lg mb-12">
+            You only pay the full price if you decide to continue after the 30-day trial.
+          </p>
+          <Button size="lg" className="bg-black hover:bg-gray-900 text-white text-2xl px-16 py-8 h-auto font-black">
+            START YOUR $1 TRIAL NOW
+          </Button>
+          <p className="mt-6 text-sm">
+            ⚡ Only 15 spots available • First 3 annual members get lifetime benefits
+          </p>
         </div>
       </section>
 
