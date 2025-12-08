@@ -74,21 +74,27 @@ function TheIdentity() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Hero Section - Renato Cariani Style */}
+      {/* Hero Section - Video Background */}
       <div className="relative h-screen overflow-hidden">
-        {/* Background Image - Zoomed Out */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: 'url(/hero-bw.jpg)',
-            transform: `translateY(${scrollY * 0.5}px) scale(0.85)`,
-            transformOrigin: 'center 30%',
-            filter: 'grayscale(100%) contrast(1.2)'
-          }}
-        />
+        {/* Loom Video Background */}
+        <div className="absolute inset-0">
+          <iframe 
+            src="https://www.loom.com/embed/3201bd36895a4db0b3974394130a2811?autoplay=1&loop=1&muted=1&hideEmbedTopBar=true" 
+            frameBorder="0" 
+            allowFullScreen
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            style={{
+              width: '177.77vh',
+              height: '100vh',
+              minWidth: '100vw',
+              minHeight: '56.25vw',
+              pointerEvents: 'none'
+            }}
+          />
+        </div>
         
-        {/* Dark Overlay Only */}
-        <div className="absolute inset-0 bg-black/50" />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/40" />
         
         {/* Content */}
         <div className="relative z-10 h-full flex items-center">
