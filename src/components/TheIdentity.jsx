@@ -11,17 +11,54 @@ function TheIdentity() {
     const handleScroll = () => setScrollY(window.scrollY)
     window.addEventListener('scroll', handleScroll)
     
-    // FORCE hide navbar and footer with !important
+    // NUCLEAR OPTION: Hide ALL nav and footer elements
     const style = document.createElement('style')
+    style.id = 'identity-page-styles'
     style.innerHTML = `
-      nav { display: none !important; }
-      footer { display: none !important; }
+      nav,
+      header,
+      [class*="nav"],
+      [class*="Nav"],
+      [class*="header"],
+      [class*="Header"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        top: -9999px !important;
+      }
+      footer,
+      [class*="footer"],
+      [class*="Footer"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+      }
+      body {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+      }
     `
     document.head.appendChild(style)
     
+    // Also try to remove nav elements from DOM
+    setTimeout(() => {
+      const navs = document.querySelectorAll('nav, header')
+      navs.forEach(nav => {
+        if (nav && !nav.closest('[data-page="identity"]')) {
+          nav.style.cssText = 'display: none !important; visibility: hidden !important; height: 0 !important; overflow: hidden !important;'
+        }
+      })
+    }, 100)
+    
     return () => {
       window.removeEventListener('scroll', handleScroll)
-      document.head.removeChild(style)
+      const styleEl = document.getElementById('identity-page-styles')
+      if (styleEl) document.head.removeChild(styleEl)
     }
   }, [])
 
