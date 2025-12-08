@@ -11,29 +11,18 @@ function TheIdentity() {
     const handleScroll = () => setScrollY(window.scrollY)
     window.addEventListener('scroll', handleScroll)
     
-    // Hide navbar and footer on mount
-    const nav = document.querySelector('nav')
-    const footer = document.querySelector('footer')
-    if (nav) nav.style.display = 'none'
-    if (footer) footer.style.display = 'none'
+    // FORCE hide navbar and footer with !important
+    const style = document.createElement('style')
+    style.innerHTML = `
+      nav { display: none !important; }
+      footer { display: none !important; }
+    `
+    document.head.appendChild(style)
     
     return () => {
       window.removeEventListener('scroll', handleScroll)
-      // Restore on unmount
-      if (nav) nav.style.display = ''
-      if (footer) footer.style.display = ''
+      document.head.removeChild(style)
     }
-  }, [])
-
-  // Auto-scroll to video on page load
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const videoSection = document.getElementById('video-section')
-      if (videoSection) {
-        videoSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
-    }, 500)
-    return () => clearTimeout(timer)
   }, [])
 
   const deliverables = [
@@ -165,10 +154,10 @@ function TheIdentity() {
           </div>
           <div className="relative w-full" style={{ paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
             <iframe 
-              src="https://www.loom.com/embed/3201bd36895a4db0b3974394130a2811?hideEmbedTopBar=false" 
+              src="https://www.loom.com/embed/3201bd36895a4db0b3974394130a2811?hide_owner=false&hide_share=false&hide_title=false&hideEmbedTopBar=false" 
               frameBorder="0" 
               allowFullScreen
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; microphone"
               className="absolute top-0 left-0 w-full h-full rounded-lg shadow-2xl"
               title="The Identity - 100 Day Challenge"
             />
