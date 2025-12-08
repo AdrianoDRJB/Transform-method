@@ -187,7 +187,14 @@ function App() {
         <Route path="/" element={<TheIdentity />} />
         <Route path="/identity" element={<TheIdentity />} />
         <Route path="/transform2026" element={<TheIdentity />} />
-        <Route path="/*" element={<AppContent />} />
+        <Route path="/home" element={<AppContent />} />
+        <Route path="/method" element={<AppContent />} />
+        <Route path="/calculator" element={<AppContent />} />
+        <Route path="/tracker" element={<AppContent />} />
+        <Route path="/ebooks" element={<AppContent />} />
+        <Route path="/plans" element={<AppContent />} />
+        <Route path="/success" element={<AppContent />} />
+        <Route path="/offer" element={<AppContent />} />
       </Routes>
     </Router>
   )
