@@ -1,6 +1,10 @@
 {
   "routes": [
     {
+      "src": "/identity",
+      "dest": "/identity.html"
+    },
+    {
       "src": "/identity.html",
       "dest": "/identity.html"
     },
