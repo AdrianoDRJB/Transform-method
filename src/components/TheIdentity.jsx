@@ -41,7 +41,7 @@ function TheIdentity() {
       icon: BookOpen,
       title: "The eBook Starter Pack",
       value: "$197",
-      description: "Science-based summaries of books that would take months to read. Written by someone who read them AND lived them: Emotional Eating, Environment Design, Nutrition Myths, The TRANSFORM Method, and The Science of Sleep."
+      description: "Complete eBooks distilling 10+ science-based books that would take months to read. Written by someone who read them AND lived them: Emotional Eating, Environment Design, Nutrition Myths, The TRANSFORM Method, and The Science of Sleep."
     },
     {
       icon: Users,
