@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
-import { CheckCircle2, Trophy, Users, BookOpen, MessageCircle, Zap, Target, Award } from 'lucide-react'
+import { Check, Award, BookOpen, Users, Trophy, Target, Zap, Crown } from 'lucide-react'
 
 function TheIdentity() {
   const [scrollY, setScrollY] = useState(0)
@@ -11,6 +11,17 @@ function TheIdentity() {
     const handleScroll = () => setScrollY(window.scrollY)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Auto-scroll to video on page load
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const videoSection = document.getElementById('video-section')
+      if (videoSection) {
+        videoSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 500)
+    return () => clearTimeout(timer)
   }, [])
 
   const deliverables = [
@@ -132,7 +143,7 @@ function TheIdentity() {
       </div>
 
       {/* Video Section */}
-      <div className="py-24 bg-black">
+      <div id="video-section" className="py-24 bg-black">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-red-500 font-bold text-xl tracking-wider uppercase">Watch This First</span>
