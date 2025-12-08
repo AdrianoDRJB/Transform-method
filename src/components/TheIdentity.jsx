@@ -32,7 +32,7 @@ function TheIdentity() {
     {
       icon: Users,
       title: "The Inner Circle (Private Discord Community)",
-      description: "Get total access to my life. See my workouts, my meals, the books I'm reading, and my personal notes on psychology and communication."
+      description: "Full access during the program. See my training videos, reading insights, my psychologist's reality checks, how I handle tough days. Live with an athlete who was obese, alcoholic, and a smoker."
     }
   ]
 
@@ -41,13 +41,13 @@ function TheIdentity() {
       icon: BookOpen,
       title: "The eBook Starter Pack",
       value: "$197",
-      description: "Get instant access to my complete library: Emotional Eating, Environment Design, Nutrition Myths, The TRANSFORM Method, and The Science of Sleep."
+      description: "Science-based summaries of books that would take months to read. Written by someone who read them AND lived them: Emotional Eating, Environment Design, Nutrition Myths, The TRANSFORM Method, and The Science of Sleep."
     },
     {
       icon: Users,
       title: "The Inner Circle Community",
       value: "$497",
-      description: "Lifetime access to the private Discord group. Daily support, ask me anything, and connect with people as serious about transformation as you are."
+      description: "Full access to my private Discord during the program. See my training videos, reading insights, my psychologist's reality checks, how I handle tough days. Live with an athlete who was obese, alcoholic, and a smoker - so YES, you can too."
     },
     {
       icon: Trophy,
@@ -81,8 +81,8 @@ function TheIdentity() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: 'url(/hero-bw.jpg)',
-            transform: `translateY(${scrollY * 0.5}px) scale(1.15)`,
-            transformOrigin: 'center 30%',
+            transform: `translateY(${scrollY * 0.5}px) scale(1.5)`,
+            transformOrigin: 'center 25%',
             filter: 'grayscale(100%) contrast(1.2)'
           }}
         />
@@ -148,8 +148,8 @@ function TheIdentity() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <Card className="bg-gray-900 border-gray-800 text-white">
               <CardHeader>
-                <CardTitle className="text-red-500">265 lbs → 180 lbs</CardTitle>
-                <CardDescription className="text-gray-400">38kg Lost & Maintained</CardDescription>
+                <CardTitle className="text-red-500">265 lbs → 220 lbs</CardTitle>
+                <CardDescription className="text-gray-400">38kg Fat Lost (Targeting ~200 lbs)</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-300">From obese, alcoholic, and smoker to competing at the country's biggest championship</p>
