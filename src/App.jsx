@@ -10,6 +10,7 @@ import EbooksPage from './components/EbooksPage'
 import PlansPage from './components/PlansPage'
 import SuccessPage from './components/SuccessPage'
 import BlackFridayOffer from './components/BlackFridayOffer'
+import TheIdentity from './components/TheIdentity'
 import './App.css'
 
 function App() {
@@ -125,6 +126,7 @@ function App() {
           <Route path="/plans" element={<PlansPage />} />
           <Route path="/success" element={<SuccessPage />} />
           <Route path="/offer" element={<BlackFridayOffer />} />
+          <Route path="/identity" element={<TheIdentity />} />
         </Routes>
 
         {/* Footer */}
