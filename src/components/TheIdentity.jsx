@@ -81,8 +81,8 @@ function TheIdentity() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: 'url(/hero-bw.jpg)',
-            transform: `translateY(${scrollY * 0.5}px) scale(1.5)`,
-            transformOrigin: 'center 25%',
+            transform: `translateY(${scrollY * 0.5}px) scale(1.0)`,
+            transformOrigin: 'center 30%',
             filter: 'grayscale(100%) contrast(1.2)'
           }}
         />
