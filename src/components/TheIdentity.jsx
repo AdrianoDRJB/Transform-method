@@ -144,7 +144,7 @@ function TheIdentity() {
               <span className="text-red-500">Lived Your Struggle</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              I lost 38kg, got sober, and became a national-level CrossFit competitor. I combine the science of nutrition and training with the real-world psychological strategies that I used to overcome addiction, binge eating, and self-sabotage.
+              I lost 38kg, got sober, and competed twice at the in-person stage of the country's biggest CrossFit championship qualifier (registered for the third time). I combine the science of nutrition and training with the real-world psychological strategies that I used to overcome addiction, binge eating, and self-sabotage.
             </p>
           </div>
 
@@ -155,7 +155,7 @@ function TheIdentity() {
                 <CardDescription className="text-gray-400">38kg Lost & Maintained</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-300">From obese, alcoholic, and smoker to national CrossFit competitor</p>
+                <p className="text-gray-300">From obese, alcoholic, and smoker to competing at the country's biggest championship</p>
               </CardContent>
             </Card>
 
