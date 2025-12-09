@@ -519,10 +519,18 @@ function TheIdentity() {
             The question is, are you ready to claim it?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white text-xl px-12 py-6 h-auto font-bold">
+            <Button 
+              size="lg" 
+              className="bg-red-600 hover:bg-red-700 text-white text-xl px-12 py-6 h-auto font-bold"
+              onClick={() => document.getElementById('plans')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               YES, I'M READY
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black text-xl px-12 py-6 h-auto font-bold">
+            <Button 
+              size="lg" 
+              className="bg-white text-black hover:bg-gray-200 text-xl px-12 py-6 h-auto font-bold"
+              onClick={() => window.location.href = '/home'}
+            >
               I HAVE QUESTIONS
             </Button>
           </div>
