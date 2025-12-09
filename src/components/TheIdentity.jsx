@@ -140,7 +140,21 @@ function TheIdentity() {
       </div>
 
       {/* The Unique Mechanism */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+      <section className="py-20 relative">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{
+            backgroundImage: 'url(/antesdepois.jpg)',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover'
+          }}
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/80" />
+        
+        {/* Content */}
+        <div className="relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-red-500 font-bold text-sm tracking-wider uppercase">The Difference</span>
@@ -184,6 +198,7 @@ function TheIdentity() {
               </CardContent>
             </Card>
           </div>
+        </div>
         </div>
       </section>
 
