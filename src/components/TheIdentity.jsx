@@ -529,7 +529,7 @@ function TheIdentity() {
             <Button 
               size="lg" 
               className="bg-white text-black hover:bg-gray-200 text-xl px-12 py-6 h-auto font-bold"
-              onClick={() => window.location.href = '/'}
+              onClick={() => window.location.href = '/home'}
             >
               I HAVE QUESTIONS
             </Button>
