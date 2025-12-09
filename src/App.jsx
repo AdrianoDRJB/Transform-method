@@ -184,7 +184,6 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<TheIdentity />} />
         <Route path="/identity" element={<TheIdentity />} />
         <Route path="/transform2026" element={<TheIdentity />} />
         <Route path="/*" element={<AppContent />} />
