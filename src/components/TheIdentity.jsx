@@ -120,7 +120,7 @@ function TheIdentity() {
                   size="lg" 
                   variant="outline" 
                   className="border-white text-white hover:bg-white hover:text-black text-lg px-12 py-6 h-auto font-bold"
-                  onClick={() => window.open('https://www.loom.com/share/8b08fde8c4e94d6b9c7f1e2a3b4c5d6e', '_blank')}
+                  onClick={() => window.open('https://www.loom.com/share/3201bd36895a4db0b3974394130a2811', '_blank')}
                 >
                   WATCH HOW
                 </Button>
