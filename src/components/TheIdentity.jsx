@@ -356,12 +356,13 @@ function TheIdentity() {
             <Card className="bg-black border-gray-800 hover:border-red-600 transition-all">
               <CardHeader>
                 <CardTitle className="text-white text-2xl">Quarterly</CardTitle>
-                <CardDescription className="text-gray-400">3 months transformation</CardDescription>
+                <CardDescription className="text-gray-400">3 months + 1 FREE = 4 months total</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
                   <p className="text-3xl font-black text-white mb-1">$499</p>
-                  <p className="text-gray-400 text-sm mb-3">3 months</p>
+                  <p className="text-gray-400 text-sm mb-1">3 months</p>
+                  <p className="text-green-500 text-xs font-bold mb-3">+1 MONTH FREE (Total: 4 months)</p>
                   <ul className="space-y-2 text-xs text-gray-300">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
@@ -404,12 +405,13 @@ function TheIdentity() {
               </div>
               <CardHeader>
                 <CardTitle className="text-white text-2xl">Semi-Annual</CardTitle>
-                <CardDescription className="text-gray-400">6 months transformation</CardDescription>
+                <CardDescription className="text-gray-400">6 months + 3 FREE = 9 months total</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
                   <p className="text-3xl font-black text-white mb-1">$999</p>
-                  <p className="text-gray-400 text-sm mb-3">6 months</p>
+                  <p className="text-gray-400 text-sm mb-1">6 months</p>
+                  <p className="text-green-500 text-xs font-bold mb-3">+3 MONTHS FREE (Total: 9 months)</p>
                   <ul className="space-y-2 text-xs text-gray-300">
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
@@ -434,6 +436,10 @@ function TheIdentity() {
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>The 100-Day Transformation Challenge</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span className="font-bold text-yellow-400">Exclusive Cooking Videos (Chef Experience 2012-2021)</span>
                     </li>
                   </ul>
                 </div>
@@ -480,6 +486,10 @@ function TheIdentity() {
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>The 100-Day Transformation Challenge</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span className="font-bold text-yellow-400">Exclusive Cooking Videos (Chef Experience 2012-2021)</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
