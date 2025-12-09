@@ -118,8 +118,7 @@ function TheIdentity() {
                 </Button>
                 <Button 
                   size="lg" 
-                  variant="outline" 
-                  className="border-white text-white hover:bg-white hover:text-black text-lg px-12 py-6 h-auto font-bold"
+                  className="bg-white text-black hover:bg-gray-200 text-lg px-12 py-6 h-auto font-bold"
                   onClick={() => window.open('https://www.loom.com/share/3201bd36895a4db0b3974394130a2811', '_blank')}
                 >
                   WATCH HOW
@@ -337,21 +336,21 @@ function TheIdentity() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Trimestral */}
             <Card className="bg-black border-gray-800 hover:border-red-600 transition-all">
               <CardHeader>
-                <CardTitle className="text-white text-2xl">Trimestral</CardTitle>
-                <CardDescription className="text-gray-400">3 meses de transformação</CardDescription>
+                <CardTitle className="text-white text-2xl">Quarterly</CardTitle>
+                <CardDescription className="text-gray-400">3 months transformation</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                  <p className="text-4xl font-black text-white mb-2">R$ 499</p>
-                  <p className="text-gray-400">3 meses</p>
+                  <p className="text-4xl font-black text-white mb-2">$499</p>
+                  <p className="text-gray-400">3 months</p>
                 </div>
                 <a href="https://buy.stripe.com/9B6eVc0Zh4UT8dV59b1Jm0v" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
-                    COMEÇAR AGORA
+                    START NOW
                   </Button>
                 </a>
               </CardContent>
@@ -360,20 +359,20 @@ function TheIdentity() {
             {/* Semestral */}
             <Card className="bg-black border-red-600 hover:border-red-500 transition-all relative">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-red-600 text-white px-4 py-1 rounded-full text-sm font-bold">MAIS POPULAR</span>
+                <span className="bg-red-600 text-white px-4 py-1 rounded-full text-sm font-bold">MOST POPULAR</span>
               </div>
               <CardHeader>
-                <CardTitle className="text-white text-2xl">Semestral</CardTitle>
-                <CardDescription className="text-gray-400">6 meses de transformação</CardDescription>
+                <CardTitle className="text-white text-2xl">Semi-Annual</CardTitle>
+                <CardDescription className="text-gray-400">6 months transformation</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                  <p className="text-4xl font-black text-white mb-2">R$ 999</p>
-                  <p className="text-gray-400">6 meses</p>
+                  <p className="text-4xl font-black text-white mb-2">$999</p>
+                  <p className="text-gray-400">6 months</p>
                 </div>
                 <a href="https://buy.stripe.com/cNicN4dM34UTeCjatv1Jm0w" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
-                    COMEÇAR AGORA
+                    START NOW
                   </Button>
                 </a>
               </CardContent>
@@ -382,18 +381,18 @@ function TheIdentity() {
             {/* Anual */}
             <Card className="bg-black border-gray-800 hover:border-red-600 transition-all">
               <CardHeader>
-                <CardTitle className="text-white text-2xl">Anual</CardTitle>
-                <CardDescription className="text-gray-400">12 meses + benefícios vitalícios</CardDescription>
+                <CardTitle className="text-white text-2xl">Annual</CardTitle>
+                <CardDescription className="text-gray-400">12 months + lifetime benefits</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                  <p className="text-4xl font-black text-white mb-2">R$ 1.999</p>
-                  <p className="text-gray-400">12 meses</p>
-                  <p className="text-red-500 text-sm font-bold mt-2">Primeiros 3: Benefícios Vitalícios</p>
+                  <p className="text-4xl font-black text-white mb-2">$1,999</p>
+                  <p className="text-gray-400">12 months</p>
+                  <p className="text-red-500 text-sm font-bold mt-2">First 3: Lifetime Benefits</p>
                 </div>
                 <a href="https://buy.stripe.com/dRmdR88rJ7312TB8ln1Jm0x" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
-                    COMEÇAR AGORA
+                    START NOW
                   </Button>
                 </a>
               </CardContent>
