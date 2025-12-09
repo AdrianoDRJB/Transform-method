@@ -337,7 +337,7 @@ function TheIdentity() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Trimestral */}
+            {/* Quarterly */}
             <Card className="bg-black border-gray-800 hover:border-red-600 transition-all">
               <CardHeader>
                 <CardTitle className="text-white text-2xl">Quarterly</CardTitle>
@@ -346,7 +346,33 @@ function TheIdentity() {
               <CardContent>
                 <div className="mb-6">
                   <p className="text-4xl font-black text-white mb-2">$499</p>
-                  <p className="text-gray-400">3 months</p>
+                  <p className="text-gray-400 mb-4">3 months</p>
+                  <ul className="space-y-3 text-sm text-gray-300">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span>The 100-Day Identity Shift System</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span>Custom Nutrition & Training Blueprint</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span>Weekly 1-on-1 Identity Coaching Sessions</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span>The Inner Circle (Private Discord Community)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span>The eBook Starter Pack</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span>The 100-Day Transformation Challenge</span>
+                    </li>
+                  </ul>
                 </div>
                 <a href="https://buy.stripe.com/9B6eVc0Zh4UT8dV59b1Jm0v" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
@@ -356,7 +382,7 @@ function TheIdentity() {
               </CardContent>
             </Card>
 
-            {/* Semestral */}
+            {/* Semi-Annual */}
             <Card className="bg-black border-red-600 hover:border-red-500 transition-all relative">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <span className="bg-red-600 text-white px-4 py-1 rounded-full text-sm font-bold">MOST POPULAR</span>
@@ -368,7 +394,33 @@ function TheIdentity() {
               <CardContent>
                 <div className="mb-6">
                   <p className="text-4xl font-black text-white mb-2">$999</p>
-                  <p className="text-gray-400">6 months</p>
+                  <p className="text-gray-400 mb-4">6 months</p>
+                  <ul className="space-y-3 text-sm text-gray-300">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span>The 100-Day Identity Shift System</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span>Custom Nutrition & Training Blueprint</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span>Weekly 1-on-1 Identity Coaching Sessions</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span>The Inner Circle (Private Discord Community)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span>The eBook Starter Pack</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span>The 100-Day Transformation Challenge</span>
+                    </li>
+                  </ul>
                 </div>
                 <a href="https://buy.stripe.com/cNicN4dM34UTeCjatv1Jm0w" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
@@ -378,7 +430,7 @@ function TheIdentity() {
               </CardContent>
             </Card>
 
-            {/* Anual */}
+            {/* Annual */}
             <Card className="bg-black border-gray-800 hover:border-red-600 transition-all">
               <CardHeader>
                 <CardTitle className="text-white text-2xl">Annual</CardTitle>
@@ -387,8 +439,38 @@ function TheIdentity() {
               <CardContent>
                 <div className="mb-6">
                   <p className="text-4xl font-black text-white mb-2">$1,999</p>
-                  <p className="text-gray-400">12 months</p>
-                  <p className="text-red-500 text-sm font-bold mt-2">First 3: Lifetime Benefits</p>
+                  <p className="text-gray-400 mb-2">12 months</p>
+                  <p className="text-red-500 text-sm font-bold mb-4">First 3: Lifetime Benefits</p>
+                  <ul className="space-y-3 text-sm text-gray-300">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span>The 100-Day Identity Shift System</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span>Custom Nutrition & Training Blueprint</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span>Weekly 1-on-1 Identity Coaching Sessions</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span>The Inner Circle (Private Discord Community)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span>The eBook Starter Pack</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span>The 100-Day Transformation Challenge</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <span className="font-bold text-red-400">EXCLUSIVE LIFETIME BENEFITS</span>
+                    </li>
+                  </ul>
                 </div>
                 <a href="https://buy.stripe.com/dRmdR88rJ7312TB8ln1Jm0x" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
