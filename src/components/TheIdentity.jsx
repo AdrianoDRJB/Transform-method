@@ -346,8 +346,8 @@ function TheIdentity() {
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                  <p className="text-4xl font-black text-white mb-2">$497</p>
-                  <p className="text-gray-400">ou 3x de $166</p>
+                  <p className="text-4xl font-black text-white mb-2">R$ 499</p>
+                  <p className="text-gray-400">3 meses</p>
                 </div>
                 <a href="https://buy.stripe.com/9B6eVc0Zh4UT8dV59b1Jm0v" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
@@ -368,8 +368,8 @@ function TheIdentity() {
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                  <p className="text-4xl font-black text-white mb-2">$897</p>
-                  <p className="text-gray-400">ou 6x de $150</p>
+                  <p className="text-4xl font-black text-white mb-2">R$ 999</p>
+                  <p className="text-gray-400">6 meses</p>
                 </div>
                 <a href="https://buy.stripe.com/cNicN4dM34UTeCjatv1Jm0w" target="_blank" rel="noopener noreferrer">
                   <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
@@ -387,8 +387,8 @@ function TheIdentity() {
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                  <p className="text-4xl font-black text-white mb-2">$1,497</p>
-                  <p className="text-gray-400">ou 12x de $125</p>
+                  <p className="text-4xl font-black text-white mb-2">R$ 1.999</p>
+                  <p className="text-gray-400">12 meses</p>
                   <p className="text-red-500 text-sm font-bold mt-2">Primeiros 3: Benefícios Vitalícios</p>
                 </div>
                 <a href="https://buy.stripe.com/dRmdR88rJ7312TB8ln1Jm0x" target="_blank" rel="noopener noreferrer">
