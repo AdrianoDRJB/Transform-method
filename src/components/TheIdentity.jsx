@@ -109,11 +109,20 @@ function TheIdentity() {
                 This is a complete transformation system designed to help you lose up to 20kg of fat, build lean muscle, and develop the mindset of an athlete.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white text-lg px-12 py-6 h-auto font-bold">
+                <Button 
+                  size="lg" 
+                  className="bg-red-600 hover:bg-red-700 text-white text-lg px-12 py-6 h-auto font-bold"
+                  onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+                >
                   START YOUR TRANSFORMATION
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black text-lg px-12 py-6 h-auto font-bold">
-                  LEARN MORE
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-white text-white hover:bg-white hover:text-black text-lg px-12 py-6 h-auto font-bold"
+                  onClick={() => window.location.href = '/video'}
+                >
+                  WATCH HOW
                 </Button>
               </div>
               <p className="mt-6 text-sm text-gray-400">
@@ -143,6 +152,17 @@ function TheIdentity() {
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               I lost 38kg, got sober, and competed twice at the in-person stage of the country's biggest CrossFit championship qualifier (registered for the third time). I combine the science of nutrition and training with the real-world psychological strategies that I used to overcome addiction, binge eating, and self-sabotage.
             </p>
+          </div>
+
+          {/* Before/After Photo */}
+          <div className="mb-16 flex justify-center">
+            <div className="relative max-w-4xl w-full">
+              <img 
+                src="/before-after.jpg" 
+                alt="Before and After Transformation" 
+                className="w-full h-auto rounded-lg shadow-2xl"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -291,7 +311,7 @@ function TheIdentity() {
       </section>
 
       {/* 30-Day Trial */}
-      <section className="py-20 bg-red-600">
+      <section id="pricing" className="py-20 bg-red-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-6">
             Try It For 30 Days
