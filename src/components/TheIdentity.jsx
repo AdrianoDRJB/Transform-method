@@ -109,11 +109,20 @@ function TheIdentity() {
                 This is a complete transformation system designed to help you lose up to 20kg of fat, build lean muscle, and develop the mindset of an athlete.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white text-lg px-12 py-6 h-auto font-bold">
+                <Button 
+                  size="lg" 
+                  className="bg-red-600 hover:bg-red-700 text-white text-lg px-12 py-6 h-auto font-bold"
+                  onClick={() => document.getElementById('plans')?.scrollIntoView({ behavior: 'smooth' })}
+                >
                   START YOUR TRANSFORMATION
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black text-lg px-12 py-6 h-auto font-bold">
-                  LEARN MORE
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-white text-white hover:bg-white hover:text-black text-lg px-12 py-6 h-auto font-bold"
+                  onClick={() => window.open('https://www.loom.com/share/8b08fde8c4e94d6b9c7f1e2a3b4c5d6e', '_blank')}
+                >
+                  WATCH HOW
                 </Button>
               </div>
               <p className="mt-6 text-sm text-gray-400">
@@ -291,7 +300,7 @@ function TheIdentity() {
       </section>
 
       {/* 30-Day Trial */}
-      <section className="py-20 bg-red-600">
+      <section id="pricing" className="py-20 bg-red-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-6">
             Try It For 30 Days
@@ -305,12 +314,91 @@ function TheIdentity() {
           <p className="text-lg mb-12">
             You only pay the full price if you decide to continue after the 30-day trial.
           </p>
-          <Button size="lg" className="bg-black hover:bg-gray-900 text-white text-2xl px-16 py-8 h-auto font-black">
+          <Button 
+            size="lg" 
+            className="bg-black hover:bg-gray-900 text-white text-2xl px-16 py-8 h-auto font-black"
+            onClick={() => document.getElementById('plans')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             START YOUR $1 TRIAL NOW
           </Button>
           <p className="mt-6 text-sm">
             ⚡ Only 15 spots available • First 3 annual members get lifetime benefits
           </p>
+        </div>
+      </section>
+
+      {/* Pricing Plans */}
+      <section id="plans" className="py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-red-500 font-bold text-sm tracking-wider uppercase">Choose Your Plan</span>
+            <h2 className="text-4xl md:text-5xl font-black mt-4">
+              Start Your Transformation
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Trimestral */}
+            <Card className="bg-black border-gray-800 hover:border-red-600 transition-all">
+              <CardHeader>
+                <CardTitle className="text-white text-2xl">Trimestral</CardTitle>
+                <CardDescription className="text-gray-400">3 meses de transformação</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="mb-6">
+                  <p className="text-4xl font-black text-white mb-2">$497</p>
+                  <p className="text-gray-400">ou 3x de $166</p>
+                </div>
+                <a href="https://buy.stripe.com/9B6eVc0Zh4UT8dV59b1Jm0v" target="_blank" rel="noopener noreferrer">
+                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
+                    COMEÇAR AGORA
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            {/* Semestral */}
+            <Card className="bg-black border-red-600 hover:border-red-500 transition-all relative">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span className="bg-red-600 text-white px-4 py-1 rounded-full text-sm font-bold">MAIS POPULAR</span>
+              </div>
+              <CardHeader>
+                <CardTitle className="text-white text-2xl">Semestral</CardTitle>
+                <CardDescription className="text-gray-400">6 meses de transformação</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="mb-6">
+                  <p className="text-4xl font-black text-white mb-2">$897</p>
+                  <p className="text-gray-400">ou 6x de $150</p>
+                </div>
+                <a href="https://buy.stripe.com/cNicN4dM34UTeCjatv1Jm0w" target="_blank" rel="noopener noreferrer">
+                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
+                    COMEÇAR AGORA
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            {/* Anual */}
+            <Card className="bg-black border-gray-800 hover:border-red-600 transition-all">
+              <CardHeader>
+                <CardTitle className="text-white text-2xl">Anual</CardTitle>
+                <CardDescription className="text-gray-400">12 meses + benefícios vitalícios</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="mb-6">
+                  <p className="text-4xl font-black text-white mb-2">$1,497</p>
+                  <p className="text-gray-400">ou 12x de $125</p>
+                  <p className="text-red-500 text-sm font-bold mt-2">Primeiros 3: Benefícios Vitalícios</p>
+                </div>
+                <a href="https://buy.stripe.com/dRmdR88rJ7312TB8ln1Jm0x" target="_blank" rel="noopener noreferrer">
+                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
+                    COMEÇAR AGORA
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
