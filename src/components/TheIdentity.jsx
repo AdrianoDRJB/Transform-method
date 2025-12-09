@@ -336,7 +336,7 @@ function TheIdentity() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {/* Quarterly */}
             <Card className="bg-black border-gray-800 hover:border-red-600 transition-all">
               <CardHeader>
@@ -345,37 +345,37 @@ function TheIdentity() {
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                  <p className="text-4xl font-black text-white mb-2">$499</p>
-                  <p className="text-gray-400 mb-4">3 months</p>
-                  <ul className="space-y-3 text-sm text-gray-300">
+                  <p className="text-3xl font-black text-white mb-1">$499</p>
+                  <p className="text-gray-400 text-sm mb-3">3 months</p>
+                  <ul className="space-y-2 text-xs text-gray-300">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>The 100-Day Identity Shift System</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>Custom Nutrition & Training Blueprint</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>Weekly 1-on-1 Identity Coaching Sessions</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>The Inner Circle (Private Discord Community)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>The eBook Starter Pack</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>The 100-Day Transformation Challenge</span>
                     </li>
                   </ul>
                 </div>
                 <a href="https://buy.stripe.com/9B6eVc0Zh4UT8dV59b1Jm0v" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
+                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 text-sm">
                     START NOW
                   </Button>
                 </a>
@@ -393,37 +393,37 @@ function TheIdentity() {
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                  <p className="text-4xl font-black text-white mb-2">$999</p>
-                  <p className="text-gray-400 mb-4">6 months</p>
-                  <ul className="space-y-3 text-sm text-gray-300">
+                  <p className="text-3xl font-black text-white mb-1">$999</p>
+                  <p className="text-gray-400 text-sm mb-3">6 months</p>
+                  <ul className="space-y-2 text-xs text-gray-300">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>The 100-Day Identity Shift System</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>Custom Nutrition & Training Blueprint</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>Weekly 1-on-1 Identity Coaching Sessions</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>The Inner Circle (Private Discord Community)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>The eBook Starter Pack</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>The 100-Day Transformation Challenge</span>
                     </li>
                   </ul>
                 </div>
                 <a href="https://buy.stripe.com/cNicN4dM34UTeCjatv1Jm0w" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
+                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 text-sm">
                     START NOW
                   </Button>
                 </a>
@@ -438,42 +438,42 @@ function TheIdentity() {
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                  <p className="text-4xl font-black text-white mb-2">$1,999</p>
-                  <p className="text-gray-400 mb-2">12 months</p>
-                  <p className="text-red-500 text-sm font-bold mb-4">First 3: Lifetime Benefits</p>
-                  <ul className="space-y-3 text-sm text-gray-300">
+                  <p className="text-3xl font-black text-white mb-1">$1,999</p>
+                  <p className="text-gray-400 text-sm mb-1">12 months</p>
+                  <p className="text-red-500 text-xs font-bold mb-3">First 3: Lifetime Benefits</p>
+                  <ul className="space-y-2 text-xs text-gray-300">
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>The 100-Day Identity Shift System</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>Custom Nutrition & Training Blueprint</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>Weekly 1-on-1 Identity Coaching Sessions</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>The Inner Circle (Private Discord Community)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>The eBook Starter Pack</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span>The 100-Day Transformation Challenge</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
                       <span className="font-bold text-red-400">EXCLUSIVE LIFETIME BENEFITS</span>
                     </li>
                   </ul>
                 </div>
                 <a href="https://buy.stripe.com/dRmdR88rJ7312TB8ln1Jm0x" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-6">
+                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 text-sm">
                     START NOW
                   </Button>
                 </a>
