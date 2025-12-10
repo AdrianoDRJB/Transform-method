@@ -529,7 +529,8 @@ function TheIdentity() {
             <Button 
               size="lg" 
               className="bg-white text-black hover:bg-gray-200 text-xl px-12 py-6 h-auto font-bold"
-              onClick={() => window.open('https://wa.me/5532984900823', '_blank')}
+              onClick={() => window.location.href = '/'}
+            
             >
               I HAVE QUESTIONS
             </Button>
