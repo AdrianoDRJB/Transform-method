@@ -16,15 +16,6 @@ import './App.css'
 function AppContent() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const location = useLocation()
-  const isIdentityPage = location.pathname === '/identity' || location.pathname === '/transform2026'
-
-  // If identity or transform2026 page, render ONLY the component without any wrapper
-  if (location.pathname === '/identity') {
-    return <TheIdentity />
-  }
-  if (location.pathname === '/transform2026') {
-    return <TheIdentity />
-  }
 
   // Normal pages with navbar and footer
   return (
