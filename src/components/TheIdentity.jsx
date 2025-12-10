@@ -212,7 +212,7 @@ function TheIdentity() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {deliverables.map((item, index) => (
               <Card key={index} className="bg-black border-red-900 hover:border-red-600 transition-all">
                 <CardHeader>
@@ -244,7 +244,7 @@ function TheIdentity() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {bonuses.map((bonus, index) => (
               <Card key={index} className={`${bonus.exclusive ? 'bg-gradient-to-br from-red-900 to-black border-red-500' : 'bg-gray-900 border-gray-800'}`}>
                 <CardHeader>
