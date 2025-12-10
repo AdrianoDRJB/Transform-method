@@ -85,13 +85,13 @@ function HomePage() {
           behavioral psychology, and real-world experience to create lasting change.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/plans">
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-8 w-full sm:w-auto">
+          <Link to="/plans" className="flex-1 sm:flex-none">
+            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-12 py-6 h-auto w-full sm:w-auto">
               Choose a Plan <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
-          <Link to="/method">
-            <Button size="lg" variant="outline" className="text-lg px-8 w-full sm:w-auto">
+          <Link to="/method" className="flex-1 sm:flex-none">
+            <Button size="lg" variant="outline" className="text-lg px-12 py-6 h-auto w-full sm:w-auto">
               Learn the Method
             </Button>
           </Link>
