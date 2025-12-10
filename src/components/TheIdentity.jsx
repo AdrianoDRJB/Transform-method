@@ -111,17 +111,17 @@ function TheIdentity() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-red-600 hover:bg-red-700 text-white text-lg px-12 py-6 h-auto font-bold"
-                  onClick={() => document.getElementById('plans')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  START YOUR TRANSFORMATION
-                </Button>
-                <Button 
-                  size="lg" 
                   className="bg-white text-black hover:bg-gray-200 text-lg px-12 py-6 h-auto font-bold"
                   onClick={() => window.open('https://www.loom.com/share/3201bd36895a4db0b3974394130a2811', '_blank')}
                 >
                   WATCH HOW
+                </Button>
+                <Button 
+                  size="lg" 
+                  className="bg-red-600 hover:bg-red-700 text-white text-lg px-12 py-6 h-auto font-bold"
+                  onClick={() => document.getElementById('plans')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  START YOUR TRANSFORMATION
                 </Button>
               </div>
               <p className="mt-6 text-sm text-gray-400">
