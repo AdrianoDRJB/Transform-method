@@ -23,7 +23,7 @@ function AppContent() {
     return <TheIdentity />
   }
   if (location.pathname === '/transform2026') {
-    return <Transform2026 />
+    return <TheIdentity />
   }
 
   // Normal pages with navbar and footer
@@ -128,6 +128,7 @@ function AppContent() {
 
         {/* Routes */}
         <Routes>
+          <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/method" element={<AboutMethod />} />
           <Route path="/calculator" element={<CalorieCalculator />} />
