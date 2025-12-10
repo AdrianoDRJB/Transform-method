@@ -99,7 +99,7 @@ function HomePage() {
       </div>
 
       {/* Benefits Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+      <div className="grid grid-cols-4 gap-4 mb-20">
         {benefits.map((benefit, index) => (
           <Card 
             key={index} 
