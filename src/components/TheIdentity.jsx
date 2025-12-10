@@ -351,7 +351,7 @@ function TheIdentity() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 gap-6 max-w-7xl mx-auto">
             {/* Quarterly */}
             <Card className="bg-black border-gray-800 hover:border-red-600 transition-all">
               <CardHeader>
@@ -529,7 +529,7 @@ function TheIdentity() {
             <Button 
               size="lg" 
               className="bg-white text-black hover:bg-gray-200 text-xl px-12 py-6 h-auto font-bold"
-              onClick={() => window.location.href = '/home'}
+              onClick={() => window.open('https://wa.me/5532984900823', '_blank')}
             >
               I HAVE QUESTIONS
             </Button>
