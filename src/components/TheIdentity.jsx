@@ -351,7 +351,7 @@ function TheIdentity() {
             </h2>
           </div>
 
-          <div className="grid !grid-cols-1 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-3 gap-6 max-w-7xl mx-auto">
             {/* Quarterly */}
             <Card className="bg-black border-gray-800 hover:border-red-600 transition-all">
               <CardHeader>
