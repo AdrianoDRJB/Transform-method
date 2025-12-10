@@ -135,7 +135,7 @@ function AppContent() {
           <Route path="/ebooks" element={<EbooksPage />} />
           <Route path="/plans" element={<PlansPage />} />
           <Route path="/success" element={<SuccessPage />} />
-          <Route path="/offer" element={<BlackFridayOffer />} />
+          <Route path="/offer" element={<TheIdentity />} />
         </Routes>
 
         {/* Footer */}
