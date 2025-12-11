@@ -121,7 +121,7 @@ const FAQSection = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link 
-              to="/plans"
+              to="/identity"
               className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg"
             >
               Choose Your Plan Now
