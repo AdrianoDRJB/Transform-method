@@ -1,6 +1,22 @@
 {
   "rewrites": [
     {
+      "source": "/api/subscribe",
+      "destination": "/api/subscribe"
+    },
+    {
+      "source": "/assets/(.*)",
+      "destination": "/assets/$1"
+    },
+    {
+      "source": "/(.*\\.pdf)",
+      "destination": "/$1"
+    },
+    {
+      "source": "/(.*\\.ico)",
+      "destination": "/$1"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

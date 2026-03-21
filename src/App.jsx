@@ -9,7 +9,6 @@ import CalorieCalculator from './components/CalorieCalculator'
 import EbooksPage from './components/EbooksPage'
 import PlansPage from './components/PlansPage'
 import SuccessPage from './components/SuccessPage'
-import BlackFridayOffer from './components/BlackFridayOffer'
 import TheIdentity from './components/TheIdentity'
 import './App.css'
 

@@ -9,6 +9,28 @@ import FAQSection from './FAQSection.jsx'
 
 function HomePage() {
   const [viewMode, setViewMode] = useState('detailed') // 'detailed' or 'phases'
+  const [email, setEmail] = useState('')
+  const [emailStatus, setEmailStatus] = useState('idle') // idle | loading | success | error
+
+  const handlePDFDownload = async (e) => {
+    e.preventDefault()
+    if (!email || !email.includes('@')) {
+      setEmailStatus('error')
+      return
+    }
+    setEmailStatus('loading')
+    try {
+      await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      })
+    } catch (_) {}
+    setEmailStatus('success')
+    setTimeout(() => {
+      window.open('/TRANSFORM_Method_Full_Corrected_eBook.pdf', '_blank')
+    }, 300)
+  }
 
   const transformSteps = [
     { letter: 'T', title: 'Track Your Reality', description: 'Understand where you are before you can change where you\'re going.' },
@@ -69,37 +91,98 @@ function HomePage() {
 
   return (
     <>
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      {/* Hero Section */}
-      <div className="text-center mb-20">
-        <div className="inline-block mb-4">
-          <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+      {/* Hero Section - Full width with photo background */}
+      <div
+        className="relative w-full min-h-screen flex items-center justify-center"
+        style={{
+          backgroundImage: 'url(/antesdepois.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center 40%',
+        }}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/65" />
+
+        <div className="relative z-10 w-full max-w-3xl mx-auto px-6 py-20 text-center text-white">
+          <span className="inline-block bg-white/20 backdrop-blur-sm border border-white/30 text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
             Science-Based Transformation
           </span>
-        </div>
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
-          Transform Your Life,<br />One System at a Time
-        </h1>
-        <p className="text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-3xl mx-auto">
-          A complete, science-based manual for total life transformation. Learn the proven method that combines neuroscience, 
-          behavioral psychology, and real-world experience to create lasting change.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/plans" className="flex-1 sm:flex-none">
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-12 py-6 h-auto w-full sm:w-auto">
-              Choose a Plan <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
-          <Link to="/method" className="flex-1 sm:flex-none">
-            <Button size="lg" variant="outline" className="text-lg px-12 py-6 h-auto w-full sm:w-auto">
-              Learn the Method
-            </Button>
-          </Link>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6">
+            I lost <span className="text-yellow-400">84 lbs of fat.</span><br />
+            Rebuilt my body.<br />
+            Rebuilt my life.
+          </h1>
+
+          <p className="text-lg sm:text-xl text-white/80 mb-4 max-w-xl mx-auto">
+            3 years sober. National CrossFit competitor. ADHD overcomer.<br />
+            This is the exact system I used — and now I teach it.
+          </p>
+
+          <p className="text-sm text-white/60 mb-10">
+            Nutrition Student (3rd year) • Precision Nutrition Certified • Change Psychology Specialist
+          </p>
+
+          {/* PDF Capture Box */}
+          <div className="bg-black/50 backdrop-blur-md border-2 border-yellow-400 rounded-2xl p-6 mb-8 max-w-md mx-auto">
+            <p className="text-yellow-400 font-bold text-sm uppercase tracking-wider mb-1">Free eBook</p>
+            <h3 className="text-white font-bold text-xl mb-2">The TRANSFORM Method Guide</h3>
+            <p className="text-white/70 text-sm mb-4">The exact system I used to lose 84 lbs and transform my life. Free download.</p>
+            {emailStatus === 'success' ? (
+              <div className="text-center">
+                <p className="text-green-400 font-bold mb-3">✓ Check your email — PDF is opening now!</p>
+                <a
+                  href="/TRANSFORM_Method_Full_Corrected_eBook.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-6 rounded-xl transition-all text-center"
+                >
+                  Download Again
+                </a>
+              </div>
+            ) : (
+              <form onSubmit={handlePDFDownload} className="flex flex-col gap-3">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => { setEmail(e.target.value); setEmailStatus('idle') }}
+                  placeholder="Enter your email to get free access"
+                  className="w-full px-4 py-3 rounded-xl bg-white text-gray-900 placeholder-gray-500 text-sm outline-none focus:ring-2 focus:ring-yellow-400"
+                  required
+                />
+                {emailStatus === 'error' && (
+                  <p className="text-red-400 text-xs">Please enter a valid email address.</p>
+                )}
+                <button
+                  type="submit"
+                  disabled={emailStatus === 'loading'}
+                  className="block w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-6 rounded-xl transition-all text-center disabled:opacity-60"
+                >
+                  {emailStatus === 'loading' ? 'Sending...' : 'Download Free PDF'}
+                </button>
+              </form>
+            )}
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/plans">
+              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-10 py-5 h-auto w-full sm:w-auto">
+                Choose a Plan <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <a href="https://calendly.com/adriano-nutrition/new-meeting" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" variant="outline" className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black text-lg px-10 py-5 h-auto w-full sm:w-auto">
+                Book a Call <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </a>
+          </div>
         </div>
       </div>
 
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
       {/* Benefits Section */}
-      <div className="grid grid-cols-4 gap-4 mb-20">
+      <div className="flex flex-col gap-4 mb-20">
         {benefits.map((benefit, index) => (
           <Card 
             key={index} 
@@ -108,14 +191,14 @@ function HomePage() {
             }`}
             onClick={benefit.clickable ? scrollToTransformations : undefined}
           >
-            <CardHeader>
-              <div className="bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 p-3 rounded-lg w-fit mb-2">
+            <CardContent className="flex items-center gap-5 py-5">
+              <div className="bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 p-3 rounded-lg flex-shrink-0">
                 <benefit.icon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
               </div>
-              <CardTitle className="text-lg">{benefit.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>{benefit.description}</CardDescription>
+              <div>
+                <p className="font-bold text-base text-gray-900 dark:text-white">{benefit.title}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">{benefit.description}</p>
+              </div>
             </CardContent>
           </Card>
         ))}

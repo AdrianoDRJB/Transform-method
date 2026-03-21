@@ -1,339 +1,296 @@
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Check, Star, Crown, Sparkles } from 'lucide-react';
+import { Check, Zap, Star, Crown, Clock } from 'lucide-react';
 
 const PlansPage = () => {
-  const plans = [
-    {
-      id: 'quarterly',
-      name: 'TRANSFORM START',
-      tagline: '3 Months + 1 FREE',
-      price: '$499',
-      originalPrice: null,
-      duration: '4 months total',
-      monthlyEquivalent: '$166/month',
-      description: 'Complete access to the 100-Day Challenge with all core benefits',
-      features: [
-        'Full access to my 100-day transformation journey',
-        'My daily meals & training logs (exclusive)',
-        'What I\'m studying: nutrition & behavior change',
-        'My therapy insights & mental health strategies',
-        'Group Q&A live sessions (weekly)',
-        'Private 1-on-1 check-ins for adjustments',
-        'Personalized nutrition & training plan',
-        'Multi-channel support (WhatsApp, Email)',
-        '🎁 BLACK FRIDAY: +1 MONTH FREE (4 months total)',
-        '30-day money-back guarantee'
-      ],
-      stripeLink: 'https://buy.stripe.com/6oU00i23l0EDcub8ln1Jm0p',
-      badge: null,
-      color: 'from-green-600 to-emerald-700',
-      hoverColor: 'hover:from-green-700 hover:to-emerald-800'
-    },
-    {
-      id: 'semiannual',
-      name: 'TRANSFORM EVOLVE',
-      tagline: '6 Months + 3 FREE',
-      price: '$899',
-      originalPrice: '$999',
-      duration: '9 months total',
-      monthlyEquivalent: '$149/month',
-      description: 'Extended transformation with massive time bonus and 10% discount',
-      features: [
-        'Everything in TRANSFORM START, PLUS:',
-        '🔥 10% DISCOUNT ($999 → $899)',
-        '🎁 +3 MONTHS FREE (9 months total)',
-        'Extended 1-on-1 support through 9 months',
-        'Priority access to new content & resources',
-        'Quarterly progress reviews & strategy sessions',
-        'Advanced habit-building frameworks',
-        'Access to all new resources added during your 9 months',
-        'Massive discount on renewal',
-        '30-day money-back guarantee'
-      ],
-      stripeLink: 'https://buy.stripe.com/fZu14m37pbjh1Px8ln1Jm0q',
-      badge: 'MOST POPULAR',
-      badgeColor: 'bg-orange-500',
-      color: 'from-blue-600 to-indigo-700',
-      hoverColor: 'hover:from-blue-700 hover:to-indigo-800'
-    },
-    {
-      id: 'annual',
-      name: 'TRANSFORM ELITE',
-      tagline: '12 Months + 6 LIFETIME',
-      price: '$1,599',
-      originalPrice: '$1,999',
-      duration: '12 months + lifetime benefits',
-      monthlyEquivalent: '$133/month',
-      description: 'Ultimate transformation with lifetime benefits as a founding member',
-      features: [
-        'Everything in TRANSFORM EVOLVE, PLUS:',
-        '🔥 20% DISCOUNT ($1,999 → $1,599)',
-        '🎁 +6 MONTHS OF LIFETIME BENEFITS',
-        '👑 Founding Member Status',
-        'Lifetime access to ALL future content, eBooks, courses',
-        'Lifetime access to any new challenges I create',
-        'Exclusive monthly 1-on-1 call (lifetime)',
-        'First access to new programs & beta features',
-        'VIP priority support across all channels',
-        'For those who trust me for a full year without knowing me yet',
-        '30-day money-back guarantee'
-      ],
-      stripeLink: 'https://buy.stripe.com/5kQ28qeQ72ML1Px6df1Jm0r',
-      badge: 'BEST VALUE',
-      badgeColor: 'bg-gradient-to-r from-purple-600 to-pink-600',
-      color: 'from-purple-600 to-pink-700',
-      hoverColor: 'hover:from-purple-700 hover:to-pink-800'
-    }
-  ];
-
-  const PlanCard = ({ plan }) => {
-    const isPopular = plan.badge === 'MOST POPULAR';
-    const isBestValue = plan.badge === 'BEST VALUE';
-    
-    return (
-      <div className={`relative ${isPopular || isBestValue ? 'lg:-mt-4 lg:mb-4' : ''}`}>
-        {plan.badge && (
-          <div className={`absolute -top-4 left-1/2 transform -translate-x-1/2 ${plan.badgeColor} text-white px-4 py-1 rounded-full text-sm font-bold z-10 shadow-lg flex items-center gap-1`}>
-            {plan.badge === 'MOST POPULAR' && <Star className="w-4 h-4" />}
-            {plan.badge === 'BEST VALUE' && <Crown className="w-4 h-4" />}
-            {plan.badge}
-          </div>
-        )}
-        
-        <Card className={`h-full ${isPopular || isBestValue ? 'border-2 border-orange-500 shadow-2xl' : 'shadow-lg'} hover:shadow-xl transition-all`}>
-          <CardHeader className="text-center pb-4">
-            <CardTitle className="text-3xl font-bold text-gray-900 mb-2">
-              {plan.name}
-            </CardTitle>
-            <p className="text-gray-600 text-sm mb-4 font-semibold">{plan.tagline}</p>
-            <div className="mb-2">
-              {plan.originalPrice && (
-                <div className="text-2xl text-gray-400 line-through mb-1">
-                  {plan.originalPrice}
-                </div>
-              )}
-              <span className="text-5xl font-bold text-gray-900">{plan.price}</span>
-              <div className="text-sm text-gray-600 mt-2">
-                {plan.monthlyEquivalent} • {plan.duration}
-              </div>
-            </div>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              {plan.description}
-            </p>
-          </CardHeader>
-          
-          <CardContent className="pt-0">
-            <ul className="space-y-3 mb-6">
-              {plan.features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700 text-sm">{feature}</span>
-                </li>
-              ))}
-            </ul>
-            
-            <a
-              href={plan.stripeLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r ${plan.color} ${plan.hoverColor} transition-all shadow-lg`}
-            >
-              Choose {plan.name}
-            </a>
-            
-            <p className="text-center text-xs text-gray-500 mt-4">
-              Only 2 spots per plan • Limited availability
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Spots Banner */}
-        <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-lg p-6 mb-12 text-center shadow-xl">
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <Sparkles className="w-6 h-6" />
-            <h2 className="text-2xl font-bold">LIMITED SPOTS AVAILABLE</h2>
-            <Sparkles className="w-6 h-6" />
-          </div>
-          <p className="text-lg">
-            Join the 100-Day Transformation Challenge • Only 6 Spots Available (2 per plan)
-          </p>
-        </div>
+    <div className="min-h-screen bg-black text-white py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            Choose Your Transformation Plan
+          <h1 className="text-5xl font-bold mb-4">
+            Choose Your <span className="text-yellow-400">Transformation</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-            All plans include full access to my 100-day transformation journey, personalized coaching, and a 30-day money-back guarantee.
-          </p>
-          <p className="text-lg text-gray-700 font-semibold">
-            🎯 Join me as I drop 22 lbs (10kg) for a competition while you build your own transformation
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            All plans include a <span className="text-yellow-400 font-bold">30-day free trial</span>. Cancel anytime before it ends and pay nothing.
           </p>
         </div>
 
         {/* Plans Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {plans.map((plan) => (
-            <PlanCard key={plan.id} plan={plan} />
-          ))}
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
 
-        {/* Trust Badges */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-green-600 mb-2">30 Days</div>
-              <p className="text-gray-700">Money-Back Guarantee</p>
+          {/* Plan 1: Single Consultation - ANCHOR */}
+          <div className="relative border border-gray-700 rounded-2xl p-6 bg-gray-900 flex flex-col">
+            <div className="mb-6">
+              <div className="flex items-center gap-2 mb-3">
+                <Clock className="w-5 h-5 text-gray-400" />
+                <span className="text-sm text-gray-400 uppercase tracking-wider font-semibold">Single Session</span>
+              </div>
+              <h2 className="text-2xl font-bold text-white mb-2">Quick Fix</h2>
+              <p className="text-gray-400 text-sm">One 15–20 min adjustment session. No ongoing support.</p>
             </div>
-            <div>
-              <div className="text-4xl font-bold text-red-600 mb-2">6 Spots</div>
-              <p className="text-gray-700">2 Per Plan • Limited Availability</p>
+
+            <div className="mb-6">
+              <div className="text-4xl font-bold text-white">$219</div>
+              <div className="text-gray-500 text-sm mt-1">one-time payment</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold text-purple-600 mb-2">100 Days</div>
-              <p className="text-gray-700">Live Transformation Journey</p>
-            </div>
+
+            <ul className="space-y-3 mb-8 flex-1">
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-400 text-sm">1 video call (15–20 min)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-400 text-sm">Nutrition adjustment only</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-400 text-sm">No follow-up included</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-400 text-sm">No ongoing support</span>
+              </li>
+            </ul>
+
+            <a
+              href="https://buy.stripe.com/eVq4gy5fx0EDam34571Jm0F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full text-center py-3 px-6 rounded-xl border border-gray-600 text-gray-300 font-semibold hover:border-gray-400 hover:text-white transition-all"
+            >
+              Book Session
+            </a>
           </div>
-        </div>
 
-        {/* What You Get */}
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8 mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-            What You Get in the 100-Day Challenge
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="flex items-start gap-3">
-              <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-              <div>
-                <p className="font-semibold text-gray-900">My Complete Playbook</p>
-                <p className="text-sm text-gray-600">Daily meals, training logs, real-time updates</p>
+          {/* Plan 2: Quarterly $499 */}
+          <div className="relative border border-yellow-500/50 rounded-2xl p-6 bg-gray-900 flex flex-col">
+            <div className="mb-6">
+              <div className="flex items-center gap-2 mb-3">
+                <Zap className="w-5 h-5 text-yellow-400" />
+                <span className="text-sm text-yellow-400 uppercase tracking-wider font-semibold">3 Months</span>
               </div>
+              <h2 className="text-2xl font-bold text-white mb-2">TRANSFORM START</h2>
+              <p className="text-gray-400 text-sm">Full coaching for 3 months. Real results, real accountability.</p>
             </div>
-            <div className="flex items-start gap-3">
-              <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-              <div>
-                <p className="font-semibold text-gray-900">Exclusive Study Materials</p>
-                <p className="text-sm text-gray-600">What I'm learning about nutrition & behavior</p>
-              </div>
+
+            <div className="mb-2">
+              <div className="text-4xl font-bold text-yellow-400">$499<span className="text-lg text-gray-400 font-normal">/3mo</span></div>
+              <div className="text-gray-500 text-sm mt-1">~$166/month</div>
             </div>
-            <div className="flex items-start gap-3">
-              <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-              <div>
-                <p className="font-semibold text-gray-900">Therapy Insights</p>
-                <p className="text-sm text-gray-600">Mental health strategies (ADHD, motivation, etc.)</p>
-              </div>
+            <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-lg px-3 py-2 mb-6">
+              <span className="text-yellow-400 text-sm font-bold">30 days FREE trial</span>
+              <span className="text-gray-400 text-sm"> — cancel before and pay $0</span>
             </div>
-            <div className="flex items-start gap-3">
-              <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-              <div>
-                <p className="font-semibold text-gray-900">Group Q&A Lives</p>
-                <p className="text-sm text-gray-600">Weekly sessions to share, motivate, connect</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-              <div>
-                <p className="font-semibold text-gray-900">Private 1-on-1 Check-ins</p>
-                <p className="text-sm text-gray-600">Individual adjustments tailored to you</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <Check className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-              <div>
-                <p className="font-semibold text-gray-900">Athlete's Perspective</p>
-                <p className="text-sm text-gray-600">See how someone who started obese trains today</p>
-              </div>
-            </div>
+
+            <ul className="space-y-3 mb-8 flex-1">
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">Personalized nutrition plan</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">Weekly 1:1 check-ins</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">WhatsApp & email support</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">Macro tracking guidance</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">TRANSFORM Method eBook</span>
+              </li>
+            </ul>
+
+            <a
+              href="https://buy.stripe.com/dRm28q0ZhfzxgKrcBD1Jm0s"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full text-center py-3 px-6 rounded-xl bg-yellow-400 text-black font-bold hover:bg-yellow-300 transition-all"
+            >
+              Start Free Trial
+            </a>
           </div>
-        </div>
 
-        {/* FAQ Section */}
-        <div className="bg-gray-50 rounded-lg p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-            Frequently Asked Questions
-          </h2>
-          
-          <div className="space-y-4 max-w-3xl mx-auto">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                What happens after I purchase?
-              </h3>
-              <p className="text-gray-700">
-                You'll receive a confirmation email with instructions to schedule your first 1-on-1 consultation. 
-                You'll also get immediate access to the private community and resources.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                When does the 100-Day Challenge start?
-              </h3>
-              <p className="text-gray-700">
-                The challenge starts as soon as you join. You'll get immediate access to preparation materials and the community.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Can I upgrade my plan later?
-              </h3>
-              <p className="text-gray-700">
-                Yes! You can upgrade at any time during the first 30 days, and we'll credit what you've already paid toward the higher tier.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                What if I'm not satisfied?
-              </h3>
-              <p className="text-gray-700">
-                All plans include a 30-day money-back guarantee. If you're not satisfied, request a full refund—no questions asked.
-              </p>
+          {/* Plan 3: Semiannual $999 - MOST POPULAR */}
+          <div className="relative border-2 border-yellow-400 rounded-2xl p-6 bg-gray-900 flex flex-col shadow-2xl shadow-yellow-400/20">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 text-black px-4 py-1 rounded-full text-sm font-bold flex items-center gap-1">
+              <Star className="w-4 h-4" /> MOST POPULAR
             </div>
 
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Why only 6 spots?
-              </h3>
-              <p className="text-gray-700">
-                I'm closing my coaching to all new clients for the next 100 days. My entire focus will be on my own transformation challenge and these 6 individuals. This is about quality, not quantity.
-              </p>
+            <div className="mb-6 mt-2">
+              <div className="flex items-center gap-2 mb-3">
+                <Star className="w-5 h-5 text-yellow-400" />
+                <span className="text-sm text-yellow-400 uppercase tracking-wider font-semibold">6 Months</span>
+              </div>
+              <h2 className="text-2xl font-bold text-white mb-2">TRANSFORM EVOLVE</h2>
+              <p className="text-gray-400 text-sm">6 months of full transformation. Where real change happens.</p>
             </div>
+
+            <div className="mb-2">
+              <div className="text-4xl font-bold text-yellow-400">$999<span className="text-lg text-gray-400 font-normal">/6mo</span></div>
+              <div className="text-gray-500 text-sm mt-1">~$166/month</div>
+            </div>
+            <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-lg px-3 py-2 mb-6">
+              <span className="text-yellow-400 text-sm font-bold">30 days FREE trial</span>
+              <span className="text-gray-400 text-sm"> — cancel before and pay $0</span>
+            </div>
+
+            <ul className="space-y-3 mb-8 flex-1">
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">Everything in START, plus:</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">Bi-weekly video calls</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">Training plan included</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">Priority WhatsApp support</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">Full eBook library (5 guides)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">Monthly strategy reviews</span>
+              </li>
+            </ul>
+
+            <a
+              href="https://buy.stripe.com/eVq9AS5fxfzxam36df1Jm0t"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full text-center py-3 px-6 rounded-xl bg-yellow-400 text-black font-bold hover:bg-yellow-300 transition-all"
+            >
+              Start Free Trial
+            </a>
           </div>
+
+          {/* Plan 4: Annual $1999 */}
+          <div className="relative border border-red-500/50 rounded-2xl p-6 bg-gray-900 flex flex-col">
+            <div className="mb-6">
+              <div className="flex items-center gap-2 mb-3">
+                <Crown className="w-5 h-5 text-red-400" />
+                <span className="text-sm text-red-400 uppercase tracking-wider font-semibold">12 Months</span>
+              </div>
+              <h2 className="text-2xl font-bold text-white mb-2">TRANSFORM ELITE</h2>
+              <p className="text-gray-400 text-sm">Full year. Maximum results. For those who are serious.</p>
+            </div>
+
+            <div className="mb-2">
+              <div className="text-4xl font-bold text-red-400">$1,999<span className="text-lg text-gray-400 font-normal">/yr</span></div>
+              <div className="text-gray-500 text-sm mt-1">~$166/month</div>
+            </div>
+            <div className="bg-red-400/10 border border-red-400/30 rounded-lg px-3 py-2 mb-6">
+              <span className="text-red-400 text-sm font-bold">30 days FREE trial</span>
+              <span className="text-gray-400 text-sm"> — cancel before and pay $0</span>
+            </div>
+
+            <ul className="space-y-3 mb-8 flex-1">
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">Everything in EVOLVE, plus:</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">Weekly 1:1 video calls</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">Complete eBook library (7 guides)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">VIP priority support</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">Founding member status</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300 text-sm">Lifetime access to all future content</span>
+              </li>
+            </ul>
+
+            <a
+              href="https://buy.stripe.com/cNi00i4bt2ML1Px3131Jm0u"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full text-center py-3 px-6 rounded-xl bg-red-500 text-white font-bold hover:bg-red-400 transition-all"
+            >
+              Start Free Trial
+            </a>
+          </div>
+
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">
-            Still have questions?
+        {/* Anchoring callout */}
+        <div className="bg-gray-900 border border-yellow-400/30 rounded-2xl p-8 mb-12 text-center">
+          <p className="text-gray-400 text-lg">
+            💡 A single 15-min consultation costs <span className="text-white font-bold">$219</span>. 
+            For just <span className="text-yellow-400 font-bold">$499</span> you get <span className="text-white font-bold">3 full months</span> of coaching — 
+            with a <span className="text-yellow-400 font-bold">30-day free trial</span>. 
+            The math is obvious.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="https://wa.me/553299871422" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-all"
-            >
-              Message on WhatsApp
-            </a>
-            <a 
-              href="https://instagram.com/adriano.nutrition" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-all"
-            >
-              Follow on Instagram
-            </a>
+        </div>
+
+        {/* Trust section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center mb-12">
+          <div className="bg-gray-900 rounded-xl p-6">
+            <div className="text-3xl font-bold text-yellow-400 mb-2">30 Days</div>
+            <p className="text-gray-400">Free trial — cancel anytime</p>
+          </div>
+          <div className="bg-gray-900 rounded-xl p-6">
+            <div className="text-3xl font-bold text-yellow-400 mb-2">84 lbs</div>
+            <p className="text-gray-400">Lost by my first client</p>
+          </div>
+          <div className="bg-gray-900 rounded-xl p-6">
+            <div className="text-3xl font-bold text-yellow-400 mb-2">100%</div>
+            <p className="text-gray-400">Real results, real people</p>
           </div>
         </div>
+
+        {/* FAQ */}
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-8">Questions?</h2>
+          <div className="space-y-4">
+            <div className="bg-gray-900 rounded-xl p-6">
+              <h3 className="font-bold text-white mb-2">How does the 30-day free trial work?</h3>
+              <p className="text-gray-400 text-sm">You start today, I start working with you immediately. If you cancel before day 30, you pay nothing. After day 30, your subscription begins automatically.</p>
+            </div>
+            <div className="bg-gray-900 rounded-xl p-6">
+              <h3 className="font-bold text-white mb-2">What's the difference between the plans?</h3>
+              <p className="text-gray-400 text-sm">The longer the plan, the deeper the transformation. 3 months gets you started. 6 months builds real habits. 12 months changes your life permanently.</p>
+            </div>
+            <div className="bg-gray-900 rounded-xl p-6">
+              <h3 className="font-bold text-white mb-2">Can I upgrade later?</h3>
+              <p className="text-gray-400 text-sm">Yes. Start with 3 months and upgrade anytime. Most clients who start with 3 months end up staying longer.</p>
+            </div>
+            <div className="bg-gray-900 rounded-xl p-6">
+              <h3 className="font-bold text-white mb-2">What if I have questions before buying?</h3>
+              <p className="text-gray-400 text-sm">
+                Book a free 15-min call:{' '}
+                <a href="https://calendly.com/adriano-nutrition/new-meeting" target="_blank" rel="noopener noreferrer" className="text-yellow-400 underline">
+                  calendly.com/adriano-nutrition/new-meeting
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );
