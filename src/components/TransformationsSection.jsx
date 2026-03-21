@@ -124,6 +124,24 @@ const TransformationsSection = () => {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Paula Abdomen Transformation */}
+            <Card className="overflow-hidden">
+              <CardContent className="p-0">
+                <img 
+                  src="/paula-abdomen.jpg" 
+                  alt="Paula's body transformation" 
+                  className="w-full h-auto object-cover"
+                />
+                <div className="p-6">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Paula, 38</h4>
+                  <p className="text-gray-600">
+                    Mom of 2, entrepreneur. Used a busy life as an excuse — until she learned the process. 
+                    Now she trains CrossFit and lifts weights consistently.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>

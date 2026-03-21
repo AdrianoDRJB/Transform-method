@@ -179,6 +179,32 @@ function HomePage() {
         </div>
       </div>
 
+    {/* Paula Testimonial - Quick Social Proof */}
+    <div className="bg-black py-10 px-4">
+      <div className="max-w-4xl mx-auto">
+        <p className="text-yellow-400 text-center text-sm font-bold uppercase tracking-widest mb-8">Real Results. Real People.</p>
+        <div className="flex flex-col md:flex-row items-center gap-8 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-10">
+          <div className="w-full md:w-1/2 flex-shrink-0">
+            <img
+              src="/paula-rosto.jpg"
+              alt="Paula's transformation"
+              className="w-full rounded-xl object-cover"
+            />
+          </div>
+          <div className="flex-1 text-white">
+            <h3 className="text-2xl font-black mb-1">Paula, 38</h3>
+            <p className="text-yellow-400 text-sm font-semibold mb-4">Mom of 2 · Esthetician · Entrepreneur</p>
+            <p className="text-white/80 text-base leading-relaxed">
+              She used a busy life as an excuse for years. Two kids, a business, no time — sound familiar?
+              <br /><br />
+              Then she stopped making excuses and started learning the process. Today Paula does CrossFit and strength training consistently. Not because she has more time. Because she finally understood how it works.
+            </p>
+            <p className="mt-6 text-white/40 text-xs italic">"I stopped waiting for the perfect moment. I just started."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
       {/* Benefits Section */}
