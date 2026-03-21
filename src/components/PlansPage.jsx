@@ -143,7 +143,7 @@ const PlansPage = () => {
             </a>
             
             <p className="text-center text-xs text-gray-500 mt-4">
-              Only 2 spots per plan • Offer ends Dec 3rd, 2024
+              Only 2 spots per plan • Limited availability
             </p>
           </CardContent>
         </Card>
@@ -154,18 +154,15 @@ const PlansPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Black Friday Banner */}
+        {/* Spots Banner */}
         <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-lg p-6 mb-12 text-center shadow-xl">
           <div className="flex items-center justify-center gap-2 mb-2">
             <Sparkles className="w-6 h-6" />
-            <h2 className="text-2xl font-bold">BLACK FRIDAY EXCLUSIVE</h2>
+            <h2 className="text-2xl font-bold">LIMITED SPOTS AVAILABLE</h2>
             <Sparkles className="w-6 h-6" />
           </div>
           <p className="text-lg">
             Join the 100-Day Transformation Challenge • Only 6 Spots Available (2 per plan)
-          </p>
-          <p className="text-sm mt-2 opacity-90">
-            Offer ends December 3rd, 2024
           </p>
         </div>
 
@@ -280,7 +277,7 @@ const PlansPage = () => {
                 When does the 100-Day Challenge start?
               </h3>
               <p className="text-gray-700">
-                The challenge officially starts on December 10th, 2024. If you join before then, you'll get early access to preparation materials and community.
+                The challenge starts as soon as you join. You'll get immediate access to preparation materials and the community.
               </p>
             </div>
             

@@ -91,7 +91,7 @@ const SuccessPage = () => {
                     Book your initial video call to discuss your goals, routine, and create your personalized action plan.
                   </p>
                   <a
-                    href="https://calendly.com/adriano-nutrition/30min"
+                    href="https://calendly.com/adriano-nutrition/new-meeting"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium rounded-md transition-all shadow-lg"
