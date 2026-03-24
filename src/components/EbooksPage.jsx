@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
-import { BookOpen, Lock, Download, CheckCircle, Star } from 'lucide-react';
+import { BookOpen, Lock, Download, CheckCircle, Star, Gift, Mail } from 'lucide-react';
 import ContactSection from './ContactSection.jsx';
 
 const EbooksPage = () => {
   const [purchasedEbooks, setPurchasedEbooks] = useState([]);
+
+  // Free ebook form state
+  const [freeEmail, setFreeEmail] = useState('');
+  const [freeSubmitting, setFreeSubmitting] = useState(false);
+  const [freeSuccess, setFreeSuccess] = useState(false);
+  const [freeError, setFreeError] = useState('');
 
   // Load purchased ebooks from localStorage
   useEffect(() => {
@@ -14,6 +20,16 @@ const EbooksPage = () => {
       setPurchasedEbooks(JSON.parse(purchased));
     }
   }, []);
+
+  const freeEbooks = [
+    {
+      id: 'late-night-cravings',
+      title: 'Late Night Cravings',
+      description: 'Why they happen and how to stop. The real reason you eat at night has nothing to do with willpower.',
+      file: '/late-night-cravings.pdf',
+      topics: ['Root causes of night cravings', 'The biology behind it', 'What actually works', 'Evidence-based habits']
+    }
+  ];
 
   const mainEbook = {
     id: 'transform-method-complete',
@@ -68,18 +84,41 @@ const EbooksPage = () => {
   ];
 
   const handlePurchase = (stripeLink) => {
-    // Redirect to Stripe Checkout
     window.location.href = stripeLink;
   };
 
   const handleDownload = (ebook) => {
-    // Create a temporary link and trigger download
     const link = document.createElement('a');
     link.href = ebook.file;
     link.download = `${ebook.title.replace(/\s+/g, '_')}.pdf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const handleFreeDownload = async (e, ebook) => {
+    e.preventDefault();
+    if (!freeEmail || !freeEmail.includes('@')) {
+      setFreeError('Please enter a valid email address.');
+      return;
+    }
+    setFreeSubmitting(true);
+    setFreeError('');
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: freeEmail })
+      });
+      if (!res.ok) throw new Error('Subscription failed');
+      setFreeSuccess(true);
+      // Trigger download after successful subscription
+      setTimeout(() => handleDownload(ebook), 500);
+    } catch (err) {
+      setFreeError('Something went wrong. Please try again.');
+    } finally {
+      setFreeSubmitting(false);
+    }
   };
 
   const isPurchased = (ebookId) => purchasedEbooks.includes(ebookId);
@@ -174,8 +213,98 @@ const EbooksPage = () => {
         </div>
       </div>
 
+      {/* FREE EBOOKS SECTION */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-12">
+        <div className="flex items-center gap-3 mb-6">
+          <Gift className="w-7 h-7 text-green-600" />
+          <h2 className="text-3xl font-bold text-gray-900">Free eBooks</h2>
+          <span className="bg-green-100 text-green-700 text-sm font-semibold px-3 py-1 rounded-full">No credit card required</span>
+        </div>
+        <p className="text-gray-600 mb-8 text-lg">Enter your email to download instantly. You'll also receive practical, no-bullshit nutrition content directly to your inbox.</p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {freeEbooks.map((ebook) => (
+            <Card key={ebook.id} className="flex flex-col border-2 border-green-400 hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="inline-flex items-center gap-1 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-3 w-fit">
+                  <Gift className="w-4 h-4" />
+                  FREE
+                </div>
+                <CardTitle className="text-2xl mb-2">{ebook.title}</CardTitle>
+                <CardDescription className="text-base">{ebook.description}</CardDescription>
+              </CardHeader>
+
+              <CardContent className="flex-1">
+                <div>
+                  <h4 className="font-semibold text-sm text-gray-700 mb-2">What you'll learn:</h4>
+                  <ul className="space-y-1 mb-6">
+                    {ebook.topics.map((topic, index) => (
+                      <li key={index} className="text-sm text-gray-600 flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
+                        {topic}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {freeSuccess ? (
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-center gap-3">
+                      <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-green-800">You're in! Your download is starting.</p>
+                        <p className="text-sm text-green-700">Check your inbox for more free content.</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <form onSubmit={(e) => handleFreeDownload(e, ebook)} className="space-y-3">
+                      <div className="flex gap-2">
+                        <div className="relative flex-1">
+                          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                          <input
+                            type="email"
+                            value={freeEmail}
+                            onChange={(e) => setFreeEmail(e.target.value)}
+                            placeholder="Your email address"
+                            className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                            required
+                          />
+                        </div>
+                        <Button
+                          type="submit"
+                          disabled={freeSubmitting}
+                          className="bg-green-600 hover:bg-green-700 text-white whitespace-nowrap"
+                        >
+                          {freeSubmitting ? 'Sending...' : (
+                            <>
+                              <Download className="w-4 h-4 mr-1" />
+                              Download Free
+                            </>
+                          )}
+                        </Button>
+                      </div>
+                      {freeError && (
+                        <p className="text-red-500 text-sm">{freeError}</p>
+                      )}
+                      <p className="text-xs text-gray-400">No spam. Unsubscribe anytime.</p>
+                    </form>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <div className="border-t border-gray-200"></div>
+      </div>
+
       {/* Main eBook - Featured */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-2">Premium eBooks</h2>
+          <p className="text-lg text-gray-600">In-depth guides for serious transformation</p>
+        </div>
         <EbookCard ebook={mainEbook} featured={true} />
       </div>
 
@@ -251,7 +380,6 @@ const EbooksPage = () => {
         </div>
       </div>
 
-      {/* CTA Section */}
     </div>
 
     {/* Contact Section */}
