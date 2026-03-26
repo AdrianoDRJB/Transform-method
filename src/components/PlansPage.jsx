@@ -108,7 +108,7 @@ const PlansPage = () => {
             </ul>
 
             <a
-              href="https://buy.stripe.com/dRm28q0ZhfzxgKrcBD1Jm0s"
+              href="https://buy.stripe.com/9B6eVc0Zh4UT8dV59b1Jm0v"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full text-center py-3 px-6 rounded-xl bg-yellow-400 text-black font-bold hover:bg-yellow-300 transition-all"
@@ -169,7 +169,7 @@ const PlansPage = () => {
             </ul>
 
             <a
-              href="https://buy.stripe.com/eVq9AS5fxfzxam36df1Jm0t"
+              href="https://buy.stripe.com/cNicN4dM34UTeCjatv1Jm0w"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full text-center py-3 px-6 rounded-xl bg-yellow-400 text-black font-bold hover:bg-yellow-300 transition-all"
@@ -226,7 +226,7 @@ const PlansPage = () => {
             </ul>
 
             <a
-              href="https://buy.stripe.com/cNi00i4bt2ML1Px3131Jm0u"
+              href="https://buy.stripe.com/dRmdR88rJ7312TB8ln1Jm0x"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full text-center py-3 px-6 rounded-xl bg-red-500 text-white font-bold hover:bg-red-400 transition-all"

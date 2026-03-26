@@ -97,7 +97,7 @@ function HomePage() {
         style={{
           backgroundImage: 'url(/antesdepois.jpg)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center 40%',
+          backgroundPosition: 'center 65%',
         }}
       >
         {/* Dark overlay */}
