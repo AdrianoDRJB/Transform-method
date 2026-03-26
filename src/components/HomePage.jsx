@@ -101,7 +101,7 @@ function HomePage() {
         }}
       >
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/65" />
+        <div className="absolute inset-0 bg-black/25" />
 
         <div className="relative z-10 w-full max-w-3xl mx-auto px-6 py-20 text-center text-white">
           <span className="inline-block bg-white/20 backdrop-blur-sm border border-white/30 text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6">

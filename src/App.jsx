@@ -50,9 +50,9 @@ function AppContent() {
               <Link to="/ebooks" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
                 eBooks
               </Link>
-                <Link to="/identity">
+                <Link to="/plans">
                   <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
-                    The Identity
+                    Choose a Plan
                   </Button>
                 </Link>
               </div>
