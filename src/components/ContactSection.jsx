@@ -79,7 +79,7 @@ export default function ContactSection() {
 
         {/* Additional CTA */}
         <div className="mt-12">
-          <Link to="/identity">
+          <Link to="/plans">
             <button className="bg-white text-purple-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg text-lg transition-all shadow-lg hover:shadow-xl inline-flex items-center gap-2">
               Choose Your Plan
               <ArrowRight className="w-5 h-5" />
