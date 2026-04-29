@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { Card, CardContent } from './ui/card';
+import { ChevronDown, ChevronUp, Mail } from 'lucide-react';
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -49,7 +48,7 @@ const FAQSection = () => {
     },
     {
       question: "How do I know if I'm ready to start?",
-      answer: "You're ready when: You're tired of trying and failing, You want a real solution, not another temporary diet, You're willing to invest in yourself, You understand that transformation takes time and consistency. If you've read this far, you're already ready. The next step is simple: click the button below and let's talk."
+      answer: "You're ready when: You're tired of trying and failing, You want a real solution, not another temporary diet, You're willing to invest in yourself, You understand that transformation takes time and consistency. If you've read this far, you're already ready. The next step is simple: grab the free guide and start learning the method."
     }
   ];
 
@@ -83,6 +82,10 @@ const FAQSection = () => {
     );
   };
 
+  const scrollToCapture = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <div className="bg-gray-50 py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -103,49 +106,25 @@ const FAQSection = () => {
           </CardContent>
         </Card>
 
-        {/* CTA after FAQ */}
+        {/* Single CTA after FAQ - directs to email capture */}
         <div className="mt-12 text-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
             Ready to Start Your Transformation?
           </h3>
           <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-            Don't wait for the "perfect moment". It doesn't exist. The best time to start is now. 
-            In 100 days, you could be 10kg lighter, with more energy, more confidence, and a completely different life.
-          </p>
-          <p className="text-lg text-gray-600 mb-8">
-            Or you could be exactly where you are today, wondering "what if I had started?"
-          </p>
-          <p className="text-xl font-semibold text-gray-900 mb-8">
-            The choice is yours.
+            The first step is understanding the method. Grab the free guide and see how it works — no commitment, no credit card.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link 
-              to="/plans"
-              className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg"
-            >
-              Choose Your Plan Now
-            </Link>
-            <a 
-              href="https://wa.me/553299871422" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 transition-all shadow-lg"
-            >
-              Message on WhatsApp
-            </a>
-            <a 
-              href="https://instagram.com/adriano.nutrition" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-all"
-            >
-              Follow on Instagram
-            </a>
-          </div>
+          <button
+            onClick={scrollToCapture}
+            className="inline-flex items-center justify-center gap-2 px-8 py-3 text-base font-bold rounded-xl text-black bg-yellow-400 hover:bg-yellow-300 transition-all shadow-lg"
+          >
+            <Mail className="w-5 h-5" />
+            Get the Free Guide
+          </button>
           
-          <p className="mt-8 text-sm text-gray-500">
-            Your transformation starts with a message. 👇
+          <p className="mt-6 text-sm text-gray-500">
+            Join hundreds of people who already started their transformation.
           </p>
         </div>
       </div>
