@@ -18,14 +18,23 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Invalid email' })
   }
 
+  // Use environment variable for API key (set BEEHIIV_API_KEY in Vercel dashboard)
+  const apiKey = process.env.BEEHIIV_API_KEY
+  if (!apiKey) {
+    console.error('BEEHIIV_API_KEY environment variable is not set')
+    return res.status(500).json({ error: 'Server configuration error' })
+  }
+
+  const publicationId = process.env.BEEHIIV_PUBLICATION_ID || 'pub_6b58b59a-46f7-4fbc-b1c9-992f681d4caf'
+
   try {
     const response = await fetch(
-      'https://api.beehiiv.com/v2/publications/pub_6b58b59a-46f7-4fbc-b1c9-992f681d4caf/subscriptions',
+      `https://api.beehiiv.com/v2/publications/${publicationId}/subscriptions`,
       {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer vAV9vgnWqUtxrVDYw6N3eZa1v9gdJCO2CQZ3o6pM51haMe8rhqlBvgpqWrlJV9ww'
+          'Authorization': `Bearer ${apiKey}`
         },
         body: JSON.stringify({
           email,

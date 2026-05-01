@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
-import { Button } from '@/components/ui/button.jsx'
 import { Menu, X, Dumbbell } from 'lucide-react'
 import HomePage from './components/HomePage'
 import MacroTracker from './components/MacroTracker'
@@ -10,6 +9,7 @@ import EbooksPage from './components/EbooksPage'
 import PlansPage from './components/PlansPage'
 import SuccessPage from './components/SuccessPage'
 import TheIdentity from './components/TheIdentity'
+import ThankYouPage from './components/ThankYouPage'
 import './App.css'
 
 function AppContent() {
@@ -34,26 +34,21 @@ function AppContent() {
               </Link>
 
               {/* Desktop Navigation */}
-              <div className="flex items-center space-x-8">
+              <div className="hidden md:flex items-center space-x-8">
                 <Link to="/" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
                   Home
                 </Link>
                 <Link to="/method" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
                   The Method
                 </Link>
-              <Link to="/calculator" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
-                Calculator
-              </Link>
-              <Link to="/tracker" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
-                Macro Tracker
-              </Link>
-              <Link to="/ebooks" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
-                eBooks
-              </Link>
-                <Link to="/plans">
-                  <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
-                    Choose a Plan
-                  </Button>
+                <Link to="/calculator" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
+                  Calculator
+                </Link>
+                <Link to="/tracker" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
+                  Macro Tracker
+                </Link>
+                <Link to="/ebooks" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
+                  eBooks
                 </Link>
               </div>
 
@@ -106,11 +101,6 @@ function AppContent() {
                 >
                   eBooks
                 </Link>
-                <Link to="/plans" onClick={() => setMobileMenuOpen(false)}>
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
-                    Choose a Plan
-                  </Button>
-                </Link>
               </div>
             </div>
           )}
@@ -126,6 +116,7 @@ function AppContent() {
           <Route path="/ebooks" element={<EbooksPage />} />
           <Route path="/plans" element={<PlansPage />} />
           <Route path="/success" element={<SuccessPage />} />
+          <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/offer" element={<TheIdentity />} />
           <Route path="/identity" element={<TheIdentity />} />
           <Route path="/transform2026" element={<TheIdentity />} />
@@ -158,9 +149,9 @@ function AppContent() {
               <div>
                 <h3 className="font-semibold mb-4">Resources</h3>
                 <ul className="space-y-2 text-sm text-slate-400">
-                  <li><a href="#" className="hover:text-white transition-colors">Get the Book</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                  <li><Link to="/ebooks" className="hover:text-white transition-colors">eBooks</Link></li>
+                  <li><a href="mailto:adriano.nutrition@gmail.com" className="hover:text-white transition-colors">Contact</a></li>
+                  <li><a href="https://instagram.com/adriano.nutrition" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a></li>
                 </ul>
               </div>
             </div>

@@ -1,36 +1,14 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
-import { ArrowRight, Brain, Target, TrendingUp, Users, Zap, CheckCircle2 } from 'lucide-react'
-import ContactSection from './ContactSection.jsx'
+import { Brain, Target, TrendingUp, Users, Zap, CheckCircle2, ArrowRight, Gift } from 'lucide-react'
 import TransformationsSection from './TransformationsSection.jsx'
 import FAQSection from './FAQSection.jsx'
+import ContactSection from './ContactSection.jsx'
 
 function HomePage() {
   const [viewMode, setViewMode] = useState('detailed') // 'detailed' or 'phases'
-  const [email, setEmail] = useState('')
-  const [emailStatus, setEmailStatus] = useState('idle') // idle | loading | success | error
 
-  const handlePDFDownload = async (e) => {
-    e.preventDefault()
-    if (!email || !email.includes('@')) {
-      setEmailStatus('error')
-      return
-    }
-    setEmailStatus('loading')
-    try {
-      await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
-      })
-    } catch (_) {}
-    setEmailStatus('success')
-    setTimeout(() => {
-      window.open('/TRANSFORM_Method_Full_Corrected_eBook.pdf', '_blank')
-    }, 300)
-  }
+  const GUMROAD_STARTER_KIT = 'https://nutriadriano.gumroad.com/l/starter-kit'
 
   const transformSteps = [
     { letter: 'T', title: 'Track Your Reality', description: 'Understand where you are before you can change where you\'re going.' },
@@ -123,58 +101,23 @@ function HomePage() {
             Nutrition Student (3rd year) • Precision Nutrition Certified • Change Psychology Specialist
           </p>
 
-          {/* PDF Capture Box */}
+          {/* Gumroad Starter Kit CTA - THE ONLY CTA */}
           <div className="bg-black/50 backdrop-blur-md border-2 border-yellow-400 rounded-2xl p-6 mb-8 max-w-md mx-auto">
-            <p className="text-yellow-400 font-bold text-sm uppercase tracking-wider mb-1">Free eBook</p>
-            <h3 className="text-white font-bold text-xl mb-2">The TRANSFORM Method Guide</h3>
-            <p className="text-white/70 text-sm mb-4">The exact system I used to lose 84 lbs and transform my life. Free download.</p>
-            {emailStatus === 'success' ? (
-              <div className="text-center">
-                <p className="text-green-400 font-bold mb-3">✓ Check your email — PDF is opening now!</p>
-                <a
-                  href="/TRANSFORM_Method_Full_Corrected_eBook.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-6 rounded-xl transition-all text-center"
-                >
-                  Download Again
-                </a>
-              </div>
-            ) : (
-              <form onSubmit={handlePDFDownload} className="flex flex-col gap-3">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => { setEmail(e.target.value); setEmailStatus('idle') }}
-                  placeholder="Enter your email to get free access"
-                  className="w-full px-4 py-3 rounded-xl bg-white text-gray-900 placeholder-gray-500 text-sm outline-none focus:ring-2 focus:ring-yellow-400"
-                  required
-                />
-                {emailStatus === 'error' && (
-                  <p className="text-red-400 text-xs">Please enter a valid email address.</p>
-                )}
-                <button
-                  type="submit"
-                  disabled={emailStatus === 'loading'}
-                  className="block w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-6 rounded-xl transition-all text-center disabled:opacity-60"
-                >
-                  {emailStatus === 'loading' ? 'Sending...' : 'Download Free PDF'}
-                </button>
-              </form>
-            )}
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/plans">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-10 py-5 h-auto w-full sm:w-auto">
-                Choose a Plan <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <a href="https://calendly.com/adriano-nutrition/new-meeting" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" variant="outline" className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black text-lg px-10 py-5 h-auto w-full sm:w-auto">
-                Book a Call <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+            <p className="text-yellow-400 font-bold text-sm uppercase tracking-wider mb-1">Free Starter Kit</p>
+            <h3 className="text-white font-bold text-xl mb-2">The TRANSFORM Method Starter Kit</h3>
+            <p className="text-white/70 text-sm mb-5">The exact system I used to lose 84 lbs and transform my life. Free download — no credit card required.</p>
+            <a
+              href={GUMROAD_STARTER_KIT}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-6 rounded-xl transition-all text-center text-lg"
+            >
+              <span className="inline-flex items-center gap-2">
+                <Gift className="h-5 w-5" />
+                Get Your Free Starter Kit
+              </span>
             </a>
+            <p className="text-white/40 text-xs mt-3">100% free. Instant access via Gumroad.</p>
           </div>
         </div>
       </div>
@@ -327,48 +270,52 @@ function HomePage() {
 
     </div>
 
-    {/* Transformations Section - Moved here */}
+    {/* Transformations Section */}
     <TransformationsSection />
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-      {/* Macro Tracker CTA */}
-      <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0 mb-20">
-        <CardContent className="p-8 md:p-12">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex-1">
-              <div className="flex items-center gap-2 mb-3">
-                <Zap className="h-6 w-6" />
-                <h3 className="text-2xl font-bold">Free Macro Tracker</h3>
+      {/* Free Tools CTA - Secondary, subtle */}
+      <div className="mb-20">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+            Free Tools
+          </h2>
+          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            Start building better habits today with our free nutrition tools
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Card className="border-2 hover:border-blue-500 transition-all hover:shadow-lg">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-3 mb-3">
+                <Zap className="h-6 w-6 text-blue-600" />
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Macro Tracker</h3>
               </div>
-              <p className="text-blue-50 text-lg mb-4">
-                Track your nutrition with our integrated USDA food database. Start building better eating habits today.
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
+                Track your nutrition with our integrated USDA food database. Access 350,000+ foods.
               </p>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-blue-200" />
-                  <span>Access to 350,000+ foods from USDA database</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-blue-200" />
-                  <span>Track macros, calories, and nutrients</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-blue-200" />
-                  <span>100% free, no registration required</span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <Link to="/tracker">
-                <Button size="lg" variant="secondary" className="text-lg px-8">
-                  Try Macro Tracker <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+              <a href="/tracker" className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center gap-1">
+                Try it free <ArrowRight className="h-4 w-4" />
+              </a>
+            </CardContent>
+          </Card>
+          <Card className="border-2 hover:border-blue-500 transition-all hover:shadow-lg">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-3 mb-3">
+                <Target className="h-6 w-6 text-blue-600" />
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Calorie Calculator</h3>
+              </div>
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
+                Calculate your daily calorie needs based on your goals, activity level, and body composition.
+              </p>
+              <a href="/calculator" className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center gap-1">
+                Calculate now <ArrowRight className="h-4 w-4" />
+              </a>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
 
       {/* Testimonial Section */}
       <div className="text-center mb-20">
@@ -388,6 +335,27 @@ function HomePage() {
         </Card>
       </div>
 
+      {/* Inline Gumroad CTA - Reinforcement */}
+      <div className="mb-20">
+        <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0">
+          <CardContent className="p-8 md:p-12 text-center">
+            <h3 className="text-2xl md:text-3xl font-bold mb-3">Get the Free TRANSFORM Method Starter Kit</h3>
+            <p className="text-blue-100 text-lg mb-6 max-w-xl mx-auto">
+              The exact 9-step system used to lose 84 lbs and rebuild a life from scratch. No fluff, just science.
+            </p>
+            <a
+              href={GUMROAD_STARTER_KIT}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-8 rounded-xl transition-all text-lg inline-flex items-center gap-2"
+            >
+              <Gift className="h-5 w-5" />
+              Get Your Free Starter Kit
+            </a>
+          </CardContent>
+        </Card>
+      </div>
+
     </div>
 
     {/* FAQ Section */}
@@ -400,4 +368,3 @@ function HomePage() {
 }
 
 export default HomePage
-
