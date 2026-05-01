@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Card, CardContent } from './ui/card';
-import { ChevronDown, ChevronUp, Mail } from 'lucide-react';
+import { ChevronDown, ChevronUp, Gift } from 'lucide-react';
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
+
+  const GUMROAD_STARTER_KIT = 'https://nutriadriano.gumroad.com/l/starter-kit';
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -48,7 +50,7 @@ const FAQSection = () => {
     },
     {
       question: "How do I know if I'm ready to start?",
-      answer: "You're ready when: You're tired of trying and failing, You want a real solution, not another temporary diet, You're willing to invest in yourself, You understand that transformation takes time and consistency. If you've read this far, you're already ready. The next step is simple: grab the free guide and start learning the method."
+      answer: "You're ready when: You're tired of trying and failing, You want a real solution, not another temporary diet, You're willing to invest in yourself, You understand that transformation takes time and consistency. If you've read this far, you're already ready. The next step is simple: grab the free starter kit and see how it works."
     }
   ];
 
@@ -82,10 +84,6 @@ const FAQSection = () => {
     );
   };
 
-  const scrollToCapture = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   return (
     <div className="bg-gray-50 py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -106,22 +104,24 @@ const FAQSection = () => {
           </CardContent>
         </Card>
 
-        {/* Single CTA after FAQ - directs to email capture */}
+        {/* Single CTA after FAQ - directs to Gumroad Starter Kit */}
         <div className="mt-12 text-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
             Ready to Start Your Transformation?
           </h3>
           <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-            The first step is understanding the method. Grab the free guide and see how it works — no commitment, no credit card.
+            The first step is understanding the method. Grab the free starter kit and see how it works — no commitment, no credit card.
           </p>
           
-          <button
-            onClick={scrollToCapture}
+          <a
+            href={GUMROAD_STARTER_KIT}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-8 py-3 text-base font-bold rounded-xl text-black bg-yellow-400 hover:bg-yellow-300 transition-all shadow-lg"
           >
-            <Mail className="w-5 h-5" />
-            Get the Free Guide
-          </button>
+            <Gift className="w-5 h-5" />
+            Get the Free Starter Kit
+          </a>
           
           <p className="mt-6 text-sm text-gray-500">
             Join hundreds of people who already started their transformation.

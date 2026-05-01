@@ -1,41 +1,14 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
-import { Brain, Target, TrendingUp, Users, Zap, CheckCircle2, ArrowRight, Mail } from 'lucide-react'
+import { Brain, Target, TrendingUp, Users, Zap, CheckCircle2, ArrowRight, Gift } from 'lucide-react'
 import TransformationsSection from './TransformationsSection.jsx'
 import FAQSection from './FAQSection.jsx'
 import ContactSection from './ContactSection.jsx'
 
 function HomePage() {
   const [viewMode, setViewMode] = useState('detailed') // 'detailed' or 'phases'
-  const [email, setEmail] = useState('')
-  const [emailStatus, setEmailStatus] = useState('idle') // idle | loading | success | error
-  const navigate = useNavigate()
 
-  const handlePDFDownload = async (e) => {
-    e.preventDefault()
-    if (!email || !email.includes('@')) {
-      setEmailStatus('error')
-      return
-    }
-    setEmailStatus('loading')
-    try {
-      await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
-      })
-    } catch (_) {}
-    setEmailStatus('success')
-    // Redirect to thank-you page after successful capture
-    setTimeout(() => {
-      navigate('/thank-you')
-    }, 500)
-  }
-
-  const scrollToCapture = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
+  const GUMROAD_STARTER_KIT = 'https://nutriadriano.gumroad.com/l/starter-kit'
 
   const transformSteps = [
     { letter: 'T', title: 'Track Your Reality', description: 'Understand where you are before you can change where you\'re going.' },
@@ -128,37 +101,23 @@ function HomePage() {
             Nutrition Student (3rd year) • Precision Nutrition Certified • Change Psychology Specialist
           </p>
 
-          {/* PDF Capture Box - THE ONLY CTA */}
+          {/* Gumroad Starter Kit CTA - THE ONLY CTA */}
           <div className="bg-black/50 backdrop-blur-md border-2 border-yellow-400 rounded-2xl p-6 mb-8 max-w-md mx-auto">
-            <p className="text-yellow-400 font-bold text-sm uppercase tracking-wider mb-1">Free eBook</p>
-            <h3 className="text-white font-bold text-xl mb-2">The TRANSFORM Method Guide</h3>
-            <p className="text-white/70 text-sm mb-4">The exact system I used to lose 84 lbs and transform my life. Free download.</p>
-            {emailStatus === 'success' ? (
-              <div className="text-center">
-                <p className="text-green-400 font-bold mb-3">Redirecting you to your download...</p>
-              </div>
-            ) : (
-              <form onSubmit={handlePDFDownload} className="flex flex-col gap-3">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => { setEmail(e.target.value); setEmailStatus('idle') }}
-                  placeholder="Enter your email to get free access"
-                  className="w-full px-4 py-3 rounded-xl bg-white text-gray-900 placeholder-gray-500 text-sm outline-none focus:ring-2 focus:ring-yellow-400"
-                  required
-                />
-                {emailStatus === 'error' && (
-                  <p className="text-red-400 text-xs">Please enter a valid email address.</p>
-                )}
-                <button
-                  type="submit"
-                  disabled={emailStatus === 'loading'}
-                  className="block w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-6 rounded-xl transition-all text-center disabled:opacity-60"
-                >
-                  {emailStatus === 'loading' ? 'Sending...' : 'Download Free PDF'}
-                </button>
-              </form>
-            )}
+            <p className="text-yellow-400 font-bold text-sm uppercase tracking-wider mb-1">Free Starter Kit</p>
+            <h3 className="text-white font-bold text-xl mb-2">The TRANSFORM Method Starter Kit</h3>
+            <p className="text-white/70 text-sm mb-5">The exact system I used to lose 84 lbs and transform my life. Free download — no credit card required.</p>
+            <a
+              href={GUMROAD_STARTER_KIT}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-6 rounded-xl transition-all text-center text-lg"
+            >
+              <span className="inline-flex items-center gap-2">
+                <Gift className="h-5 w-5" />
+                Get Your Free Starter Kit
+              </span>
+            </a>
+            <p className="text-white/40 text-xs mt-3">100% free. Instant access via Gumroad.</p>
           </div>
         </div>
       </div>
@@ -376,21 +335,23 @@ function HomePage() {
         </Card>
       </div>
 
-      {/* Inline Email Capture - Reinforcement CTA */}
+      {/* Inline Gumroad CTA - Reinforcement */}
       <div className="mb-20">
         <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0">
           <CardContent className="p-8 md:p-12 text-center">
-            <h3 className="text-2xl md:text-3xl font-bold mb-3">Get the Free TRANSFORM Method Guide</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-3">Get the Free TRANSFORM Method Starter Kit</h3>
             <p className="text-blue-100 text-lg mb-6 max-w-xl mx-auto">
               The exact 9-step system used to lose 84 lbs and rebuild a life from scratch. No fluff, just science.
             </p>
-            <button
-              onClick={scrollToCapture}
+            <a
+              href={GUMROAD_STARTER_KIT}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-8 rounded-xl transition-all text-lg inline-flex items-center gap-2"
             >
-              <Mail className="h-5 w-5" />
-              Get Your Free Copy
-            </button>
+              <Gift className="h-5 w-5" />
+              Get Your Free Starter Kit
+            </a>
           </CardContent>
         </Card>
       </div>
