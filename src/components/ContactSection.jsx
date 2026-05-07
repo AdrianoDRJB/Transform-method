@@ -1,7 +1,7 @@
 import { Mail, MessageCircle, Instagram, Gift } from 'lucide-react';
 
 export default function ContactSection() {
-  const GUMROAD_STARTER_KIT = 'https://nutriadriano.gumroad.com/l/starter-kit';
+  const GUMROAD_STARTER_KIT = 'https://adrianonutrition.gumroad.com/l/starter-kit';
 
   return (
     <section className="py-20 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500">

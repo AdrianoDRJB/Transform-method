@@ -4,8 +4,8 @@ import { CheckCircle, BookOpen, ArrowRight, Star, Sparkles, Shield, Clock, Gift,
 import { Card, CardContent } from '@/components/ui/card.jsx'
 
 function ThankYouPage() {
-  const GUMROAD_BUNDLE = 'https://nutriadriano.gumroad.com/l/transformation-bundle'
-  const GUMROAD_STARTER_KIT = 'https://nutriadriano.gumroad.com/l/starter-kit'
+  const GUMROAD_BUNDLE = 'https://adrianonutrition.gumroad.com/l/transformation-bundle'
+  const GUMROAD_STARTER_KIT = 'https://adrianonutrition.gumroad.com/l/starter-kit'
 
   const bundleIncludes = [
     'The Complete TRANSFORM Method Guide (100+ pages)',

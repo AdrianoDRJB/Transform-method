@@ -8,7 +8,7 @@ import ContactSection from './ContactSection.jsx'
 function HomePage() {
   const [viewMode, setViewMode] = useState('detailed') // 'detailed' or 'phases'
 
-  const GUMROAD_STARTER_KIT = 'https://nutriadriano.gumroad.com/l/starter-kit'
+  const GUMROAD_STARTER_KIT = 'https://adrianonutrition.gumroad.com/l/starter-kit'
 
   const transformSteps = [
     { letter: 'T', title: 'Track Your Reality', description: 'Understand where you are before you can change where you\'re going.' },

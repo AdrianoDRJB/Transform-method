@@ -5,7 +5,7 @@ import { ChevronDown, ChevronUp, Gift } from 'lucide-react';
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const GUMROAD_STARTER_KIT = 'https://nutriadriano.gumroad.com/l/starter-kit';
+  const GUMROAD_STARTER_KIT = 'https://adrianonutrition.gumroad.com/l/starter-kit';
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
