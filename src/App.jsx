@@ -50,6 +50,9 @@ function AppContent() {
                 <Link to="/ebooks" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
                   eBooks
                 </Link>
+                <Link to="/plans" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
+                  Plans
+                </Link>
               </div>
 
               {/* Mobile menu button */}
@@ -101,6 +104,13 @@ function AppContent() {
                 >
                   eBooks
                 </Link>
+                <Link
+                  to="/plans"
+                  className="block text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Plans
+                </Link>
               </div>
             </div>
           )}
@@ -150,6 +160,7 @@ function AppContent() {
                 <h3 className="font-semibold mb-4">Resources</h3>
                 <ul className="space-y-2 text-sm text-slate-400">
                   <li><Link to="/ebooks" className="hover:text-white transition-colors">eBooks</Link></li>
+                  <li><Link to="/plans" className="hover:text-white transition-colors">Plans</Link></li>
                   <li><a href="mailto:adriano.nutrition@gmail.com" className="hover:text-white transition-colors">Contact</a></li>
                   <li><a href="https://instagram.com/adriano.nutrition" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a></li>
                 </ul>
