@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Brain, Target, TrendingUp, Users, Zap, CheckCircle2, ArrowRight, Gift } from 'lucide-react'
 import TransformationsSection from './TransformationsSection.jsx'
@@ -119,6 +120,14 @@ function HomePage() {
             </a>
             <p className="text-white/40 text-xs mt-3">100% free. Instant access via Gumroad.</p>
           </div>
+
+          {/* Secondary CTA - Path to paid coaching, for people who already know they want a coach */}
+          <p className="text-white/80 text-sm">
+            Already know you want a coach?{' '}
+            <Link to="/plans" className="underline underline-offset-4 font-semibold text-yellow-400 hover:text-yellow-300">
+              See coaching plans &amp; book a free call →
+            </Link>
+          </p>
         </div>
       </div>
 
@@ -352,6 +361,12 @@ function HomePage() {
               <Gift className="h-5 w-5" />
               Get Your Free Starter Kit
             </a>
+            <p className="mt-4 text-blue-100 text-sm">
+              Prefer to skip straight to coaching?{' '}
+              <Link to="/plans" className="underline underline-offset-4 font-semibold text-white hover:text-yellow-300">
+                See plans & book a free strategy call →
+              </Link>
+            </p>
           </CardContent>
         </Card>
       </div>
