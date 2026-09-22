@@ -1,10 +1,9 @@
+import { Link } from 'react-router-dom';
 import { Mail, MessageCircle, Instagram, Gift } from 'lucide-react';
 
 export default function ContactSection() {
-  const GUMROAD_STARTER_KIT = 'https://adrianonutrition.gumroad.com/l/starter-kit';
-
   return (
-    <section className="py-20 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500">
+    <section className="py-20 bg-gradient-to-br from-[#0f3f26] via-[#1b5e3a] to-[#134a2c]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* CTA Heading */}
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -12,19 +11,17 @@ export default function ContactSection() {
         </h2>
         
         <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-          Start with the free TRANSFORM Method Starter Kit — the exact system used to lose 84 lbs and rebuild a life from scratch.
+          Start with the free TRANSFORM Method eBooks — the exact system used to lose 84 lbs and rebuild a life from scratch.
         </p>
 
-        {/* Primary CTA - Gumroad Starter Kit */}
-        <a
-          href={GUMROAD_STARTER_KIT}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-4 px-10 rounded-xl text-lg transition-all shadow-lg hover:shadow-xl mb-12"
+        {/* Primary CTA - Free eBooks */}
+        <Link
+          to="/ebooks"
+          className="inline-flex items-center gap-2 bg-[#2e9e4f] hover:bg-[#3fae67] text-[#06140b] font-bold py-4 px-10 rounded-xl text-lg transition-all shadow-lg hover:shadow-xl mb-12"
         >
           <Gift className="w-5 h-5" />
-          Get Your Free Starter Kit
-        </a>
+          Get Your Free eBooks
+        </Link>
 
         {/* Secondary Contact Options - Subtle */}
         <div className="border-t border-white/20 pt-8">
