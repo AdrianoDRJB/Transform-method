@@ -1,11 +1,11 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
-import { BookOpen, Download, Gift, PhoneCall, Sparkles } from 'lucide-react';
+import { BookOpen, Download, Gift, Unlock, Sparkles } from 'lucide-react';
 import ContactSection from './ContactSection.jsx';
 
 const EbooksPage = () => {
-  const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/new-meeting';
+  const STRIPE_COMPLETE_GUIDES_LINK = 'https://buy.stripe.com/aFa7sKfUb2ML79R9pr1Jm0G';
 
   const freeEbooks = [
     {
@@ -141,7 +141,7 @@ const EbooksPage = () => {
           </div>
           <h2 className="text-3xl font-bold text-white mb-2">Complete Guides</h2>
           <p className="text-lg text-[#9fb6a8] max-w-2xl mx-auto">
-            The full, in-depth version of each topic — given directly to coaching clients. Curious what's inside? Book a free call and I'll walk you through it.
+            The full, in-depth version of every topic — get all 5 Complete Guides in one purchase for <span className="text-[#49c274] font-semibold">$47.90</span>, delivered instantly as PDFs.
           </p>
         </div>
 
@@ -154,13 +154,13 @@ const EbooksPage = () => {
               </CardHeader>
               <CardFooter className="mt-auto">
                 <a
-                  href={CALENDLY_LINK}
+                  href={STRIPE_COMPLETE_GUIDES_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-[#2e9e4f] text-[#49c274] hover:bg-[#2e9e4f]/10 font-semibold py-2.5 px-4 text-sm transition-colors"
                 >
-                  <PhoneCall className="w-4 h-4" />
-                  Book a Call
+                  <Unlock className="w-4 h-4" />
+                  Get All 5 — $47.90
                 </a>
               </CardFooter>
             </Card>
@@ -181,7 +181,7 @@ const EbooksPage = () => {
 
             <div>
               <h3 className="font-semibold text-lg mb-2 text-white">What's the difference between the free and complete versions?</h3>
-              <p className="text-[#9fb6a8]">The free guides give you the core framework for each topic. The complete guides go much deeper, with the full system, and are given to coaching clients — book a call if you want one.</p>
+              <p className="text-[#9fb6a8]">The free guides give you the core framework for each topic. The complete guides go much deeper, with the full system — get all 5 in one purchase for instant access.</p>
             </div>
 
             <div>
