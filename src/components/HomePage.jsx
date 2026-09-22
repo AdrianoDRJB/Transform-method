@@ -9,8 +9,6 @@ import ContactSection from './ContactSection.jsx'
 function HomePage() {
   const [viewMode, setViewMode] = useState('detailed') // 'detailed' or 'phases'
 
-  const GUMROAD_STARTER_KIT = 'https://adrianonutrition.gumroad.com/l/starter-kit'
-
   const transformSteps = [
     { letter: 'T', title: 'Track Your Reality', description: 'Understand where you are before you can change where you\'re going.' },
     { letter: 'R', title: 'Redesign Your Environment', description: 'Shape your surroundings to support your desired habits.' },
@@ -29,28 +27,28 @@ function HomePage() {
       title: 'Understand Your Current Reality',
       description: 'Complete assessment, identify patterns, and analyze data',
       steps: ['T'],
-      color: 'from-blue-600 to-blue-700'
+      color: 'from-[#2e9e4f] to-[#1b5e3a]'
     },
     {
       phase: 'DESIGN',
       title: 'Create Your Personalized Plan',
       description: 'Environment redesign, obstacle strategies, and custom action plan',
       steps: ['R', 'N'],
-      color: 'from-green-600 to-green-700'
+      color: 'from-emerald-600 to-[#1b5e3a]'
     },
     {
       phase: 'IMPLEMENT',
       title: 'Put Systems Into Practice',
       description: 'Daily micro-habits, habit stacking, and systems focus',
       steps: ['A', 'S', 'F'],
-      color: 'from-orange-600 to-orange-700'
+      color: 'from-emerald-500 to-emerald-600'
     },
     {
       phase: 'TRANSFORM',
       title: 'Evolve and Consolidate Changes',
       description: 'Continuous optimization, identity shift, and permanent maintenance',
       steps: ['O', 'R', 'M'],
-      color: 'from-purple-600 to-purple-700'
+      color: 'from-[#1b5e3a] to-[#0f3f26]'
     }
   ]
 
@@ -88,7 +86,7 @@ function HomePage() {
           </span>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6">
-            I lost <span className="text-yellow-400">84 lbs of fat.</span><br />
+            I lost <span className="text-[#49c274]">84 lbs of fat.</span><br />
             Rebuilt my body.<br />
             Rebuilt my life.
           </h1>
@@ -102,29 +100,27 @@ function HomePage() {
             Nutrition Student (3rd year) • Precision Nutrition Certified • Change Psychology Specialist
           </p>
 
-          {/* Gumroad Starter Kit CTA - THE ONLY CTA */}
-          <div className="bg-black/50 backdrop-blur-md border-2 border-yellow-400 rounded-2xl p-6 mb-8 max-w-md mx-auto">
-            <p className="text-yellow-400 font-bold text-sm uppercase tracking-wider mb-1">Free Starter Kit</p>
-            <h3 className="text-white font-bold text-xl mb-2">The TRANSFORM Method Starter Kit</h3>
+          {/* Free eBooks CTA - THE ONLY CTA */}
+          <div className="bg-black/50 backdrop-blur-md border-2 border-[#49c274] rounded-2xl p-6 mb-8 max-w-md mx-auto">
+            <p className="text-[#49c274] font-bold text-sm uppercase tracking-wider mb-1">Free eBooks</p>
+            <h3 className="text-white font-bold text-xl mb-2">5 Free TRANSFORM Method Guides</h3>
             <p className="text-white/70 text-sm mb-5">The exact system I used to lose 84 lbs and transform my life. Free download — no credit card required.</p>
-            <a
-              href={GUMROAD_STARTER_KIT}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-6 rounded-xl transition-all text-center text-lg"
+            <Link
+              to="/ebooks"
+              className="block w-full bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-bold py-3 px-6 rounded-xl transition-all text-center text-lg"
             >
               <span className="inline-flex items-center gap-2">
                 <Gift className="h-5 w-5" />
-                Get Your Free Starter Kit
+                Get the Free eBooks
               </span>
-            </a>
-            <p className="text-white/40 text-xs mt-3">100% free. Instant access via Gumroad.</p>
+            </Link>
+            <p className="text-white/40 text-xs mt-3">100% free. Instant download.</p>
           </div>
 
           {/* Secondary CTA - Path to paid coaching, for people who already know they want a coach */}
           <p className="text-white/80 text-sm">
             Already know you want a coach?{' '}
-            <Link to="/plans" className="underline underline-offset-4 font-semibold text-yellow-400 hover:text-yellow-300">
+            <Link to="/plans" className="underline underline-offset-4 font-semibold text-[#49c274] hover:text-[#5dcf85]">
               See coaching plans &amp; book a free call →
             </Link>
           </p>
@@ -134,7 +130,7 @@ function HomePage() {
     {/* Paula Testimonial - Quick Social Proof */}
     <div className="bg-black py-10 px-4">
       <div className="max-w-4xl mx-auto">
-        <p className="text-yellow-400 text-center text-sm font-bold uppercase tracking-widest mb-8">Real Results. Real People.</p>
+        <p className="text-[#49c274] text-center text-sm font-bold uppercase tracking-widest mb-8">Real Results. Real People.</p>
         <div className="flex flex-col md:flex-row items-center gap-8 bg-white/5 border border-white/10 rounded-2xl p-6 md:p-10">
           <div className="w-full md:w-1/2 flex-shrink-0">
             <img
@@ -145,7 +141,7 @@ function HomePage() {
           </div>
           <div className="flex-1 text-white">
             <h3 className="text-2xl font-black mb-1">Paula, 38</h3>
-            <p className="text-yellow-400 text-sm font-semibold mb-4">Mom of 2 · Esthetician · Entrepreneur</p>
+            <p className="text-[#49c274] text-sm font-semibold mb-4">Mom of 2 · Esthetician · Entrepreneur</p>
             <p className="text-white/80 text-base leading-relaxed">
               She used a busy life as an excuse for years. Two kids, a business, no time — sound familiar?
               <br /><br />
@@ -162,20 +158,20 @@ function HomePage() {
       {/* Benefits Section */}
       <div className="flex flex-col gap-4 mb-20">
         {benefits.map((benefit, index) => (
-          <Card 
-            key={index} 
-            className={`border-2 hover:border-blue-500 transition-all hover:shadow-lg ${
+          <Card
+            key={index}
+            className={`border-2 hover:border-[#2e9e4f] transition-all hover:shadow-lg ${
               benefit.clickable ? 'cursor-pointer' : ''
             }`}
             onClick={benefit.clickable ? scrollToTransformations : undefined}
           >
             <CardContent className="flex items-center gap-5 py-5">
-              <div className="bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 p-3 rounded-lg flex-shrink-0">
-                <benefit.icon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+              <div className="bg-[#2e9e4f]/15 p-3 rounded-lg flex-shrink-0">
+                <benefit.icon className="h-6 w-6 text-[#49c274]" />
               </div>
               <div>
-                <p className="font-bold text-base text-gray-900 dark:text-white">{benefit.title}</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">{benefit.description}</p>
+                <p className="font-bold text-base text-white">{benefit.title}</p>
+                <p className="text-sm text-muted-foreground mt-0.5">{benefit.description}</p>
               </div>
             </CardContent>
           </Card>
@@ -185,10 +181,10 @@ function HomePage() {
       {/* TRANSFORM Method Section */}
       <div className="mb-20">
         <div className="text-center mb-8">
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold mb-4 text-white">
             The TRANSFORM Method
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-6">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
             A complete system designed to guide you through your transformation journey
           </p>
           
@@ -198,8 +194,8 @@ function HomePage() {
               onClick={() => setViewMode('detailed')}
               className={`px-6 py-3 rounded-lg font-medium transition-all ${
                 viewMode === 'detailed'
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? 'bg-gradient-to-r from-[#2e9e4f] to-[#1b5e3a] text-white shadow-lg'
+                  : 'bg-white/10 text-gray-200 hover:bg-white/15'
               }`}
             >
               9 Detailed Steps
@@ -208,8 +204,8 @@ function HomePage() {
               onClick={() => setViewMode('phases')}
               className={`px-6 py-3 rounded-lg font-medium transition-all ${
                 viewMode === 'phases'
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? 'bg-gradient-to-r from-[#2e9e4f] to-[#1b5e3a] text-white shadow-lg'
+                  : 'bg-white/10 text-gray-200 hover:bg-white/15'
               }`}
             >
               4 Implementation Phases
@@ -224,7 +220,7 @@ function HomePage() {
               <Card key={index} className="group hover:shadow-xl transition-all hover:-translate-y-1">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-2">
-                    <div className="bg-gradient-to-br from-blue-600 to-purple-600 text-white font-bold text-2xl w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="bg-gradient-to-br from-[#2e9e4f] to-[#1b5e3a] text-white font-bold text-2xl w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                       {step.letter}
                     </div>
                     <CardTitle className="text-lg">{step.title}</CardTitle>
@@ -262,10 +258,10 @@ function HomePage() {
                     
                     {/* Phase Content */}
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      <h3 className="text-2xl font-bold text-white mb-2">
                         {phase.title}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-400 text-lg">
+                      <p className="text-muted-foreground text-lg">
                         {phase.description}
                       </p>
                     </div>
@@ -287,38 +283,38 @@ function HomePage() {
       {/* Free Tools CTA - Secondary, subtle */}
       <div className="mb-20">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+          <h2 className="text-3xl font-bold mb-4 text-white">
             Free Tools
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Start building better habits today with our free nutrition tools
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="border-2 hover:border-blue-500 transition-all hover:shadow-lg">
+          <Card className="border-2 hover:border-[#2e9e4f] transition-all hover:shadow-lg">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-3">
-                <Zap className="h-6 w-6 text-blue-600" />
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Macro Tracker</h3>
+                <Zap className="h-6 w-6 text-[#49c274]" />
+                <h3 className="text-xl font-bold text-white">Macro Tracker</h3>
               </div>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-muted-foreground mb-4">
                 Track your nutrition with our integrated USDA food database. Access 350,000+ foods.
               </p>
-              <a href="/tracker" className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center gap-1">
+              <a href="/tracker" className="text-[#49c274] hover:text-[#3fae67] font-medium inline-flex items-center gap-1">
                 Try it free <ArrowRight className="h-4 w-4" />
               </a>
             </CardContent>
           </Card>
-          <Card className="border-2 hover:border-blue-500 transition-all hover:shadow-lg">
+          <Card className="border-2 hover:border-[#2e9e4f] transition-all hover:shadow-lg">
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-3">
-                <Target className="h-6 w-6 text-blue-600" />
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Calorie Calculator</h3>
+                <Target className="h-6 w-6 text-[#49c274]" />
+                <h3 className="text-xl font-bold text-white">Calorie Calculator</h3>
               </div>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-muted-foreground mb-4">
                 Calculate your daily calorie needs based on your goals, activity level, and body composition.
               </p>
-              <a href="/calculator" className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center gap-1">
+              <a href="/calculator" className="text-[#49c274] hover:text-[#3fae67] font-medium inline-flex items-center gap-1">
                 Calculate now <ArrowRight className="h-4 w-4" />
               </a>
             </CardContent>
@@ -328,42 +324,40 @@ function HomePage() {
 
       {/* Testimonial Section */}
       <div className="text-center mb-20">
-        <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+        <h2 className="text-3xl font-bold mb-8 text-white">
           A Journey of Transformation
         </h2>
         <Card className="max-w-4xl mx-auto">
           <CardContent className="p-8">
-            <blockquote className="text-lg text-slate-700 dark:text-slate-300 italic mb-4">
+            <blockquote className="text-lg text-slate-300 italic mb-4">
               "Eight years ago, I was 30 years old, hungover, and couldn't catch my breath tying my shoes. 
               Today, I'm sober, a consistent athlete, and competing at a national level. This method saved my life, 
               and it's built on science, not motivation."
             </blockquote>
-            <p className="font-semibold text-slate-900 dark:text-white">— The Author</p>
-            <p className="text-sm text-slate-600 dark:text-slate-400">3 years sober • National CrossFit competitor • ADHD advocate</p>
+            <p className="font-semibold text-white">— The Author</p>
+            <p className="text-sm text-muted-foreground">3 years sober • National CrossFit competitor • ADHD advocate</p>
           </CardContent>
         </Card>
       </div>
 
-      {/* Inline Gumroad CTA - Reinforcement */}
+      {/* Inline eBooks CTA - Reinforcement */}
       <div className="mb-20">
-        <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0">
+        <Card className="bg-gradient-to-r from-[#2e9e4f] to-[#1b5e3a] text-white border-0">
           <CardContent className="p-8 md:p-12 text-center">
-            <h3 className="text-2xl md:text-3xl font-bold mb-3">Get the Free TRANSFORM Method Starter Kit</h3>
-            <p className="text-blue-100 text-lg mb-6 max-w-xl mx-auto">
+            <h3 className="text-2xl md:text-3xl font-bold mb-3">Get the Free TRANSFORM Method eBooks</h3>
+            <p className="text-white/80 text-lg mb-6 max-w-xl mx-auto">
               The exact 9-step system used to lose 84 lbs and rebuild a life from scratch. No fluff, just science.
             </p>
-            <a
-              href={GUMROAD_STARTER_KIT}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-3 px-8 rounded-xl transition-all text-lg inline-flex items-center gap-2"
+            <Link
+              to="/ebooks"
+              className="bg-white hover:bg-white/90 text-[#1b5e3a] font-bold py-3 px-8 rounded-xl transition-all text-lg inline-flex items-center gap-2"
             >
               <Gift className="h-5 w-5" />
-              Get Your Free Starter Kit
-            </a>
-            <p className="mt-4 text-blue-100 text-sm">
+              Get Your Free eBooks
+            </Link>
+            <p className="mt-4 text-white/80 text-sm">
               Prefer to skip straight to coaching?{' '}
-              <Link to="/plans" className="underline underline-offset-4 font-semibold text-white hover:text-yellow-300">
+              <Link to="/plans" className="underline underline-offset-4 font-semibold text-white hover:text-white/70">
                 See plans & book a free strategy call →
               </Link>
             </p>
