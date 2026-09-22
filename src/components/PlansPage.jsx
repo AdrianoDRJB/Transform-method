@@ -44,7 +44,7 @@ const PlansPage = () => {
                 <span className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Single Session</span>
               </div>
               <h2 className="text-2xl font-bold text-white mb-2">Quick Fix</h2>
-              <p className="text-muted-foreground text-sm">One 15–20 min adjustment session. Perfect for a specific question or quick nutrition check.</p>
+              <p className="text-muted-foreground text-sm">A full 90-minute initial consultation, plus a follow-up adjustment (up to 20 min) 10–15 days later. Perfect for a specific question or a one-time nutrition check-in.</p>
             </div>
 
             <div className="mb-6">
@@ -55,19 +55,19 @@ const PlansPage = () => {
             <ul className="space-y-3 mb-8 flex-1">
               <li className="flex items-start gap-3">
                 <Check className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground text-sm">1 video call (15–20 min)</span>
+                <span className="text-muted-foreground text-sm">1 full video consultation (90 min)</span>
               </li>
               <li className="flex items-start gap-3">
                 <Check className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground text-sm">Nutrition adjustment only</span>
+                <span className="text-muted-foreground text-sm">1 follow-up adjustment call (up to 20 min), 10–15 days later</span>
               </li>
               <li className="flex items-start gap-3">
                 <Check className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground text-sm">No follow-up included</span>
+                <span className="text-muted-foreground text-sm">Nutrition adjustment only — no ongoing Q&A</span>
               </li>
               <li className="flex items-start gap-3">
                 <Check className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground text-sm">No ongoing support</span>
+                <span className="text-muted-foreground text-sm">All other benefits included only in longer plans</span>
               </li>
             </ul>
 
@@ -355,7 +355,7 @@ const PlansPage = () => {
             </div>
             <div className="bg-[#12201a] rounded-xl p-6">
               <h3 className="font-bold text-white mb-2">What about the Quick Fix option?</h3>
-              <p className="text-muted-foreground text-sm">The Quick Fix is a single 15–20 minute session for people who have a specific question or need a quick nutrition adjustment. It's not a coaching plan — it's a one-time consultation. You can purchase it directly without a strategy call.</p>
+              <p className="text-muted-foreground text-sm">The Quick Fix is a full 90-minute consultation plus a short follow-up adjustment (up to 20 minutes) 10–15 days later, for people who have a specific question or need a one-time nutrition check-in. It's not a coaching plan — there's no ongoing Q&A access, and it's not upgradable to the full benefits of the longer plans. You can purchase it directly without a strategy call.</p>
             </div>
             <div className="bg-[#12201a] rounded-xl p-6">
               <h3 className="font-bold text-white mb-2">Can I upgrade later?</h3>
