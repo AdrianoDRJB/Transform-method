@@ -44,7 +44,7 @@ const PlansPage = () => {
                 <span className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Single Session</span>
               </div>
               <h2 className="text-2xl font-bold text-white mb-2">Quick Fix</h2>
-              <p className="text-muted-foreground text-sm">A full 90-minute initial consultation, plus a 20–30 min follow-up adjustment after 15 days. Perfect for a specific question or a one-time nutrition check-in.</p>
+              <p className="text-muted-foreground text-sm">A full 90-minute initial consultation, plus a follow-up adjustment (up to 20 min) 10–15 days later. Perfect for a specific question or a one-time nutrition check-in.</p>
             </div>
 
             <div className="mb-6">
@@ -59,7 +59,7 @@ const PlansPage = () => {
               </li>
               <li className="flex items-start gap-3">
                 <Check className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground text-sm">1 follow-up adjustment call (20–30 min) after 15 days</span>
+                <span className="text-muted-foreground text-sm">1 follow-up adjustment call (up to 20 min), 10–15 days later</span>
               </li>
               <li className="flex items-start gap-3">
                 <Check className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5" />
@@ -355,7 +355,7 @@ const PlansPage = () => {
             </div>
             <div className="bg-[#12201a] rounded-xl p-6">
               <h3 className="font-bold text-white mb-2">What about the Quick Fix option?</h3>
-              <p className="text-muted-foreground text-sm">The Quick Fix is a full 90-minute consultation plus a 20–30 minute follow-up adjustment after 15 days, for people who have a specific question or need a one-time nutrition check-in. It's not a coaching plan — there's no ongoing Q&A access, and it's not upgradable to the full benefits of the longer plans. You can purchase it directly without a strategy call.</p>
+              <p className="text-muted-foreground text-sm">The Quick Fix is a full 90-minute consultation plus a short follow-up adjustment (up to 20 minutes) 10–15 days later, for people who have a specific question or need a one-time nutrition check-in. It's not a coaching plan — there's no ongoing Q&A access, and it's not upgradable to the full benefits of the longer plans. You can purchase it directly without a strategy call.</p>
             </div>
             <div className="bg-[#12201a] rounded-xl p-6">
               <h3 className="font-bold text-white mb-2">Can I upgrade later?</h3>
