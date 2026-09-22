@@ -124,7 +124,7 @@ function TheIdentity() {
                   START YOUR TRANSFORMATION
                 </Button>
               </div>
-              <p className="mt-6 text-sm text-gray-400">
+              <p className="mt-6 text-sm text-muted-foreground">
                 ⚡ Only 15 spots available • 30-day trial for $1
               </p>
             </div>
@@ -162,36 +162,36 @@ function TheIdentity() {
               Created By Someone Who's<br />
               <span className="text-red-500">Lived Your Struggle</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               I lost 38kg, got sober, and competed twice at the in-person stage of the country's biggest CrossFit championship qualifier (registered for the third time). I combine the science of nutrition and training with the real-world psychological strategies that I used to overcome addiction, binge eating, and self-sabotage.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <Card className="bg-gray-900 border-gray-800 text-white">
+            <Card className="bg-gray-900 border-white/10 text-white">
               <CardHeader>
                 <CardTitle className="text-red-500">265 lbs → 220 lbs</CardTitle>
-                <CardDescription className="text-gray-400">38kg Fat Lost (Targeting ~200 lbs)</CardDescription>
+                <CardDescription className="text-muted-foreground">38kg Fat Lost (Targeting ~200 lbs)</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-300">From obese, alcoholic, and smoker to competing at the country's biggest championship</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-gray-900 border-gray-800 text-white">
+            <Card className="bg-gray-900 border-white/10 text-white">
               <CardHeader>
                 <CardTitle className="text-red-500">3 Years Sober</CardTitle>
-                <CardDescription className="text-gray-400">Addiction to Athlete</CardDescription>
+                <CardDescription className="text-muted-foreground">Addiction to Athlete</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-300">Overcame alcoholism and substance abuse through identity transformation</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-gray-900 border-gray-800 text-white">
+            <Card className="bg-gray-900 border-white/10 text-white">
               <CardHeader>
                 <CardTitle className="text-red-500">Nutrition Student</CardTitle>
-                <CardDescription className="text-gray-400">Science-Based Approach</CardDescription>
+                <CardDescription className="text-muted-foreground">Science-Based Approach</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-300">Combining academic knowledge with real-world experience</p>
@@ -226,7 +226,7 @@ function TheIdentity() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-400">{item.description}</p>
+                  <p className="text-muted-foreground">{item.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -246,7 +246,7 @@ function TheIdentity() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {bonuses.map((bonus, index) => (
-              <Card key={index} className={`${bonus.exclusive ? 'bg-gradient-to-br from-red-900 to-black border-red-500' : 'bg-gray-900 border-gray-800'}`}>
+              <Card key={index} className={`${bonus.exclusive ? 'bg-gradient-to-br from-red-900 to-black border-red-500' : 'bg-gray-900 border-white/10'}`}>
                 <CardHeader>
                   <div className="flex items-start justify-between">
                     <div className="flex items-start gap-4">
@@ -289,7 +289,7 @@ function TheIdentity() {
             <CardContent className="p-8">
               <div className="space-y-4">
                 {valueBreakdown.map((item, index) => (
-                  <div key={index} className="flex justify-between items-center py-3 border-b border-gray-800">
+                  <div key={index} className="flex justify-between items-center py-3 border-b border-white/10">
                     <span className="text-gray-300 text-lg">{item.item}</span>
                     <span className="text-white font-bold text-xl">{item.value}</span>
                   </div>
@@ -303,7 +303,7 @@ function TheIdentity() {
           </Card>
 
           <div className="text-center mt-12">
-            <p className="text-2xl text-gray-400 mb-4">
+            <p className="text-2xl text-muted-foreground mb-4">
               You're getting a complete identity transformation system, worth over <span className="text-white font-bold">$5,600</span>
             </p>
             <p className="text-3xl font-black text-red-500 mb-8">
@@ -353,15 +353,15 @@ function TheIdentity() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {/* Quarterly */}
-            <Card className="bg-black border-gray-800 hover:border-red-600 transition-all">
+            <Card className="bg-black border-white/10 hover:border-red-600 transition-all">
               <CardHeader>
                 <CardTitle className="text-white text-2xl">Quarterly</CardTitle>
-                <CardDescription className="text-gray-400">3 months + 1 FREE = 4 months total</CardDescription>
+                <CardDescription className="text-muted-foreground">3 months + 1 FREE = 4 months total</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
                   <p className="text-3xl font-black text-white mb-1">$499</p>
-                  <p className="text-gray-400 text-sm mb-1">3 months</p>
+                  <p className="text-muted-foreground text-sm mb-1">3 months</p>
                   <p className="text-green-500 text-xs font-bold mb-3">+1 MONTH FREE (Total: 4 months)</p>
                   <ul className="space-y-2 text-xs text-gray-300">
                     <li className="flex items-start gap-2">
@@ -405,12 +405,12 @@ function TheIdentity() {
               </div>
               <CardHeader>
                 <CardTitle className="text-white text-2xl">Semi-Annual</CardTitle>
-                <CardDescription className="text-gray-400">6 months + 3 FREE = 9 months total</CardDescription>
+                <CardDescription className="text-muted-foreground">6 months + 3 FREE = 9 months total</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
                   <p className="text-3xl font-black text-white mb-1">$999</p>
-                  <p className="text-gray-400 text-sm mb-1">6 months</p>
+                  <p className="text-muted-foreground text-sm mb-1">6 months</p>
                   <p className="text-green-500 text-xs font-bold mb-3">+3 MONTHS FREE (Total: 9 months)</p>
                   <ul className="space-y-2 text-xs text-gray-300">
                     <li className="flex items-start gap-2">
@@ -439,7 +439,7 @@ function TheIdentity() {
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
-                      <span className="font-bold text-yellow-400">Exclusive Cooking Videos (Chef Experience 2012-2021)</span>
+                      <span className="font-bold text-[#49c274]">Exclusive Cooking Videos (Chef Experience 2012-2021)</span>
                     </li>
                   </ul>
                 </div>
@@ -452,15 +452,15 @@ function TheIdentity() {
             </Card>
 
             {/* Annual */}
-            <Card className="bg-black border-gray-800 hover:border-red-600 transition-all">
+            <Card className="bg-black border-white/10 hover:border-red-600 transition-all">
               <CardHeader>
                 <CardTitle className="text-white text-2xl">Annual</CardTitle>
-                <CardDescription className="text-gray-400">12 months + lifetime benefits</CardDescription>
+                <CardDescription className="text-muted-foreground">12 months + lifetime benefits</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
                   <p className="text-3xl font-black text-white mb-1">$1,999</p>
-                  <p className="text-gray-400 text-sm mb-1">12 months</p>
+                  <p className="text-muted-foreground text-sm mb-1">12 months</p>
                   <p className="text-red-500 text-xs font-bold mb-3">First 3: Lifetime Benefits</p>
                   <ul className="space-y-2 text-xs text-gray-300">
                     <li className="flex items-start gap-2">
@@ -489,7 +489,7 @@ function TheIdentity() {
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
-                      <span className="font-bold text-yellow-400">Exclusive Cooking Videos (Chef Experience 2012-2021)</span>
+                      <span className="font-bold text-[#49c274]">Exclusive Cooking Videos (Chef Experience 2012-2021)</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
@@ -515,7 +515,7 @@ function TheIdentity() {
             Your New Identity<br />
             <span className="text-red-500">Is Waiting</span>
           </h2>
-          <p className="text-2xl text-gray-400 mb-12">
+          <p className="text-2xl text-muted-foreground mb-12">
             The question is, are you ready to claim it?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
