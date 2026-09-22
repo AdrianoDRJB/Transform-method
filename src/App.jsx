@@ -18,39 +18,39 @@ function AppContent() {
 
   // Normal pages with navbar and footer
   return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+      <div className="min-h-screen bg-gradient-to-br from-[#0b140f] to-[#0f1c15]">
         {/* Navigation */}
-        <nav className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav className="bg-[#0b140f]/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-white/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               {/* Logo */}
               <Link to="/" className="flex items-center space-x-2 group">
-                <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-2 rounded-lg group-hover:scale-110 transition-transform">
+                <div className="bg-gradient-to-br from-[#1b5e3a] to-[#2e9e4f] p-2 rounded-lg group-hover:scale-110 transition-transform">
                   <Dumbbell className="h-6 w-6 text-white" />
                 </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <span className="text-xl font-bold bg-gradient-to-r from-[#2e9e4f] to-[#49c274] bg-clip-text text-transparent">
                   TRANSFORM
                 </span>
               </Link>
 
               {/* Desktop Navigation */}
               <div className="flex items-center space-x-4">
-                <Link to="/" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
+                <Link to="/" className="text-slate-300 hover:text-[#49c274] transition-colors font-medium">
                   Home
                 </Link>
-                <Link to="/method" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
+                <Link to="/method" className="text-slate-300 hover:text-[#49c274] transition-colors font-medium">
                   The Method
                 </Link>
-                <Link to="/calculator" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
+                <Link to="/calculator" className="text-slate-300 hover:text-[#49c274] transition-colors font-medium">
                   Calculator
                 </Link>
-                <Link to="/tracker" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
+                <Link to="/tracker" className="text-slate-300 hover:text-[#49c274] transition-colors font-medium">
                   Macro Tracker
                 </Link>
-                <Link to="/ebooks" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
+                <Link to="/ebooks" className="text-slate-300 hover:text-[#49c274] transition-colors font-medium">
                   eBooks
                 </Link>
-                <Link to="/plans" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
+                <Link to="/plans" className="text-slate-300 hover:text-[#49c274] transition-colors font-medium">
                   Plans
                 </Link>
               </div>
@@ -58,7 +58,7 @@ function AppContent() {
               {/* Mobile menu button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="hidden p-2 rounded-md text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+                className="hidden p-2 rounded-md text-slate-300 hover:bg-white/10"
               >
                 {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -67,46 +67,46 @@ function AppContent() {
 
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
-            <div className="hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+            <div className="hidden bg-[#0b140f] border-t border-white/10">
               <div className="px-4 py-3 space-y-3">
                 <Link
                   to="/"
-                  className="block text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                  className="block text-slate-300 hover:text-[#49c274] transition-colors font-medium"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Home
                 </Link>
                 <Link
                   to="/method"
-                  className="block text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                  className="block text-slate-300 hover:text-[#49c274] transition-colors font-medium"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   The Method
                 </Link>
                 <Link
                   to="/calculator"
-                  className="block text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                  className="block text-slate-300 hover:text-[#49c274] transition-colors font-medium"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Calculator
                 </Link>
                 <Link
                   to="/tracker"
-                  className="block text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                  className="block text-slate-300 hover:text-[#49c274] transition-colors font-medium"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Macro Tracker
                 </Link>
                 <Link
                   to="/ebooks"
-                  className="block text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                  className="block text-slate-300 hover:text-[#49c274] transition-colors font-medium"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   eBooks
                 </Link>
                 <Link
                   to="/plans"
-                  className="block text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                  className="block text-slate-300 hover:text-[#49c274] transition-colors font-medium"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Plans
@@ -133,23 +133,23 @@ function AppContent() {
         </Routes>
 
         {/* Footer */}
-        <footer className="bg-slate-900 text-white mt-20">
+        <footer className="bg-[#0b140f] text-white mt-20 border-t border-white/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <div className="flex items-center space-x-2 mb-4">
-                  <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-2 rounded-lg">
+                  <div className="bg-gradient-to-br from-[#1b5e3a] to-[#2e9e4f] p-2 rounded-lg">
                     <Dumbbell className="h-5 w-5 text-white" />
                   </div>
                   <span className="text-lg font-bold">TRANSFORM</span>
                 </div>
-                <p className="text-slate-400 text-sm">
+                <p className="text-muted-foreground text-sm">
                   A science-based system for total life transformation.
                 </p>
               </div>
               <div>
                 <h3 className="font-semibold mb-4">Quick Links</h3>
-                <ul className="space-y-2 text-sm text-slate-400">
+                <ul className="space-y-2 text-sm text-muted-foreground">
                   <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
                   <li><Link to="/method" className="hover:text-white transition-colors">The Method</Link></li>
                   <li><Link to="/calculator" className="hover:text-white transition-colors">Calculator</Link></li>
@@ -158,7 +158,7 @@ function AppContent() {
               </div>
               <div>
                 <h3 className="font-semibold mb-4">Resources</h3>
-                <ul className="space-y-2 text-sm text-slate-400">
+                <ul className="space-y-2 text-sm text-muted-foreground">
                   <li><Link to="/ebooks" className="hover:text-white transition-colors">eBooks</Link></li>
                   <li><Link to="/plans" className="hover:text-white transition-colors">Plans</Link></li>
                   <li><a href="mailto:adriano.nutrition@gmail.com" className="hover:text-white transition-colors">Contact</a></li>
@@ -166,7 +166,7 @@ function AppContent() {
                 </ul>
               </div>
             </div>
-            <div className="border-t border-slate-800 mt-8 pt-8 text-center text-sm text-slate-400">
+            <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm text-muted-foreground">
               <p>&copy; 2025 The Transform Method. All rights reserved.</p>
             </div>
           </div>
