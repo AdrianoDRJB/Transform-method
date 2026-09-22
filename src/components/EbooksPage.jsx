@@ -141,7 +141,7 @@ const EbooksPage = () => {
           </div>
           <h2 className="text-3xl font-bold text-white mb-2">Complete Guides</h2>
           <p className="text-lg text-[#9fb6a8] max-w-2xl mx-auto">
-            The full, in-depth version of every topic — get all 5 Complete Guides in one purchase, delivered instantly as PDFs.
+            The full, in-depth version of every topic — get all 5 Complete Guides in one purchase for <span className="text-[#49c274] font-semibold">$47.90</span>, delivered instantly as PDFs.
           </p>
         </div>
 
@@ -160,7 +160,7 @@ const EbooksPage = () => {
                   className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-[#2e9e4f] text-[#49c274] hover:bg-[#2e9e4f]/10 font-semibold py-2.5 px-4 text-sm transition-colors"
                 >
                   <Unlock className="w-4 h-4" />
-                  Get All 5 Complete Guides
+                  Get All 5 — $47.90
                 </a>
               </CardFooter>
             </Card>
