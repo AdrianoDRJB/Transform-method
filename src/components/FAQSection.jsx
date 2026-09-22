@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent } from './ui/card';
 import { ChevronDown, ChevronUp, Gift } from 'lucide-react';
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
-
-  const GUMROAD_STARTER_KIT = 'https://adrianonutrition.gumroad.com/l/starter-kit';
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -50,7 +49,7 @@ const FAQSection = () => {
     },
     {
       question: "How do I know if I'm ready to start?",
-      answer: "You're ready when: You're tired of trying and failing, You want a real solution, not another temporary diet, You're willing to invest in yourself, You understand that transformation takes time and consistency. If you've read this far, you're already ready. The next step is simple: grab the free starter kit and see how it works."
+      answer: "You're ready when: You're tired of trying and failing, You want a real solution, not another temporary diet, You're willing to invest in yourself, You understand that transformation takes time and consistency. If you've read this far, you're already ready. The next step is simple: grab the free eBooks and see how it works."
     }
   ];
 
@@ -58,24 +57,24 @@ const FAQSection = () => {
     const isOpen = openIndex === index;
     
     return (
-      <div className="border-b border-gray-200 last:border-0">
+      <div className="border-b border-white/10 last:border-0">
         <button
           onClick={() => toggleFAQ(index)}
-          className="w-full py-5 px-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+          className="w-full py-5 px-6 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
         >
-          <h3 className="text-lg font-semibold text-gray-900 pr-8">
+          <h3 className="text-lg font-semibold text-white pr-8">
             {faq.question}
           </h3>
           {isOpen ? (
-            <ChevronUp className="w-5 h-5 text-blue-600 flex-shrink-0" />
+            <ChevronUp className="w-5 h-5 text-[#49c274] flex-shrink-0" />
           ) : (
-            <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
+            <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />
           )}
         </button>
         
         {isOpen && (
           <div className="px-6 pb-5">
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed">
               {faq.answer}
             </p>
           </div>
@@ -85,13 +84,13 @@ const FAQSection = () => {
   };
 
   return (
-    <div className="bg-gray-50 py-16">
+    <div className="bg-[#0f1c15] py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-white mb-4">
             Still Have Questions?
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-muted-foreground">
             Here are answers to the most common questions
           </p>
         </div>
@@ -104,26 +103,24 @@ const FAQSection = () => {
           </CardContent>
         </Card>
 
-        {/* Single CTA after FAQ - directs to Gumroad Starter Kit */}
+        {/* Single CTA after FAQ - directs to the free eBooks */}
         <div className="mt-12 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <h3 className="text-2xl font-bold text-white mb-4">
             Ready to Start Your Transformation?
           </h3>
-          <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-            The first step is understanding the method. Grab the free starter kit and see how it works — no commitment, no credit card.
+          <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+            The first step is understanding the method. Grab the free eBooks and see how it works — no commitment, no credit card.
           </p>
-          
-          <a
-            href={GUMROAD_STARTER_KIT}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3 text-base font-bold rounded-xl text-black bg-yellow-400 hover:bg-yellow-300 transition-all shadow-lg"
+
+          <Link
+            to="/ebooks"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3 text-base font-bold rounded-xl text-[#06140b] bg-[#2e9e4f] hover:bg-[#3fae67] transition-all shadow-lg"
           >
             <Gift className="w-5 h-5" />
-            Get the Free Starter Kit
-          </a>
-          
-          <p className="mt-6 text-sm text-gray-500">
+            Get the Free eBooks
+          </Link>
+
+          <p className="mt-6 text-sm text-muted-foreground">
             Join hundreds of people who already started their transformation.
           </p>
         </div>

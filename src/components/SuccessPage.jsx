@@ -46,25 +46,25 @@ const SuccessPage = () => {
   const details = getPlanDetails();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white py-16">
+    <div className="min-h-screen bg-[#0b140f] py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Success Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-6">
-            <CheckCircle className="w-12 h-12 text-green-600" />
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-[#2e9e4f]/15 rounded-full mb-6">
+            <CheckCircle className="w-12 h-12 text-[#49c274]" />
           </div>
           
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-white mb-4">
             🎉 Payment Successful!
           </h1>
           
           {plan && (
-            <p className="text-xl text-gray-700 mb-2">
+            <p className="text-xl text-gray-200 mb-2">
               Welcome to the <span className="font-bold text-green-600">{plan} Plan</span>
             </p>
           )}
           
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-muted-foreground">
             Your transformation journey starts now!
           </p>
         </div>
@@ -72,29 +72,29 @@ const SuccessPage = () => {
         {/* Next Steps */}
         <Card className="shadow-xl mb-8">
           <CardContent className="p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            <h2 className="text-2xl font-bold text-white mb-6 text-center">
               📋 Your Next Steps
             </h2>
             
             <div className="space-y-6">
               {/* Step 1: Schedule Call */}
-              <div className="flex items-start gap-4 p-4 bg-blue-50 rounded-lg border-2 border-blue-200">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+              <div className="flex items-start gap-4 p-4 bg-[#2e9e4f]/10 rounded-lg border-2 border-[#2e9e4f]/30">
+                <div className="flex-shrink-0 w-8 h-8 bg-[#2e9e4f] text-[#06140b] rounded-full flex items-center justify-center font-bold">
                   1
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                    <Calendar className="w-5 h-5 text-blue-600" />
+                  <h3 className="text-lg font-semibold text-white mb-2 flex items-center gap-2">
+                    <Calendar className="w-5 h-5 text-[#49c274]" />
                     Schedule Your First 1:1 Consultation
                   </h3>
-                  <p className="text-gray-700 mb-4">
+                  <p className="text-gray-200 mb-4">
                     Book your initial video call to discuss your goals, routine, and create your personalized action plan.
                   </p>
                   <a
                     href="https://calendly.com/adriano-nutrition/new-meeting"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium rounded-md transition-all shadow-lg"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-[#2e9e4f] to-[#1b5e3a] hover:from-[#3fae67] hover:to-[#1f6c43] text-white font-medium rounded-md transition-all shadow-lg"
                   >
                     Schedule Now
                     <ArrowRight className="ml-2 w-5 h-5" />
@@ -103,19 +103,19 @@ const SuccessPage = () => {
               </div>
 
               {/* Step 2: Check Email */}
-              <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                <div className="flex-shrink-0 w-8 h-8 bg-gray-600 text-white rounded-full flex items-center justify-center font-bold">
+              <div className="flex items-start gap-4 p-4 bg-white/5 rounded-lg">
+                <div className="flex-shrink-0 w-8 h-8 bg-white/20 text-white rounded-full flex items-center justify-center font-bold">
                   2
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                    <BookOpen className="w-5 h-5 text-gray-600" />
+                  <h3 className="text-lg font-semibold text-white mb-2 flex items-center gap-2">
+                    <BookOpen className="w-5 h-5 text-muted-foreground" />
                     Check Your Email
                   </h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-200">
                     You'll receive your payment receipt and welcome email with:
                   </p>
-                  <ul className="mt-2 space-y-1 text-gray-700">
+                  <ul className="mt-2 space-y-1 text-gray-200">
                     <li>• Download links for your eBooks</li>
                     <li>• Access to training materials</li>
                     <li>• Community invitation</li>
@@ -125,19 +125,19 @@ const SuccessPage = () => {
               </div>
 
               {/* Step 3: Join Community */}
-              <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                <div className="flex-shrink-0 w-8 h-8 bg-gray-600 text-white rounded-full flex items-center justify-center font-bold">
+              <div className="flex items-start gap-4 p-4 bg-white/5 rounded-lg">
+                <div className="flex-shrink-0 w-8 h-8 bg-white/20 text-white rounded-full flex items-center justify-center font-bold">
                   3
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                    <Users className="w-5 h-5 text-gray-600" />
+                  <h3 className="text-lg font-semibold text-white mb-2 flex items-center gap-2">
+                    <Users className="w-5 h-5 text-muted-foreground" />
                     Join Our Community
                   </h3>
-                  <p className="text-gray-700 mb-3">
+                  <p className="text-gray-200 mb-3">
                     Connect with other members on their transformation journey. Share wins, ask questions, and stay motivated!
                   </p>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-muted-foreground">
                     Community link will be sent to your email
                   </p>
                 </div>
@@ -149,21 +149,21 @@ const SuccessPage = () => {
         {/* Plan Details */}
         <Card className="shadow-lg mb-8">
           <CardContent className="p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
+            <h3 className="text-xl font-bold text-white mb-4 text-center">
               What's Included in Your Plan
             </h3>
             <div className="grid md:grid-cols-3 gap-4 text-center">
               <div>
-                <div className="text-2xl font-bold text-green-600 mb-1">{details.meetings}</div>
-                <p className="text-sm text-gray-600">Coaching Sessions</p>
+                <div className="text-2xl font-bold text-[#49c274] mb-1">{details.meetings}</div>
+                <p className="text-sm text-muted-foreground">Coaching Sessions</p>
               </div>
               <div>
-                <div className="text-2xl font-bold text-blue-600 mb-1">{details.ebooks}</div>
-                <p className="text-sm text-gray-600">Resources</p>
+                <div className="text-2xl font-bold text-[#49c274] mb-1">{details.ebooks}</div>
+                <p className="text-sm text-muted-foreground">Resources</p>
               </div>
               <div>
-                <div className="text-2xl font-bold text-purple-600 mb-1">{details.support}</div>
-                <p className="text-sm text-gray-600">Support Level</p>
+                <div className="text-2xl font-bold text-[#49c274] mb-1">{details.support}</div>
+                <p className="text-sm text-muted-foreground">Support Level</p>
               </div>
             </div>
           </CardContent>
@@ -179,12 +179,12 @@ const SuccessPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="https://wa.me/553299871422" 
-              target="_blank" 
+              href="https://wa.me/5532984900823"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-3 bg-white text-green-700 font-medium rounded-md hover:bg-gray-100 transition-all"
             >
-              WhatsApp: +55 32 99871422
+              WhatsApp: +55 32 98490-0823
             </a>
             <a 
               href="https://instagram.com/adriano.nutrition" 
@@ -199,10 +199,10 @@ const SuccessPage = () => {
 
         {/* Footer Message */}
         <div className="text-center mt-8">
-          <p className="text-gray-600 italic">
+          <p className="text-muted-foreground italic">
             "Your transformation starts with a decision. You just made it. Now let's make it happen together."
           </p>
-          <p className="text-gray-800 font-semibold mt-2">
+          <p className="text-gray-100 font-semibold mt-2">
             - Adriano Monteiro
           </p>
         </div>
