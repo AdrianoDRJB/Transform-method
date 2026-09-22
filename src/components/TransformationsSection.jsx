@@ -4,14 +4,14 @@ import { Award, TrendingUp } from 'lucide-react';
 
 const TransformationsSection = () => {
   return (
-    <div id="transformations-section" className="bg-gradient-to-b from-gray-50 to-white py-20">
+    <div id="transformations-section" className="bg-gradient-to-b from-[#0f1c15] to-[#0b140f] py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-white mb-4">
             Real Science, Real Results
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Evidence-based approach backed by education and proven through real-world transformations
           </p>
         </div>
@@ -19,34 +19,34 @@ const TransformationsSection = () => {
         {/* Certifications */}
         <div className="mb-20">
           <div className="flex items-center justify-center mb-8">
-            <Award className="w-6 h-6 text-blue-600 mr-2" />
-            <h3 className="text-2xl font-bold text-gray-900">Education & Certifications</h3>
+            <Award className="w-6 h-6 text-[#49c274] mr-2" />
+            <h3 className="text-2xl font-bold text-white">Education & Certifications</h3>
           </div>
           
           <Card className="max-w-4xl mx-auto">
             <CardContent className="p-8">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h4 className="text-xl font-semibold text-gray-900 mb-4">Academic Background</h4>
-                  <ul className="space-y-3 text-gray-700">
+                  <h4 className="text-xl font-semibold text-white mb-4">Academic Background</h4>
+                  <ul className="space-y-3 text-gray-200">
                     <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">•</span>
+                      <span className="text-[#49c274] mr-2">•</span>
                       <span><strong>Nutrition Student</strong> - 3rd Year University</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">•</span>
+                      <span className="text-[#49c274] mr-2">•</span>
                       <span><strong>Precision Nutrition Level 1</strong> Certified Coach</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">•</span>
+                      <span className="text-[#49c274] mr-2">•</span>
                       <span><strong>Change Psychology Specialist</strong> - Advanced Certificate</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">•</span>
+                      <span className="text-[#49c274] mr-2">•</span>
                       <span><strong>Metabolism & Nutrition</strong> Specialist</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-blue-600 mr-2">•</span>
+                      <span className="text-[#49c274] mr-2">•</span>
                       <span><strong>Plant-Based Nutrition</strong> Coach Certified</span>
                     </li>
                   </ul>
@@ -66,8 +66,8 @@ const TransformationsSection = () => {
         {/* Transformations */}
         <div id="proven-transformations">
           <div className="flex items-center justify-center mb-8">
-            <TrendingUp className="w-6 h-6 text-purple-600 mr-2" />
-            <h3 className="text-2xl font-bold text-gray-900">Proven Transformations</h3>
+            <TrendingUp className="w-6 h-6 text-[#49c274] mr-2" />
+            <h3 className="text-2xl font-bold text-white">Proven Transformations</h3>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -80,8 +80,8 @@ const TransformationsSection = () => {
                   className="w-full h-auto object-cover"
                 />
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">My Journey</h4>
-                  <p className="text-gray-600">
+                  <h4 className="text-lg font-semibold text-white mb-2">My Journey</h4>
+                  <p className="text-muted-foreground">
                     From 30 years old, hungover, and struggling to tie my shoes to 3 years sober, 
                     competing at national CrossFit level. Science-based transformation works.
                   </p>
@@ -98,8 +98,8 @@ const TransformationsSection = () => {
                   className="w-full h-auto object-cover"
                 />
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Client Success</h4>
-                  <p className="text-gray-600">
+                  <h4 className="text-lg font-semibold text-white mb-2">Client Success</h4>
+                  <p className="text-muted-foreground">
                     Incredible transformation through sustainable nutrition and consistent habits. 
                     Real results from science-based coaching.
                   </p>
@@ -116,8 +116,8 @@ const TransformationsSection = () => {
                   className="w-full h-auto object-cover"
                 />
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Client Success</h4>
-                  <p className="text-gray-600">
+                  <h4 className="text-lg font-semibold text-white mb-2">Client Success</h4>
+                  <p className="text-muted-foreground">
                     30+ kg lost through consistent application of the Transform Method. 
                     Real results from real science.
                   </p>
@@ -134,8 +134,8 @@ const TransformationsSection = () => {
                   className="w-full h-auto object-cover"
                 />
                 <div className="p-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Paula, 38</h4>
-                  <p className="text-gray-600">
+                  <h4 className="text-lg font-semibold text-white mb-2">Paula, 38</h4>
+                  <p className="text-muted-foreground">
                     Mom of 2, entrepreneur. Used a busy life as an excuse — until she learned the process. 
                     Now she trains CrossFit and lifts weights consistently.
                   </p>
