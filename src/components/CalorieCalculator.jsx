@@ -131,14 +131,14 @@ function CalorieCalculator() {
       {/* Header */}
       <div className="text-center mb-12">
         <div className="inline-block mb-4">
-          <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+          <span className="bg-gradient-to-r from-[#2e9e4f] to-[#1b5e3a] text-white px-4 py-2 rounded-full text-sm font-semibold">
             Free Tool
           </span>
         </div>
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
           Calorie & Macro Calculator
         </h1>
-        <p className="text-xl text-slate-600 dark:text-slate-400 mb-4 max-w-3xl mx-auto">
+        <p className="text-xl text-muted-foreground mb-4 max-w-3xl mx-auto">
           Get personalized nutrition targets based on your goals and body composition
         </p>
       </div>
@@ -149,7 +149,7 @@ function CalorieCalculator() {
           <Card>
             <CardHeader>
               <div className="flex items-center gap-2 mb-2">
-                <Calculator className="h-5 w-5 text-blue-600" />
+                <Calculator className="h-5 w-5 text-[#49c274]" />
                 <CardTitle>Calorie & Macro Calculator</CardTitle>
               </div>
               <CardDescription>
@@ -165,8 +165,8 @@ function CalorieCalculator() {
                     type="button"
                     onClick={() => setUnitSystem('metric')}
                     className={unitSystem === 'metric' 
-                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white' 
-                      : 'bg-slate-200 text-slate-700 hover:bg-slate-300'}
+                      ? 'bg-gradient-to-r from-[#2e9e4f] to-[#1b5e3a] hover:from-[#3fae67] hover:to-[#1f6c43] text-white' 
+                      : 'bg-white/10 text-white hover:bg-white/20'}
                   >
                     Metric (kg, cm)
                   </Button>
@@ -174,8 +174,8 @@ function CalorieCalculator() {
                     type="button"
                     onClick={() => setUnitSystem('imperial')}
                     className={unitSystem === 'imperial' 
-                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white' 
-                      : 'bg-slate-200 text-slate-700 hover:bg-slate-300'}
+                      ? 'bg-gradient-to-r from-[#2e9e4f] to-[#1b5e3a] hover:from-[#3fae67] hover:to-[#1f6c43] text-white' 
+                      : 'bg-white/10 text-white hover:bg-white/20'}
                   >
                     Imperial (lbs, ft)
                   </Button>
@@ -282,13 +282,13 @@ function CalorieCalculator() {
                     <option key={key} value={key}>{label}</option>
                   ))}
                 </select>
-                <p className="text-xs text-slate-500 mt-1">Recommended for most people</p>
+                <p className="text-xs text-muted-foreground mt-1">Recommended for most people</p>
               </div>
 
               {/* Calculate Button */}
               <Button
                 onClick={calculateCalories}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg py-6"
+                className="w-full bg-gradient-to-r from-[#2e9e4f] to-[#1b5e3a] hover:from-[#3fae67] hover:to-[#1f6c43] text-white text-lg py-6"
               >
                 Calculate Macros
               </Button>
@@ -301,7 +301,7 @@ function CalorieCalculator() {
           {results ? (
             <>
               {/* Daily Calories */}
-              <Card className="border-2 border-blue-500">
+              <Card className="border-2 border-[#2e9e4f]">
                 <CardHeader>
                   <div className="flex items-center gap-2">
                     <Flame className="h-5 w-5 text-orange-600" />
@@ -309,19 +309,19 @@ function CalorieCalculator() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-4xl font-bold text-blue-600 mb-2">
+                  <div className="text-4xl font-bold text-[#49c274] mb-2">
                     {results.targetCalories}
                   </div>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                  <p className="text-sm text-muted-foreground">
                     calories per day
                   </p>
                   <div className="mt-4 pt-4 border-t space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-slate-600">BMR:</span>
+                      <span className="text-muted-foreground">BMR:</span>
                       <span className="font-semibold">{results.bmr} cal</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-600">TDEE:</span>
+                      <span className="text-muted-foreground">TDEE:</span>
                       <span className="font-semibold">{results.tdee} cal</span>
                     </div>
                   </div>
@@ -332,7 +332,7 @@ function CalorieCalculator() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center gap-2">
-                    <Target className="h-5 w-5 text-purple-600" />
+                    <Target className="h-5 w-5 text-[#3fae67]" />
                     <CardTitle>Macro Targets</CardTitle>
                   </div>
                 </CardHeader>
@@ -342,37 +342,37 @@ function CalorieCalculator() {
                       <span className="text-sm font-medium">Protein</span>
                       <span className="text-sm font-bold text-red-600">{results.protein}g</span>
                     </div>
-                    <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-2 bg-white/10 rounded-full overflow-hidden">
                       <div className="h-full bg-red-500" style={{ width: '30%' }}></div>
                     </div>
                   </div>
                   <div>
                     <div className="flex justify-between mb-2">
                       <span className="text-sm font-medium">Carbs</span>
-                      <span className="text-sm font-bold text-blue-600">{results.carbs}g</span>
+                      <span className="text-sm font-bold text-[#49c274]">{results.carbs}g</span>
                     </div>
-                    <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
-                      <div className="h-full bg-blue-500" style={{ width: '40%' }}></div>
+                    <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                      <div className="h-full bg-[#49c274]" style={{ width: '40%' }}></div>
                     </div>
                   </div>
                   <div>
                     <div className="flex justify-between mb-2">
                       <span className="text-sm font-medium">Fat</span>
-                      <span className="text-sm font-bold text-yellow-600">{results.fat}g</span>
+                      <span className="text-sm font-bold text-[#c9a227]">{results.fat}g</span>
                     </div>
-                    <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
-                      <div className="h-full bg-yellow-500" style={{ width: '30%' }}></div>
+                    <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                      <div className="h-full bg-[#c9a227]" style={{ width: '30%' }}></div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
               {/* Info Card */}
-              <Card className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-0">
+              <Card className="bg-gradient-to-r from-[#12201a] to-[#0f1c15] border-0">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-3">
-                    <TrendingUp className="h-5 w-5 text-blue-600 mt-0.5" />
-                    <div className="text-sm text-slate-700 dark:text-slate-300">
+                    <TrendingUp className="h-5 w-5 text-[#49c274] mt-0.5" />
+                    <div className="text-sm text-slate-300">
                       <p className="font-semibold mb-1">Track Your Progress</p>
                       <p>Use the Macro Tracker to log your daily food intake and stay on target!</p>
                     </div>
@@ -381,10 +381,10 @@ function CalorieCalculator() {
               </Card>
             </>
           ) : (
-            <Card className="bg-slate-50 dark:bg-slate-800">
+            <Card className="bg-[#12201a]">
               <CardContent className="p-12 text-center">
-                <Calculator className="h-12 w-12 text-slate-400 mx-auto mb-4" />
-                <p className="text-slate-600 dark:text-slate-400">
+                <Calculator className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                <p className="text-muted-foreground">
                   Fill in your information and click "Calculate Macros" to see your personalized nutrition targets
                 </p>
               </CardContent>
@@ -403,24 +403,24 @@ function CalorieCalculator() {
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                   {/* 1500 Cal Plan */}
-                  <Card className="border-2 hover:border-green-500 transition-colors">
+                  <Card className="border-2 hover:border-[#2e9e4f] transition-colors">
                     <CardContent className="p-6">
                       <div className="text-center mb-4">
                         <Flame className="h-10 w-10 text-orange-500 mx-auto mb-2" />
                         <h3 className="text-xl font-bold">1500 Calories</h3>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Fat Loss</p>
+                        <p className="text-sm text-muted-foreground mt-1">Fat Loss</p>
                       </div>
                       <div className="space-y-2 text-sm mb-4">
                         <div className="flex justify-between">
-                          <span className="text-slate-600 dark:text-slate-400">Protein:</span>
+                          <span className="text-muted-foreground">Protein:</span>
                           <span className="font-semibold">112g</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-slate-600 dark:text-slate-400">Fat:</span>
+                          <span className="text-muted-foreground">Fat:</span>
                           <span className="font-semibold">50g</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-slate-600 dark:text-slate-400">Carbs:</span>
+                          <span className="text-muted-foreground">Carbs:</span>
                           <span className="font-semibold">150g</span>
                         </div>
                       </div>
@@ -429,7 +429,7 @@ function CalorieCalculator() {
                         download
                         className="block w-full"
                       >
-                        <Button className="w-full bg-green-600 hover:bg-green-700">
+                        <Button className="w-full bg-[#2e9e4f] hover:bg-[#3fae67]">
                           Download PDF
                         </Button>
                       </a>
@@ -437,24 +437,24 @@ function CalorieCalculator() {
                   </Card>
 
                   {/* 1800 Cal Plan */}
-                  <Card className="border-2 hover:border-green-500 transition-colors">
+                  <Card className="border-2 hover:border-[#2e9e4f] transition-colors">
                     <CardContent className="p-6">
                       <div className="text-center mb-4">
                         <Flame className="h-10 w-10 text-orange-500 mx-auto mb-2" />
                         <h3 className="text-xl font-bold">1800 Calories</h3>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Moderate Loss</p>
+                        <p className="text-sm text-muted-foreground mt-1">Moderate Loss</p>
                       </div>
                       <div className="space-y-2 text-sm mb-4">
                         <div className="flex justify-between">
-                          <span className="text-slate-600 dark:text-slate-400">Protein:</span>
+                          <span className="text-muted-foreground">Protein:</span>
                           <span className="font-semibold">135g</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-slate-600 dark:text-slate-400">Fat:</span>
+                          <span className="text-muted-foreground">Fat:</span>
                           <span className="font-semibold">60g</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-slate-600 dark:text-slate-400">Carbs:</span>
+                          <span className="text-muted-foreground">Carbs:</span>
                           <span className="font-semibold">180g</span>
                         </div>
                       </div>
@@ -463,7 +463,7 @@ function CalorieCalculator() {
                         download
                         className="block w-full"
                       >
-                        <Button className="w-full bg-green-600 hover:bg-green-700">
+                        <Button className="w-full bg-[#2e9e4f] hover:bg-[#3fae67]">
                           Download PDF
                         </Button>
                       </a>
@@ -471,24 +471,24 @@ function CalorieCalculator() {
                   </Card>
 
                   {/* 2200 Cal Plan */}
-                  <Card className="border-2 hover:border-green-500 transition-colors">
+                  <Card className="border-2 hover:border-[#2e9e4f] transition-colors">
                     <CardContent className="p-6">
                       <div className="text-center mb-4">
                         <Flame className="h-10 w-10 text-orange-500 mx-auto mb-2" />
                         <h3 className="text-xl font-bold">2200 Calories</h3>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Maintenance</p>
+                        <p className="text-sm text-muted-foreground mt-1">Maintenance</p>
                       </div>
                       <div className="space-y-2 text-sm mb-4">
                         <div className="flex justify-between">
-                          <span className="text-slate-600 dark:text-slate-400">Protein:</span>
+                          <span className="text-muted-foreground">Protein:</span>
                           <span className="font-semibold">165g</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-slate-600 dark:text-slate-400">Fat:</span>
+                          <span className="text-muted-foreground">Fat:</span>
                           <span className="font-semibold">73g</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-slate-600 dark:text-slate-400">Carbs:</span>
+                          <span className="text-muted-foreground">Carbs:</span>
                           <span className="font-semibold">220g</span>
                         </div>
                       </div>
@@ -497,7 +497,7 @@ function CalorieCalculator() {
                         download
                         className="block w-full"
                       >
-                        <Button className="w-full bg-green-600 hover:bg-green-700">
+                        <Button className="w-full bg-[#2e9e4f] hover:bg-[#3fae67]">
                           Download PDF
                         </Button>
                       </a>
@@ -505,24 +505,24 @@ function CalorieCalculator() {
                   </Card>
 
                   {/* 2500 Cal Plan */}
-                  <Card className="border-2 hover:border-green-500 transition-colors">
+                  <Card className="border-2 hover:border-[#2e9e4f] transition-colors">
                     <CardContent className="p-6">
                       <div className="text-center mb-4">
                         <Flame className="h-10 w-10 text-orange-500 mx-auto mb-2" />
                         <h3 className="text-xl font-bold">2500 Calories</h3>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">Muscle Gain</p>
+                        <p className="text-sm text-muted-foreground mt-1">Muscle Gain</p>
                       </div>
                       <div className="space-y-2 text-sm mb-4">
                         <div className="flex justify-between">
-                          <span className="text-slate-600 dark:text-slate-400">Protein:</span>
+                          <span className="text-muted-foreground">Protein:</span>
                           <span className="font-semibold">188g</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-slate-600 dark:text-slate-400">Fat:</span>
+                          <span className="text-muted-foreground">Fat:</span>
                           <span className="font-semibold">83g</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-slate-600 dark:text-slate-400">Carbs:</span>
+                          <span className="text-muted-foreground">Carbs:</span>
                           <span className="font-semibold">250g</span>
                         </div>
                       </div>
@@ -531,7 +531,7 @@ function CalorieCalculator() {
                         download
                         className="block w-full"
                       >
-                        <Button className="w-full bg-green-600 hover:bg-green-700">
+                        <Button className="w-full bg-[#2e9e4f] hover:bg-[#3fae67]">
                           Download PDF
                         </Button>
                       </a>
@@ -539,8 +539,8 @@ function CalorieCalculator() {
                   </Card>
                 </div>
 
-                <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                  <p className="text-sm text-slate-700 dark:text-slate-300">
+                <div className="mt-6 p-4 bg-[#2e9e4f]/10 rounded-lg">
+                  <p className="text-sm text-slate-300">
                     <strong>Note:</strong> These meal plans use a balanced 30/30/40 macro distribution. 
                     Each plan includes instructions on how to adjust based on your carb/fat preferences while maintaining results.
                   </p>
