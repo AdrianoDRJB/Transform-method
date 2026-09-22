@@ -150,17 +150,17 @@ function MacroTracker() {
       {/* Header */}
       <div className="text-center mb-12">
         <div className="inline-block mb-4">
-          <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+          <span className="bg-gradient-to-r from-[#2e9e4f] to-[#1b5e3a] text-white px-4 py-2 rounded-full text-sm font-semibold">
             Free Tool
           </span>
         </div>
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
           Macro Tracker
         </h1>
-        <p className="text-xl text-slate-600 dark:text-slate-400 mb-4 max-w-3xl mx-auto">
+        <p className="text-xl text-muted-foreground mb-4 max-w-3xl mx-auto">
           Track your nutrition with access to 350,000+ foods from the USDA database
         </p>
-        <div className="flex items-center justify-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+        <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
           <Info className="h-4 w-4" />
           <span>All data stored locally in your browser. No registration required.</span>
         </div>
@@ -173,7 +173,7 @@ function MacroTracker() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Search className="h-5 w-5 text-blue-600" />
+                <Search className="h-5 w-5 text-[#49c274]" />
                 Search Foods
               </CardTitle>
               <CardDescription>
@@ -192,7 +192,7 @@ function MacroTracker() {
                 <Button 
                   onClick={searchFoods} 
                   disabled={isSearching || !searchQuery.trim()}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                  className="bg-gradient-to-r from-[#2e9e4f] to-[#1b5e3a] hover:from-[#3fae67] hover:to-[#1f6c43]"
                 >
                   {isSearching ? (
                     <>
@@ -216,7 +216,7 @@ function MacroTracker() {
                     return (
                       <div
                         key={index}
-                        className="p-3 border rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                        className="p-3 border rounded-lg hover:bg-white/5 transition-colors"
                       >
                         <div className="flex justify-between items-start gap-4">
                           <div className="flex-1">
@@ -224,11 +224,11 @@ function MacroTracker() {
                               {food.description || food.brandName || 'Unknown Food'}
                             </h4>
                             {food.brandOwner && (
-                              <p className="text-xs text-slate-500 dark:text-slate-400">
+                              <p className="text-xs text-muted-foreground">
                                 {food.brandOwner}
                               </p>
                             )}
-                            <div className="flex gap-4 mt-2 text-xs text-slate-600 dark:text-slate-400">
+                            <div className="flex gap-4 mt-2 text-xs text-muted-foreground">
                               <span>{Math.round(macros.calories)} cal</span>
                               <span>P: {Math.round(macros.protein)}g</span>
                               <span>C: {Math.round(macros.carbs)}g</span>
@@ -276,7 +276,7 @@ function MacroTracker() {
             </CardHeader>
             <CardContent>
               {trackedFoods.length === 0 ? (
-                <div className="text-center py-8 text-slate-500 dark:text-slate-400">
+                <div className="text-center py-8 text-muted-foreground">
                   <Drumstick className="h-12 w-12 mx-auto mb-3 opacity-50" />
                   <p>No foods tracked yet. Search and add foods to get started!</p>
                 </div>
@@ -285,13 +285,13 @@ function MacroTracker() {
                   {trackedFoods.map((food) => (
                     <div
                       key={food.id}
-                      className="p-4 border rounded-lg bg-slate-50 dark:bg-slate-800/50"
+                      className="p-4 border rounded-lg bg-slate-800/50"
                     >
                       <div className="flex justify-between items-start gap-4 mb-3">
                         <div className="flex-1">
                           <h4 className="font-semibold">{food.name}</h4>
                           {food.brand && (
-                            <p className="text-xs text-slate-500 dark:text-slate-400">
+                            <p className="text-xs text-muted-foreground">
                               {food.brand}
                             </p>
                           )}
@@ -300,7 +300,7 @@ function MacroTracker() {
                           variant="ghost"
                           size="sm"
                           onClick={() => removeFood(food.id)}
-                          className="text-red-600 hover:text-red-700 hover:bg-red-50 dark:hover:bg-red-900/20"
+                          className="text-red-600 hover:text-red-700 hover:bg-red-900/20"
                         >
                           <Trash2 className="h-4 w-4" />
                         </Button>
@@ -321,35 +321,35 @@ function MacroTracker() {
                             className="w-20 h-8 text-sm"
                           />
                         </div>
-                        <div className="text-xs text-slate-500 dark:text-slate-400">
+                        <div className="text-xs text-muted-foreground">
                           ({food.servingSize}{food.servingSizeUnit} per serving)
                         </div>
                       </div>
 
                       <div className="grid grid-cols-4 gap-2 mt-3 text-xs">
-                        <div className="text-center p-2 bg-white dark:bg-slate-900 rounded">
+                        <div className="text-center p-2 bg-slate-900 rounded">
                           <div className="font-semibold text-orange-600">
                             {Math.round(food.macros.calories * food.amount)}
                           </div>
-                          <div className="text-slate-500 dark:text-slate-400">cal</div>
+                          <div className="text-muted-foreground">cal</div>
                         </div>
-                        <div className="text-center p-2 bg-white dark:bg-slate-900 rounded">
+                        <div className="text-center p-2 bg-slate-900 rounded">
                           <div className="font-semibold text-red-600">
                             {Math.round(food.macros.protein * food.amount)}g
                           </div>
-                          <div className="text-slate-500 dark:text-slate-400">protein</div>
+                          <div className="text-muted-foreground">protein</div>
                         </div>
-                        <div className="text-center p-2 bg-white dark:bg-slate-900 rounded">
+                        <div className="text-center p-2 bg-slate-900 rounded">
                           <div className="font-semibold text-blue-600">
                             {Math.round(food.macros.carbs * food.amount)}g
                           </div>
-                          <div className="text-slate-500 dark:text-slate-400">carbs</div>
+                          <div className="text-muted-foreground">carbs</div>
                         </div>
-                        <div className="text-center p-2 bg-white dark:bg-slate-900 rounded">
+                        <div className="text-center p-2 bg-slate-900 rounded">
                           <div className="font-semibold text-yellow-600">
                             {Math.round(food.macros.fat * food.amount)}g
                           </div>
-                          <div className="text-slate-500 dark:text-slate-400">fat</div>
+                          <div className="text-muted-foreground">fat</div>
                         </div>
                       </div>
                     </div>
@@ -366,7 +366,7 @@ function MacroTracker() {
           <Card className="sticky top-20">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Target className="h-5 w-5 text-blue-600" />
+                <Target className="h-5 w-5 text-[#49c274]" />
                 Daily Goals
               </CardTitle>
               <CardDescription>Set your daily macro targets</CardDescription>
@@ -416,10 +416,10 @@ function MacroTracker() {
           </Card>
 
           {/* Daily Summary Card */}
-          <Card className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2">
+          <Card className="bg-gradient-to-br from-[#12201a] to-[#0f1c15] border-2">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-blue-600" />
+                <TrendingUp className="h-5 w-5 text-[#49c274]" />
                 Today's Summary
               </CardTitle>
             </CardHeader>
@@ -500,4 +500,3 @@ function MacroTracker() {
 }
 
 export default MacroTracker
-
