@@ -139,14 +139,14 @@ function AboutMethod() {
       {/* Hero Section */}
       <div className="text-center mb-16">
         <div className="inline-block mb-4">
-          <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+          <span className="bg-gradient-to-r from-[#2e9e4f] to-[#1b5e3a] text-white px-4 py-2 rounded-full text-sm font-semibold">
             The Complete System
           </span>
         </div>
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
           The TRANSFORM Method
         </h1>
-        <p className="text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-3xl mx-auto">
+        <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
           A nine-step, science-based system for total life transformation. Each step builds upon the last to create 
           a holistic and sustainable path to lasting change.
         </p>
@@ -157,7 +157,7 @@ function AboutMethod() {
         <h2 className="text-3xl font-bold mb-8 text-center">Built on Science</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {scienceFoundation.map((item, index) => (
-            <Card key={index} className="border-2 hover:border-blue-500 transition-all">
+            <Card key={index} className="border-2 hover:border-[#2e9e4f] transition-all">
               <CardHeader>
                 <CardTitle className="text-lg">{item.title}</CardTitle>
               </CardHeader>
@@ -176,7 +176,7 @@ function AboutMethod() {
           {methodPrinciples.map((principle, index) => (
             <Card key={index} className="overflow-hidden hover:shadow-xl transition-all">
               <div className="flex flex-col md:flex-row">
-                <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-8 md:p-12 flex items-center justify-center md:w-48">
+                <div className="bg-gradient-to-br from-[#2e9e4f] to-[#1b5e3a] p-8 md:p-12 flex items-center justify-center md:w-48">
                   <div className="text-white text-center">
                     <div className="text-6xl font-bold mb-2">{principle.letter}</div>
                     <div className="text-sm opacity-90">Step {index + 1}</div>
@@ -184,14 +184,14 @@ function AboutMethod() {
                 </div>
                 <div className="flex-1 p-6 md:p-8">
                   <h3 className="text-2xl font-bold mb-3">{principle.title}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 mb-4">{principle.description}</p>
+                  <p className="text-muted-foreground mb-4">{principle.description}</p>
                   <ul className="space-y-2">
                     {principle.details.map((detail, detailIndex) => (
                       <li key={detailIndex} className="flex items-start gap-2">
-                        <div className="bg-blue-100 dark:bg-blue-900/30 p-1 rounded mt-0.5">
-                          <ArrowRight className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                        <div className="bg-[#2e9e4f]/20 p-1 rounded mt-0.5">
+                          <ArrowRight className="h-4 w-4 text-[#49c274]" />
                         </div>
-                        <span className="text-slate-700 dark:text-slate-300">{detail}</span>
+                        <span className="text-slate-300">{detail}</span>
                       </li>
                     ))}
                   </ul>
@@ -203,17 +203,17 @@ function AboutMethod() {
       </div>
 
       {/* Why It Works */}
-      <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0 mb-20">
+      <Card className="bg-gradient-to-r from-[#2e9e4f] to-[#1b5e3a] text-white border-0 mb-20">
         <CardContent className="p-8 md:p-12">
           <div className="max-w-3xl mx-auto text-center">
             <BookOpen className="h-12 w-12 mx-auto mb-4" />
             <h2 className="text-3xl font-bold mb-4">Why This Method Works</h2>
-            <p className="text-lg text-blue-50 mb-6">
+            <p className="text-lg text-white/80 mb-6">
               The TRANSFORM Method isn't just theory—it's a proven system built on neuroscience, behavioral psychology, 
               and real-world experience. It combines the latest research on habit formation, neuroplasticity, and 
               identity-based change with practical strategies that have been tested through years of personal transformation.
             </p>
-            <p className="text-lg text-blue-50 mb-8">
+            <p className="text-lg text-white/80 mb-8">
               Unlike motivation-based approaches that fade over time, this method builds sustainable systems that work 
               with your brain's natural tendencies, making lasting change inevitable rather than impossible.
             </p>
@@ -231,19 +231,19 @@ function AboutMethod() {
           <CardContent className="p-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
               <div>
-                <div className="text-4xl font-bold text-blue-600 mb-2">8 Years</div>
-                <div className="text-slate-600 dark:text-slate-400">Of continuous refinement</div>
+                <div className="text-4xl font-bold text-[#49c274] mb-2">8 Years</div>
+                <div className="text-muted-foreground">Of continuous refinement</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-purple-600 mb-2">3 Years</div>
-                <div className="text-slate-600 dark:text-slate-400">Sober and thriving</div>
+                <div className="text-4xl font-bold text-[#49c274] mb-2">3 Years</div>
+                <div className="text-muted-foreground">Sober and thriving</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-blue-600 mb-2">44 lbs</div>
-                <div className="text-slate-600 dark:text-slate-400">Lost in first 100 days</div>
+                <div className="text-4xl font-bold text-[#49c274] mb-2">44 lbs</div>
+                <div className="text-muted-foreground">Lost in first 100 days</div>
               </div>
             </div>
-            <p className="text-slate-700 dark:text-slate-300 italic">
+            <p className="text-slate-300 italic">
               "From hungover and unable to tie my shoes without catching my breath at 30 years old, 
               to competing at a national level in CrossFit. This method saved my life."
             </p>
@@ -254,10 +254,10 @@ function AboutMethod() {
       {/* Final CTA */}
       <div className="text-center">
         <h2 className="text-3xl font-bold mb-4">Start Your Transformation Today</h2>
-        <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
           Get the complete guide with detailed strategies, scientific insights, and practical tools.
         </p>
-        <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-8">
+        <Button size="lg" className="bg-gradient-to-r from-[#2e9e4f] to-[#1b5e3a] hover:from-[#3fae67] hover:to-[#1f6c43] text-white text-lg px-8">
           Get the Book <ArrowRight className="ml-2 h-5 w-5" />
         </Button>
       </div>
@@ -269,4 +269,3 @@ function AboutMethod() {
 import { Home } from 'lucide-react'
 
 export default AboutMethod
-
