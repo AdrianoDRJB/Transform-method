@@ -33,7 +33,7 @@ const PlansPage = () => {
             <div>
               <h3 className="text-xl font-bold text-white mb-2">How It Works</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Every plan includes a <span className="text-[#49c274] font-semibold">live 60-minute assessment call</span> — 
+                Every plan includes a <span className="text-[#49c274] font-semibold">live 90-minute assessment call</span> — 
                 we'll go over your goals, your current situation, and build your personalized macro & calorie plan together. 
                 From there, pick the level of ongoing support that fits you.
               </p>
@@ -52,7 +52,7 @@ const PlansPage = () => {
                 <span className="text-sm text-muted-foreground uppercase tracking-wider font-semibold">Single Session</span>
               </div>
               <h2 className="text-2xl font-bold text-white mb-2">Quick Fix</h2>
-              <p className="text-muted-foreground text-sm">A live 60-minute assessment session with a personalized macro & calorie plan — yours to keep as a PDF. No ongoing follow-up.</p>
+              <p className="text-muted-foreground text-sm">A live 90-minute assessment session with a personalized macro & calorie plan — yours to keep as a PDF. No ongoing follow-up.</p>
             </div>
 
             <div className="mb-6">
@@ -63,7 +63,7 @@ const PlansPage = () => {
             <ul className="space-y-3 mb-8 flex-1">
               <li className="flex items-start gap-3">
                 <Check className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground text-sm">Live assessment call (60 min)</span>
+                <span className="text-muted-foreground text-sm">Live assessment call (90 min)</span>
               </li>
               <li className="flex items-start gap-3">
                 <Check className="w-4 h-4 text-muted-foreground flex-shrink-0 mt-0.5" />
@@ -109,7 +109,7 @@ const PlansPage = () => {
             <ul className="space-y-3 mb-8 flex-1">
               <li className="flex items-start gap-3">
                 <Check className="w-4 h-4 text-[#49c274] flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300 text-sm">Live assessment call (60 min)</span>
+                <span className="text-gray-300 text-sm">Live assessment call (90 min)</span>
               </li>
               <li className="flex items-start gap-3">
                 <Check className="w-4 h-4 text-[#49c274] flex-shrink-0 mt-0.5" />
@@ -179,7 +179,7 @@ const PlansPage = () => {
             <ul className="space-y-3 mb-8 flex-1">
               <li className="flex items-start gap-3">
                 <Check className="w-4 h-4 text-[#49c274] flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300 text-sm">Live assessment call (60 min)</span>
+                <span className="text-gray-300 text-sm">Live assessment call (90 min)</span>
               </li>
               <li className="flex items-start gap-3">
                 <Check className="w-4 h-4 text-[#49c274] flex-shrink-0 mt-0.5" />
@@ -245,7 +245,7 @@ const PlansPage = () => {
             <ul className="space-y-3 mb-8 flex-1">
               <li className="flex items-start gap-3">
                 <Check className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300 text-sm">Live assessment call (60 min)</span>
+                <span className="text-gray-300 text-sm">Live assessment call (90 min)</span>
               </li>
               <li className="flex items-start gap-3">
                 <Check className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5" />
@@ -369,7 +369,7 @@ const PlansPage = () => {
               <Calendar className="w-8 h-8 text-[#49c274]" />
             </div>
             <div className="text-2xl font-bold text-[#49c274] mb-2">Live Assessment Included</div>
-            <p className="text-muted-foreground text-sm">Every plan starts with a 60-minute live session</p>
+            <p className="text-muted-foreground text-sm">Every plan starts with a 90-minute live session</p>
           </div>
         </div>
 
@@ -379,7 +379,7 @@ const PlansPage = () => {
           <div className="space-y-4">
             <div className="bg-[#12201a] rounded-xl p-6">
               <h3 className="font-bold text-white mb-2">What happens after I purchase?</h3>
-              <p className="text-muted-foreground text-sm">You'll get an email to schedule your live 60-minute assessment call. From there, we build your personalized macro & calorie plan together and get started on your plan right away.</p>
+              <p className="text-muted-foreground text-sm">You'll get an email to schedule your live 90-minute assessment call. From there, we build your personalized macro & calorie plan together and get started on your plan right away.</p>
             </div>
             <div className="bg-[#12201a] rounded-xl p-6">
               <h3 className="font-bold text-white mb-2">How does billing work?</h3>
@@ -391,7 +391,7 @@ const PlansPage = () => {
             </div>
             <div className="bg-[#12201a] rounded-xl p-6">
               <h3 className="font-bold text-white mb-2">What about the Quick Fix option?</h3>
-              <p className="text-muted-foreground text-sm">The Quick Fix is a single 60-minute live assessment with a personalized macro & calorie plan you keep as a PDF. It's not a coaching plan — there's no ongoing follow-up, and it's not upgradable to the full benefits of the longer plans.</p>
+              <p className="text-muted-foreground text-sm">The Quick Fix is a single 90-minute live assessment with a personalized macro & calorie plan you keep as a PDF. It's not a coaching plan — there's no ongoing follow-up, and it's not upgradable to the full benefits of the longer plans.</p>
             </div>
             <div className="bg-[#12201a] rounded-xl p-6">
               <h3 className="font-bold text-white mb-2">Can I upgrade later?</h3>
