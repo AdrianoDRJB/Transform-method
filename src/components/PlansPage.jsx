@@ -2,14 +2,11 @@ import React from 'react';
 import { Check, Zap, Star, Crown, Clock, Calendar, ArrowRight, Shield, Users, CreditCard } from 'lucide-react';
 
 const PlansPage = () => {
-  // TODO(Adriano): replace these placeholder links with the new Stripe Payment Links
-  // for each plan once they're created. Do not reuse the old Quick Fix link — the
-  // price changed from $219 to $259.
   const STRIPE_LINKS = {
-    quickFix: '#',
-    start: '#',
-    evolve: '#',
-    elite: '#',
+    quickFix: 'https://buy.stripe.com/4gMdR80Zh3QP1Pxbxz1Jm0L',
+    start: 'https://buy.stripe.com/bJe7sK0Zhevt0Lt1WZ1Jm0I',
+    evolve: 'https://buy.stripe.com/8x28wO23l3QP3XF59b1Jm0J',
+    elite: 'https://buy.stripe.com/6oUdR89vN3QP9hZdFH1Jm0K',
   };
 
   return (
@@ -33,8 +30,8 @@ const PlansPage = () => {
             <div>
               <h3 className="text-xl font-bold text-white mb-2">How It Works</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Every plan includes a <span className="text-[#49c274] font-semibold">live 90-minute assessment call</span> — 
-                we'll go over your goals, your current situation, and build your personalized macro & calorie plan together. 
+                Every plan includes a <span className="text-[#49c274] font-semibold">live 90-minute assessment call</span> —
+                we'll go over your goals, your current situation, and build your personalized macro & calorie plan together.
                 From there, pick the level of ongoing support that fits you.
               </p>
             </div>
@@ -103,7 +100,7 @@ const PlansPage = () => {
 
             <div className="mb-6">
               <div className="text-4xl font-bold text-[#49c274]">$559<span className="text-lg text-muted-foreground font-normal">/3mo</span></div>
-              <div className="text-muted-foreground text-sm mt-1">~$186/month · billed once, upfront</div>
+              <div className="text-muted-foreground text-sm mt-1">~$186/month · recurring subscription, billed every 3 months</div>
             </div>
 
             <ul className="space-y-3 mb-8 flex-1">
@@ -169,7 +166,7 @@ const PlansPage = () => {
 
             <div className="mb-2">
               <div className="text-4xl font-bold text-[#49c274]">$1,159<span className="text-lg text-muted-foreground font-normal">/6mo</span></div>
-              <div className="text-muted-foreground text-sm mt-1">~$193/month · billed once, upfront</div>
+              <div className="text-muted-foreground text-sm mt-1">~$193/month · recurring subscription, billed every 6 months</div>
             </div>
             <div className="bg-[#2e9e4f]/10 border border-[#2e9e4f]/30 rounded-lg px-3 py-2 mb-6">
               <span className="text-[#49c274] text-sm font-bold">Best value</span>
@@ -235,7 +232,7 @@ const PlansPage = () => {
 
             <div className="mb-2">
               <div className="text-4xl font-bold text-red-400">$2,219<span className="text-lg text-muted-foreground font-normal">/yr</span></div>
-              <div className="text-muted-foreground text-sm mt-1">~$185/month · billed once, upfront</div>
+              <div className="text-muted-foreground text-sm mt-1">~$185/month · recurring subscription, billed annually</div>
             </div>
             <div className="bg-red-400/10 border border-red-400/30 rounded-lg px-3 py-2 mb-6">
               <span className="text-red-400 text-sm font-bold">Best value</span>
@@ -306,14 +303,14 @@ const PlansPage = () => {
         {/* Social Proof Section */}
         <div className="mb-12">
           <h2 className="text-3xl font-bold text-center mb-8">Real People. Real Results.</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {/* Adriano's Story */}
             <div className="bg-[#12201a] rounded-2xl p-6 border border-white/10">
               <div className="flex items-center gap-4 mb-4">
-                <img 
-                  src="/transformations/adriano-transformation.jpg" 
-                  alt="Adriano's transformation" 
+                <img
+                  src="/transformations/adriano-transformation.jpg"
+                  alt="Adriano's transformation"
                   className="w-16 h-16 rounded-full object-cover"
                 />
                 <div>
@@ -322,7 +319,7 @@ const PlansPage = () => {
                 </div>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                "Eight years ago, I was 30 years old, hungover, and couldn't catch my breath tying my shoes. 
+                "Eight years ago, I was 30 years old, hungover, and couldn't catch my breath tying my shoes.
                 Today, I'm sober, a consistent athlete, and competing at a national level. This method saved my life."
               </p>
             </div>
@@ -330,9 +327,9 @@ const PlansPage = () => {
             {/* Paula's Story */}
             <div className="bg-[#12201a] rounded-2xl p-6 border border-white/10">
               <div className="flex items-center gap-4 mb-4">
-                <img 
-                  src="/paula-rosto.jpg" 
-                  alt="Paula's transformation" 
+                <img
+                  src="/paula-rosto.jpg"
+                  alt="Paula's transformation"
                   className="w-16 h-16 rounded-full object-cover"
                 />
                 <div>
@@ -341,7 +338,7 @@ const PlansPage = () => {
                 </div>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                "I stopped waiting for the perfect moment. I just started. Now I do CrossFit and strength training 
+                "I stopped waiting for the perfect moment. I just started. Now I do CrossFit and strength training
                 consistently. Not because I have more time — because I finally understood how it works."
               </p>
             </div>
@@ -383,7 +380,7 @@ const PlansPage = () => {
             </div>
             <div className="bg-[#12201a] rounded-xl p-6">
               <h3 className="font-bold text-white mb-2">How does billing work?</h3>
-              <p className="text-muted-foreground text-sm">Plans are billed as a single upfront payment for the full term — 3, 6, or 12 months — not a recurring monthly subscription.</p>
+              <p className="text-muted-foreground text-sm">The Quick Fix is a one-time payment — no recurring charges. TRANSFORM START, EVOLVE, and ELITE are recurring subscriptions: you're billed automatically every 3, 6, or 12 months (matching your plan) until you cancel. You can cancel anytime before your next billing date.</p>
             </div>
             <div className="bg-[#12201a] rounded-xl p-6">
               <h3 className="font-bold text-white mb-2">What's the difference between the plans?</h3>
