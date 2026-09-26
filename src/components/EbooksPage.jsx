@@ -13,31 +13,31 @@ const EbooksPage = () => {
       id: 'transform-method',
       title: 'TRANSFORM Method',
       description: 'The 9-step framework in a nutshell — how nutrition, habits, mindset, and environment fit together.',
-      file: '/TRANSFORM_Method_Full_Corrected_eBook.pdf',
+      file: '/ebooks-bonus/transform-method-bonus.pdf',
     },
     {
       id: 'nutrition-fundamentals',
       title: 'Nutrition Fundamentals',
       description: 'The science-based basics — no fads, no myths, just what actually moves the needle.',
-      file: '/ebooks/nutrition_myths_guide.pdf',
+      file: '/ebooks-bonus/nutrition-fundamentals-bonus.pdf',
     },
     {
       id: 'environment-design',
       title: 'Environment Design',
       description: 'Shape your surroundings so good habits are easy and bad ones are hard.',
-      file: '/ebooks/environment_habits_mastery.pdf',
+      file: '/ebooks-bonus/environment-design-bonus.pdf',
     },
     {
       id: 'adhd-emotional-intelligence',
       title: 'ADHD & Emotional Intelligence',
       description: 'Understand your triggers and build emotional awareness, with ADHD in mind.',
-      file: '/ebooks/emotional_mastery_guide.pdf',
+      file: '/ebooks-bonus/adhd-emotional-intelligence-bonus.pdf',
     },
     {
       id: 'sleep-recovery-mental-resilience',
       title: 'Sleep, Recovery & Mental Resilience',
       description: 'Why recovery is where the real transformation happens.',
-      file: '/ebooks/building_resilient_mind.pdf',
+      file: '/ebooks-bonus/sleep-recovery-mental-resilience-bonus.pdf',
     },
   ];
 
