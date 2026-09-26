@@ -65,43 +65,45 @@ function AppContent() {
               </button>
             </div>
           </div>
-
-          {/* Mobile Navigation Overlay */}
-          {mobileMenuOpen && (
-            <div className="md:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-[#0b140f] flex flex-col overflow-y-auto">
-              <div className="flex-1 flex flex-col items-center justify-center gap-8 px-6 py-10">
-                {[
-                  { to: '/', label: 'Home' },
-                  { to: '/method', label: 'The Method' },
-                  { to: '/calculator', label: 'Calculator' },
-                  { to: '/tracker', label: 'Macro Tracker' },
-                  { to: '/ebooks', label: 'eBooks' },
-                  { to: '/plans', label: 'Plans' },
-                ].map((item) => (
-                  <Link
-                    key={item.to}
-                    to={item.to}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`text-2xl font-semibold uppercase tracking-wide transition-colors ${
-                      location.pathname === item.to ? 'text-[#49c274]' : 'text-slate-200 hover:text-[#49c274]'
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-              <div className="pb-12 text-center">
-                <Link
-                  to="/plans"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="inline-block bg-[#2e9e4f] hover:bg-[#3fae67] text-[#06140b] font-bold py-3 px-8 rounded-xl transition-all"
-                >
-                  Choose Your Plan
-                </Link>
-              </div>
-            </div>
-          )}
         </nav>
+
+        {/* Mobile Navigation Overlay (kept outside <nav> on purpose — that element has
+            backdrop-blur, which creates a new containing block for fixed-position
+            descendants and was collapsing this overlay to zero height) */}
+        {mobileMenuOpen && (
+          <div className="md:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-[#0b140f] flex flex-col overflow-y-auto">
+            <div className="flex-1 flex flex-col items-center justify-center gap-8 px-6 py-10">
+              {[
+                { to: '/', label: 'Home' },
+                { to: '/method', label: 'The Method' },
+                { to: '/calculator', label: 'Calculator' },
+                { to: '/tracker', label: 'Macro Tracker' },
+                { to: '/ebooks', label: 'eBooks' },
+                { to: '/plans', label: 'Plans' },
+              ].map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-2xl font-semibold uppercase tracking-wide transition-colors ${
+                    location.pathname === item.to ? 'text-[#49c274]' : 'text-slate-200 hover:text-[#49c274]'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+            <div className="pb-12 text-center">
+              <Link
+                to="/plans"
+                onClick={() => setMobileMenuOpen(false)}
+                className="inline-block bg-[#2e9e4f] hover:bg-[#3fae67] text-[#06140b] font-bold py-3 px-8 rounded-xl transition-all"
+              >
+                Choose Your Plan
+              </Link>
+            </div>
+          </div>
+        )}
 
         {/* Routes */}
         <Routes>
