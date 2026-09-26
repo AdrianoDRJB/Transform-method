@@ -34,7 +34,7 @@ function AppContent() {
               </Link>
 
               {/* Desktop Navigation */}
-              <div className="flex items-center space-x-4">
+              <div className="hidden md:flex items-center space-x-4">
                 <Link to="/" className="text-slate-300 hover:text-[#49c274] transition-colors font-medium">
                   Home
                 </Link>
@@ -58,58 +58,45 @@ function AppContent() {
               {/* Mobile menu button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="hidden p-2 rounded-md text-slate-300 hover:bg-white/10"
+                className="md:hidden p-2 rounded-md text-slate-300 hover:bg-white/10"
+                aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
               >
                 {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
           </div>
 
-          {/* Mobile Navigation */}
+          {/* Mobile Navigation Overlay */}
           {mobileMenuOpen && (
-            <div className="hidden bg-[#0b140f] border-t border-white/10">
-              <div className="px-4 py-3 space-y-3">
-                <Link
-                  to="/"
-                  className="block text-slate-300 hover:text-[#49c274] transition-colors font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Home
-                </Link>
-                <Link
-                  to="/method"
-                  className="block text-slate-300 hover:text-[#49c274] transition-colors font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  The Method
-                </Link>
-                <Link
-                  to="/calculator"
-                  className="block text-slate-300 hover:text-[#49c274] transition-colors font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Calculator
-                </Link>
-                <Link
-                  to="/tracker"
-                  className="block text-slate-300 hover:text-[#49c274] transition-colors font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Macro Tracker
-                </Link>
-                <Link
-                  to="/ebooks"
-                  className="block text-slate-300 hover:text-[#49c274] transition-colors font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  eBooks
-                </Link>
+            <div className="md:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-[#0b140f] flex flex-col overflow-y-auto">
+              <div className="flex-1 flex flex-col items-center justify-center gap-8 px-6 py-10">
+                {[
+                  { to: '/', label: 'Home' },
+                  { to: '/method', label: 'The Method' },
+                  { to: '/calculator', label: 'Calculator' },
+                  { to: '/tracker', label: 'Macro Tracker' },
+                  { to: '/ebooks', label: 'eBooks' },
+                  { to: '/plans', label: 'Plans' },
+                ].map((item) => (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`text-2xl font-semibold uppercase tracking-wide transition-colors ${
+                      location.pathname === item.to ? 'text-[#49c274]' : 'text-slate-200 hover:text-[#49c274]'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+              <div className="pb-12 text-center">
                 <Link
                   to="/plans"
-                  className="block text-slate-300 hover:text-[#49c274] transition-colors font-medium"
                   onClick={() => setMobileMenuOpen(false)}
+                  className="inline-block bg-[#2e9e4f] hover:bg-[#3fae67] text-[#06140b] font-bold py-3 px-8 rounded-xl transition-all"
                 >
-                  Plans
+                  Choose Your Plan
                 </Link>
               </div>
             </div>
