@@ -9,6 +9,13 @@ import ContactSection from './ContactSection.jsx'
 function HomePage() {
   const [viewMode, setViewMode] = useState('detailed') // 'detailed' or 'phases'
 
+  const homePlans = [
+    { name: 'Quick Fix', tag: 'Single Session', price: '$259', period: 'one-time payment', cta: 'Buy Now', link: 'https://buy.stripe.com/4gMdR80Zh3QP1Pxbxz1Jm0L' },
+    { name: 'TRANSFORM START', tag: '3 Months', price: '$559', period: 'billed every 3 months', cta: 'Get Started', link: 'https://buy.stripe.com/bJe7sK0Zhevt0Lt1WZ1Jm0I' },
+    { name: 'TRANSFORM EVOLVE', tag: '6 Months', price: '$1,159', period: 'billed every 6 months', cta: 'Get Started', link: 'https://buy.stripe.com/8x28wO23l3QP3XF59b1Jm0J', highlight: true },
+    { name: 'TRANSFORM ELITE', tag: '12 Months', price: '$2,219', period: 'billed annually', cta: 'Get Started', link: 'https://buy.stripe.com/6oUdR89vN3QP9hZdFH1Jm0K' },
+  ]
+
   const transformSteps = [
     { letter: 'T', title: 'Track Your Reality', description: 'Understand where you are before you can change where you\'re going.' },
     { letter: 'R', title: 'Redesign Your Environment', description: 'Shape your surroundings to support your desired habits.' },
@@ -365,6 +372,55 @@ function HomePage() {
         </Card>
       </div>
 
+    </div>
+
+    {/* Plans Preview Section */}
+    <div className="bg-black py-16 px-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+            Choose Your <span className="text-[#49c274]">Transformation</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            From a single assessment to a full year of coaching — pick the level of support that fits you.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          {homePlans.map((plan) => (
+            <div
+              key={plan.name}
+              className={`relative rounded-2xl p-6 bg-[#12201a] border flex flex-col ${
+                plan.highlight ? 'border-2 border-[#2e9e4f] shadow-xl shadow-[#2e9e4f]/20' : 'border-white/10'
+              }`}
+            >
+              {plan.highlight && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#2e9e4f] text-[#06140b] px-3 py-1 rounded-full text-xs font-bold">
+                  MOST POPULAR
+                </div>
+              )}
+              <span className="text-xs uppercase tracking-wider text-[#49c274] font-semibold mb-2">{plan.tag}</span>
+              <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
+              <div className="text-3xl font-bold text-white mb-1">{plan.price}</div>
+              <p className="text-sm text-muted-foreground mb-6">{plan.period}</p>
+              <a
+                href={plan.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto w-full text-center py-2.5 px-4 rounded-xl bg-[#2e9e4f] hover:bg-[#3fae67] text-[#06140b] font-bold transition-all"
+              >
+                {plan.cta}
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <Link to="/plans" className="text-[#49c274] hover:text-[#5dcf85] font-semibold inline-flex items-center gap-1">
+            See full plan details &amp; FAQ <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </div>
     </div>
 
     {/* FAQ Section */}
