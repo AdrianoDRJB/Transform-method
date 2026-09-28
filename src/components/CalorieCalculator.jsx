@@ -200,11 +200,11 @@ function CalorieCalculator() {
                     id="gender"
                     value={formData.gender}
                     onChange={(e) => handleInputChange('gender', e.target.value)}
-                    className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                    className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm text-white shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
                   >
-                    <option value="">Select gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
+                    <option className="bg-white text-black" value="">Select gender</option>
+                    <option className="bg-white text-black" value="male">Male</option>
+                    <option className="bg-white text-black" value="female">Female</option>
                   </select>
                 </div>
               </div>
@@ -244,11 +244,11 @@ function CalorieCalculator() {
                   id="activity"
                   value={formData.activityLevel}
                   onChange={(e) => handleInputChange('activityLevel', e.target.value)}
-                  className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                  className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm text-white shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                  <option value="">Select activity level</option>
+                  <option className="bg-white text-black" value="">Select activity level</option>
                   {Object.entries(activityLevels).map(([key, { label }]) => (
-                    <option key={key} value={key}>{label}</option>
+                    <option className="bg-white text-black" key={key} value={key}>{label}</option>
                   ))}
                 </select>
               </div>
@@ -260,11 +260,11 @@ function CalorieCalculator() {
                   id="goal"
                   value={formData.goal}
                   onChange={(e) => handleInputChange('goal', e.target.value)}
-                  className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                  className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm text-white shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                  <option value="">Select your goal</option>
+                  <option className="bg-white text-black" value="">Select your goal</option>
                   {Object.entries(goals).map(([key, { label }]) => (
-                    <option key={key} value={key}>{label}</option>
+                    <option className="bg-white text-black" key={key} value={key}>{label}</option>
                   ))}
                 </select>
               </div>
@@ -276,10 +276,10 @@ function CalorieCalculator() {
                   id="formula"
                   value={formData.formula}
                   onChange={(e) => handleInputChange('formula', e.target.value)}
-                  className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                  className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm text-white shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   {Object.entries(formulas).map(([key, { label }]) => (
-                    <option key={key} value={key}>{label}</option>
+                    <option className="bg-white text-black" key={key} value={key}>{label}</option>
                   ))}
                 </select>
                 <p className="text-xs text-muted-foreground mt-1">Recommended for most people</p>
