@@ -6,65 +6,38 @@ import ContactSection from './ContactSection.jsx';
 
 const EbooksPage = () => {
   const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/new-meeting';
+  const EBOOKS_KIT_LINK = 'https://buy.stripe.com/aFa7sKfUb2ML79R9pr1Jm0G';
 
   const freeEbooks = [
     {
       id: 'transform-method',
       title: 'TRANSFORM Method',
       description: 'The 9-step framework in a nutshell — how nutrition, habits, mindset, and environment fit together.',
-      file: '/ebooks-free/transform-method.pdf',
+      file: '/ebooks-bonus/transform-method-bonus.pdf',
     },
     {
       id: 'nutrition-fundamentals',
       title: 'Nutrition Fundamentals',
       description: 'The science-based basics — no fads, no myths, just what actually moves the needle.',
-      file: '/ebooks-free/nutrition-fundamentals.pdf',
+      file: '/ebooks-bonus/nutrition-fundamentals-bonus.pdf',
     },
     {
       id: 'environment-design',
       title: 'Environment Design',
       description: 'Shape your surroundings so good habits are easy and bad ones are hard.',
-      file: '/ebooks-free/environment-design.pdf',
+      file: '/ebooks-bonus/environment-design-bonus.pdf',
     },
     {
       id: 'adhd-emotional-intelligence',
       title: 'ADHD & Emotional Intelligence',
       description: 'Understand your triggers and build emotional awareness, with ADHD in mind.',
-      file: '/ebooks-free/adhd-emotional-intelligence.pdf',
+      file: '/ebooks-bonus/adhd-emotional-intelligence-bonus.pdf',
     },
     {
       id: 'sleep-recovery-mental-resilience',
       title: 'Sleep, Recovery & Mental Resilience',
       description: 'Why recovery is where the real transformation happens.',
-      file: '/ebooks-free/sleep-recovery-mental-resilience.pdf',
-    },
-  ];
-
-  const completeGuides = [
-    {
-      id: 'transform-method-complete',
-      title: 'TRANSFORM Method — Complete Guide',
-      description: 'The full framework, step by step. Every principle, every phase, every tool.',
-    },
-    {
-      id: 'nutrition-fundamentals-complete',
-      title: 'Nutrition Fundamentals — Complete Guide',
-      description: 'The deep-dive version: full science, meal strategy, and practical application.',
-    },
-    {
-      id: 'environment-design-complete',
-      title: 'Environment Design — Complete Guide',
-      description: 'A full system for redesigning your environment around lasting habits.',
-    },
-    {
-      id: 'emotional-intelligence-complete',
-      title: 'Emotional Intelligence — Complete Guide',
-      description: 'Master your triggers, your self-talk, and your emotional regulation.',
-    },
-    {
-      id: 'sleep-recovery-mental-resilience-complete',
-      title: 'Sleep, Recovery & Mental Resilience — Complete Guide',
-      description: 'The complete recovery framework — sleep, stress, and mental resilience.',
+      file: '/ebooks-bonus/sleep-recovery-mental-resilience-bonus.pdf',
     },
   ];
 
@@ -132,39 +105,56 @@ const EbooksPage = () => {
         <div className="border-t border-white/10"></div>
       </div>
 
-      {/* Complete Guides Section */}
+      {/* Complete eBooks Kit Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 text-[#49c274] font-semibold text-sm uppercase tracking-wide mb-2">
             <Sparkles className="w-4 h-4" />
-            For clients &amp; serious transformations
+            For serious transformations
           </div>
-          <h2 className="text-3xl font-bold text-white mb-2">Complete Guides</h2>
+          <h2 className="text-3xl font-bold text-white mb-2">Complete eBooks Kit</h2>
           <p className="text-lg text-[#9fb6a8] max-w-2xl mx-auto">
-            The full, in-depth version of each topic — given directly to coaching clients. Curious what's inside? Book a free call and I'll walk you through it.
+            The full, in-depth version of every guide above — every principle, every phase, every tool. The same material given directly to coaching clients.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {completeGuides.map((ebook) => (
-            <Card key={ebook.id} className="flex flex-col bg-[#12201a] border border-[#2e9e4f]/25">
-              <CardHeader>
-                <CardTitle className="text-lg text-white mb-1">{ebook.title}</CardTitle>
-                <CardDescription className="text-sm text-[#9fb6a8]">{ebook.description}</CardDescription>
-              </CardHeader>
-              <CardFooter className="mt-auto">
-                <a
-                  href={CALENDLY_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-[#2e9e4f] text-[#49c274] hover:bg-[#2e9e4f]/10 font-semibold py-2.5 px-4 text-sm transition-colors"
-                >
-                  <PhoneCall className="w-4 h-4" />
-                  Book a Call
-                </a>
-              </CardFooter>
-            </Card>
-          ))}
+        <div className="max-w-md mx-auto">
+          <Card className="flex flex-col bg-[#12201a] border-2 border-[#2e9e4f] shadow-xl shadow-[#2e9e4f]/20">
+            <CardHeader>
+              <div className="inline-flex items-center gap-1 bg-[#2e9e4f] text-[#06140b] px-3 py-1 rounded-full text-xs font-bold mb-3 w-fit">
+                <Sparkles className="w-3.5 h-3.5" />
+                COMPLETE KIT
+              </div>
+              <CardTitle className="text-2xl text-white mb-1">All 5 Complete Guides</CardTitle>
+              <CardDescription className="text-sm text-[#9fb6a8]">
+                TRANSFORM Method, Nutrition Fundamentals, Environment Design, Emotional Intelligence, and Sleep &amp; Recovery — the full, deep-dive version of each.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="text-4xl font-bold text-white mb-1">$47.90</div>
+              <p className="text-sm text-muted-foreground">one-time payment</p>
+            </CardContent>
+            <CardFooter className="mt-auto flex flex-col gap-3">
+              <a
+                href={EBOOKS_KIT_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#2e9e4f] hover:bg-[#3fae67] text-[#06140b] font-bold py-3 px-4 transition-colors"
+              >
+                <Download className="w-4 h-4" />
+                Get the Complete Kit
+              </a>
+              <a
+                href={CALENDLY_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-[#2e9e4f] text-[#49c274] hover:bg-[#2e9e4f]/10 font-semibold py-2.5 px-4 text-sm transition-colors"
+              >
+                <PhoneCall className="w-4 h-4" />
+                Prefer to talk first? Book a free call
+              </a>
+            </CardFooter>
+          </Card>
         </div>
       </div>
 
@@ -181,7 +171,7 @@ const EbooksPage = () => {
 
             <div>
               <h3 className="font-semibold text-lg mb-2 text-white">What's the difference between the free and complete versions?</h3>
-              <p className="text-[#9fb6a8]">The free guides give you the core framework for each topic. The complete guides go much deeper, with the full system, and are given to coaching clients — book a call if you want one.</p>
+              <p className="text-[#9fb6a8]">The free guides give you the core framework for each topic. The Complete eBooks Kit goes much deeper — the full system for all 5 topics — and is a one-time purchase with instant access after checkout.</p>
             </div>
 
             <div>
