@@ -9,27 +9,27 @@ const EbooksKitDeliveryPage = () => {
     {
       id: 'transform-method',
       title: 'TRANSFORM Method — Complete Guide',
-      file: '/ebooks-complete/transform-method-complete-guide.pdf',
+      file: '/transform-method-complete-guide.pdf',
     },
     {
       id: 'nutrition-fundamentals',
       title: 'Nutrition Fundamentals — Complete Guide',
-      file: '/ebooks-complete/nutrition-fundamentals-complete-guide.pdf',
+      file: '/nutrition-fundamentals-complete-guide.pdf',
     },
     {
       id: 'environment-design',
       title: 'Environment Design — Complete Guide',
-      file: '/ebooks-complete/environment-design-complete-guide.pdf',
+      file: '/environment-design-complete-guide.pdf',
     },
     {
       id: 'emotional-intelligence',
       title: 'Emotional Intelligence — Complete Guide',
-      file: '/ebooks-complete/emotional-intelligence-complete-guide.pdf',
+      file: '/emotional-intelligence-complete-guide.pdf',
     },
     {
       id: 'sleep-recovery-mental-resilience',
       title: 'Sleep, Recovery & Mental Resilience — Complete Guide',
-      file: '/ebooks-complete/sleep-recovery-mental-resilience-complete-guide.pdf',
+      file: '/sleep-recovery-mental-resilience-complete-guide.pdf',
     },
   ];
 
