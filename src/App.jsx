@@ -13,6 +13,8 @@ import TheIdentity from './components/TheIdentity'
 import ThankYouPage from './components/ThankYouPage'
 import './App.css'
 
+const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/new-meeting'
+
 function AppContent() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const location = useLocation()
@@ -54,6 +56,14 @@ function AppContent() {
                 <Link to="/plans" className="text-slate-300 hover:text-[#49c274] transition-colors font-medium">
                   Plans
                 </Link>
+                <a
+                  href={CALENDLY_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#2e9e4f] hover:bg-[#3fae67] text-[#06140b] font-bold px-4 py-2 rounded-lg transition-all"
+                >
+                  Book a Free Call
+                </a>
               </div>
 
               {/* Mobile menu button */}
@@ -93,6 +103,15 @@ function AppContent() {
                   {item.label}
                 </Link>
               ))}
+              <a
+                href={CALENDLY_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-2xl font-semibold uppercase tracking-wide text-[#49c274] hover:text-[#3fae67] transition-colors"
+              >
+                Book a Free Call
+              </a>
             </div>
             <div className="pb-12 text-center">
               <Link
