@@ -315,7 +315,7 @@ const PlansPage = () => {
                 />
                 <div>
                   <h3 className="font-bold text-white">Adriano (The Creator)</h3>
-                  <p className="text-[#49c274] text-sm">Lost 84 lbs · 3 years sober · National CrossFit competitor</p>
+                  <p className="text-[#49c274] text-sm">Lost 84 lbs · 4 years sober · National CrossFit competitor</p>
                 </div>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
