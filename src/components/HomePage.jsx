@@ -99,7 +99,7 @@ function HomePage() {
           </h1>
 
           <p className="text-lg sm:text-xl text-white/80 mb-4 max-w-xl mx-auto">
-            3 years sober. National CrossFit competitor. ADHD overcomer.<br />
+            4 years sober. National CrossFit competitor. ADHD overcomer.<br />
             This is the exact system I used — and now I teach it.
           </p>
 
@@ -342,7 +342,7 @@ function HomePage() {
               and it's built on science, not motivation."
             </blockquote>
             <p className="font-semibold text-white">— The Author</p>
-            <p className="text-sm text-muted-foreground">3 years sober • National CrossFit competitor • ADHD advocate</p>
+            <p className="text-sm text-muted-foreground">4 years sober • National CrossFit competitor • ADHD advocate</p>
           </CardContent>
         </Card>
       </div>
