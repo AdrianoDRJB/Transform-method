@@ -138,7 +138,7 @@ function ThankYouPage() {
             actionable steps you can start using today."
           </blockquote>
           <p className="text-center text-white font-bold mt-4">— Adriano</p>
-          <p className="text-center text-[#9fb6a8] text-sm">Lost 84 lbs · 3 years sober · National CrossFit competitor</p>
+          <p className="text-center text-[#9fb6a8] text-sm">Lost 84 lbs · 4 years sober · National CrossFit competitor</p>
         </div>
       </div>
 

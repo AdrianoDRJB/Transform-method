@@ -235,7 +235,7 @@ function AboutMethod() {
                 <div className="text-muted-foreground">Of continuous refinement</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-[#49c274] mb-2">3 Years</div>
+                <div className="text-4xl font-bold text-[#49c274] mb-2">4 Years</div>
                 <div className="text-muted-foreground">Sober and thriving</div>
               </div>
               <div>

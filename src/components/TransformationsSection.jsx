@@ -82,7 +82,7 @@ const TransformationsSection = () => {
                 <div className="p-6">
                   <h4 className="text-lg font-semibold text-white mb-2">My Journey</h4>
                   <p className="text-muted-foreground">
-                    From 30 years old, hungover, and struggling to tie my shoes to 3 years sober, 
+                    From 30 years old, hungover, and struggling to tie my shoes to 4 years sober, 
                     competing at national CrossFit level. Science-based transformation works.
                   </p>
                 </div>
