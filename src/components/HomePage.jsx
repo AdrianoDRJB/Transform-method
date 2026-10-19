@@ -123,8 +123,19 @@ function HomePage() {
             </Link>
             <p className="text-white/40 text-xs mt-3">100% free. Instant download.</p>
           </div>
+        {/* Tertiary CTA - Free 20-min discovery call for people with questions */}
+          <p className="text-white/80 text-sm mb-2">
+            <a
+              href="https://calendly.com/adriano-nutrition/free-20-min-discovery-call"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 font-semibold text-[#49c274] hover:text-[#5dcf85]"
+            >
+              Any doubts? Book a free 20-min call →
+            </a>
+          </p>
 
-          {/* Secondary CTA - Path to paid coaching, for people who already know they want a coach */}
+        {/* Secondary CTA - Path to paid coaching, for people who already know they want a coach */}
           <p className="text-white/80 text-sm">
             Already know you want a coach?{' '}
             <Link to="/plans" className="underline underline-offset-4 font-semibold text-[#49c274] hover:text-[#5dcf85]">
