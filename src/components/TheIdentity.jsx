@@ -180,7 +180,7 @@ function TheIdentity() {
 
             <Card className="bg-gray-900 border-white/10 text-white">
               <CardHeader>
-                <CardTitle className="text-red-500">3 Years Sober</CardTitle>
+                <CardTitle className="text-red-500">4 Years Sober</CardTitle>
                 <CardDescription className="text-muted-foreground">Addiction to Athlete</CardDescription>
               </CardHeader>
               <CardContent>
