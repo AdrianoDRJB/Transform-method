@@ -3,7 +3,7 @@
 
 // Cole aqui o ID do Pixel da Meta (numero de uns 15 digitos), entre aspas.
 // Enquanto estiver vazio, o Pixel fica desligado e o resto continua funcionando.
-export const META_PIXEL_ID = ''
+export const META_PIXEL_ID = '1318891623640427'
 
 let pixelStarted = false
 
