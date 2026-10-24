@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardContent } from './ui/card';
-import { CheckCircle, Calendar, Users, BookOpen, ArrowRight } from 'lucide-react';
+import { CheckCircle, Calendar, Users, BookOpen } from 'lucide-react';
 
 const SuccessPage = () => {
   const [plan, setPlan] = useState('');
@@ -90,15 +90,9 @@ const SuccessPage = () => {
                   <p className="text-gray-200 mb-4">
                     Book your initial video call to discuss your goals, routine, and create your personalized action plan.
                   </p>
-                  <a
-                    href="https://calendly.com/adriano-nutrition/new-meeting"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-[#2e9e4f] to-[#1b5e3a] hover:from-[#3fae67] hover:to-[#1f6c43] text-white font-medium rounded-md transition-all shadow-lg"
-                  >
-                    Schedule Now
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </a>
+                  <p className="text-[#49c274] font-semibold">
+                    Your private booking link is on your payment confirmation page. Check your email receipt too.
+                  </p>
                 </div>
               </div>
 

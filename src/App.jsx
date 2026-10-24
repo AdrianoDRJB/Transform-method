@@ -9,7 +9,6 @@ import EbooksPage from './components/EbooksPage'
 import EbooksKitDeliveryPage from './components/EbooksKitDeliveryPage'
 import PlansPage from './components/PlansPage'
 import SuccessPage from './components/SuccessPage'
-import TheIdentity from './components/TheIdentity'
 import ThankYouPage from './components/ThankYouPage'
 import CallBookedPage from './components/CallBookedPage'
 import { initMetaPixel, trackPageView, trackBookCallClick, trackPaidSessionClick, trackCheckoutClick, trackEbookDownload } from './lib/tracking'
@@ -169,9 +168,6 @@ function AppContent() {
           <Route path="/success" element={<SuccessPage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/call-booked" element={<CallBookedPage />} />
-          <Route path="/offer" element={<TheIdentity />} />
-          <Route path="/identity" element={<TheIdentity />} />
-          <Route path="/transform2026" element={<TheIdentity />} />
         </Routes>
 
         {/* Footer */}
@@ -222,8 +218,6 @@ function App() {
     <Router>
       <Tracker />
       <Routes>
-        <Route path="/identity" element={<TheIdentity />} />
-        <Route path="/transform2026" element={<TheIdentity />} />
         <Route path="/*" element={<AppContent />} />
       </Routes>
     </Router>
