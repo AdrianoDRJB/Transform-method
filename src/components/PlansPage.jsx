@@ -49,6 +49,9 @@ const PlansPage = () => {
             <p className="text-sm text-muted-foreground mt-1">
               Valid on your first payment of any plan until October 31. No code needed.
             </p>
+            <p className="text-sm text-white mt-2">
+              Start, Evolve and Elite: pay nothing today. Your first payment is on day 15. Cancel before then and you pay nothing, no questions asked.
+            </p>
           </div>
         )}
 

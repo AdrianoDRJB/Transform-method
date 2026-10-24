@@ -27,7 +27,7 @@ const FAQS = [
   },
   {
     q: 'What if I start and do not like it?',
-    a: 'You have my full support for 30 days. If it is not for you, you can ask for your money back.',
+    a: 'You have my full support for 15 days. If it is not for you, you can ask for your money back, no questions asked.',
   },
 ]
 

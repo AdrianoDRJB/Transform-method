@@ -25,7 +25,7 @@ const FAQSection = () => {
     },
     {
       question: "What if I start and don't like it?",
-      answer: "The process is risk-free. You have my full support for 30 days, and if you don't like it, request your money back—no questions, no obstacles. That's how confident I am in what I'm doing."
+      answer: "The process is risk-free. You have my full support for 15 days, and if you don't like it, request your money back, no questions, no obstacles. That's how confident I am in what I'm doing."
     },
     {
       question: "Do I need to go to the gym or do intense workouts?",
