@@ -5,15 +5,17 @@ import { Brain, Target, TrendingUp, Users, Zap, CheckCircle2, ArrowRight, Gift }
 import TransformationsSection from './TransformationsSection.jsx'
 import FAQSection from './FAQSection.jsx'
 import ContactSection from './ContactSection.jsx'
+import { isOctoberPromo, withPromoCode, PROMO_LINKS } from '../lib/promo.js'
 
 function HomePage() {
   const [viewMode, setViewMode] = useState('detailed') // 'detailed' or 'phases'
 
+  const promo = isOctoberPromo()
   const homePlans = [
-    { name: 'Quick Fix', tag: 'Single Session', price: '$259', period: 'one-time payment', cta: 'Buy Now', link: 'https://buy.stripe.com/4gMdR80Zh3QP1Pxbxz1Jm0L' },
-    { name: 'TRANSFORM START', tag: '3 Months', price: '$559', period: 'billed every 3 months', cta: 'Get Started', link: 'https://buy.stripe.com/bJe7sK0Zhevt0Lt1WZ1Jm0I' },
-    { name: 'TRANSFORM EVOLVE', tag: '6 Months', price: '$1,159', period: 'billed every 6 months', cta: 'Get Started', link: 'https://buy.stripe.com/8x28wO23l3QP3XF59b1Jm0J', highlight: true },
-    { name: 'TRANSFORM ELITE', tag: '12 Months', price: '$2,219', period: 'billed annually', cta: 'Get Started', link: 'https://buy.stripe.com/6oUdR89vN3QP9hZdFH1Jm0K' },
+    { name: 'Quick Fix', tag: 'Single Session', price: '$259', period: 'one-time payment', cta: 'Buy Now', link: 'https://buy.stripe.com/4gMdR80Zh3QP1Pxbxz1Jm0L', promoPrice: '$155.40', promoLink: PROMO_LINKS.quickFix },
+    { name: 'TRANSFORM START', tag: '3 Months', price: '$559', period: 'billed every 3 months', cta: 'Get Started', link: 'https://buy.stripe.com/bJe7sK0Zhevt0Lt1WZ1Jm0I', promoPrice: '$335.40', promoLink: PROMO_LINKS.start },
+    { name: 'TRANSFORM EVOLVE', tag: '6 Months', price: '$1,159', period: 'billed every 6 months', cta: 'Get Started', link: 'https://buy.stripe.com/8x28wO23l3QP3XF59b1Jm0J', promoPrice: '$695.40', promoLink: PROMO_LINKS.evolve, highlight: true },
+    { name: 'TRANSFORM ELITE', tag: '12 Months', price: '$2,219', period: 'billed annually', cta: 'Get Started', link: 'https://buy.stripe.com/6oUdR89vN3QP9hZdFH1Jm0K', promoPrice: '$1,331.40', promoLink: PROMO_LINKS.elite },
   ]
 
   const transformSteps = [
@@ -384,10 +386,21 @@ function HomePage() {
               )}
               <span className="text-xs uppercase tracking-wider text-[#49c274] font-semibold mb-2">{plan.tag}</span>
               <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
-              <div className="text-3xl font-bold text-white mb-1">{plan.price}</div>
-              <p className="text-sm text-muted-foreground mb-6">{plan.period}</p>
+              <div className="text-3xl font-bold text-white mb-1">
+                {promo ? (
+                  <>
+                    <span className="line-through text-muted-foreground text-xl mr-2">{plan.price}</span>
+                    {plan.promoPrice}
+                  </>
+                ) : (
+                  plan.price
+                )}
+              </div>
+              <p className="text-sm text-muted-foreground mb-1">{plan.period}</p>
+              {promo && <p className="text-xs text-[#7be0a0] font-semibold mb-5">4 years sober special: 40% off your first payment, applied</p>}
+              {!promo && <div className="mb-5" />}
               <a
-                href={plan.link}
+                href={promo ? withPromoCode(plan.promoLink) : plan.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-auto w-full text-center py-2.5 px-4 rounded-xl bg-[#2e9e4f] hover:bg-[#3fae67] text-[#06140b] font-bold transition-all"
