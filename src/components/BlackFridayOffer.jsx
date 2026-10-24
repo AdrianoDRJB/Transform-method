@@ -173,7 +173,7 @@ function BlackFridayOffer() {
                 </Button>
               </Link>
               <p className="text-blue-100 text-sm mt-4">
-                30-day money-back guarantee • Zero risk
+                15-day money-back guarantee • Zero risk
               </p>
             </CardContent>
           </Card>
