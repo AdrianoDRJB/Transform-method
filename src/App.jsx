@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
 import { Menu, X, Dumbbell } from 'lucide-react'
 import HomePage from './components/HomePage'
@@ -11,9 +11,39 @@ import PlansPage from './components/PlansPage'
 import SuccessPage from './components/SuccessPage'
 import TheIdentity from './components/TheIdentity'
 import ThankYouPage from './components/ThankYouPage'
+import CallBookedPage from './components/CallBookedPage'
+import { initMetaPixel, trackPageView, trackBookCallClick, trackCheckoutClick, trackEbookDownload } from './lib/tracking'
 import './App.css'
 
 const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/new-meeting'
+
+// Envia visualizacoes de pagina e cliques importantes para o Analytics e a Meta
+function Tracker() {
+  const location = useLocation()
+
+  useEffect(() => {
+    initMetaPixel()
+  }, [])
+
+  useEffect(() => {
+    trackPageView(location.pathname + location.search)
+  }, [location.pathname, location.search])
+
+  useEffect(() => {
+    const onClick = (event) => {
+      const link = event.target.closest && event.target.closest('a')
+      if (!link || !link.href) return
+      const url = link.href
+      if (url.includes('calendly.com')) trackBookCallClick(url)
+      else if (url.includes('buy.stripe.com')) trackCheckoutClick(url)
+      else if (/\.pdf(\?|$)/i.test(url)) trackEbookDownload(url)
+    }
+    document.addEventListener('click', onClick, true)
+    return () => document.removeEventListener('click', onClick, true)
+  }, [])
+
+  return null
+}
 
 function AppContent() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -137,6 +167,7 @@ function AppContent() {
           <Route path="/plans" element={<PlansPage />} />
           <Route path="/success" element={<SuccessPage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
+          <Route path="/call-booked" element={<CallBookedPage />} />
           <Route path="/offer" element={<TheIdentity />} />
           <Route path="/identity" element={<TheIdentity />} />
           <Route path="/transform2026" element={<TheIdentity />} />
@@ -188,6 +219,7 @@ function AppContent() {
 function App() {
   return (
     <Router>
+      <Tracker />
       <Routes>
         <Route path="/identity" element={<TheIdentity />} />
         <Route path="/transform2026" element={<TheIdentity />} />
