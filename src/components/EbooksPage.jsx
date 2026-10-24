@@ -3,16 +3,15 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from './ui/button';
 import { BookOpen, Download, Gift, PhoneCall, Sparkles } from 'lucide-react';
 import ContactSection from './ContactSection.jsx';
+import { isOctoberPromo } from '../lib/promo.js';
 
 const EbooksPage = () => {
   const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/free-20-min-discovery-call';
   const BASE_KIT_LINK = 'https://buy.stripe.com/aFa7sKfUb2ML79R9pr1Jm0G';
 
-  // Quem chega pelo anuncio da Meta (a Meta sempre coloca fbclid no link) ou
-  // por um link com ?promo=4years recebe o desconto de 40% automaticamente,
-  // sem precisar digitar o codigo no checkout.
-  const params = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
-  const hasLaunchDiscount = params.has('fbclid') || (params.get('promo') || '').toLowerCase() === '4years';
+  // Quem chega pelo anuncio da Meta ou por ?promo=4years recebe 40% automaticamente,
+  // ate 31/10 (ver src/lib/promo.js).
+  const hasLaunchDiscount = isOctoberPromo();
   const EBOOKS_KIT_LINK = hasLaunchDiscount
     ? `${BASE_KIT_LINK}?prefilled_promo_code=4YEARS`
     : BASE_KIT_LINK;

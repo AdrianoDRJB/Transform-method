@@ -1,13 +1,33 @@
 import React from 'react';
 import { Check, Zap, Star, Crown, Clock, Calendar, ArrowRight, Shield, Users, CreditCard } from 'lucide-react';
+import { isOctoberPromo, withPromoCode, PROMO_LINKS } from '../lib/promo.js';
 
 const PlansPage = () => {
-  const STRIPE_LINKS = {
+  const promo = isOctoberPromo();
+  const STANDARD_LINKS = {
     quickFix: 'https://buy.stripe.com/4gMdR80Zh3QP1Pxbxz1Jm0L',
     start: 'https://buy.stripe.com/bJe7sK0Zhevt0Lt1WZ1Jm0I',
     evolve: 'https://buy.stripe.com/8x28wO23l3QP3XF59b1Jm0J',
     elite: 'https://buy.stripe.com/6oUdR89vN3QP9hZdFH1Jm0K',
   };
+  const STRIPE_LINKS = promo
+    ? {
+        quickFix: withPromoCode(PROMO_LINKS.quickFix),
+        start: withPromoCode(PROMO_LINKS.start),
+        evolve: withPromoCode(PROMO_LINKS.evolve),
+        elite: withPromoCode(PROMO_LINKS.elite),
+      }
+    : STANDARD_LINKS;
+  // Mostra o preco cheio riscado e o preco com 40% no primeiro pagamento
+  const price = (full, discounted) =>
+    promo ? (
+      <>
+        <span className="line-through text-muted-foreground text-2xl mr-2">{full}</span>
+        {discounted}
+      </>
+    ) : (
+      full
+    );
 
   return (
     <div className="min-h-screen bg-black text-white py-16">
@@ -22,6 +42,15 @@ const PlansPage = () => {
             Every plan is personalized to your goals, lifestyle, and body.
           </p>
         </div>
+
+        {promo && (
+          <div className="max-w-3xl mx-auto mb-8 rounded-2xl border border-[#49c274] bg-[#12201a] p-5 text-center">
+            <p className="text-lg font-bold text-[#7be0a0]">4 years sober special: 40% off, already applied</p>
+            <p className="text-sm text-muted-foreground mt-1">
+              Valid on your first payment of any plan until October 31. No code needed.
+            </p>
+          </div>
+        )}
 
         {/* How It Works */}
         <div className="bg-[#12201a] border border-[#2e9e4f]/30 rounded-2xl p-6 md:p-8 mb-12 max-w-3xl mx-auto">
@@ -53,7 +82,7 @@ const PlansPage = () => {
             </div>
 
             <div className="mb-6">
-              <div className="text-4xl font-bold text-white">$259</div>
+              <div className="text-4xl font-bold text-white">{price('$259', '$155.40')}</div>
               <div className="text-muted-foreground text-sm mt-1">one-time payment</div>
             </div>
 
@@ -83,7 +112,7 @@ const PlansPage = () => {
               className="w-full text-center py-3 px-6 rounded-xl border border-gray-600 text-gray-300 font-semibold hover:border-gray-400 hover:text-white transition-all flex items-center justify-center gap-2"
             >
               <CreditCard className="w-4 h-4" />
-              Buy Now — $259
+              Buy Now — {promo ? '$155.40' : '$259'}
             </a>
           </div>
 
@@ -99,7 +128,7 @@ const PlansPage = () => {
             </div>
 
             <div className="mb-6">
-              <div className="text-4xl font-bold text-[#49c274]">$559<span className="text-lg text-muted-foreground font-normal">/3mo</span></div>
+              <div className="text-4xl font-bold text-[#49c274]">{price('$559', '$335.40')}<span className="text-lg text-muted-foreground font-normal">/3mo</span></div>
               <div className="text-muted-foreground text-sm mt-1">~$186/month · recurring subscription, billed every 3 months</div>
             </div>
 
@@ -145,7 +174,7 @@ const PlansPage = () => {
               className="w-full text-center py-3 px-6 rounded-xl bg-[#2e9e4f] text-[#06140b] font-bold hover:bg-[#3fae67] transition-all flex items-center justify-center gap-2"
             >
               <CreditCard className="w-4 h-4" />
-              Get Started — $559
+              Get Started — {promo ? '$335.40' : '$559'}
             </a>
           </div>
 
@@ -165,7 +194,7 @@ const PlansPage = () => {
             </div>
 
             <div className="mb-2">
-              <div className="text-4xl font-bold text-[#49c274]">$1,159<span className="text-lg text-muted-foreground font-normal">/6mo</span></div>
+              <div className="text-4xl font-bold text-[#49c274]">{price('$1,159', '$695.40')}<span className="text-lg text-muted-foreground font-normal">/6mo</span></div>
               <div className="text-muted-foreground text-sm mt-1">~$193/month · recurring subscription, billed every 6 months</div>
             </div>
             <div className="bg-[#2e9e4f]/10 border border-[#2e9e4f]/30 rounded-lg px-3 py-2 mb-6">
@@ -215,7 +244,7 @@ const PlansPage = () => {
               className="w-full text-center py-3 px-6 rounded-xl bg-[#2e9e4f] text-[#06140b] font-bold hover:bg-[#3fae67] transition-all flex items-center justify-center gap-2"
             >
               <CreditCard className="w-4 h-4" />
-              Get Started — $1,159
+              Get Started — {promo ? '$695.40' : '$1,159'}
             </a>
           </div>
 
@@ -231,7 +260,7 @@ const PlansPage = () => {
             </div>
 
             <div className="mb-2">
-              <div className="text-4xl font-bold text-red-400">$2,219<span className="text-lg text-muted-foreground font-normal">/yr</span></div>
+              <div className="text-4xl font-bold text-red-400">{price('$2,219', '$1,331.40')}<span className="text-lg text-muted-foreground font-normal">/yr</span></div>
               <div className="text-muted-foreground text-sm mt-1">~$185/month · recurring subscription, billed annually</div>
             </div>
             <div className="bg-red-400/10 border border-red-400/30 rounded-lg px-3 py-2 mb-6">
@@ -285,7 +314,7 @@ const PlansPage = () => {
               className="w-full text-center py-3 px-6 rounded-xl bg-red-500 text-white font-bold hover:bg-red-400 transition-all flex items-center justify-center gap-2"
             >
               <CreditCard className="w-4 h-4" />
-              Get Started — $2,219
+              Get Started — {promo ? '$1,331.40' : '$2,219'}
             </a>
           </div>
 
