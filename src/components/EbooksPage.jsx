@@ -6,7 +6,16 @@ import ContactSection from './ContactSection.jsx';
 
 const EbooksPage = () => {
   const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/free-20-min-discovery-call';
-  const EBOOKS_KIT_LINK = 'https://buy.stripe.com/aFa7sKfUb2ML79R9pr1Jm0G';
+  const BASE_KIT_LINK = 'https://buy.stripe.com/aFa7sKfUb2ML79R9pr1Jm0G';
+
+  // Quem chega pelo anuncio da Meta (a Meta sempre coloca fbclid no link) ou
+  // por um link com ?promo=4years recebe o desconto de 40% automaticamente,
+  // sem precisar digitar o codigo no checkout.
+  const params = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
+  const hasLaunchDiscount = params.has('fbclid') || (params.get('promo') || '').toLowerCase() === '4years';
+  const EBOOKS_KIT_LINK = hasLaunchDiscount
+    ? `${BASE_KIT_LINK}?prefilled_promo_code=4YEARS`
+    : BASE_KIT_LINK;
 
   const freeEbooks = [
     {
@@ -131,7 +140,17 @@ const EbooksPage = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="text-4xl font-bold text-white mb-1">$47.90</div>
+              {hasLaunchDiscount ? (
+                <>
+                  <div className="flex items-baseline gap-3 mb-1">
+                    <div className="text-4xl font-bold text-white">$28.74</div>
+                    <div className="text-xl text-muted-foreground line-through">$47.90</div>
+                  </div>
+                  <p className="text-sm text-[#7be0a0] font-semibold mb-1">4 years sober special: 40% off, applied automatically</p>
+                </>
+              ) : (
+                <div className="text-4xl font-bold text-white mb-1">$47.90</div>
+              )}
               <p className="text-sm text-muted-foreground">one-time payment</p>
             </CardContent>
             <CardFooter className="mt-auto flex flex-col gap-3">
