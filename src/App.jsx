@@ -12,10 +12,10 @@ import SuccessPage from './components/SuccessPage'
 import TheIdentity from './components/TheIdentity'
 import ThankYouPage from './components/ThankYouPage'
 import CallBookedPage from './components/CallBookedPage'
-import { initMetaPixel, trackPageView, trackBookCallClick, trackCheckoutClick, trackEbookDownload } from './lib/tracking'
+import { initMetaPixel, trackPageView, trackBookCallClick, trackPaidSessionClick, trackCheckoutClick, trackEbookDownload } from './lib/tracking'
 import './App.css'
 
-const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/new-meeting'
+const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/free-20-min-discovery-call'
 
 // Envia visualizacoes de pagina e cliques importantes para o Analytics e a Meta
 function Tracker() {
@@ -34,7 +34,8 @@ function Tracker() {
       const link = event.target.closest && event.target.closest('a')
       if (!link || !link.href) return
       const url = link.href
-      if (url.includes('calendly.com')) trackBookCallClick(url)
+      if (url.includes('free-20-min-discovery-call')) trackBookCallClick(url)
+      else if (url.includes('calendly.com/adriano-nutrition/new-meeting')) trackPaidSessionClick(url)
       else if (url.includes('buy.stripe.com')) trackCheckoutClick(url)
       else if (/\.pdf(\?|$)/i.test(url)) trackEbookDownload(url)
     }

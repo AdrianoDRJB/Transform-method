@@ -29,10 +29,16 @@ export function trackPageView(path) {
   meta('track', 'PageView')
 }
 
-// Clicou para agendar a call (link do Calendly)
+// Clicou para agendar a call GRATIS de 20 minutos (free-20-min-discovery-call)
 export function trackBookCallClick(url) {
   ga('event', 'book_call_click', { link_url: url })
   meta('trackCustom', 'BookCallClick')
+}
+
+// Clicou para agendar a sessao PAGA de 90 minutos (new-meeting).
+// So aparece para quem ja pagou, entao NAO vira lead e nao vai para a Meta.
+export function trackPaidSessionClick(url) {
+  ga('event', 'schedule_paid_session_click', { link_url: url })
 }
 
 // Clicou para comprar um plano (link do Stripe)
@@ -47,7 +53,7 @@ export function trackEbookDownload(url) {
   meta('track', 'ViewContent', { content_name: 'free_ebook' })
 }
 
-// Agendou a call de verdade (pagina /call-booked, depois do Calendly)
+// Agendou a call GRATIS de 20 minutos (pagina /call-booked, depois do Calendly)
 export function trackCallBooked() {
   ga('event', 'qualify_lead', { method: 'calendly' })
   ga('event', 'generate_lead', { method: 'calendly' })

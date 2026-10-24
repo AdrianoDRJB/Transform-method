@@ -4,7 +4,7 @@ import { CheckCircle, BookOpen, ArrowRight, Sparkles, Shield, Clock, PhoneCall }
 import { Card, CardContent } from '@/components/ui/card.jsx'
 
 function ThankYouPage() {
-  const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/new-meeting'
+  const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/free-20-min-discovery-call'
 
   const guideHighlights = [
     'The Complete TRANSFORM Method Guide',
