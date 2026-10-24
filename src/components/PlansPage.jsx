@@ -304,7 +304,7 @@ const PlansPage = () => {
         <div className="mb-12">
           <h2 className="text-3xl font-bold text-center mb-8">Real People. Real Results.</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 gap-6 max-w-2xl mx-auto">
             {/* Adriano's Story */}
             <div className="bg-[#12201a] rounded-2xl p-6 border border-white/10">
               <div className="flex items-center gap-4 mb-4">
@@ -321,25 +321,6 @@ const PlansPage = () => {
               <p className="text-muted-foreground text-sm leading-relaxed">
                 "Eight years ago, I was 30 years old, hungover, and couldn't catch my breath tying my shoes.
                 Today, I'm sober, a consistent athlete, and competing at a national level. This method saved my life."
-              </p>
-            </div>
-
-            {/* Paula's Story */}
-            <div className="bg-[#12201a] rounded-2xl p-6 border border-white/10">
-              <div className="flex items-center gap-4 mb-4">
-                <img
-                  src="/paula-rosto.jpg"
-                  alt="Paula's transformation"
-                  className="w-16 h-16 rounded-full object-cover"
-                />
-                <div>
-                  <h3 className="font-bold text-white">Paula, 38</h3>
-                  <p className="text-[#49c274] text-sm">Mom of 2 · Esthetician · Entrepreneur</p>
-                </div>
-              </div>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                "I stopped waiting for the perfect moment. I just started. Now I do CrossFit and strength training
-                consistently. Not because I have more time — because I finally understood how it works."
               </p>
             </div>
           </div>

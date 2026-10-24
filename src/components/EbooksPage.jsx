@@ -5,7 +5,7 @@ import { BookOpen, Download, Gift, PhoneCall, Sparkles } from 'lucide-react';
 import ContactSection from './ContactSection.jsx';
 
 const EbooksPage = () => {
-  const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/new-meeting';
+  const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/free-20-min-discovery-call';
   const EBOOKS_KIT_LINK = 'https://buy.stripe.com/aFa7sKfUb2ML79R9pr1Jm0G';
 
   const freeEbooks = [

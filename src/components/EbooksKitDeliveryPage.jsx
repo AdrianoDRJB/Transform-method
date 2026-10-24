@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Download, CheckCircle, Sparkles, PhoneCall } from 'lucide-react';
 
 const EbooksKitDeliveryPage = () => {
-  const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/new-meeting';
+  const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/free-20-min-discovery-call';
 
   const guides = [
     {
