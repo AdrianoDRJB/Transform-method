@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom'
 import { Menu, X, Dumbbell } from 'lucide-react'
 import HomePage from './components/HomePage'
 import MacroTracker from './components/MacroTracker'
@@ -13,6 +13,24 @@ import ThankYouPage from './components/ThankYouPage'
 import CallBookedPage from './components/CallBookedPage'
 import { initMetaPixel, trackPageView, trackBookCallClick, trackPaidSessionClick, trackCheckoutClick, trackEbookDownload } from './lib/tracking'
 import './App.css'
+
+// Quem chega direto na pagina de precos vindo de um anuncio ainda nao conhece o Adriano.
+// Na primeira entrada da sessao, leva para a pagina inicial (mantendo a URL com utm e o desconto).
+const AD_ENTRY_KEY = 'ad_entry_done'
+function PlansEntry() {
+  const location = useLocation()
+  const params = new URLSearchParams(location.search)
+  const fromAd = (params.get('utm_medium') || '').toLowerCase() === 'paid' || (params.get('promo') || '').toLowerCase() === '4years'
+  let alreadyEntered = false
+  try {
+    alreadyEntered = window.sessionStorage.getItem(AD_ENTRY_KEY) === '1'
+    if (fromAd && !alreadyEntered) window.sessionStorage.setItem(AD_ENTRY_KEY, '1')
+  } catch (e) {
+    alreadyEntered = true
+  }
+  if (fromAd && !alreadyEntered) return <Navigate to={`/${location.search}`} replace />
+  return <PlansPage />
+}
 
 const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/free-20-min-discovery-call'
 
@@ -164,7 +182,7 @@ function AppContent() {
           <Route path="/tracker" element={<MacroTracker />} />
           <Route path="/ebooks" element={<EbooksPage />} />
           <Route path="/ebooks-kit-success" element={<EbooksKitDeliveryPage />} />
-          <Route path="/plans" element={<PlansPage />} />
+          <Route path="/plans" element={<PlansEntry />} />
           <Route path="/success" element={<SuccessPage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/call-booked" element={<CallBookedPage />} />
