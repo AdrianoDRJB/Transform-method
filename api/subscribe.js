@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  const { email } = req.body
+  const { email, campaign } = req.body
 
   if (!email || !email.includes('@')) {
     return res.status(400).json({ error: 'Invalid email' })
@@ -41,7 +41,8 @@ export default async function handler(req, res) {
           reactivate_existing: true,
           send_welcome_email: true,
           utm_source: 'website',
-          utm_medium: 'lead_magnet'
+          utm_medium: 'lead_magnet',
+          utm_campaign: typeof campaign === 'string' && campaign ? campaign.slice(0, 60) : 'organic'
         })
       }
     )
