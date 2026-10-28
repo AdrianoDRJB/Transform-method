@@ -90,9 +90,18 @@ function HomePage() {
         <div className="absolute inset-0 bg-black/25" />
 
         <div className="relative z-10 w-full max-w-3xl mx-auto px-6 py-20 text-center text-white">
-          <span className="inline-block bg-white/20 backdrop-blur-sm border border-white/30 text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
-            Science-Based Transformation
-          </span>
+          {promo ? (
+            <Link
+              to="/plans"
+              className="inline-block bg-[#49c274] text-[#06140b] px-4 py-2 rounded-full text-sm font-black uppercase tracking-wide mb-6 shadow-lg"
+            >
+              4 years sober special: 40% off any plan until Oct 31
+            </Link>
+          ) : (
+            <span className="inline-block bg-white/20 backdrop-blur-sm border border-white/30 text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+              Science-Based Transformation
+            </span>
+          )}
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6">
             I lost <span className="text-[#49c274]">84 lbs of fat.</span><br />
@@ -109,7 +118,22 @@ function HomePage() {
             Nutrition Student (3rd year) • Precision Nutrition Certified • Change Psychology Specialist
           </p>
 
-          {/* Free eBooks CTA - THE ONLY CTA */}
+          {/* Oferta dos 4 anos sobrio: so aparece para quem veio do anuncio ou de ?promo=4years */}
+          {promo && (
+            <div className="bg-[#49c274] text-[#06140b] rounded-2xl p-6 mb-5 max-w-md mx-auto shadow-xl">
+              <p className="font-black text-sm uppercase tracking-wider mb-1">4 years sober special</p>
+              <h3 className="font-black text-3xl leading-tight mb-2">40% off any coaching plan</h3>
+              <p className="text-sm font-semibold mb-4">Discount applied automatically. Ends Oct 31. Plus a free 20 minute call with me.</p>
+              <Link
+                to="/plans"
+                className="block w-full bg-[#06140b] hover:bg-black text-[#49c274] font-bold py-3 px-6 rounded-xl transition-all text-center text-lg"
+              >
+                See plans with 40% off →
+              </Link>
+            </div>
+          )}
+
+          {/* Free eBooks CTA */}
           <div className="bg-black/50 backdrop-blur-md border-2 border-[#49c274] rounded-2xl p-6 mb-8 max-w-md mx-auto">
             <p className="text-[#49c274] font-bold text-sm uppercase tracking-wider mb-1">Free eBooks</p>
             <h3 className="text-white font-bold text-xl mb-2">5 Free TRANSFORM Method Guides</h3>
