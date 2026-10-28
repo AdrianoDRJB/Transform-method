@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { BookOpen, Download, Gift, PhoneCall, Sparkles } from 'lucide-react';
 import ContactSection from './ContactSection.jsx';
 import { isOctoberPromo } from '../lib/promo.js';
+import { trackEmailSignup } from '../lib/tracking';
 
 const EbooksPage = () => {
   const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/free-20-min-discovery-call';
@@ -49,7 +50,48 @@ const EbooksPage = () => {
     },
   ];
 
+  // Para baixar, a pessoa deixa o e-mail uma vez. Fica salvo no navegador para nao pedir de novo.
+  const EMAIL_KEY = 'ebooks_email_done';
+  const readUnlocked = () => {
+    try { return window.localStorage.getItem(EMAIL_KEY) === '1'; } catch (e) { return false; }
+  };
+  const [unlocked, setUnlocked] = useState(readUnlocked);
+  const [email, setEmail] = useState('');
+  const [sending, setSending] = useState(false);
+  const [formError, setFormError] = useState('');
+  const formRef = useRef(null);
+
+  const handleEmailSubmit = async (e) => {
+    e.preventDefault();
+    const value = email.trim();
+    if (!value || !value.includes('@') || !value.includes('.')) {
+      setFormError('Please enter a valid email.');
+      return;
+    }
+    setFormError('');
+    setSending(true);
+    try {
+      // Se o cadastro falhar, a pessoa mesmo assim recebe os guias.
+      await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: value, campaign: isOctoberPromo() ? 'ad_4years' : 'organic' }),
+      });
+    } catch (err) {
+      // segue o fluxo
+    }
+    trackEmailSignup(isOctoberPromo() ? 'ad_4years' : 'organic');
+    try { window.localStorage.setItem(EMAIL_KEY, '1'); } catch (err) { /* sem storage, vale so nesta visita */ }
+    setSending(false);
+    setUnlocked(true);
+  };
+
   const handleDownload = (ebook) => {
+    if (!unlocked) {
+      setFormError('Enter your email first and the guides unlock.');
+      if (formRef.current) formRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
     const link = document.createElement('a');
     link.href = ebook.file;
     link.download = `${ebook.title.replace(/\s+/g, '_')}.pdf`;
@@ -79,9 +121,36 @@ const EbooksPage = () => {
         <div className="flex items-center gap-3 mb-6">
           <Gift className="w-7 h-7 text-[#49c274]" />
           <h2 className="text-3xl font-bold text-white">Free eBooks</h2>
-          <span className="bg-[#49c274]/15 text-[#49c274] text-sm font-semibold px-3 py-1 rounded-full">Instant download, no email required</span>
+          <span className="bg-[#49c274]/15 text-[#49c274] text-sm font-semibold px-3 py-1 rounded-full">Free. Just your email.</span>
         </div>
-        <p className="text-[#9fb6a8] mb-8 text-lg">Five free guides — tap any of them to download the PDF right now.</p>
+        <p className="text-[#9fb6a8] mb-6 text-lg">Five free guides. Enter your email once, then download any of them.</p>
+
+        <div ref={formRef} className="bg-[#12201a] border-2 border-[#49c274] rounded-2xl p-5 mb-8 max-w-xl">
+          {unlocked ? (
+            <p className="text-white font-semibold">You are in. Tap "Download Free" on any guide below.</p>
+          ) : (
+            <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                inputMode="email"
+                autoComplete="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Your best email"
+                className="flex-1 rounded-xl px-4 py-3 bg-black/40 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-[#49c274]"
+              />
+              <button
+                type="submit"
+                disabled={sending}
+                className="rounded-xl px-6 py-3 bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-bold disabled:opacity-60"
+              >
+                {sending ? 'Sending...' : 'Unlock the free guides'}
+              </button>
+            </form>
+          )}
+          {formError && !unlocked && <p className="text-red-300 text-sm mt-2">{formError}</p>}
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {freeEbooks.map((ebook) => (

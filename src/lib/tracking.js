@@ -53,6 +53,12 @@ export function trackEbookDownload(url) {
   meta('track', 'ViewContent', { content_name: 'free_ebook' })
 }
 
+// Deixou o e-mail para liberar os guias gratis (formulario da pagina /ebooks)
+export function trackEmailSignup(source) {
+  ga('event', 'ebook_email_signup', { method: source || 'ebooks_page' })
+  meta('track', 'Subscribe')
+}
+
 // Agendou a call GRATIS de 20 minutos (pagina /call-booked, depois do Calendly)
 export function trackCallBooked() {
   ga('event', 'qualify_lead', { method: 'calendly' })
