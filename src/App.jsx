@@ -7,6 +7,7 @@ import AboutMethod from './components/AboutMethod'
 import CalorieCalculator from './components/CalorieCalculator'
 import EbooksPage from './components/EbooksPage'
 import EbooksKitDeliveryPage from './components/EbooksKitDeliveryPage'
+import GuidesOfferPage from './components/GuidesOfferPage'
 import PlansPage from './components/PlansPage'
 import SuccessPage from './components/SuccessPage'
 import ThankYouPage from './components/ThankYouPage'
@@ -181,6 +182,7 @@ function AppContent() {
           <Route path="/calculator" element={<CalorieCalculator />} />
           <Route path="/tracker" element={<MacroTracker />} />
           <Route path="/ebooks" element={<EbooksPage />} />
+          <Route path="/guides" element={<GuidesOfferPage />} />
           <Route path="/ebooks-kit-success" element={<EbooksKitDeliveryPage />} />
           <Route path="/plans" element={<PlansEntry />} />
           <Route path="/success" element={<SuccessPage />} />
