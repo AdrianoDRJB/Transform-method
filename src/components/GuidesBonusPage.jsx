@@ -8,8 +8,10 @@ import { PROMO_LINKS } from '../lib/promo.js';
 const CODES = {
   single: 'GUIDE40',   // 40% off no Quick Fix ($259 -> $155.40)
   quarter: 'GUIDE50',  // 50% off no START ($559 -> $279.50)
-  semester: 'GUIDE6M', // $600 off no EVOLVE ($1,159 -> $559)
 };
+
+// Link do START sem codigo (preco cheio). Quem paga cheio recebe 6 meses, liberados manualmente por Adriano.
+const START_FULL_PRICE_LINK = 'https://buy.stripe.com/bJe7sK0Zhevt0Lt1WZ1Jm0I';
 
 const link = (url, code) => `${url}?prefilled_promo_code=${code}`;
 
@@ -24,21 +26,19 @@ const offers = [
     cta: 'Book my single session',
   },
   {
-    name: '3 months of coaching',
+    name: '3 months of coaching, half price',
     was: '$559',
     now: '$279.50',
     note: '50% off. Weekly support while you build the system.',
     code: CODES.quarter,
     url: link(PROMO_LINKS.start, CODES.quarter),
-    cta: 'Start 3 months',
+    cta: 'Start 3 months for $279.50',
   },
   {
-    name: '6 months of coaching',
-    was: '$1,159',
+    name: '6 months for the price of 3',
     now: '$559',
-    note: 'Pay the price of 3 months, get 6. Same $559, double the time.',
-    code: CODES.semester,
-    url: link(PROMO_LINKS.evolve, CODES.semester),
+    note: 'Pay the full 3 month price and I give you 6 months of coaching. Double the time to make it stick.',
+    url: START_FULL_PRICE_LINK,
     cta: 'Get 6 months for $559',
     featured: true,
   },
@@ -61,7 +61,7 @@ const GuidesBonusPage = () => {
           Read the guides. If you like them and want help applying them, this is for you.
         </h1>
         <p className="text-white/80 text-lg text-center mb-10">
-          Reader discount, available only through this page. The code is already applied when you click.
+          Reader offers, available only through this page. Discount codes are already filled in when you click.
         </p>
 
         <div className="space-y-5 mb-10">
@@ -72,7 +72,7 @@ const GuidesBonusPage = () => {
             >
               <h2 className="text-xl font-bold mb-1">{o.name}</h2>
               <p className="mb-2">
-                <span className="text-white/50 line-through mr-2">{o.was}</span>
+                {o.was && <span className="text-white/50 line-through mr-2">{o.was}</span>}
                 <span className="text-[#49c274] text-3xl font-black">{o.now}</span>
               </p>
               <p className="text-white/85 text-lg mb-4 flex items-start gap-2"><CheckCircle className="w-5 h-5 text-[#49c274] mt-1 flex-shrink-0" />{o.note}</p>
@@ -82,7 +82,7 @@ const GuidesBonusPage = () => {
               >
                 {o.cta}
               </a>
-              <p className="text-white/50 text-sm mt-2">Code {o.code} is filled in for you.</p>
+              {o.code && <p className="text-white/50 text-sm mt-2">Code {o.code} is filled in for you.</p>}
             </div>
           ))}
         </div>
