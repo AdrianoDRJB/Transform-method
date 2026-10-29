@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { CheckCircle } from 'lucide-react';
-import { PROMO_LINKS } from '../lib/promo.js';
 
 // Pagina escondida: so quem comprou os guias de $9.90 recebe este link (dentro do PDF, no e-mail de confirmacao e no e-mail de boas-vindas).
 // Nao aparece no menu nem no site, e pede aos buscadores para nao indexar.
@@ -10,8 +9,11 @@ const CODES = {
   quarter: 'GUIDE50',  // 50% off no START ($559 -> $279.50)
 };
 
-// Link do START sem codigo (preco cheio). Quem paga cheio recebe 6 meses, liberados manualmente por Adriano.
-const START_FULL_PRICE_LINK = 'https://buy.stripe.com/bJe7sK0Zhevt0Lt1WZ1Jm0I';
+// Links criados so para esta campanha: cobram na hora, sem periodo de teste, com campo de codigo promocional.
+const QUICK_FIX_LINK = 'https://buy.stripe.com/dRmbJ00Zh1IHcub8ln1Jm0S';
+const START_LINK = 'https://buy.stripe.com/6oU14m9vNdrp0Lt6df1Jm0R';
+// Quem paga o START cheio ($559) recebe 6 meses, liberados manualmente por Adriano.
+const START_FULL_PRICE_LINK = START_LINK;
 
 const link = (url, code) => `${url}?prefilled_promo_code=${code}`;
 
@@ -22,7 +24,7 @@ const offers = [
     now: '$155.40',
     note: '40% off. One session to apply what you read.',
     code: CODES.single,
-    url: link(PROMO_LINKS.quickFix, CODES.single),
+    url: link(QUICK_FIX_LINK, CODES.single),
     cta: 'Book my single session',
   },
   {
@@ -31,7 +33,7 @@ const offers = [
     now: '$279.50',
     note: '50% off. Weekly support while you build the system.',
     code: CODES.quarter,
-    url: link(PROMO_LINKS.start, CODES.quarter),
+    url: link(START_LINK, CODES.quarter),
     cta: 'Start 3 months for $279.50',
   },
   {
