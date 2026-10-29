@@ -9,6 +9,7 @@ import EbooksPage from './components/EbooksPage'
 import EbooksKitDeliveryPage from './components/EbooksKitDeliveryPage'
 import GuidesOfferPage from './components/GuidesOfferPage'
 import GuidesBonusPage from './components/GuidesBonusPage'
+import GuidesThanksPage from './components/GuidesThanksPage'
 import PlansPage from './components/PlansPage'
 import SuccessPage from './components/SuccessPage'
 import ThankYouPage from './components/ThankYouPage'
@@ -185,6 +186,7 @@ function AppContent() {
           <Route path="/ebooks" element={<EbooksPage />} />
           <Route path="/guides" element={<GuidesOfferPage />} />
           <Route path="/guides/bonus" element={<GuidesBonusPage />} />
+          <Route path="/guides/thanks" element={<GuidesThanksPage />} />
           <Route path="/ebooks-kit-success" element={<EbooksKitDeliveryPage />} />
           <Route path="/plans" element={<PlansEntry />} />
           <Route path="/success" element={<SuccessPage />} />
