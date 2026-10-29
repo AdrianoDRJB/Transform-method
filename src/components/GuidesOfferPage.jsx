@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { CheckCircle, Shield, BookOpen } from 'lucide-react';
 
 // Link de pagamento do Stripe do produto de $9.90 (5 guias completos, pagamento unico).
-const GUIDES_CHECKOUT_LINK = 'https://buy.stripe.com/REPLACE_WITH_STRIPE_LINK';
+const GUIDES_CHECKOUT_LINK = 'https://buy.stripe.com/3cI14m9vNfzxdyf4571Jm0Q';
 const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/free-20-min-discovery-call';
 
 const points = [
