@@ -68,6 +68,7 @@ const TeamPage = () => (
         </p>
         <p className="text-white/60 text-sm mb-8 -mt-6">$559 is the regular price of the 3 month plan. $259 is the first cohort price.</p>
         <CtaButton />
+        <p className="text-white/90 text-base font-bold mt-4">At checkout, tap "Add code" and enter <span className="text-[#49c274]">TEAM259</span> to get the $259 price.</p>
         <p className="text-white/60 text-sm mt-3">Card saved today. $259 charged on day 31 unless you cancel before. One payment, not a subscription.</p>
       </div>
     </div>
@@ -157,6 +158,7 @@ const TeamPage = () => (
         </ol>
         <div className="mt-6 text-center">
           <CtaButton />
+          <p className="text-white/90 text-base font-bold mt-4">At checkout, tap "Add code" and enter <span className="text-[#49c274]">TEAM259</span>.</p>
         </div>
       </div>
 
