@@ -64,8 +64,9 @@ const TeamPage = () => (
           Try the first 30 days. Nothing is charged until day 31. If you do not like it, cancel and keep the material.
         </p>
         <p className="text-white/90 font-bold text-lg mb-8">
-          Early Black Friday price: <span className="text-[#49c274]">$259</span> for the full 12 weeks
+          Early Black Friday price: <span className="text-white/50 line-through mr-2">$559</span><span className="text-[#49c274]">$259</span> for the full 12 weeks
         </p>
+        <p className="text-white/60 text-sm mb-8 -mt-6">$559 is the regular price of the 3 month plan. $259 is the first cohort price.</p>
         <CtaButton />
         <p className="text-white/60 text-sm mt-3">Card saved today. $259 charged on day 31 unless you cancel before. One payment, not a subscription.</p>
       </div>
