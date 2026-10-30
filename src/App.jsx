@@ -12,6 +12,7 @@ import GuidesBonusPage from './components/GuidesBonusPage'
 import GuidesThanksPage from './components/GuidesThanksPage'
 import QuickFixPage from './components/QuickFixPage.jsx'
 import TeamPage from './components/TeamPage.jsx'
+import TeamWelcomePage from './components/TeamWelcomePage.jsx'
 import PlansPage from './components/PlansPage'
 import SuccessPage from './components/SuccessPage'
 import ThankYouPage from './components/ThankYouPage'
@@ -193,6 +194,7 @@ function AppContent() {
           <Route path="/plans" element={<PlansEntry />} />
           <Route path="/quick-fix" element={<QuickFixPage />} />
           <Route path="/team" element={<TeamPage />} />
+          <Route path="/team/welcome" element={<TeamWelcomePage />} />
           <Route path="/success" element={<SuccessPage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/call-booked" element={<CallBookedPage />} />
