@@ -4,7 +4,7 @@ import { CheckCircle, XCircle, Calendar, Target, Users, Moon, Dumbbell, Utensils
 
 // Link de pagamento do Stripe (assinatura com teste de 30 dias, cobra no dia 31).
 // Enquanto estiver vazio, o botao leva para o Instagram para nao quebrar.
-const TEAM_CHECKOUT_LINK = '';
+const TEAM_CHECKOUT_LINK = 'https://buy.stripe.com/00w7sK4btevt0Ltatv1Jm0T?prefilled_promo_code=TEAM259';
 const FALLBACK_LINK = 'https://ig.me/m/adriano.nutrition';
 const CTA_HREF = TEAM_CHECKOUT_LINK || FALLBACK_LINK;
 const CTA_TEXT = 'Start my 30 days. Pay nothing today';
