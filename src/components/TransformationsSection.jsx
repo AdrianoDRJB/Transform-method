@@ -31,7 +31,7 @@ const TransformationsSection = () => {
                   <ul className="space-y-3 text-gray-200">
                     <li className="flex items-start">
                       <span className="text-[#49c274] mr-2">•</span>
-                      <span><strong>Nutrition Student</strong> - 3rd Year University</span>
+                      <span><strong>Nutrition degree</strong> in progress (final year)</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-[#49c274] mr-2">•</span>

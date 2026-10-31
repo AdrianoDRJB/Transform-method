@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from './ui/card';
-import { ChevronDown, ChevronUp, Gift } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -109,19 +109,20 @@ const FAQSection = () => {
             Ready to Start Your Transformation?
           </h3>
           <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-            The first step is understanding the method. Grab the free eBooks and see how it works — no commitment, no credit card.
+            The easiest first step is a free 20 minute call. No pressure, no commitment.
           </p>
 
-          <Link
-            to="/ebooks"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3 text-base font-bold rounded-xl text-[#06140b] bg-[#2e9e4f] hover:bg-[#3fae67] transition-all shadow-lg"
+          <a
+            href="https://calendly.com/adriano-nutrition/free-20-min-discovery-call"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-bold rounded-xl text-[#06140b] bg-[#49c274] hover:bg-[#5dcf85] transition-all shadow-lg"
           >
-            <Gift className="w-5 h-5" />
-            Get the Free eBooks
-          </Link>
+            Book a free 20-min call &rarr;
+          </a>
 
-          <p className="mt-6 text-sm text-muted-foreground">
-            Join hundreds of people who already started their transformation.
+          <p className="mt-6 text-base text-muted-foreground">
+            Prefer to start on your own? <Link to="/ebooks" className="text-[#49c274] underline underline-offset-4 font-semibold">Get the free guides</Link>.
           </p>
         </div>
       </div>
