@@ -69,7 +69,7 @@ function HomePage() {
   }
 
   const benefits = [
-    { icon: Brain, title: 'Science-Based', description: 'Nutrition Student (3rd year) • Precision Nutrition Certified • Change Psychology Specialist' },
+    { icon: Brain, title: 'Science-Based', description: 'Nutrition Student (final year) • Precision Nutrition Certified • Change Psychology Specialist' },
     { icon: Target, title: 'Proven Results', description: 'Real transformations: 30kg+ lost, sobriety achieved, lives changed', clickable: true },
     { icon: TrendingUp, title: 'Sustainable Change', description: 'Build habits that last a lifetime' },
     { icon: Users, title: 'Community Support', description: 'Join others on their transformation journey' },
@@ -114,8 +114,12 @@ function HomePage() {
             This is the exact system I used — and now I teach it.
           </p>
 
+          <p className="text-lg sm:text-xl font-semibold text-white mb-4 max-w-xl mx-auto">
+            Nutrition coaching for athletes, busy parents and ADHD brains. Macros that fit your real life, not a perfect one.
+          </p>
+
           <p className="text-sm text-white/60 mb-10">
-            Nutrition Student (3rd year) • Precision Nutrition Certified • Change Psychology Specialist
+            Nutrition Student (final year) • Precision Nutrition Certified • Change Psychology Specialist
           </p>
 
           {/* Oferta dos 4 anos sobrio: so aparece para quem veio do anuncio ou de ?promo=4years */}
@@ -154,7 +158,7 @@ function HomePage() {
             href="https://calendly.com/adriano-nutrition/free-20-min-discovery-call"
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-full max-w-md mx-auto bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-bold py-3 px-6 rounded-xl transition-all text-center mb-3"
+            className="block w-full max-w-md mx-auto text-white/90 hover:text-white underline underline-offset-4 font-semibold py-2 text-center"
           >
             Any doubts? Book a free 20-min call →
           </a>
@@ -162,9 +166,9 @@ function HomePage() {
         {/* Secondary CTA - Path to paid coaching, for people who already know they want a coach */}
           <Link
             to="/plans"
-            className="block w-full max-w-md mx-auto bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-bold py-3 px-6 rounded-xl transition-all text-center"
+            className="block w-full max-w-md mx-auto text-white/90 hover:text-white underline underline-offset-4 font-semibold py-2 text-center"
           >
-            Already know you want a coach? See coaching plans &amp; book a free call →
+            Ready for coaching? See the plans →
           </Link>
         </div>
       </div>
