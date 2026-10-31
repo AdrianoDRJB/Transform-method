@@ -69,8 +69,8 @@ function HomePage() {
   }
 
   const benefits = [
-    { icon: Brain, title: 'Science-Based', description: 'Nutrition Student (3rd year) • Precision Nutrition Certified • Change Psychology Specialist' },
-    { icon: Target, title: 'Proven Results', description: 'Real transformations: 30kg+ lost, sobriety achieved, lives changed', clickable: true },
+    { icon: Brain, title: 'Science-Based', description: 'Precision Nutrition Certified • Change Psychology Specialist • Nutrition degree in progress' },
+    { icon: Target, title: 'Real Results', description: 'My own 84 lbs transformation, plus people I have coached', clickable: true },
     { icon: TrendingUp, title: 'Sustainable Change', description: 'Build habits that last a lifetime' },
     { icon: Users, title: 'Community Support', description: 'Join others on their transformation journey' },
   ]
@@ -104,18 +104,17 @@ function HomePage() {
           )}
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6">
-            I lost <span className="text-[#49c274]">84 lbs of fat.</span><br />
-            Rebuilt my body.<br />
-            Rebuilt my life.
+            Struggling to stay <span className="text-[#49c274]">consistent?</span><br />
+            Nutrition coaching built on systems, not willpower.
           </h1>
 
-          <p className="text-lg sm:text-xl text-white/80 mb-4 max-w-xl mx-auto">
-            4 years sober. National CrossFit competitor. ADHD overcomer.<br />
-            This is the exact system I used — and now I teach it.
+          <p className="text-lg sm:text-xl text-white/90 mb-4 max-w-xl mx-auto">
+            I lost <strong>84 lbs of fat</strong> and kept it off. 4 years sober. National CrossFit competitor. Living with ADHD.<br />
+            This is the exact system I used, and now I teach it.
           </p>
 
-          <p className="text-sm text-white/60 mb-10">
-            Nutrition Student (3rd year) • Precision Nutrition Certified • Change Psychology Specialist
+          <p className="text-base text-white/70 mb-10">
+            Precision Nutrition Certified Coach • Nutrition degree in progress
           </p>
 
           {/* Oferta dos 4 anos sobrio: so aparece para quem veio do anuncio ou de ?promo=4years */}
@@ -133,39 +132,30 @@ function HomePage() {
             </div>
           )}
 
-          {/* Free eBooks CTA */}
-          <div className="bg-black/50 backdrop-blur-md border-2 border-[#49c274] rounded-2xl p-6 mb-8 max-w-md mx-auto">
-            <p className="text-[#49c274] font-bold text-sm uppercase tracking-wider mb-1">Free eBooks</p>
-            <h3 className="text-white font-bold text-xl mb-2">5 Free TRANSFORM Method Guides</h3>
-            <p className="text-white/70 text-sm mb-5">The exact system I used to lose 84 lbs and transform my life. Free download — no credit card required.</p>
-            <Link
-              to="/ebooks"
-              className="block w-full bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-bold py-3 px-6 rounded-xl transition-all text-center text-lg"
-            >
-              <span className="inline-flex items-center gap-2">
-                <Gift className="h-5 w-5" />
-                Get the Free eBooks
-              </span>
-            </Link>
-            <p className="text-white/40 text-xs mt-3">100% free. Instant download.</p>
-          </div>
-        {/* Tertiary CTA - Free 20-min discovery call for people with questions */}
+          {/* Primary CTA: free 20-min call (single main path) */}
           <a
             href="https://calendly.com/adriano-nutrition/free-20-min-discovery-call"
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-full max-w-md mx-auto bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-bold py-3 px-6 rounded-xl transition-all text-center mb-3"
+            className="block w-full max-w-md mx-auto bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-black py-4 px-6 rounded-xl transition-all text-center text-xl shadow-xl mb-3"
           >
-            Any doubts? Book a free 20-min call →
+            Book a free 20-min call &rarr;
           </a>
+          <p className="text-white/70 text-base mb-8">No pressure. We look at where you are and I tell you honestly if I can help.</p>
 
-        {/* Secondary CTA - Path to paid coaching, for people who already know they want a coach */}
-          <Link
-            to="/plans"
-            className="block w-full max-w-md mx-auto bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-bold py-3 px-6 rounded-xl transition-all text-center"
-          >
-            Already know you want a coach? See coaching plans &amp; book a free call →
-          </Link>
+          {/* Secondary: free guides for people who want to start on their own */}
+          <div className="bg-black/50 backdrop-blur-md border border-[#49c274]/60 rounded-2xl p-5 max-w-md mx-auto">
+            <p className="text-white text-lg font-bold mb-3">Prefer to start on your own?</p>
+            <Link
+              to="/ebooks"
+              className="block w-full border-2 border-[#49c274] text-[#49c274] hover:bg-[#49c274] hover:text-[#06140b] font-bold py-3 px-6 rounded-xl transition-all text-center text-lg"
+            >
+              <span className="inline-flex items-center gap-2">
+                <Gift className="h-5 w-5" />
+                Get the 5 free guides
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -296,48 +286,6 @@ function HomePage() {
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-      {/* Free Tools CTA - Secondary, subtle */}
-      <div className="mb-20">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-4 text-white">
-            Free Tools
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Start building better habits today with our free nutrition tools
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="border-2 hover:border-[#2e9e4f] transition-all hover:shadow-lg">
-            <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Zap className="h-6 w-6 text-[#49c274]" />
-                <h3 className="text-xl font-bold text-white">Macro Tracker</h3>
-              </div>
-              <p className="text-muted-foreground mb-4">
-                Track your nutrition with our integrated USDA food database. Access 350,000+ foods.
-              </p>
-              <a href="/tracker" className="text-[#49c274] hover:text-[#3fae67] font-medium inline-flex items-center gap-1">
-                Try it free <ArrowRight className="h-4 w-4" />
-              </a>
-            </CardContent>
-          </Card>
-          <Card className="border-2 hover:border-[#2e9e4f] transition-all hover:shadow-lg">
-            <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Target className="h-6 w-6 text-[#49c274]" />
-                <h3 className="text-xl font-bold text-white">Calorie Calculator</h3>
-              </div>
-              <p className="text-muted-foreground mb-4">
-                Calculate your daily calorie needs based on your goals, activity level, and body composition.
-              </p>
-              <a href="/calculator" className="text-[#49c274] hover:text-[#3fae67] font-medium inline-flex items-center gap-1">
-                Calculate now <ArrowRight className="h-4 w-4" />
-              </a>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-
       {/* Testimonial Section */}
       <div className="text-center mb-20">
         <h2 className="text-3xl font-bold mb-8 text-white">
@@ -351,7 +299,7 @@ function HomePage() {
               and it's built on science, not motivation."
             </blockquote>
             <p className="font-semibold text-white">— The Author</p>
-            <p className="text-sm text-muted-foreground">4 years sober • National CrossFit competitor • ADHD advocate</p>
+            <p className="text-sm text-muted-foreground">4 years sober • National CrossFit competitor • Living with ADHD</p>
           </CardContent>
         </Card>
       </div>
@@ -383,7 +331,8 @@ function HomePage() {
 
     </div>
 
-    {/* Plans Preview Section */}
+    {/* Plans: only for visitors coming from the 4 years sober promo. Everyone else sees the call CTA. */}
+    {promo ? (
     <div className="bg-black py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
@@ -442,6 +391,31 @@ function HomePage() {
         </div>
       </div>
     </div>
+    ) : (
+    <div className="bg-black py-16 px-4">
+      <div className="max-w-3xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+          Not sure where to start? <span className="text-[#49c274]">Let's talk.</span>
+        </h2>
+        <p className="text-lg text-muted-foreground mb-8">
+          A free 20 minute call. No pressure, no sales script.
+        </p>
+        <a
+          href="https://calendly.com/adriano-nutrition/free-20-min-discovery-call"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-black py-4 px-10 rounded-xl transition-all text-xl shadow-xl"
+        >
+          Book a free 20-min call &rarr;
+        </a>
+        <p className="mt-6">
+          <Link to="/plans" className="text-[#49c274] hover:text-[#5dcf85] font-semibold text-base">
+            See coaching plans &rarr;
+          </Link>
+        </p>
+      </div>
+    </div>
+    )}
 
     {/* FAQ Section */}
     <FAQSection />
