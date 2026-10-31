@@ -121,7 +121,7 @@ const FAQSection = () => {
           </Link>
 
           <p className="mt-6 text-sm text-muted-foreground">
-            Join hundreds of people who already started their transformation.
+            Start with the free guides. No credit card needed.
           </p>
         </div>
       </div>

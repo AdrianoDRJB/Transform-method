@@ -334,7 +334,7 @@ const PlansPage = () => {
 
         {/* Social Proof Section */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-center mb-8">Real People. Real Results.</h2>
+          <h2 className="text-3xl font-bold text-center mb-8">It Worked For Me First</h2>
 
           <div className="grid grid-cols-1 gap-6 max-w-2xl mx-auto">
             {/* Adriano's Story */}
