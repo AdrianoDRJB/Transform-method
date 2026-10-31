@@ -115,7 +115,7 @@ function HomePage() {
           </p>
 
           <p className="text-lg sm:text-xl font-semibold text-white mb-4 max-w-xl mx-auto">
-            Nutrition coaching for athletes, busy parents and ADHD brains. Macros that fit your real life, not a perfect one.
+            Nutrition coaching for ADHD brains and anyone tired of starting over. A plan that fits your real life, not a perfect one.
           </p>
 
           <p className="text-sm text-white/60 mb-10">
