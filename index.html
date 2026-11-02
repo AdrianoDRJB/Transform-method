@@ -19,5 +19,21 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <link rel="stylesheet" href="https://storage.googleapis.com/mychatbot-widget-assets/v1/style.css" />
+    <script src="https://storage.googleapis.com/mychatbot-widget-assets/v1/widget.js"></script>
+    <div id="my-chat-widget-container"></div>
+    <script>
+      MyChatBot.mount('#my-chat-widget-container', {
+        account_id: "400609d9-486d-437a-8f6e-6ea46e706bbd",
+        widget_id: "adrianonutrition-site",
+        api_url: 'https://api.mychatbot.app',
+        assistant_name: "Adrianonutrition Assistant",
+        color: "#6F52E0",
+        lang: 'en',
+        ad_widget_title: '',
+        ad_widget_description: '',
+        ad_popup_messages: []
+      });
+    </script>
   </body>
 </html>
