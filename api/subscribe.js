@@ -9,6 +9,24 @@ export default async function handler(req, res) {
   }
 
   // Diagnostico: GET /api/subscribe mostra se a chave do beehiiv existe e se funciona (nunca mostra a chave).
+  if (req.method === 'GET' && req.query && req.query.probe) {
+    // Temporario: le uma pagina publica do beehiiv para descobrir o endpoint do formulario.
+    try {
+      const u = new URL(String(req.query.probe))
+      if (!u.hostname.endsWith('beehiiv.com')) return res.status(400).json({ error: 'host' })
+      const r = await fetch(u.toString(), { headers: { 'User-Agent': 'Mozilla/5.0' } })
+      const t = await r.text()
+      const urls = Array.from(new Set(t.match(/https?:\/\/[^"'\s)\\]+|\/[a-zA-Z0-9_\-\/]*(?:submit|subscribe|subscription)[a-zA-Z0-9_\-\/]*/g) || [])).slice(0, 60)
+      const hits = []
+      const re = /(.{120})(submit|subscriptions?|\/subscribe)(.{160})/g
+      let m
+      while ((m = re.exec(t)) && hits.length < 12) hits.push(m[0])
+      return res.status(200).json({ status: r.status, setCookie: r.headers.get('set-cookie') ? 'yes' : 'no', length: t.length, head: t.slice(0, 1500), urls, hits })
+    } catch (err) {
+      return res.status(200).json({ error: err.message })
+    }
+  }
+
   if (req.method === 'GET') {
     const key = process.env.BEEHIIV_API_KEY
     const pid = process.env.BEEHIIV_PUBLICATION_ID || 'pub_6b58b59a-46f7-4fbc-b1c9-992f681d4caf'
