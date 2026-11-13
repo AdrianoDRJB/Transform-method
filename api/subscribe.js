@@ -8,6 +8,20 @@ export default async function handler(req, res) {
     return res.status(200).end()
   }
 
+  // Diagnostico: GET /api/subscribe mostra se a chave do beehiiv existe e se funciona (nunca mostra a chave).
+  if (req.method === 'GET') {
+    const key = process.env.BEEHIIV_API_KEY
+    const pid = process.env.BEEHIIV_PUBLICATION_ID || 'pub_6b58b59a-46f7-4fbc-b1c9-992f681d4caf'
+    if (!key) return res.status(200).json({ hasKey: false })
+    try {
+      const r = await fetch(`https://api.beehiiv.com/v2/publications/${pid}`, { headers: { Authorization: `Bearer ${key}` } })
+      const body = await r.json().catch(() => ({}))
+      return res.status(200).json({ hasKey: true, keyLength: key.length, beehiivStatus: r.status, ok: r.ok, message: r.ok ? undefined : body })
+    } catch (err) {
+      return res.status(200).json({ hasKey: true, error: err.message })
+    }
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
   }
@@ -50,6 +64,7 @@ export default async function handler(req, res) {
     const data = await response.json()
 
     if (!response.ok) {
+      console.error('beehiiv subscribe failed', response.status, JSON.stringify(data))
       return res.status(response.status).json({ error: data })
     }
 
