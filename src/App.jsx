@@ -11,6 +11,7 @@ import GuidesOfferPage from './components/GuidesOfferPage'
 import GuidesBonusPage from './components/GuidesBonusPage'
 import GuidesThanksPage from './components/GuidesThanksPage'
 import QuickFixPage from './components/QuickFixPage.jsx'
+import FreeGuidesLanding from './components/FreeGuidesLanding.jsx'
 import TeamPage from './components/TeamPage.jsx'
 import TeamWelcomePage from './components/TeamWelcomePage.jsx'
 import PlansPage from './components/PlansPage'
@@ -248,6 +249,7 @@ function App() {
     <Router>
       <Tracker />
       <Routes>
+        <Route path="/free-guides" element={<FreeGuidesLanding />} />
         <Route path="/*" element={<AppContent />} />
       </Routes>
     </Router>
