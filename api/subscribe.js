@@ -21,7 +21,7 @@ export default async function handler(req, res) {
       const re = /(.{120})(submit|subscriptions?|\/subscribe)(.{160})/g
       let m
       while ((m = re.exec(t)) && hits.length < 12) hits.push(m[0])
-      return res.status(200).json({ status: r.status, setCookie: r.headers.get('set-cookie') ? 'yes' : 'no', length: t.length, head: t.slice(0, 1500), urls, hits })
+      const fm = t.match(/<form[\s\S]*?<\/form>/i); const inputs = (t.match(/<(?:input|button|select|textarea)[^>]*>/gi) || []).slice(0, 20); return res.status(200).json({ form: fm ? fm[0].slice(0, 2500) : null, inputs, status: r.status, setCookie: r.headers.get('set-cookie') ? 'yes' : 'no', length: t.length, head: t.slice(0, 1500), urls, hits })
     } catch (err) {
       return res.status(200).json({ error: err.message })
     }
