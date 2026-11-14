@@ -5,7 +5,7 @@ import { trackEmailSignup } from '../lib/tracking'
 // Pagina de captura para trafego frio do Meta (sem preco, sem menu, sem rodape do site).
 // Ordem: e-mail primeiro (libera os guias), Book a Call logo abaixo, descricao detalhada, Book a Call no fim.
 const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/free-20-min-discovery-call'
-const EMAIL_KEY = 'ebooks_email_done'
+const EMAIL_KEY = 'free_guides_verified_v2'
 
 const guides = [
   {
