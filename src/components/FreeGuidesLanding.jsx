@@ -182,7 +182,7 @@ function EmailForm({ id, unlocked, onUnlock, buttonText }) {
       <p className="text-white/70 text-sm mb-3">Type your email below and press Subscribe.</p>
       <div
         ref={boxRef}
-        className="bg-white rounded-xl overflow-hidden"
+        className="bg-black rounded-xl overflow-hidden border border-[#49c274]/40"
         style={{ height: FORM_H * scale }}
       >
         <iframe
@@ -198,6 +198,7 @@ function EmailForm({ id, unlocked, onUnlock, buttonText }) {
             margin: 0,
             border: 0,
             backgroundColor: 'transparent',
+            filter: 'invert(1) hue-rotate(180deg)',
             transform: `scale(${scale})`,
             transformOrigin: '0 0',
             marginLeft: Math.max(0, (boxW - FORM_W * scale) / 2),
