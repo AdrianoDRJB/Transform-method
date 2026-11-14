@@ -126,7 +126,23 @@ const BEEHIIV_FORM_URL = 'https://subscribe-forms.beehiiv.com/8bc25af3-6bed-42b2
 
 // Formulario oficial do beehiiv dentro da pagina (o cadastro feito pelo servidor do site e bloqueado pela Cloudflare do beehiiv).
 // O e-mail vai direto para o beehiiv. Depois de enviar, a pessoa toca no botao para abrir os 5 guias.
+// O formulario do beehiiv tem largura fixa (~560px). No celular encolhemos ele para caber na caixa.
+const FORM_W = 560
+const FORM_H = 300
+
 function EmailForm({ id, unlocked, onUnlock, buttonText }) {
+  const boxRef = useRef(null)
+  const [boxW, setBoxW] = useState(FORM_W)
+  useEffect(() => {
+    const el = boxRef.current
+    if (!el) return
+    const update = () => setBoxW(el.clientWidth || FORM_W)
+    update()
+    window.addEventListener('resize', update)
+    return () => window.removeEventListener('resize', update)
+  }, [unlocked])
+  const scale = Math.min(1, boxW / FORM_W)
+
   useEffect(() => {
     if (unlocked) return
     if (document.querySelector('script[data-beehiiv-embed]')) return
@@ -164,7 +180,11 @@ function EmailForm({ id, unlocked, onUnlock, buttonText }) {
     <div id={id} className="bg-[#12201a] border-2 border-[#49c274] rounded-2xl p-5">
       <p className="text-white font-bold text-lg mb-1">Step 1: enter your email</p>
       <p className="text-white/70 text-sm mb-3">Type your email below and press Subscribe.</p>
-      <div className="bg-white rounded-xl overflow-hidden">
+      <div
+        ref={boxRef}
+        className="bg-white rounded-xl overflow-hidden"
+        style={{ height: FORM_H * scale }}
+      >
         <iframe
           src={BEEHIIV_FORM_URL}
           title="Email signup"
@@ -172,7 +192,16 @@ function EmailForm({ id, unlocked, onUnlock, buttonText }) {
           data-test-id="beehiiv-embed"
           frameBorder="0"
           scrolling="no"
-          style={{ width: '100%', height: 190, margin: 0, border: 0, backgroundColor: 'transparent' }}
+          style={{
+            width: FORM_W,
+            height: FORM_H,
+            margin: 0,
+            border: 0,
+            backgroundColor: 'transparent',
+            transform: `scale(${scale})`,
+            transformOrigin: '0 0',
+            marginLeft: Math.max(0, (boxW - FORM_W * scale) / 2),
+          }}
         />
       </div>
       <p className="text-white font-bold text-lg mt-4 mb-2">Step 2: open your guides</p>
