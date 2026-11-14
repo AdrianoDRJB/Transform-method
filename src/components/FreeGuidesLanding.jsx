@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { CheckCircle, XCircle, Download, PhoneCall, ArrowDown, Target, Home, Zap, ShieldCheck, Layers, Settings, TrendingUp, Brain, UserCheck } from 'lucide-react'
 import { trackEmailSignup } from '../lib/tracking'
 
@@ -99,7 +99,7 @@ const notForYou = [
 
 const faqs = [
   { q: 'Are the guides really free?', a: 'Yes. Enter your email once and you can download all five right on this page.' },
-  { q: 'What happens after I enter my email?', a: 'The guides unlock immediately, and you get a short welcome email from me. You can unsubscribe at any time.' },
+  { q: 'What happens after I enter my email?', a: 'You can open and download the guides right away, and you get a short email from me. You can unsubscribe at any time.' },
   { q: 'What is the free 20-minute conversation?', a: 'It is not a sales pitch. We talk about where you are stuck, and I give you 1 or 2 concrete things to use right away. If working together makes sense, I tell you how it would look. If not, you keep what you learned.' },
   { q: 'Will this work for me?', a: 'I cannot promise that. It worked for me and for some of my clients, and it is based on science, but results vary from person to person.' },
   { q: 'Do I have to give up foods I like?', a: 'No. Banning foods creates cravings. Foods you like can fit in a plan in a way that does not wreck your progress.' },
@@ -122,42 +122,25 @@ function BookCallButton({ where }) {
   )
 }
 
-function EmailForm({ id, unlocked, onUnlock, buttonText }) {
-  const [email, setEmail] = useState('')
-  const [sending, setSending] = useState(false)
-  const [error, setError] = useState('')
+const BEEHIIV_FORM_URL = 'https://subscribe-forms.beehiiv.com/8bc25af3-6bed-42b2-9e07-dadff9505e58'
 
-  const submit = async (e) => {
-    e.preventDefault()
-    const value = email.trim()
-    if (!value || !value.includes('@') || !value.includes('.')) {
-      setError('Please enter a valid email.')
-      return
-    }
-    setError('')
-    setSending(true)
-    let source = 'direct'
-    try {
-      const p = new URLSearchParams(window.location.search)
-      source = (p.get('utm_content') || 'direct').replace(/[^a-z0-9_-]/gi, '').slice(0, 30) || 'direct'
-    } catch (err) { /* segue */ }
-    try {
-      // Se o cadastro falhar, a pessoa mesmo assim recebe os guias.
-      await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: value, campaign: `lp_${source}` }),
-      })
-    } catch (err) { /* segue o fluxo */ }
-    trackEmailSignup(`lp_${source}`)
-    setSending(false)
-    onUnlock()
-  }
+// Formulario oficial do beehiiv dentro da pagina (o cadastro feito pelo servidor do site e bloqueado pela Cloudflare do beehiiv).
+// O e-mail vai direto para o beehiiv. Depois de enviar, a pessoa toca no botao para abrir os 5 guias.
+function EmailForm({ id, unlocked, onUnlock, buttonText }) {
+  useEffect(() => {
+    if (unlocked) return
+    if (document.querySelector('script[data-beehiiv-embed]')) return
+    const s = document.createElement('script')
+    s.async = true
+    s.src = 'https://subscribe-forms.beehiiv.com/embed.js'
+    s.setAttribute('data-beehiiv-embed', '1')
+    document.body.appendChild(s)
+  }, [unlocked])
 
   if (unlocked) {
     return (
       <div id={id} className="bg-[#12201a] border-2 border-[#49c274] rounded-2xl p-5 text-left">
-        <p className="text-white font-bold text-lg mb-1">You are in. Your 5 guides are unlocked.</p>
+        <p className="text-white font-bold text-lg mb-1">Your 5 guides are unlocked.</p>
         <p className="text-white/70 text-sm mb-4">Tap a guide to download it. Then keep reading to see how the free call works.</p>
         <ul className="space-y-3">
           {guides.map((g) => (
@@ -178,29 +161,30 @@ function EmailForm({ id, unlocked, onUnlock, buttonText }) {
   }
 
   return (
-    <form id={id} onSubmit={submit} className="bg-[#12201a] border-2 border-[#49c274] rounded-2xl p-5">
-      <div className="flex flex-col sm:flex-row gap-3">
-        <input
-          type="email"
-          inputMode="email"
-          autoComplete="email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Your best email"
-          className="flex-1 bg-[#0b140f] text-white placeholder-white/40 border border-white/20 rounded-xl px-4 py-4 text-lg focus:outline-none focus:border-[#49c274]"
+    <div id={id} className="bg-[#12201a] border-2 border-[#49c274] rounded-2xl p-5">
+      <p className="text-white font-bold text-lg mb-1">Step 1: enter your email</p>
+      <p className="text-white/70 text-sm mb-3">Type your email below and press Subscribe.</p>
+      <div className="bg-white rounded-xl overflow-hidden">
+        <iframe
+          src={BEEHIIV_FORM_URL}
+          title="Email signup"
+          className="beehiiv-embed"
+          data-test-id="beehiiv-embed"
+          frameBorder="0"
+          scrolling="no"
+          style={{ width: '100%', height: 190, margin: 0, border: 0, backgroundColor: 'transparent' }}
         />
-        <button
-          type="submit"
-          disabled={sending}
-          className="bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-black text-lg py-4 px-6 rounded-xl transition-all disabled:opacity-60"
-        >
-          {sending ? 'Sending...' : buttonText}
-        </button>
       </div>
-      {error && <p className="text-red-300 text-sm mt-2">{error}</p>}
-      <p className="text-white/50 text-sm mt-3">Free. One email and the guides unlock on this page. Unsubscribe any time.</p>
-    </form>
+      <p className="text-white font-bold text-lg mt-4 mb-2">Step 2: open your guides</p>
+      <button
+        type="button"
+        onClick={onUnlock}
+        className="w-full bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-black text-lg py-4 px-6 rounded-xl transition-all"
+      >
+        {buttonText}
+      </button>
+      <p className="text-white/50 text-sm mt-3">Free. Unsubscribe any time.</p>
+    </div>
   )
 }
 
@@ -213,6 +197,11 @@ function FreeGuidesLanding() {
 
   const onUnlock = () => {
     try { window.localStorage.setItem(EMAIL_KEY, '1') } catch (e) { /* vale so nesta visita */ }
+    try {
+      const p = new URLSearchParams(window.location.search)
+      const source = (p.get('utm_content') || 'direct').replace(/[^a-z0-9_-]/gi, '').slice(0, 30) || 'direct'
+      trackEmailSignup(`lp_${source}`)
+    } catch (e) { /* segue */ }
     setUnlocked(true)
     if (topRef.current) topRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
@@ -229,9 +218,9 @@ function FreeGuidesLanding() {
             A nutrition plan that still works after a bad day.
           </h1>
           <p className="text-lg sm:text-xl text-white/80 mb-6 text-center">
-            Five free guides for people who keep starting over. Enter your email and they unlock right here. No diet to follow, a system you can keep.
+            Five free guides for people who keep starting over. Enter your email and your guides open right here. No diet to follow, a system you can keep.
           </p>
-          <EmailForm id="signup-top" unlocked={unlocked} onUnlock={onUnlock} buttonText="Send me the 5 free guides" />
+          <EmailForm id="signup-top" unlocked={unlocked} onUnlock={onUnlock} buttonText="I entered my email. Open my 5 guides" />
           <div className="mt-6 text-center">
             <p className="text-white/70 mb-3">Prefer to talk? Free 20-minute conversation.</p>
             <BookCallButton where="top" />
@@ -304,7 +293,7 @@ function FreeGuidesLanding() {
           ))}
         </div>
         <div className="mb-12">
-          <EmailForm id="signup-mid" unlocked={unlocked} onUnlock={onUnlock} buttonText="Unlock the 5 guides" />
+          <EmailForm id="signup-mid" unlocked={unlocked} onUnlock={onUnlock} buttonText="I entered my email. Open my 5 guides" />
         </div>
 
         {/* O metodo em detalhe */}
