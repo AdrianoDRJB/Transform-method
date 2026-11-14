@@ -125,13 +125,14 @@ function BookCallButton({ where }) {
 const BEEHIIV_FORM_URL = 'https://subscribe-forms.beehiiv.com/8bc25af3-6bed-42b2-9e07-dadff9505e58'
 
 // Formulario oficial do beehiiv dentro da pagina (o cadastro feito pelo servidor do site e bloqueado pela Cloudflare do beehiiv).
-// O e-mail vai direto para o beehiiv. Depois de enviar, a pessoa toca no botao para abrir os 5 guias.
+// O e-mail vai direto para o beehiiv. Os 5 guias abrem sozinhos quando o beehiiv confirma o envio.
 // O formulario do beehiiv tem largura fixa (~560px). No celular encolhemos ele para caber na caixa.
 const FORM_W = 560
 const FORM_H = 300
 
 function EmailForm({ id, unlocked, onUnlock, buttonText }) {
   const boxRef = useRef(null)
+  const frameRef = useRef(null)
   const [boxW, setBoxW] = useState(FORM_W)
   useEffect(() => {
     const el = boxRef.current
@@ -142,6 +143,18 @@ function EmailForm({ id, unlocked, onUnlock, buttonText }) {
     return () => window.removeEventListener('resize', update)
   }, [unlocked])
   const scale = Math.min(1, boxW / FORM_W)
+
+  // So abre os guias quando o proprio formulario do beehiiv confirma que o e-mail foi enviado.
+  useEffect(() => {
+    if (unlocked) return
+    const onMessage = (event) => {
+      const frame = frameRef.current
+      if (!frame || event.source !== frame.contentWindow) return
+      if (event.data && event.data.type === 'beehiiv:success-toast') onUnlock()
+    }
+    window.addEventListener('message', onMessage)
+    return () => window.removeEventListener('message', onMessage)
+  }, [unlocked, onUnlock])
 
   useEffect(() => {
     if (unlocked) return
@@ -178,41 +191,43 @@ function EmailForm({ id, unlocked, onUnlock, buttonText }) {
 
   return (
     <div id={id} className="bg-[#12201a] border-2 border-[#49c274] rounded-2xl p-5">
-      <p className="text-white font-bold text-lg mb-1">Step 1: enter your email</p>
+      <p className="text-white font-bold text-lg mb-1">Enter your email to get the 5 guides</p>
       <p className="text-white/70 text-sm mb-3">Type your email below and press Subscribe.</p>
       <div
         ref={boxRef}
-        className="bg-black rounded-xl overflow-hidden border border-[#49c274]/40"
-        style={{ height: FORM_H * scale }}
+        className="rounded-xl overflow-hidden border border-[#49c274]/40 bg-[#12201a]"
+        style={{ height: FORM_H * scale, isolation: 'isolate' }}
       >
-        <iframe
-          src={BEEHIIV_FORM_URL}
-          title="Email signup"
-          className="beehiiv-embed"
-          data-test-id="beehiiv-embed"
-          frameBorder="0"
-          scrolling="no"
+        <div
           style={{
             width: FORM_W,
             height: FORM_H,
-            margin: 0,
-            border: 0,
-            backgroundColor: 'transparent',
-            filter: 'invert(1) hue-rotate(180deg)',
             transform: `scale(${scale})`,
             transformOrigin: '0 0',
             marginLeft: Math.max(0, (boxW - FORM_W * scale) / 2),
           }}
-        />
+        >
+          <iframe
+            ref={frameRef}
+            src={BEEHIIV_FORM_URL}
+            title="Email signup"
+            className="beehiiv-embed !w-full !h-full"
+            data-test-id="beehiiv-embed"
+            frameBorder="0"
+            scrolling="no"
+            style={{
+              margin: 0,
+              border: 0,
+              backgroundColor: 'transparent',
+              filter: 'invert(1) hue-rotate(180deg)',
+              mixBlendMode: 'screen',
+            }}
+          />
+        </div>
       </div>
-      <p className="text-white font-bold text-lg mt-4 mb-2">Step 2: open your guides</p>
-      <button
-        type="button"
-        onClick={onUnlock}
-        className="w-full bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-black text-lg py-4 px-6 rounded-xl transition-all"
-      >
-        {buttonText}
-      </button>
+      <p className="text-white/70 text-sm mt-3">
+        Your 5 guides open here automatically as soon as your email is sent.
+      </p>
       <p className="text-white/50 text-sm mt-3">Free. Unsubscribe any time.</p>
     </div>
   )
