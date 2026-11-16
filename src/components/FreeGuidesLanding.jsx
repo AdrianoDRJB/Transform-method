@@ -128,7 +128,7 @@ const BEEHIIV_FORM_URL = 'https://subscribe-forms.beehiiv.com/8bc25af3-6bed-42b2
 // O e-mail vai direto para o beehiiv. Os 5 guias abrem sozinhos quando o beehiiv confirma o envio.
 // O formulario do beehiiv tem largura fixa (~560px). No celular encolhemos ele para caber na caixa.
 const FORM_W = 560
-const FORM_H = 300
+const FORM_H = 380
 
 function EmailForm({ id, unlocked, onUnlock, buttonText }) {
   const boxRef = useRef(null)
