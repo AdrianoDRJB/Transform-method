@@ -18,7 +18,7 @@ import PlansPage from './components/PlansPage'
 import SuccessPage from './components/SuccessPage'
 import ThankYouPage from './components/ThankYouPage'
 import CallBookedPage from './components/CallBookedPage'
-import { initMetaPixel, trackPageView, trackBookCallClick, trackPaidSessionClick, trackCheckoutClick, trackEbookDownload } from './lib/tracking'
+import { initMetaPixel, initGoogleAds, trackPageView, trackBookCallClick, trackPaidSessionClick, trackCheckoutClick, trackEbookDownload } from './lib/tracking'
 import './App.css'
 
 // Quem chega direto na pagina de precos vindo de um anuncio ainda nao conhece o Adriano.
@@ -47,6 +47,7 @@ function Tracker() {
 
   useEffect(() => {
     initMetaPixel()
+    initGoogleAds()
   }, [])
 
   useEffect(() => {
