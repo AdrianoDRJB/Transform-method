@@ -5,7 +5,21 @@
 // Enquanto estiver vazio, o Pixel fica desligado e o resto continua funcionando.
 export const META_PIXEL_ID = '1318891623640427'
 
+// Cole aqui o ID da tag do Google Ads (comeca com AW-, ex: 'AW-1234567890').
+// Fica em Google Ads > Metas > Conversoes > Visualizacao de pagina > Configuracao da tag.
+// Enquanto estiver vazio, a tag fica desligada e o resto continua funcionando.
+export const GOOGLE_ADS_ID = 'AW-18550132436'
+
 let pixelStarted = false
+let adsStarted = false
+
+// Liga a tag do Google Ads (a conversao "Visualizacao de pagina" de /team/welcome dispara sozinha
+// quando a pagina carrega com a tag presente). O gtag base ja e carregado no index.html.
+export function initGoogleAds() {
+  if (adsStarted || !GOOGLE_ADS_ID || typeof window === 'undefined' || typeof window.gtag !== 'function') return
+  adsStarted = true
+  window.gtag('config', GOOGLE_ADS_ID)
+}
 
 export function initMetaPixel() {
   if (pixelStarted || !META_PIXEL_ID || typeof window === 'undefined') return
