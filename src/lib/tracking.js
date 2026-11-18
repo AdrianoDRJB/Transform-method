@@ -8,7 +8,7 @@ export const META_PIXEL_ID = '1318891623640427'
 // Cole aqui o ID da tag do Google Ads (comeca com AW-, ex: 'AW-1234567890').
 // Fica em Google Ads > Metas > Conversoes > Visualizacao de pagina > Configuracao da tag.
 // Enquanto estiver vazio, a tag fica desligada e o resto continua funcionando.
-export const GOOGLE_ADS_ID = ''
+export const GOOGLE_ADS_ID = 'AW-18550132436'
 
 let pixelStarted = false
 let adsStarted = false
