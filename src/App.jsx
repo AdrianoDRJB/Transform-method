@@ -1,23 +1,23 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom'
 import { Menu, X, Dumbbell } from 'lucide-react'
-import HomePage from './components/HomePage'
-import MacroTracker from './components/MacroTracker'
-import AboutMethod from './components/AboutMethod'
-import CalorieCalculator from './components/CalorieCalculator'
-import EbooksPage from './components/EbooksPage'
-import EbooksKitDeliveryPage from './components/EbooksKitDeliveryPage'
-import GuidesOfferPage from './components/GuidesOfferPage'
-import GuidesBonusPage from './components/GuidesBonusPage'
-import GuidesThanksPage from './components/GuidesThanksPage'
-import QuickFixPage from './components/QuickFixPage.jsx'
-import FreeGuidesLanding from './components/FreeGuidesLanding.jsx'
-import TeamPage from './components/TeamPage.jsx'
-import TeamWelcomePage from './components/TeamWelcomePage.jsx'
-import PlansPage from './components/PlansPage'
-import SuccessPage from './components/SuccessPage'
-import ThankYouPage from './components/ThankYouPage'
-import CallBookedPage from './components/CallBookedPage'
+const HomePage = lazy(() => import('./components/HomePage'))
+const MacroTracker = lazy(() => import('./components/MacroTracker'))
+const AboutMethod = lazy(() => import('./components/AboutMethod'))
+const CalorieCalculator = lazy(() => import('./components/CalorieCalculator'))
+const EbooksPage = lazy(() => import('./components/EbooksPage'))
+const EbooksKitDeliveryPage = lazy(() => import('./components/EbooksKitDeliveryPage'))
+const GuidesOfferPage = lazy(() => import('./components/GuidesOfferPage'))
+const GuidesBonusPage = lazy(() => import('./components/GuidesBonusPage'))
+const GuidesThanksPage = lazy(() => import('./components/GuidesThanksPage'))
+const QuickFixPage = lazy(() => import('./components/QuickFixPage.jsx'))
+const FreeGuidesLanding = lazy(() => import('./components/FreeGuidesLanding.jsx'))
+const TeamPage = lazy(() => import('./components/TeamPage.jsx'))
+const TeamWelcomePage = lazy(() => import('./components/TeamWelcomePage.jsx'))
+const PlansPage = lazy(() => import('./components/PlansPage'))
+const SuccessPage = lazy(() => import('./components/SuccessPage'))
+const ThankYouPage = lazy(() => import('./components/ThankYouPage'))
+const CallBookedPage = lazy(() => import('./components/CallBookedPage'))
 import { initMetaPixel, initGoogleAds, trackPageView, trackBookCallClick, trackPaidSessionClick, trackCheckoutClick, trackEbookDownload } from './lib/tracking'
 import './App.css'
 
@@ -182,6 +182,7 @@ function AppContent() {
         )}
 
         {/* Routes */}
+        <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
@@ -201,6 +202,7 @@ function AppContent() {
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/call-booked" element={<CallBookedPage />} />
         </Routes>
+        </Suspense>
 
         {/* Footer */}
         <footer className="bg-[#0b140f] text-white mt-20 border-t border-white/10">
@@ -249,10 +251,12 @@ function App() {
   return (
     <Router>
       <Tracker />
+      <Suspense fallback={null}>
       <Routes>
         <Route path="/free-guides" element={<FreeGuidesLanding />} />
         <Route path="/*" element={<AppContent />} />
       </Routes>
+      </Suspense>
     </Router>
   )
 }
