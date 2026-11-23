@@ -37,7 +37,7 @@ const mealPhotos = [
 // Formacao. Cada item e verdadeiro e usa o nome e a data do certificado.
 // Para incluir o Precision Nutrition Level 1, preencha LEVEL1_TEXT com o nome exato e a data do certificado
 // (ex.: 'Precision Nutrition Level 1 Certification (2023)'). Enquanto estiver vazio, nao aparece para o visitante.
-const LEVEL1_TEXT = '';
+const LEVEL1_TEXT = 'Precision Nutrition Level 1 Certification (October 2024)';
 const credentials = [
   { text: 'Advanced Certificate in Change Psychology, Precision Nutrition (March 2025)' },
   { text: 'Nutrition for Metabolic Health: What is Metabolism, Precision Nutrition (December 2024)', badge: '/badges/pn-nmh-1.png' },
@@ -223,7 +223,7 @@ const TeamPage = () => (
         {!LEVEL1_TEXT && typeof window !== 'undefined' && window.location.search.includes('preview') && (
           <p className="mt-3 text-sm text-[#49c274]">Preview only: the Precision Nutrition Level 1 line goes here once I have the certificate.</p>
         )}
-        <p className="text-white/60 text-sm mt-4">These are continuing education courses. I am a nutrition coach, not a doctor or a registered dietitian.</p>
+        <p className="text-white/60 text-sm mt-4">I am a nutrition coach, not a doctor or a registered dietitian.</p>
       </div>
 
       {/* No one size fits all */}
