@@ -9,6 +9,45 @@ const FALLBACK_LINK = 'https://ig.me/m/adriano.nutrition';
 const CTA_HREF = TEAM_CHECKOUT_LINK || FALLBACK_LINK;
 const CTA_TEXT = 'Start my 30 days. Pay nothing today';
 
+// Video de apresentacao do Adriano. Quando gravar, coloque o arquivo em
+// public/videos/team-intro.mp4 e troque a linha abaixo por '/videos/team-intro.mp4'.
+// Enquanto estiver vazio, nada aparece para o visitante. Para ver o espaco reservado,
+// abra a pagina com ?preview no final do endereco (ex.: /team?preview).
+const VIDEO_SRC = '';
+const VIDEO_POSTER = '/hero-bw.jpg';
+
+const benefits = [
+  { icon: Calendar, title: 'Planned with you, around your routine', text: 'We build it together, around your week and your real difficulties.' },
+  { icon: MessageCircle, title: 'Close contact with me', text: 'I am building a small team, so you get real proximity and my best support.' },
+  { icon: Utensils, title: 'A chef in your corner', text: 'Before nutrition I was a cook and a chef, so expect prep tips and a video or two to help in the kitchen.' },
+  { icon: ShieldCheck, title: 'No shortcuts, just the real work', text: 'I have lived this for 8 years: 5 with lots of ups and downs, 4 consistent. I will hold you accountable.' },
+];
+
+const trainingPhotos = [
+  { src: '/training/deadlift.jpg', alt: 'Adriano deadlifting in a competition', caption: 'Heavy days' },
+  { src: '/training/handstand.jpg', alt: 'Handstand walk at a CrossFit event', caption: 'Fun on the hard days' },
+];
+
+const mealPhotos = [
+  { src: '/meals/bowl-beet-veg.jpg', alt: 'Bowl with beet, carrot, zucchini and ground beef', caption: 'Color on the plate' },
+  { src: '/meals/plate-broccoli.jpg', alt: 'Plate with chicken, black beans, broccoli and vegetables', caption: 'Chicken, beans, broccoli' },
+  { src: '/meals/eggs-toast-fruit.jpg', alt: 'Eggs, cheese toast, fruit and coffee', caption: 'Simple breakfast' },
+];
+
+// Formacao. Cada item e verdadeiro e usa o nome e a data do certificado.
+// Para incluir o Precision Nutrition Level 1, preencha LEVEL1_TEXT com o nome exato e a data do certificado
+// (ex.: 'Precision Nutrition Level 1 Certification (2023)'). Enquanto estiver vazio, nao aparece para o visitante.
+const LEVEL1_TEXT = 'Precision Nutrition Level 1 Certification (October 2024)';
+const credentials = [
+  { text: 'Advanced Certificate in Change Psychology, Precision Nutrition (March 2025)' },
+  { text: 'Nutrition for Metabolic Health: What is Metabolism, Precision Nutrition (December 2024)', badge: '/badges/pn-nmh-1.png' },
+];
+
+const midPhotos = [
+  { src: '/training/rowing.jpg', alt: 'Adriano on the rowing machine', caption: 'Steady work', ratio: 'aspect-[3/4]' },
+  { src: '/meals/yogurt-bowl-banana.jpg', alt: 'Yogurt bowl with banana and granola', caption: 'Yogurt bowl', ratio: 'aspect-[3/4]' },
+];
+
 const phases = [
   { icon: Target, title: 'Before week 1: Kickoff', text: 'We map what has derailed you before: schedule, training load, history, travel, family. That sets your block.' },
   { icon: Utensils, title: 'Week 1: Prep', text: 'Calories and macros set from your real training schedule. A daily rhythm built around your meals, training and travel.' },
@@ -51,11 +90,39 @@ const CtaButton = () => (
   </a>
 );
 
+const VideoSlot = () => {
+  const showPlaceholder = !VIDEO_SRC && typeof window !== 'undefined' && window.location.search.includes('preview');
+  if (!VIDEO_SRC && !showPlaceholder) return null;
+  return (
+    <div className="max-w-2xl mx-auto px-5 mt-8 mb-10">
+      <div className="bg-[#12201a] border border-white/10 rounded-2xl p-3">
+        {VIDEO_SRC ? (
+          <video
+            className="w-full rounded-xl bg-black"
+            src={VIDEO_SRC}
+            poster={VIDEO_POSTER}
+            controls
+            playsInline
+            preload="metadata"
+          />
+        ) : (
+          <div className="aspect-video rounded-xl bg-black/40 border border-dashed border-[#49c274]/50 flex flex-col items-center justify-center text-center px-6">
+            <p className="text-[#49c274] font-bold mb-1">Video goes here (about 60 seconds)</p>
+            <p className="text-white/60 text-sm">Only visible with ?preview in the address. Visitors see nothing until the video is added.</p>
+          </div>
+        )}
+        <p className="text-white/70 text-sm text-center mt-2">A short note from me, Adriano</p>
+      </div>
+    </div>
+  );
+};
+
 const TeamPage = () => (
   <div className="min-h-screen bg-[#0b140f] text-white">
     {/* Hero */}
-    <div className="bg-gradient-to-r from-[#0f3f26] to-[#1b5e3a] py-14">
-      <div className="max-w-2xl mx-auto px-5 text-center">
+    <div className="bg-gradient-to-r from-[#0f3f26] to-[#1b5e3a] overflow-hidden">
+      <div className="max-w-5xl mx-auto grid md:grid-cols-[1.25fr_0.75fr] items-center">
+      <div className="px-5 py-10 md:py-14 text-left order-2 md:order-1">
         <p className="text-[#49c274] font-bold text-sm uppercase tracking-wider mb-3">Team TRANSFORM · First cohort · 10 spots</p>
         <h1 className="text-3xl sm:text-4xl font-black leading-tight mb-4">
           12 weeks of nutrition coaching built around your real life.
@@ -71,14 +138,61 @@ const TeamPage = () => (
         <p className="text-white/90 text-base font-bold mt-4">The $259 price is already applied. No code needed.</p>
         <p className="text-white/60 text-sm mt-3">Card saved today, $0 due today. $259 is charged once on day 31 unless you cancel before. The checkout page says "every 12 weeks" because of how Stripe handles free trials. I cancel it for you after your first payment, so you are charged one time only.</p>
       </div>
+      <div className="order-1 md:order-2 md:py-10 md:pr-5">
+        <picture>
+          <source media="(min-width: 768px)" srcSet="/transformations/adriano-transformation.jpg" />
+          <img
+            src="/transformations/adriano-transformation-mobile.jpg"
+            alt="Adriano Monteiro, before and after"
+            className="w-full h-auto md:rounded-2xl"
+          />
+        </picture>
+      </div>
+      </div>
     </div>
 
+    <VideoSlot />
+
     <div className="max-w-2xl mx-auto px-5 py-12">
+      {/* What you get */}
+      <h2 className="text-2xl font-bold mb-5">What working with me looks like</h2>
+      <div className="space-y-4 mb-12">
+        {benefits.map((b) => (
+          <div key={b.title} className="bg-[#12201a] border border-white/10 rounded-2xl p-5 flex gap-4">
+            <b.icon className="w-6 h-6 text-[#49c274] flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-white font-bold text-lg mb-1">{b.title}</h3>
+              <p className="text-white/80 text-lg">{b.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Real training, real food */}
+      <h2 className="text-2xl font-bold mb-2">Real training. Real food.</h2>
+      <p className="text-white/70 mb-4">This is my own week, not stock photos.</p>
+      <div className="grid grid-cols-2 gap-2 mb-2">
+        {trainingPhotos.map((p) => (
+          <figure key={p.src}>
+            <img src={p.src} alt={p.alt} loading="lazy" className="w-full aspect-[4/3] object-cover object-top rounded-xl" />
+            <figcaption className="text-white/70 text-xs mt-1 text-center">{p.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+      <div className="grid grid-cols-3 gap-2 mb-12">
+        {mealPhotos.map((p) => (
+          <figure key={p.src}>
+            <img src={p.src} alt={p.alt} loading="lazy" className="w-full aspect-square object-cover rounded-xl" />
+            <figcaption className="text-white/70 text-xs mt-1 text-center">{p.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+
       {/* Story */}
       <div className="bg-[#12201a] border border-white/10 rounded-2xl p-6 mb-12">
         <h2 className="text-2xl font-bold mb-3">I built this by living it</h2>
         <img
-          src="/transformations/adriano-transformation.jpg"
+          src="/transformations/adriano-profile.jpg"
           alt="Adriano, before and after"
           className="w-full rounded-xl mb-4"
           loading="lazy"
@@ -92,6 +206,27 @@ const TeamPage = () => (
         <p className="text-white/60 text-sm">
           Individual results vary. Photos show my own results and are not a guarantee for you.
         </p>
+      </div>
+
+      {/* Training */}
+      <div className="bg-[#12201a] border border-white/10 rounded-2xl p-6 mb-12">
+        <h2 className="text-xl font-bold mb-3">My training in coaching behavior change</h2>
+        <ul className="space-y-3">
+          {LEVEL1_TEXT && (
+            <li className="flex gap-3 text-white/90"><CheckCircle className="w-5 h-5 text-[#49c274] flex-shrink-0 mt-0.5" />Completed: {LEVEL1_TEXT}</li>
+          )}
+          {credentials.map((c) => (
+            <li key={c.text} className="flex gap-3 text-white/90 items-start">
+              <CheckCircle className="w-5 h-5 text-[#49c274] flex-shrink-0 mt-0.5" />
+              <span className="flex-1">Completed: {c.text}</span>
+              {c.badge && <img src={c.badge} alt="Precision Nutrition NMH 1 badge" className="w-12 h-auto flex-shrink-0" loading="lazy" />}
+            </li>
+          ))}
+        </ul>
+        {!LEVEL1_TEXT && typeof window !== 'undefined' && window.location.search.includes('preview') && (
+          <p className="mt-3 text-sm text-[#49c274]">Preview only: the Precision Nutrition Level 1 line goes here once I have the certificate.</p>
+        )}
+        <p className="text-white/60 text-sm mt-4">I am a nutrition coach, not a doctor or a registered dietitian.</p>
       </div>
 
       {/* No one size fits all */}
@@ -135,6 +270,15 @@ const TeamPage = () => (
               <p className="text-white/85 text-lg">{p.text}</p>
             </div>
           </div>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-2 gap-2 mb-12">
+        {midPhotos.map((p) => (
+          <figure key={p.src}>
+            <img src={p.src} alt={p.alt} loading="lazy" className={`w-full ${p.ratio} object-cover object-top rounded-xl`} />
+            <figcaption className="text-white/70 text-xs mt-1 text-center">{p.caption}</figcaption>
+          </figure>
         ))}
       </div>
 
