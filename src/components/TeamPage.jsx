@@ -9,6 +9,20 @@ const FALLBACK_LINK = 'https://ig.me/m/adriano.nutrition';
 const CTA_HREF = TEAM_CHECKOUT_LINK || FALLBACK_LINK;
 const CTA_TEXT = 'Start my 30 days. Pay nothing today';
 
+// Video de apresentacao do Adriano. Quando gravar, coloque o arquivo em
+// public/videos/team-intro.mp4 e troque a linha abaixo por '/videos/team-intro.mp4'.
+// Enquanto estiver vazio, nada aparece para o visitante. Para ver o espaco reservado,
+// abra a pagina com ?preview no final do endereco (ex.: /team?preview).
+const VIDEO_SRC = '';
+const VIDEO_POSTER = '/hero-bw.jpg';
+
+const benefits = [
+  { icon: Calendar, title: 'Planned with you, around your routine', text: 'We build it together, around your week and your real difficulties.' },
+  { icon: MessageCircle, title: 'Close contact with me', text: 'I am building a small team, so you get real proximity and my best support.' },
+  { icon: Utensils, title: 'A chef in your corner', text: 'Before nutrition I was a cook and a chef, so expect prep tips and a video or two to help in the kitchen.' },
+  { icon: ShieldCheck, title: 'No shortcuts, just the real work', text: 'I have lived this for 8 years: 5 with lots of ups and downs, 4 consistent. I will hold you accountable.' },
+];
+
 const phases = [
   { icon: Target, title: 'Before week 1: Kickoff', text: 'We map what has derailed you before: schedule, training load, history, travel, family. That sets your block.' },
   { icon: Utensils, title: 'Week 1: Prep', text: 'Calories and macros set from your real training schedule. A daily rhythm built around your meals, training and travel.' },
@@ -51,6 +65,33 @@ const CtaButton = () => (
   </a>
 );
 
+const VideoSlot = () => {
+  const showPlaceholder = !VIDEO_SRC && typeof window !== 'undefined' && window.location.search.includes('preview');
+  if (!VIDEO_SRC && !showPlaceholder) return null;
+  return (
+    <div className="max-w-2xl mx-auto px-5 -mt-6 mb-10">
+      <div className="bg-[#12201a] border border-white/10 rounded-2xl p-3">
+        {VIDEO_SRC ? (
+          <video
+            className="w-full rounded-xl bg-black"
+            src={VIDEO_SRC}
+            poster={VIDEO_POSTER}
+            controls
+            playsInline
+            preload="metadata"
+          />
+        ) : (
+          <div className="aspect-video rounded-xl bg-black/40 border border-dashed border-[#49c274]/50 flex flex-col items-center justify-center text-center px-6">
+            <p className="text-[#49c274] font-bold mb-1">Video goes here (about 60 seconds)</p>
+            <p className="text-white/60 text-sm">Only visible with ?preview in the address. Visitors see nothing until the video is added.</p>
+          </div>
+        )}
+        <p className="text-white/70 text-sm text-center mt-2">A short note from me, Adriano</p>
+      </div>
+    </div>
+  );
+};
+
 const TeamPage = () => (
   <div className="min-h-screen bg-[#0b140f] text-white">
     {/* Hero */}
@@ -73,7 +114,23 @@ const TeamPage = () => (
       </div>
     </div>
 
+    <VideoSlot />
+
     <div className="max-w-2xl mx-auto px-5 py-12">
+      {/* What you get */}
+      <h2 className="text-2xl font-bold mb-5">What working with me looks like</h2>
+      <div className="space-y-4 mb-12">
+        {benefits.map((b) => (
+          <div key={b.title} className="bg-[#12201a] border border-white/10 rounded-2xl p-5 flex gap-4">
+            <b.icon className="w-6 h-6 text-[#49c274] flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-white font-bold text-lg mb-1">{b.title}</h3>
+              <p className="text-white/80 text-lg">{b.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
       {/* Story */}
       <div className="bg-[#12201a] border border-white/10 rounded-2xl p-6 mb-12">
         <h2 className="text-2xl font-bold mb-3">I built this by living it</h2>
