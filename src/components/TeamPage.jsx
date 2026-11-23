@@ -23,6 +23,19 @@ const benefits = [
   { icon: ShieldCheck, title: 'No shortcuts, just the real work', text: 'I have lived this for 8 years: 5 with lots of ups and downs, 4 consistent. I will hold you accountable.' },
 ];
 
+const trainingPhotos = [
+  { src: '/training/deadlift.jpg', alt: 'Adriano deadlifting in a competition', caption: 'Heavy days' },
+  { src: '/training/rowing.jpg', alt: 'Adriano on the rowing machine', caption: 'Steady work' },
+  { src: '/training/handstand.jpg', alt: 'Handstand walk at a CrossFit event', caption: 'Fun on the hard days' },
+];
+
+const mealPhotos = [
+  { src: '/meals/bowl-beet-veg.jpg', alt: 'Bowl with beet, carrot, zucchini and ground beef', caption: 'Color on the plate' },
+  { src: '/meals/plate-broccoli.jpg', alt: 'Plate with chicken, black beans, broccoli and vegetables', caption: 'Chicken, beans, broccoli' },
+  { src: '/meals/eggs-toast-fruit.jpg', alt: 'Eggs, cheese toast, fruit and coffee', caption: 'Simple breakfast' },
+  { src: '/meals/yogurt-bowl-banana.jpg', alt: 'Yogurt bowl with banana and granola', caption: 'Yogurt bowl' },
+];
+
 const phases = [
   { icon: Target, title: 'Before week 1: Kickoff', text: 'We map what has derailed you before: schedule, training load, history, travel, family. That sets your block.' },
   { icon: Utensils, title: 'Week 1: Prep', text: 'Calories and macros set from your real training schedule. A daily rhythm built around your meals, training and travel.' },
@@ -137,6 +150,26 @@ const TeamPage = () => (
               <p className="text-white/80 text-lg">{b.text}</p>
             </div>
           </div>
+        ))}
+      </div>
+
+      {/* Real training, real food */}
+      <h2 className="text-2xl font-bold mb-2">Real training. Real food.</h2>
+      <p className="text-white/70 mb-4">This is my own week, not stock photos.</p>
+      <div className="grid grid-cols-3 gap-2 mb-2">
+        {trainingPhotos.map((p) => (
+          <figure key={p.src}>
+            <img src={p.src} alt={p.alt} loading="lazy" className="w-full aspect-[3/4] object-cover rounded-xl" />
+            <figcaption className="text-white/70 text-xs mt-1 text-center">{p.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-12">
+        {mealPhotos.map((p) => (
+          <figure key={p.src}>
+            <img src={p.src} alt={p.alt} loading="lazy" className="w-full aspect-square object-cover rounded-xl" />
+            <figcaption className="text-white/70 text-xs mt-1 text-center">{p.caption}</figcaption>
+          </figure>
         ))}
       </div>
 
