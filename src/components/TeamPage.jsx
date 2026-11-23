@@ -34,6 +34,15 @@ const mealPhotos = [
   { src: '/meals/eggs-toast-fruit.jpg', alt: 'Eggs, cheese toast, fruit and coffee', caption: 'Simple breakfast' },
 ];
 
+// Formacao. Cada item e verdadeiro e usa o nome e a data do certificado.
+// Para incluir o Precision Nutrition Level 1, preencha LEVEL1_TEXT com o nome exato e a data do certificado
+// (ex.: 'Precision Nutrition Level 1 Certification (2023)'). Enquanto estiver vazio, nao aparece para o visitante.
+const LEVEL1_TEXT = '';
+const credentials = [
+  { text: 'Advanced Certificate in Change Psychology, Precision Nutrition (March 2025)' },
+  { text: 'Nutrition for Metabolic Health: What is Metabolism, Precision Nutrition (December 2024)', badge: '/badges/pn-nmh-1.png' },
+];
+
 const midPhotos = [
   { src: '/training/rowing.jpg', alt: 'Adriano on the rowing machine', caption: 'Steady work', ratio: 'aspect-[3/4]' },
   { src: '/meals/yogurt-bowl-banana.jpg', alt: 'Yogurt bowl with banana and granola', caption: 'Yogurt bowl', ratio: 'aspect-[3/4]' },
@@ -194,6 +203,27 @@ const TeamPage = () => (
         <p className="text-white/60 text-sm">
           Individual results vary. Photos show my own results and are not a guarantee for you.
         </p>
+      </div>
+
+      {/* Training */}
+      <div className="bg-[#12201a] border border-white/10 rounded-2xl p-6 mb-12">
+        <h2 className="text-xl font-bold mb-3">My training in coaching behavior change</h2>
+        <ul className="space-y-3">
+          {LEVEL1_TEXT && (
+            <li className="flex gap-3 text-white/90"><CheckCircle className="w-5 h-5 text-[#49c274] flex-shrink-0 mt-0.5" />Completed: {LEVEL1_TEXT}</li>
+          )}
+          {credentials.map((c) => (
+            <li key={c.text} className="flex gap-3 text-white/90 items-start">
+              <CheckCircle className="w-5 h-5 text-[#49c274] flex-shrink-0 mt-0.5" />
+              <span className="flex-1">Completed: {c.text}</span>
+              {c.badge && <img src={c.badge} alt="Precision Nutrition NMH 1 badge" className="w-12 h-auto flex-shrink-0" loading="lazy" />}
+            </li>
+          ))}
+        </ul>
+        {!LEVEL1_TEXT && typeof window !== 'undefined' && window.location.search.includes('preview') && (
+          <p className="mt-3 text-sm text-[#49c274]">Preview only: the Precision Nutrition Level 1 line goes here once I have the certificate.</p>
+        )}
+        <p className="text-white/60 text-sm mt-4">These are continuing education courses. I am a nutrition coach, not a doctor or a registered dietitian.</p>
       </div>
 
       {/* No one size fits all */}
