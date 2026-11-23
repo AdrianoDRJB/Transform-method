@@ -4,7 +4,7 @@ import { CheckCircle, XCircle, Calendar, Target, Users, Moon, Dumbbell, Utensils
 
 // Link de pagamento do Stripe (assinatura com teste de 30 dias, cobra no dia 31).
 // Enquanto estiver vazio, o botao leva para o Instagram para nao quebrar.
-const TEAM_CHECKOUT_LINK = 'https://buy.stripe.com/00w7sK4btevt0Ltatv1Jm0T?prefilled_promo_code=TEAM259';
+const TEAM_CHECKOUT_LINK = 'https://buy.stripe.com/8x200i23lafd8dVcBD1Jm0U';
 const FALLBACK_LINK = 'https://ig.me/m/adriano.nutrition';
 const CTA_HREF = TEAM_CHECKOUT_LINK || FALLBACK_LINK;
 const CTA_TEXT = 'Start my 30 days. Pay nothing today';
@@ -35,7 +35,7 @@ const notForYou = [
 const faqs = [
   { q: 'When am I charged?', a: 'Your card is saved today and nothing is charged for 30 days. On day 31 you are charged $259 once, unless you cancel before then. Cancel any time in those 30 days by sending me a message on Instagram @adriano.nutrition. No form, no questions.' },
   { q: 'What if I do not like it?', a: 'Cancel before day 31 and you pay nothing. You keep the material we built together.' },
-  { q: 'Is it a subscription?', a: 'No. It is one payment of $259 for the 12 week block. You will not be charged again.' },
+  { q: 'Is it a subscription?', a: 'You will be charged once. It is one payment of $259 for the 12 week block. Stripe sets up free trials as subscriptions, so the checkout page says "every 12 weeks". I cancel it myself right after your first payment, so there is no second charge.' },
   { q: 'Why only 10 people?', a: 'I want to know every person in this team. The first cohort is capped at 10 and I will not go above 10 for any reason. Spots can stay open while people are in their 30 day trial, because some may cancel.' },
   { q: 'Will this work for me?', a: 'I cannot promise that. It worked for me and for some of my clients, and it is based on science, but results vary from person to person. That is why you get 30 days to decide.' },
   { q: 'Is this medical advice?', a: 'No. I am a nutrition coach, not a doctor or a registered dietitian. If you are pregnant, take medication, or have a medical or eating disorder history, talk to your doctor first.' },
@@ -68,8 +68,8 @@ const TeamPage = () => (
         </p>
         <p className="text-white/60 text-sm mb-8 -mt-6">$559 is the regular price of the 3 month plan. $259 is the first cohort price.</p>
         <CtaButton />
-        <p className="text-white/90 text-base font-bold mt-4">At checkout, tap "Add code" and enter <span className="text-[#49c274]">TEAM259</span> to get the $259 price.</p>
-        <p className="text-white/60 text-sm mt-3">Card saved today. $259 charged on day 31 unless you cancel before. One payment, not a subscription.</p>
+        <p className="text-white/90 text-base font-bold mt-4">The $259 price is already applied. No code needed.</p>
+        <p className="text-white/60 text-sm mt-3">Card saved today, $0 due today. $259 is charged once on day 31 unless you cancel before. The checkout page says "every 12 weeks" because of how Stripe handles free trials. I cancel it for you after your first payment, so you are charged one time only.</p>
       </div>
     </div>
 
@@ -158,7 +158,7 @@ const TeamPage = () => (
         </ol>
         <div className="mt-6 text-center">
           <CtaButton />
-          <p className="text-white/90 text-base font-bold mt-4">At checkout, tap "Add code" and enter <span className="text-[#49c274]">TEAM259</span>.</p>
+          <p className="text-white/90 text-base font-bold mt-4">The $259 price is already applied. No code needed.</p>
         </div>
       </div>
 
