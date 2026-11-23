@@ -25,7 +25,6 @@ const benefits = [
 
 const trainingPhotos = [
   { src: '/training/deadlift.jpg', alt: 'Adriano deadlifting in a competition', caption: 'Heavy days' },
-  { src: '/training/rowing.jpg', alt: 'Adriano on the rowing machine', caption: 'Steady work' },
   { src: '/training/handstand.jpg', alt: 'Handstand walk at a CrossFit event', caption: 'Fun on the hard days' },
 ];
 
@@ -33,7 +32,11 @@ const mealPhotos = [
   { src: '/meals/bowl-beet-veg.jpg', alt: 'Bowl with beet, carrot, zucchini and ground beef', caption: 'Color on the plate' },
   { src: '/meals/plate-broccoli.jpg', alt: 'Plate with chicken, black beans, broccoli and vegetables', caption: 'Chicken, beans, broccoli' },
   { src: '/meals/eggs-toast-fruit.jpg', alt: 'Eggs, cheese toast, fruit and coffee', caption: 'Simple breakfast' },
-  { src: '/meals/yogurt-bowl-banana.jpg', alt: 'Yogurt bowl with banana and granola', caption: 'Yogurt bowl' },
+];
+
+const midPhotos = [
+  { src: '/training/rowing.jpg', alt: 'Adriano on the rowing machine', caption: 'Steady work', ratio: 'aspect-[3/4]' },
+  { src: '/meals/yogurt-bowl-banana.jpg', alt: 'Yogurt bowl with banana and granola', caption: 'Yogurt bowl', ratio: 'aspect-[3/4]' },
 ];
 
 const phases = [
@@ -156,15 +159,15 @@ const TeamPage = () => (
       {/* Real training, real food */}
       <h2 className="text-2xl font-bold mb-2">Real training. Real food.</h2>
       <p className="text-white/70 mb-4">This is my own week, not stock photos.</p>
-      <div className="grid grid-cols-3 gap-2 mb-2">
+      <div className="grid grid-cols-2 gap-2 mb-2">
         {trainingPhotos.map((p) => (
           <figure key={p.src}>
-            <img src={p.src} alt={p.alt} loading="lazy" className="w-full aspect-[3/4] object-cover rounded-xl" />
+            <img src={p.src} alt={p.alt} loading="lazy" className="w-full aspect-[4/3] object-cover object-top rounded-xl" />
             <figcaption className="text-white/70 text-xs mt-1 text-center">{p.caption}</figcaption>
           </figure>
         ))}
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-12">
+      <div className="grid grid-cols-3 gap-2 mb-12">
         {mealPhotos.map((p) => (
           <figure key={p.src}>
             <img src={p.src} alt={p.alt} loading="lazy" className="w-full aspect-square object-cover rounded-xl" />
@@ -234,6 +237,15 @@ const TeamPage = () => (
               <p className="text-white/85 text-lg">{p.text}</p>
             </div>
           </div>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-2 gap-2 mb-12">
+        {midPhotos.map((p) => (
+          <figure key={p.src}>
+            <img src={p.src} alt={p.alt} loading="lazy" className={`w-full ${p.ratio} object-cover object-top rounded-xl`} />
+            <figcaption className="text-white/70 text-xs mt-1 text-center">{p.caption}</figcaption>
+          </figure>
         ))}
       </div>
 
