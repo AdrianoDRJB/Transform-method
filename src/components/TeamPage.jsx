@@ -95,8 +95,9 @@ const VideoSlot = () => {
 const TeamPage = () => (
   <div className="min-h-screen bg-[#0b140f] text-white">
     {/* Hero */}
-    <div className="bg-gradient-to-r from-[#0f3f26] to-[#1b5e3a] py-14">
-      <div className="max-w-2xl mx-auto px-5 text-center">
+    <div className="bg-gradient-to-r from-[#0f3f26] to-[#1b5e3a] overflow-hidden">
+      <div className="max-w-5xl mx-auto grid md:grid-cols-[1.15fr_0.85fr] items-stretch">
+      <div className="px-5 py-10 md:py-14 text-left order-2 md:order-1">
         <p className="text-[#49c274] font-bold text-sm uppercase tracking-wider mb-3">Team TRANSFORM · First cohort · 10 spots</p>
         <h1 className="text-3xl sm:text-4xl font-black leading-tight mb-4">
           12 weeks of nutrition coaching built around your real life.
@@ -111,6 +112,15 @@ const TeamPage = () => (
         <CtaButton />
         <p className="text-white/90 text-base font-bold mt-4">The $259 price is already applied. No code needed.</p>
         <p className="text-white/60 text-sm mt-3">Card saved today, $0 due today. $259 is charged once on day 31 unless you cancel before. The checkout page says "every 12 weeks" because of how Stripe handles free trials. I cancel it for you after your first payment, so you are charged one time only.</p>
+      </div>
+      <div className="relative order-1 md:order-2 h-64 md:h-auto min-h-[16rem]">
+        <img
+          src="/hero-bw.jpg"
+          alt="Adriano Monteiro"
+          className="absolute inset-0 w-full h-full object-cover object-top"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#0f3f26] via-transparent to-transparent md:from-[#0f3f26] md:via-[#0f3f26]/10" />
+      </div>
       </div>
     </div>
 
