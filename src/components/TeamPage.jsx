@@ -139,11 +139,14 @@ const TeamPage = () => (
         <p className="text-white/60 text-sm mt-3">Card saved today, $0 due today. $259 is charged once on day 31 unless you cancel before. The checkout page says "every 12 weeks" because of how Stripe handles free trials. I cancel it for you after your first payment, so you are charged one time only.</p>
       </div>
       <div className="order-1 md:order-2 md:py-10 md:pr-5">
-        <img
-          src="/transformations/adriano-transformation.jpg"
-          alt="Adriano Monteiro, before and after"
-          className="w-full h-52 md:h-auto object-cover object-top md:rounded-2xl"
-        />
+        <picture>
+          <source media="(min-width: 768px)" srcSet="/transformations/adriano-transformation.jpg" />
+          <img
+            src="/transformations/adriano-transformation-mobile.jpg"
+            alt="Adriano Monteiro, before and after"
+            className="w-full h-auto md:rounded-2xl"
+          />
+        </picture>
       </div>
       </div>
     </div>
