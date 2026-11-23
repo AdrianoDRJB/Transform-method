@@ -69,7 +69,7 @@ const VideoSlot = () => {
   const showPlaceholder = !VIDEO_SRC && typeof window !== 'undefined' && window.location.search.includes('preview');
   if (!VIDEO_SRC && !showPlaceholder) return null;
   return (
-    <div className="max-w-2xl mx-auto px-5 -mt-6 mb-10">
+    <div className="max-w-2xl mx-auto px-5 mt-8 mb-10">
       <div className="bg-[#12201a] border border-white/10 rounded-2xl p-3">
         {VIDEO_SRC ? (
           <video
@@ -96,7 +96,7 @@ const TeamPage = () => (
   <div className="min-h-screen bg-[#0b140f] text-white">
     {/* Hero */}
     <div className="bg-gradient-to-r from-[#0f3f26] to-[#1b5e3a] overflow-hidden">
-      <div className="max-w-5xl mx-auto grid md:grid-cols-[1.15fr_0.85fr] items-stretch">
+      <div className="max-w-5xl mx-auto grid md:grid-cols-[1.25fr_0.75fr] items-center">
       <div className="px-5 py-10 md:py-14 text-left order-2 md:order-1">
         <p className="text-[#49c274] font-bold text-sm uppercase tracking-wider mb-3">Team TRANSFORM · First cohort · 10 spots</p>
         <h1 className="text-3xl sm:text-4xl font-black leading-tight mb-4">
@@ -113,13 +113,12 @@ const TeamPage = () => (
         <p className="text-white/90 text-base font-bold mt-4">The $259 price is already applied. No code needed.</p>
         <p className="text-white/60 text-sm mt-3">Card saved today, $0 due today. $259 is charged once on day 31 unless you cancel before. The checkout page says "every 12 weeks" because of how Stripe handles free trials. I cancel it for you after your first payment, so you are charged one time only.</p>
       </div>
-      <div className="relative order-1 md:order-2 h-64 md:h-auto min-h-[16rem]">
+      <div className="order-1 md:order-2 md:py-10 md:pr-5">
         <img
-          src="/hero-bw.jpg"
-          alt="Adriano Monteiro"
-          className="absolute inset-0 w-full h-full object-cover object-top"
+          src="/transformations/adriano-transformation.jpg"
+          alt="Adriano Monteiro, before and after"
+          className="w-full h-52 md:h-auto object-cover object-top md:rounded-2xl"
         />
-        <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#0f3f26] via-transparent to-transparent md:from-[#0f3f26] md:via-[#0f3f26]/10" />
       </div>
       </div>
     </div>
@@ -145,7 +144,7 @@ const TeamPage = () => (
       <div className="bg-[#12201a] border border-white/10 rounded-2xl p-6 mb-12">
         <h2 className="text-2xl font-bold mb-3">I built this by living it</h2>
         <img
-          src="/transformations/adriano-transformation.jpg"
+          src="/transformations/adriano-profile.jpg"
           alt="Adriano, before and after"
           className="w-full rounded-xl mb-4"
           loading="lazy"
