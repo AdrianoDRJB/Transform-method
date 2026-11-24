@@ -274,7 +274,7 @@ function FreeGuidesLanding() {
             <p className="text-center text-white/80 text-sm font-semibold mb-3">Watch this first (1 min)</p>
             <div style={{ position: 'relative', paddingTop: '177.78%', borderRadius: 16, overflow: 'hidden', background: '#000' }}>
               <iframe
-                src="https://player.mediadelivery.net/embed/819958/74c7e87a-630a-48c5-8796-94d4db354784?autoplay=false&loop=false&muted=false&preload=false&responsive=true"
+                src="https://player.mediadelivery.net/embed/819958/7b4dd0a8-d954-4bf0-abf2-6587a0a2c4ca?autoplay=false&loop=false&muted=false&preload=false&responsive=true"
                 title="Watch this first"
                 loading="lazy"
                 style={{ border: 0, position: 'absolute', top: 0, left: 0, height: '100%', width: '100%' }}
