@@ -271,10 +271,10 @@ function FreeGuidesLanding() {
             <BookCallButton where="top" />
           </div>
           <div className="mt-8 mx-auto" style={{ maxWidth: 320 }}>
-            <p className="text-center text-white/80 text-sm font-semibold mb-3">Watch this first (1 min)</p>
+            <p className="text-center text-white/80 text-sm font-semibold mb-3">Watch this first (under 2 min)</p>
             <div style={{ position: 'relative', paddingTop: '177.78%', borderRadius: 16, overflow: 'hidden', background: '#000' }}>
               <iframe
-                src="https://player.mediadelivery.net/embed/819958/7b4dd0a8-d954-4bf0-abf2-6587a0a2c4ca?autoplay=false&loop=false&muted=false&preload=false&responsive=true"
+                src="https://player.mediadelivery.net/embed/819958/81918fc4-4dfa-47e3-898b-e165cfe9f020?autoplay=false&loop=false&muted=false&preload=false&responsive=true"
                 title="Watch this first"
                 loading="lazy"
                 style={{ border: 0, position: 'absolute', top: 0, left: 0, height: '100%', width: '100%' }}
