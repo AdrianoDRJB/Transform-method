@@ -1,45 +1,53 @@
 import React from 'react';
-import { CheckCircle, MessageCircle, Calendar, ShieldCheck } from 'lucide-react';
+import { CheckCircle, Calendar, ShieldCheck } from 'lucide-react';
 
-const DM_LINK = 'https://ig.me/m/adriano.nutrition';
-
-const steps = [
-  { icon: MessageCircle, title: 'Send me a DM on Instagram', text: 'Message @adriano.nutrition with the word TEAM and the email you used at checkout. I will reply and we book your kickoff.' },
-  { icon: Calendar, title: 'Book your kickoff', text: 'We pick a time that fits your time zone. Before it, think about your schedule, your training and what has derailed you before.' },
-  { icon: ShieldCheck, title: 'You are in control for 30 days', text: 'Nothing was charged today. If it is not for you, cancel in one click before day 31 and you pay nothing. Tap Cancel Anytime below.' },
-];
+const BOOK_LINK = 'https://calendly.com/adriano-nutrition/free-20-min-discovery-call';
 
 const TeamWelcomePage = () => (
   <div className="min-h-screen bg-[#0b140f] text-white py-16">
     <div className="max-w-2xl mx-auto px-5">
-      <div className="text-center mb-10">
+      <div className="text-center mb-8">
         <div className="inline-flex items-center justify-center w-20 h-20 bg-[#2e9e4f]/15 rounded-full mb-5">
           <CheckCircle className="w-12 h-12 text-[#49c274]" />
         </div>
         <h1 className="text-3xl sm:text-4xl font-black mb-3">Welcome to Team TRANSFORM</h1>
-        <p className="text-lg text-white/80">Your card is saved. Nothing is charged for 30 days.</p>
+        <p className="text-lg text-white/80">
+          I am glad you are here. I hope I can really help you. Your card is saved and nothing is charged for 30 days.
+        </p>
       </div>
 
-      <div className="space-y-4 mb-10">
-        {steps.map((s, i) => (
-          <div key={s.title} className="bg-[#12201a] border border-white/10 rounded-2xl p-5 flex gap-4">
-            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#49c274] text-[#06140b] font-black flex items-center justify-center">{i + 1}</div>
-            <div>
-              <h2 className="text-[#49c274] font-bold text-lg mb-1 flex items-center gap-2"><s.icon className="w-5 h-5" />{s.title}</h2>
-              <p className="text-white/85 text-lg">{s.text}</p>
-            </div>
-          </div>
-        ))}
+      <div className="bg-[#12201a] border border-white/10 rounded-2xl p-5 mb-4">
+        <h2 className="text-[#49c274] font-bold text-lg mb-1 flex items-center gap-2">
+          <Calendar className="w-5 h-5" />Book your kickoff call
+        </h2>
+        <p className="text-white/85 text-lg mb-4">
+          Pick a time that fits your time zone. Before the call, think about your schedule, your training and what has derailed you before.
+        </p>
+        <a
+          href={BOOK_LINK}
+          className="block w-full text-center bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-black text-lg py-4 rounded-xl transition-all"
+        >
+          Book my call
+        </a>
+      </div>
+
+      <div className="bg-[#12201a] border border-white/10 rounded-2xl p-5 mb-6">
+        <h2 className="text-[#49c274] font-bold text-lg mb-1 flex items-center gap-2">
+          <ShieldCheck className="w-5 h-5" />You are in control for 30 days
+        </h2>
+        <p className="text-white/85 text-lg">
+          Nothing was charged today. On day 31 you are charged $259 one time, and it never renews. If it is not for you, cancel before then and you pay nothing.
+        </p>
       </div>
 
       <div className="text-center">
-        <a href={DM_LINK} className="inline-block w-full sm:w-auto bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-black text-lg py-4 px-10 rounded-xl transition-all">
-          Message me on Instagram
-        </a>
-        <a href="/team/cancel" className="block w-full sm:w-auto sm:inline-block sm:ml-3 mt-3 sm:mt-0 border-2 border-white/40 hover:border-white text-white font-bold text-lg py-4 px-10 rounded-xl transition-all">
+        <a
+          href="/team/cancel"
+          className="inline-block border border-white/30 hover:border-white/60 text-white/80 hover:text-white font-semibold text-base py-3 px-8 rounded-xl transition-all"
+        >
           Cancel Anytime
         </a>
-        <p className="text-white/60 text-sm mt-4">On day 31 you are charged $259 once, unless you cancel before. Results vary. This is not medical advice.</p>
+        <p className="text-white/50 text-sm mt-5">Results vary. This is not medical advice.</p>
       </div>
     </div>
   </div>
