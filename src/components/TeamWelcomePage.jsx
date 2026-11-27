@@ -6,7 +6,7 @@ const DM_LINK = 'https://ig.me/m/adriano.nutrition';
 const steps = [
   { icon: MessageCircle, title: 'Send me a DM on Instagram', text: 'Message @adriano.nutrition with the word TEAM and the email you used at checkout. I will reply and we book your kickoff.' },
   { icon: Calendar, title: 'Book your kickoff', text: 'We pick a time that fits your time zone. Before it, think about your schedule, your training and what has derailed you before.' },
-  { icon: ShieldCheck, title: 'You are in control for 30 days', text: 'Nothing was charged today. If it is not for you, cancel in one click before day 31 and you pay nothing. Use the Cancel button below.' },
+  { icon: ShieldCheck, title: 'You are in control for 30 days', text: 'Nothing was charged today. If it is not for you, cancel in one click before day 31 and you pay nothing. Tap Cancel Anytime below.' },
 ];
 
 const TeamWelcomePage = () => (
@@ -37,7 +37,7 @@ const TeamWelcomePage = () => (
           Message me on Instagram
         </a>
         <a href="/team/cancel" className="block w-full sm:w-auto sm:inline-block sm:ml-3 mt-3 sm:mt-0 border-2 border-white/40 hover:border-white text-white font-bold text-lg py-4 px-10 rounded-xl transition-all">
-          Cancel (you pay nothing)
+          Cancel Anytime
         </a>
         <p className="text-white/60 text-sm mt-4">On day 31 you are charged $259 once, unless you cancel before. Results vary. This is not medical advice.</p>
       </div>

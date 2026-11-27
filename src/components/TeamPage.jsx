@@ -52,12 +52,20 @@ const faqs = [
 ];
 
 const CtaButton = () => (
-  <a
-    href={checkoutHref()}
-    className="inline-block w-full sm:w-auto bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-black text-lg py-4 px-10 rounded-xl transition-all"
-  >
-    {CTA_TEXT}
-  </a>
+  <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+    <a
+      href={checkoutHref()}
+      className="inline-block w-full sm:w-auto bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-black text-lg py-4 px-10 rounded-xl transition-all"
+    >
+      {CTA_TEXT}
+    </a>
+    <a
+      href="/team/cancel"
+      className="inline-block w-full sm:w-auto border border-white/40 hover:border-white text-white/90 hover:text-white font-semibold text-base py-3 px-6 rounded-xl transition-all text-center"
+    >
+      Cancel Anytime
+    </a>
+  </div>
 );
 
 const TeamPage = () => (
