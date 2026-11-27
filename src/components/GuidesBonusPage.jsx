@@ -90,7 +90,7 @@ const GuidesBonusPage = () => {
         </div>
 
         <p className="text-center text-white/60">
-          Not sure which one fits? <a className="text-[#49c274] underline" href="https://calendly.com/adriano-nutrition/free-20-min-discovery-call" target="_blank" rel="noopener noreferrer">Book a free 20 minute call</a> and we decide together.
+          Not sure which one fits? <a className="text-[#49c274] underline" href="https://calendly.com/adriano-nutrition/new-meeting" target="_blank" rel="noopener noreferrer">Book a call</a> and we decide together.
         </p>
       </div>
     </div>

@@ -78,7 +78,7 @@ function CallBookedPage() {
             <p className="font-bold text-[#49c274] mb-1">2. Send me 3 quick lines</p>
             <p className="text-white/70 mb-3">
               Your main goal, what you tried before, and what is hardest right now. This lets me
-              prepare and make our 20 minutes count.
+              prepare and make our time count.
             </p>
             <a href={REPLY_MAILTO} className="inline-flex items-center gap-2 font-semibold text-white underline">
               <Mail className="w-4 h-4" /> Email me your answers

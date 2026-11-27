@@ -127,7 +127,7 @@ function HomePage() {
             <div className="bg-[#49c274] text-[#06140b] rounded-2xl p-6 mb-5 max-w-md mx-auto shadow-xl">
               <p className="font-black text-sm uppercase tracking-wider mb-1">4 years sober special</p>
               <h3 className="font-black text-3xl leading-tight mb-2">40% off any coaching plan</h3>
-              <p className="text-sm font-semibold mb-4">Discount applied automatically. Ends Oct 31. Plus a free 20 minute call with me.</p>
+              <p className="text-sm font-semibold mb-4">Discount applied automatically. Ends Oct 31. Plus a call with me.</p>
               <Link
                 to="/plans"
                 className="block w-full bg-[#06140b] hover:bg-black text-[#49c274] font-bold py-3 px-6 rounded-xl transition-all text-center text-lg"
@@ -155,12 +155,12 @@ function HomePage() {
           </div>
         {/* Tertiary CTA - Free 20-min discovery call for people with questions */}
           <a
-            href="https://calendly.com/adriano-nutrition/free-20-min-discovery-call"
+            href="https://calendly.com/adriano-nutrition/new-meeting"
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full max-w-md mx-auto text-white/90 hover:text-white underline underline-offset-4 font-semibold py-2 text-center"
           >
-            Any doubts? Book a free 20-min call →
+            Any doubts? Book a call →
           </a>
 
         {/* Secondary CTA - Path to paid coaching, for people who already know they want a coach */}

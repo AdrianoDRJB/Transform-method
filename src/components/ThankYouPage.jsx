@@ -4,7 +4,7 @@ import { CheckCircle, BookOpen, ArrowRight, Sparkles, Shield, Clock, PhoneCall }
 import { Card, CardContent } from '@/components/ui/card.jsx'
 
 function ThankYouPage() {
-  const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/free-20-min-discovery-call'
+  const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/new-meeting'
 
   const guideHighlights = [
     'The Complete TRANSFORM Method Guide',
@@ -107,7 +107,7 @@ function ThankYouPage() {
                 {/* CTA */}
                 <div className="w-full md:w-auto flex-shrink-0 text-center bg-[#0f1c15] rounded-2xl p-6 md:p-8">
                   <p className="text-sm text-[#9fb6a8] mb-1">Curious what's inside?</p>
-                  <div className="text-2xl font-black text-white mb-4">Book a Free Call</div>
+                  <div className="text-2xl font-black text-white mb-4">Book a call</div>
 
                   <a
                     href={CALENDLY_LINK}
