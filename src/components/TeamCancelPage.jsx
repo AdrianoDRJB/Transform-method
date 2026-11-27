@@ -23,17 +23,17 @@ const TeamCancelPage = () => {
   return (
     <div className="min-h-screen bg-[#0b140f] text-white py-16">
       <div className="max-w-xl mx-auto px-5">
-        <h1 className="text-3xl sm:text-4xl font-black mb-3 text-center">Cancel Team TRANSFORM</h1>
+        <h1 className="text-3xl sm:text-4xl font-black mb-3 text-center">Cancel Anytime</h1>
         <p className="text-lg text-white/80 text-center mb-8">
-          Enter the email you used at checkout. Nothing will be charged. No questions asked.
+          Enter the email you used at checkout. If you are still in your free days, you pay nothing. If you were already charged, your plan will not renew. No questions asked.
         </p>
 
         {state === 'done' ? (
           <div className="bg-[#12201a] border border-white/10 rounded-2xl p-6 text-center">
             <CheckCircle className="w-12 h-12 text-[#49c274] mx-auto mb-3" />
-            <h2 className="text-xl font-bold mb-2">Done. You will not be charged.</h2>
+            <h2 className="text-xl font-bold mb-2">Done. Your plan is cancelled.</h2>
             <p className="text-white/80 text-lg">
-              If that email has a saved card with us, it is now cancelled. If you want proof, email
+              If that email has a plan or a saved card with us, it is now cancelled and will not charge you again. You will get a confirmation email. Questions or a refund request? Email
               {' '}<a className="underline" href="mailto:adrianonutrition@adrianonutrition.com">adrianonutrition@adrianonutrition.com</a>.
             </p>
           </div>
@@ -54,7 +54,7 @@ const TeamCancelPage = () => {
               disabled={state === 'sending'}
               className="w-full bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-black text-lg py-4 rounded-xl disabled:opacity-60"
             >
-              {state === 'sending' ? 'Cancelling...' : 'Cancel and do not charge me'}
+              {state === 'sending' ? 'Cancelling...' : 'Cancel my plan'}
             </button>
             {state === 'error' && (
               <p className="text-red-300 mt-4 text-lg">

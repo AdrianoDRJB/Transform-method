@@ -13,9 +13,9 @@ function HomePage() {
   const promo = isOctoberPromo()
   const homePlans = [
     { name: 'Quick Fix', tag: 'Single Session', price: '$259', period: 'one-time payment', cta: 'Buy Now', link: 'https://buy.stripe.com/4gMdR80Zh3QP1Pxbxz1Jm0L', promoPrice: '$155.40', promoLink: PROMO_LINKS.quickFix },
-    { name: 'TRANSFORM START', tag: '3 Months', price: '$559', period: 'billed every 3 months', cta: 'Get Started', link: 'https://buy.stripe.com/bJe7sK0Zhevt0Lt1WZ1Jm0I', promoPrice: '$335.40', promoLink: PROMO_LINKS.start },
-    { name: 'TRANSFORM EVOLVE', tag: '6 Months', price: '$1,159', period: 'billed every 6 months', cta: 'Get Started', link: 'https://buy.stripe.com/8x28wO23l3QP3XF59b1Jm0J', promoPrice: '$695.40', promoLink: PROMO_LINKS.evolve, highlight: true },
-    { name: 'TRANSFORM ELITE', tag: '12 Months', price: '$2,219', period: 'billed annually', cta: 'Get Started', link: 'https://buy.stripe.com/6oUdR89vN3QP9hZdFH1Jm0K', promoPrice: '$1,331.40', promoLink: PROMO_LINKS.elite },
+    { name: 'TRANSFORM START', tag: '3 Months', price: '$559', period: '15 free days, then one payment. Never renews', cta: 'Get Started', link: 'https://buy.stripe.com/bJe7sK0Zhevt0Lt1WZ1Jm0I', promoPrice: '$335.40', promoLink: PROMO_LINKS.start },
+    { name: 'TRANSFORM EVOLVE', tag: '6 Months', price: '$1,159', period: '15 free days, then one payment. Never renews', cta: 'Get Started', link: 'https://buy.stripe.com/8x28wO23l3QP3XF59b1Jm0J', promoPrice: '$695.40', promoLink: PROMO_LINKS.evolve, highlight: true },
+    { name: 'TRANSFORM ELITE', tag: '12 Months', price: '$2,219', period: '15 free days, then one payment. Never renews', cta: 'Get Started', link: 'https://buy.stripe.com/6oUdR89vN3QP9hZdFH1Jm0K', promoPrice: '$1,331.40', promoLink: PROMO_LINKS.elite },
   ]
 
   const transformSteps = [
@@ -435,6 +435,9 @@ function HomePage() {
               >
                 {plan.cta}
               </a>
+              {plan.name !== 'Quick Fix' && (
+                <a href="/team/cancel" className="mt-3 text-center text-sm text-white/70 hover:text-white underline underline-offset-4">Cancel Anytime</a>
+              )}
             </div>
           ))}
         </div>

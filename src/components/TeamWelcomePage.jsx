@@ -10,9 +10,9 @@ const TeamWelcomePage = () => (
         <div className="inline-flex items-center justify-center w-20 h-20 bg-[#2e9e4f]/15 rounded-full mb-5">
           <CheckCircle className="w-12 h-12 text-[#49c274]" />
         </div>
-        <h1 className="text-3xl sm:text-4xl font-black mb-3">Welcome to Team TRANSFORM</h1>
+        <h1 className="text-3xl sm:text-4xl font-black mb-3">Welcome to the Transform Method</h1>
         <p className="text-lg text-white/80">
-          I am glad you are here. I hope I can really help you. Your card is saved and nothing is charged for 30 days.
+          I am glad you are here. I hope I can really help you. Your card is saved and nothing is charged today.
         </p>
       </div>
 
@@ -33,10 +33,10 @@ const TeamWelcomePage = () => (
 
       <div className="bg-[#12201a] border border-white/10 rounded-2xl p-5 mb-6">
         <h2 className="text-[#49c274] font-bold text-lg mb-1 flex items-center gap-2">
-          <ShieldCheck className="w-5 h-5" />You are in control for 30 days
+          <ShieldCheck className="w-5 h-5" />You are in control
         </h2>
         <p className="text-white/85 text-lg">
-          Nothing was charged today. On day 31 you are charged $259 one time, and it never renews. If it is not for you, cancel before then and you pay nothing.
+          Nothing was charged today. When your free days end, your card is charged one time for the amount you saw at checkout, and it never renews. If it is not for you, cancel before then and you pay nothing.
         </p>
       </div>
 

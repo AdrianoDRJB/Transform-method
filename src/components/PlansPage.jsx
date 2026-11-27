@@ -132,7 +132,7 @@ const PlansPage = () => {
 
             <div className="mb-6">
               <div className="text-4xl font-bold text-[#49c274]">{price('$559', '$335.40')}<span className="text-lg text-muted-foreground font-normal">/3mo</span></div>
-              <div className="text-muted-foreground text-sm mt-1">~$186/month · recurring subscription, billed every 3 months</div>
+              <div className="text-muted-foreground text-sm mt-1">~$186/month · 15 free days, then one payment. Never renews</div>
             </div>
 
             <ul className="space-y-3 mb-8 flex-1">
@@ -179,6 +179,7 @@ const PlansPage = () => {
               <CreditCard className="w-4 h-4" />
               Get Started — {promo ? '$335.40' : '$559'}
             </a>
+            <a href="/team/cancel" className="block text-center mt-3 text-sm text-white/70 hover:text-white underline underline-offset-4">Cancel Anytime</a>
           </div>
 
           {/* Plan 3: TRANSFORM EVOLVE $1,159/6mo - MOST POPULAR */}
@@ -198,7 +199,7 @@ const PlansPage = () => {
 
             <div className="mb-2">
               <div className="text-4xl font-bold text-[#49c274]">{price('$1,159', '$695.40')}<span className="text-lg text-muted-foreground font-normal">/6mo</span></div>
-              <div className="text-muted-foreground text-sm mt-1">~$193/month · recurring subscription, billed every 6 months</div>
+              <div className="text-muted-foreground text-sm mt-1">~$193/month · 15 free days, then one payment. Never renews</div>
             </div>
             <div className="bg-[#2e9e4f]/10 border border-[#2e9e4f]/30 rounded-lg px-3 py-2 mb-6">
               <span className="text-[#49c274] text-sm font-bold">Best value</span>
@@ -249,6 +250,7 @@ const PlansPage = () => {
               <CreditCard className="w-4 h-4" />
               Get Started — {promo ? '$695.40' : '$1,159'}
             </a>
+            <a href="/team/cancel" className="block text-center mt-3 text-sm text-white/70 hover:text-white underline underline-offset-4">Cancel Anytime</a>
           </div>
 
           {/* Plan 4: TRANSFORM ELITE $2,219/yr */}
@@ -264,7 +266,7 @@ const PlansPage = () => {
 
             <div className="mb-2">
               <div className="text-4xl font-bold text-red-400">{price('$2,219', '$1,331.40')}<span className="text-lg text-muted-foreground font-normal">/yr</span></div>
-              <div className="text-muted-foreground text-sm mt-1">~$185/month · recurring subscription, billed annually</div>
+              <div className="text-muted-foreground text-sm mt-1">~$185/month · 15 free days, then one payment. Never renews</div>
             </div>
             <div className="bg-red-400/10 border border-red-400/30 rounded-lg px-3 py-2 mb-6">
               <span className="text-red-400 text-sm font-bold">Best value</span>
@@ -319,6 +321,7 @@ const PlansPage = () => {
               <CreditCard className="w-4 h-4" />
               Get Started — {promo ? '$1,331.40' : '$2,219'}
             </a>
+            <a href="/team/cancel" className="block text-center mt-3 text-sm text-white/70 hover:text-white underline underline-offset-4">Cancel Anytime</a>
           </div>
 
         </div>
@@ -393,7 +396,7 @@ const PlansPage = () => {
             </div>
             <div className="bg-[#12201a] rounded-xl p-6">
               <h3 className="font-bold text-white mb-2">How does billing work?</h3>
-              <p className="text-muted-foreground text-sm">The Quick Fix is a one-time payment — no recurring charges. TRANSFORM START, EVOLVE, and ELITE are recurring subscriptions: you're billed automatically every 3, 6, or 12 months (matching your plan) until you cancel. You can cancel anytime before your next billing date.</p>
+              <p className="text-muted-foreground text-sm">The Quick Fix is a one-time payment, with no free days and no recurring charges. TRANSFORM START, EVOLVE, and ELITE start with 15 free days. Nothing is charged today. When the free days end, you pay one time for your plan, and it never renews. You can cancel anytime in one click at adrianonutrition.com/team/cancel. If you cancel during the free days, you pay nothing.</p>
             </div>
             <div className="bg-[#12201a] rounded-xl p-6">
               <h3 className="font-bold text-white mb-2">What's the difference between the plans?</h3>
