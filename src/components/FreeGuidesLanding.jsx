@@ -260,10 +260,10 @@ function FreeGuidesLanding() {
             Adriano | Nutrition Coach · 5 free guides
           </p>
           <h1 className="text-3xl sm:text-4xl font-black leading-tight mb-4 text-center">
-            A nutrition plan that still works after a bad day.
+            One cookie doesn't ruin the day.
           </h1>
           <p className="text-lg sm:text-xl text-white/80 mb-6 text-center">
-            Five free guides for people who keep starting over. Enter your email and your guides open right here. No diet to follow, a system you can keep.
+            Most plans have no way back in after one slip. My rule: never miss twice, and the next meal is a fresh start. It is inside my 5 free guides. Enter your email and they open right here.
           </p>
           <EmailForm id="signup-top" unlocked={unlocked} onUnlock={onUnlock} buttonText="I entered my email. Open my 5 guides" />
           <div className="mt-6 text-center">
