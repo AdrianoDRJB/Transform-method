@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckCircle, Calendar, ShieldCheck } from 'lucide-react';
 
-const BOOK_LINK = 'https://calendly.com/adriano-nutrition/free-20-min-discovery-call';
+const BOOK_LINK = 'https://calendly.com/adriano-nutrition/new-meeting';
 
 const TeamWelcomePage = () => (
   <div className="min-h-screen bg-[#0b140f] text-white py-16">
@@ -27,7 +27,7 @@ const TeamWelcomePage = () => (
           href={BOOK_LINK}
           className="block w-full text-center bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-black text-lg py-4 rounded-xl transition-all"
         >
-          Book my call
+          Book a call
         </a>
       </div>
 
