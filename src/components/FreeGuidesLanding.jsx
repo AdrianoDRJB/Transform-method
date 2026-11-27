@@ -84,7 +84,7 @@ const coachingIncludes = [
 ]
 
 const callSteps = [
-  'You click the button below and pick a time that fits your time zone.',
+  'You click the button below and pick a time that fits your time zone. The call is 1 hour.',
   'You get an email with the confirmation and the meeting link.',
   'You send me 3 lines: your goal, what you have tried, and what is hardest right now.',
   'On the call I listen first, then give you 1 or 2 things you can use the same day.',
@@ -117,7 +117,7 @@ function BookCallButton({ where }) {
       data-where={where}
       className="inline-block w-full sm:w-auto bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-black text-lg py-4 px-10 rounded-xl transition-all"
     >
-      Book a Call
+      Book a call
     </a>
   )
 }
