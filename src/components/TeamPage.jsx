@@ -2,12 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle, XCircle, Calendar, Target, Users, Moon, Dumbbell, Utensils, MessageCircle, ShieldCheck } from 'lucide-react';
 
-// Link de pagamento do Stripe (assinatura com teste de 30 dias, cobra no dia 31).
-// Enquanto estiver vazio, o botao leva para o Instagram para nao quebrar.
-const TEAM_CHECKOUT_LINK = 'https://buy.stripe.com/8x200i23lafd8dVcBD1Jm0U';
-const FALLBACK_LINK = 'https://ig.me/m/adriano.nutrition';
-const CTA_HREF = TEAM_CHECKOUT_LINK || FALLBACK_LINK;
+// Checkout proprio: salva o cartao hoje e cobra $259 uma vez no dia 31 (sem assinatura).
+// A funcao /api/team-checkout leva o cliente para o checkout do Stripe. Se der qualquer erro,
+// ela manda para o link antigo de pagamento, entao a venda nunca fica sem destino.
+const CHECKOUT_PATH = '/api/team-checkout';
 const CTA_TEXT = 'Start my 30 days. Pay nothing today';
+
+// Leva junto as marcacoes do anuncio (utm_source, utm_medium, utm_campaign) para o checkout.
+const checkoutHref = () => {
+  if (typeof window === 'undefined') return CHECKOUT_PATH;
+  const p = new URLSearchParams(window.location.search);
+  const keep = new URLSearchParams();
+  ['utm_source', 'utm_medium', 'utm_campaign'].forEach((k) => { if (p.get(k)) keep.set(k, p.get(k)); });
+  const qs = keep.toString();
+  return qs ? `${CHECKOUT_PATH}?${qs}` : CHECKOUT_PATH;
+};
 
 const phases = [
   { icon: Target, title: 'Before week 1: Kickoff', text: 'We map what has derailed you before: schedule, training load, history, travel, family. That sets your block.' },
@@ -35,7 +44,7 @@ const notForYou = [
 const faqs = [
   { q: 'When am I charged?', a: 'Your card is saved today and nothing is charged for 30 days. On day 31 you are charged $259 once, unless you cancel before then. Cancel any time in those 30 days by sending me a message on Instagram @adriano.nutrition. No form, no questions.' },
   { q: 'What if I do not like it?', a: 'Cancel before day 31 and you pay nothing. You keep the material we built together.' },
-  { q: 'Is it a subscription?', a: 'You will be charged once. It is one payment of $259 for the 12 week block. Stripe sets up free trials as subscriptions, so the checkout page says "every 12 weeks". I cancel it myself right after your first payment, so there is no second charge.' },
+  { q: 'Is it a subscription?', a: 'No. You will be charged once. It is one payment of $259 for the 12 week block, on day 31. It never renews and there is no second charge.' },
   { q: 'Why only 10 people?', a: 'I want to know every person in this team. The first cohort is capped at 10 and I will not go above 10 for any reason. Spots can stay open while people are in their 30 day trial, because some may cancel.' },
   { q: 'Will this work for me?', a: 'I cannot promise that. It worked for me and for some of my clients, and it is based on science, but results vary from person to person. That is why you get 30 days to decide.' },
   { q: 'Is this medical advice?', a: 'No. I am a nutrition coach, not a doctor or a registered dietitian. If you are pregnant, take medication, or have a medical or eating disorder history, talk to your doctor first.' },
@@ -44,7 +53,7 @@ const faqs = [
 
 const CtaButton = () => (
   <a
-    href={CTA_HREF}
+    href={checkoutHref()}
     className="inline-block w-full sm:w-auto bg-[#49c274] hover:bg-[#5dcf85] text-[#06140b] font-black text-lg py-4 px-10 rounded-xl transition-all"
   >
     {CTA_TEXT}
@@ -69,7 +78,7 @@ const TeamPage = () => (
         <p className="text-white/60 text-sm mb-8 -mt-6">$559 is the regular price of the 3 month plan. $259 is the first cohort price.</p>
         <CtaButton />
         <p className="text-white/90 text-base font-bold mt-4">The $259 price is already applied. No code needed.</p>
-        <p className="text-white/60 text-sm mt-3">Card saved today, $0 due today. $259 is charged once on day 31 unless you cancel before. The checkout page says "every 12 weeks" because of how Stripe handles free trials. I cancel it for you after your first payment, so you are charged one time only.</p>
+        <p className="text-white/60 text-sm mt-3">Card saved today, $0 due today. $259 is charged once on day 31 unless you cancel before. It is not a subscription and it never renews.</p>
       </div>
     </div>
 
