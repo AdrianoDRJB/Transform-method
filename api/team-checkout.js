@@ -45,7 +45,7 @@ export default async function handler(req, res) {
   body.set('setup_intent_data[metadata][campaign]', 'team-259-once')
   body.set(
     'custom_text[submit][message]',
-    `Nothing is charged today. Your card is saved for ${TRIAL_DAYS} days. On ${chargeDateLabel()} you will be charged ${AMOUNT_LABEL} one time, and that is the only charge. This is not a subscription and it will never renew. To cancel before then, cancel in one click at [adrianonutrition.com/team/cancel](https://adrianonutrition.com/team/cancel), email adrianonutrition@adrianonutrition.com or message @adriano.nutrition on Instagram, and you pay nothing. By continuing you authorize that single charge.`,
+    `Nothing is charged today. Your card is saved for ${TRIAL_DAYS} days. On ${chargeDateLabel()} you will be charged ${AMOUNT_LABEL} one time, and that is the only charge. This is not a subscription and it will never renew. You can cancel in one click at [adrianonutrition.com/team/cancel](https://adrianonutrition.com/team/cancel), or email adrianonutrition@adrianonutrition.com or message @adriano.nutrition on Instagram, and you pay nothing. By continuing you authorize that single charge.`,
   )
 
   try {
