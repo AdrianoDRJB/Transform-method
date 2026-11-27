@@ -5,6 +5,10 @@
       "destination": "/api/subscribe"
     },
     {
+      "source": "/api/team-checkout",
+      "destination": "/api/team-checkout"
+    },
+    {
       "source": "/assets/(.*)",
       "destination": "/assets/$1"
     },
