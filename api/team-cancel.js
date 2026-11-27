@@ -1,8 +1,10 @@
-// Cancelamento do Team TRANSFORM pelo proprio cliente (sem falar com o Adriano).
-// A pessoa informa o e-mail usado no checkout; marcamos o cadastro dela como "cancelled".
-// A tarefa agendada do dia 31 pula quem esta cancelado, entao nada e cobrado.
+// Cancelamento pelo proprio cliente (Cancel Anytime), para TODOS os planos com teste gratis (15 ou 30 dias).
+// A pessoa informa o e-mail usado no checkout:
+//  - marcamos o cadastro dela como "cancelled" (a tarefa do dia 31 do Team pula quem esta cancelado);
+//  - assinaturas em teste sao canceladas na hora (nada e cobrado);
+//  - assinaturas ja ativas ficam sem renovar (cancel_at_period_end).
 //
-// Precisa da MESMA variavel STRIPE_SECRET_KEY, com permissao "Customers: Write" (inclui leitura).
+// Precisa da MESMA variavel STRIPE_SECRET_KEY, com permissoes "Customers: Write" e "Subscriptions: Write".
 // Resposta e sempre a mesma, exista o e-mail ou nao, para nao revelar quem e cliente.
 
 const readBody = async (req) => {
@@ -12,9 +14,9 @@ const readBody = async (req) => {
   try { return JSON.parse(Buffer.concat(chunks).toString('utf8') || '{}') } catch { return {} }
 }
 
-const stripe = (key, path, params) =>
+const stripe = (key, path, params, method) =>
   fetch(`https://api.stripe.com/v1/${path}`, {
-    method: params ? 'POST' : 'GET',
+    method: method || (params ? 'POST' : 'GET'),
     headers: { Authorization: `Bearer ${key}`, ...(params ? { 'Content-Type': 'application/x-www-form-urlencoded' } : {}) },
     body: params ? params.toString() : undefined,
   }).then((r) => r.json().then((j) => ({ ok: r.ok, json: j })))
@@ -48,6 +50,26 @@ export default async function handler(req, res) {
         p.set('metadata[team259_cancelled_at]', new Date().toISOString())
         const u = await stripe(key, `customers/${c.id}`, p)
         if (!u.ok) throw new Error(u.json?.error?.message || 'stripe update failed')
+
+        // Assinaturas dos planos com teste gratis
+        const subs = await stripe(key, `subscriptions?customer=${c.id}&status=all&limit=20`)
+        if (!subs.ok) throw new Error(subs.json?.error?.message || 'stripe subscriptions failed')
+        for (const sub of subs.json.data || []) {
+          if (sub.status === 'trialing') {
+            // Ainda nos dias gratis: cancela agora, nada e cobrado.
+            const d = new URLSearchParams()
+            d.set('cancellation_details[comment]', 'cancelled by customer on /team/cancel')
+            const r = await stripe(key, `subscriptions/${sub.id}`, d, 'DELETE')
+            if (!r.ok) throw new Error(r.json?.error?.message || 'stripe cancel failed')
+          } else if ((sub.status === 'active' || sub.status === 'past_due') && !sub.cancel_at_period_end && !sub.cancel_at) {
+            // Ja pagou: nao renova mais.
+            const m = new URLSearchParams()
+            m.set('cancel_at_period_end', 'true')
+            m.set('cancellation_details[comment]', 'cancelled by customer on /team/cancel')
+            const r = await stripe(key, `subscriptions/${sub.id}`, m)
+            if (!r.ok) throw new Error(r.json?.error?.message || 'stripe update sub failed')
+          }
+        }
       }
     }
     res.statusCode = 200
