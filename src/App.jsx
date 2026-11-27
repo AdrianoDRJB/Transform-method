@@ -7,8 +7,6 @@ import AboutMethod from './components/AboutMethod'
 import CalorieCalculator from './components/CalorieCalculator'
 import EbooksPage from './components/EbooksPage'
 import EbooksKitDeliveryPage from './components/EbooksKitDeliveryPage'
-import GuidesOfferPage from './components/GuidesOfferPage'
-import GuidesBonusPage from './components/GuidesBonusPage'
 import GuidesThanksPage from './components/GuidesThanksPage'
 import QuickFixPage from './components/QuickFixPage.jsx'
 import FreeGuidesLanding from './components/FreeGuidesLanding.jsx'
@@ -190,8 +188,8 @@ function AppContent() {
           <Route path="/calculator" element={<CalorieCalculator />} />
           <Route path="/tracker" element={<MacroTracker />} />
           <Route path="/ebooks" element={<EbooksPage />} />
-          <Route path="/guides" element={<GuidesOfferPage />} />
-          <Route path="/guides/bonus" element={<GuidesBonusPage />} />
+          <Route path="/guides" element={<Navigate to="/" replace />} />
+          <Route path="/guides/bonus" element={<Navigate to="/" replace />} />
           <Route path="/guides/thanks" element={<GuidesThanksPage />} />
           <Route path="/ebooks-kit-success" element={<EbooksKitDeliveryPage />} />
           <Route path="/plans" element={<PlansEntry />} />
