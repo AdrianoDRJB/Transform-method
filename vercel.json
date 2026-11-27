@@ -9,6 +9,10 @@
       "destination": "/api/team-checkout"
     },
     {
+      "source": "/api/team-cancel",
+      "destination": "/api/team-cancel"
+    },
+    {
       "source": "/assets/(.*)",
       "destination": "/assets/$1"
     },

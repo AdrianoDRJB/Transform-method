@@ -14,6 +14,7 @@ import QuickFixPage from './components/QuickFixPage.jsx'
 import FreeGuidesLanding from './components/FreeGuidesLanding.jsx'
 import TeamPage from './components/TeamPage.jsx'
 import TeamWelcomePage from './components/TeamWelcomePage.jsx'
+import TeamCancelPage from './components/TeamCancelPage.jsx'
 import PlansPage from './components/PlansPage'
 import SuccessPage from './components/SuccessPage'
 import ThankYouPage from './components/ThankYouPage'
@@ -197,6 +198,7 @@ function AppContent() {
           <Route path="/quick-fix" element={<QuickFixPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/team/welcome" element={<TeamWelcomePage />} />
+          <Route path="/team/cancel" element={<TeamCancelPage />} />
           <Route path="/success" element={<SuccessPage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/call-booked" element={<CallBookedPage />} />
