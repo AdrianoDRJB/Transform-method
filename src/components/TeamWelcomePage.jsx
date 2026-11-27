@@ -6,7 +6,7 @@ const DM_LINK = 'https://ig.me/m/adriano.nutrition';
 const steps = [
   { icon: MessageCircle, title: 'Send me a DM on Instagram', text: 'Message @adriano.nutrition with the word TEAM and the email you used at checkout. I will reply and we book your kickoff.' },
   { icon: Calendar, title: 'Book your kickoff', text: 'We pick a time that fits your time zone. Before it, think about your schedule, your training and what has derailed you before.' },
-  { icon: ShieldCheck, title: 'You are in control for 30 days', text: 'Nothing was charged today. If it is not for you, message me before day 31 and you pay nothing.' },
+  { icon: ShieldCheck, title: 'You are in control for 30 days', text: 'Nothing was charged today. If it is not for you, cancel in one click at adrianonutrition.com/team/cancel before day 31 and you pay nothing.' },
 ];
 
 const TeamWelcomePage = () => (
