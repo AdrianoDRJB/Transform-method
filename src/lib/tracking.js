@@ -43,7 +43,7 @@ export function trackPageView(path) {
   meta('track', 'PageView')
 }
 
-// Clicou para agendar a call GRATIS de 20 minutos (free-20-min-discovery-call)
+// Clicou para agendar a call GRATIS de 20 minutos (new-meeting)
 export function trackBookCallClick(url) {
   ga('event', 'book_call_click', { link_url: url })
   meta('trackCustom', 'BookCallClick')

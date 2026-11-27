@@ -40,7 +40,7 @@ function PlansEntry() {
   return <PlansPage />
 }
 
-const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/free-20-min-discovery-call'
+const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/new-meeting'
 
 // Envia visualizacoes de pagina e cliques importantes para o Analytics e a Meta
 function Tracker() {
@@ -60,7 +60,7 @@ function Tracker() {
       const link = event.target.closest && event.target.closest('a')
       if (!link || !link.href) return
       const url = link.href
-      if (url.includes('free-20-min-discovery-call')) trackBookCallClick(url)
+      if (url.includes('new-meeting')) trackBookCallClick(url)
       else if (url.includes('calendly.com/adriano-nutrition/new-meeting')) trackPaidSessionClick(url)
       else if (url.includes('buy.stripe.com')) trackCheckoutClick(url)
       else if (/\.pdf(\?|$)/i.test(url)) trackEbookDownload(url)
@@ -119,7 +119,7 @@ function AppContent() {
                   rel="noopener noreferrer"
                   className="bg-[#2e9e4f] hover:bg-[#3fae67] text-[#06140b] font-bold px-4 py-2 rounded-lg transition-all"
                 >
-                  Book a Free Call
+                  Book a call
                 </a>
               </div>
 
@@ -167,7 +167,7 @@ function AppContent() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-2xl font-semibold uppercase tracking-wide text-[#49c274] hover:text-[#3fae67] transition-colors"
               >
-                Book a Free Call
+                Book a call
               </a>
             </div>
             <div className="pb-12 text-center">

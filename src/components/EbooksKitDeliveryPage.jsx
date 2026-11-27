@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Download, CheckCircle, Sparkles, PhoneCall } from 'lucide-react';
 
 const EbooksKitDeliveryPage = () => {
-  const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/free-20-min-discovery-call';
+  const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/new-meeting';
 
   const guides = [
     {
@@ -118,7 +118,7 @@ const EbooksKitDeliveryPage = () => {
             className="inline-flex items-center gap-2 border border-[#2e9e4f] text-[#49c274] hover:bg-[#2e9e4f]/10 font-semibold py-3 px-8 rounded-xl transition-all"
           >
             <PhoneCall className="w-5 h-5" />
-            Book a Free Call
+            Book a call
           </a>
         </div>
       </div>

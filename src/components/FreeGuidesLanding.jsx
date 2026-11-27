@@ -4,7 +4,7 @@ import { trackEmailSignup } from '../lib/tracking'
 
 // Pagina de captura para trafego frio do Meta (sem preco, sem menu, sem rodape do site).
 // Ordem: e-mail primeiro (libera os guias), Book a Call logo abaixo, descricao detalhada, Book a Call no fim.
-const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/free-20-min-discovery-call'
+const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/new-meeting'
 const EMAIL_KEY = 'free_guides_verified_v2'
 
 const guides = [
@@ -100,7 +100,7 @@ const notForYou = [
 const faqs = [
   { q: 'Are the guides really free?', a: 'Yes. Enter your email once and you can download all five right on this page.' },
   { q: 'What happens after I enter my email?', a: 'You can open and download the guides right away, and you get a short email from me. You can unsubscribe at any time.' },
-  { q: 'What is the free 20-minute conversation?', a: 'It is not a sales pitch. We talk about where you are stuck, and I give you 1 or 2 concrete things to use right away. If working together makes sense, I tell you how it would look. If not, you keep what you learned.' },
+  { q: 'What happens on the call?', a: 'It is not a sales pitch. We talk about where you are stuck, and I give you 1 or 2 concrete things to use right away. If working together makes sense, I tell you how it would look. If not, you keep what you learned.' },
   { q: 'Will this work for me?', a: 'I cannot promise that. It worked for me and for some of my clients, and it is based on science, but results vary from person to person.' },
   { q: 'Do I have to give up foods I like?', a: 'No. Banning foods creates cravings. Foods you like can fit in a plan in a way that does not wreck your progress.' },
   { q: 'Can I still go out with friends, travel or work late?', a: 'Yes. A plan that only works in a perfect week is not a plan. We build around your real schedule.' },
@@ -170,7 +170,7 @@ function EmailForm({ id, unlocked, onUnlock, buttonText }) {
     return (
       <div id={id} className="bg-[#12201a] border-2 border-[#49c274] rounded-2xl p-5 text-left">
         <p className="text-white font-bold text-lg mb-1">Your 5 guides are unlocked.</p>
-        <p className="text-white/70 text-sm mb-4">Tap a guide to download it. Then keep reading to see how the free call works.</p>
+        <p className="text-white/70 text-sm mb-4">Tap a guide to download it. Then keep reading to see how the call works.</p>
         <ul className="space-y-3">
           {guides.map((g) => (
             <li key={g.title}>
@@ -267,7 +267,7 @@ function FreeGuidesLanding() {
           </p>
           <EmailForm id="signup-top" unlocked={unlocked} onUnlock={onUnlock} buttonText="I entered my email. Open my 5 guides" />
           <div className="mt-6 text-center">
-            <p className="text-white/70 mb-3">Prefer to talk? Free 20-minute conversation.</p>
+            <p className="text-white/70 mb-3">Prefer to talk? Book a call with me.</p>
             <BookCallButton where="top" />
           </div>
           <div className="mt-8 mx-auto" style={{ maxWidth: 320 }}>
@@ -284,7 +284,7 @@ function FreeGuidesLanding() {
             </div>
           </div>
           <p className="text-center text-white/60 text-sm mt-5 flex items-center justify-center gap-2">
-            <ArrowDown className="w-4 h-4" /> Keep reading to see everything I do and how the free call works
+            <ArrowDown className="w-4 h-4" /> Keep reading to see everything I do and how the call works
           </p>
         </div>
       </div>
@@ -415,7 +415,7 @@ function FreeGuidesLanding() {
 
         {/* CTA final */}
         <div className="bg-[#12201a] border-2 border-[#49c274] rounded-2xl p-6 mb-8">
-          <h2 className="text-2xl font-bold mb-2 flex items-center gap-2"><PhoneCall className="w-6 h-6 text-[#49c274]" />Want to talk it through? Book a free 20-minute conversation</h2>
+          <h2 className="text-2xl font-bold mb-2 flex items-center gap-2"><PhoneCall className="w-6 h-6 text-[#49c274]" />Want to talk it through? Book a call</h2>
           <p className="text-white/80 text-lg mb-4">It is a conversation, not a sales pitch. You leave with 1 or 2 things you can use today, even if we never work together.</p>
           <ol className="space-y-3 text-white/90 text-lg list-decimal pl-5 mb-6">
             {callSteps.map((t) => (<li key={t}>{t}</li>))}
@@ -427,7 +427,7 @@ function FreeGuidesLanding() {
 
         {/* P.S. */}
         <p className="text-white/85 text-lg mb-3">
-          <strong>P.S.</strong> If you do nothing, next week looks like this one: another plan that breaks on the first bad day. The guides are free and take a few minutes to read. And if you would rather talk, the 20-minute conversation is free too.
+          <strong>P.S.</strong> If you do nothing, next week looks like this one: another plan that breaks on the first bad day. The guides are free and take a few minutes to read. And if you would rather talk, you can book a call with me too.
         </p>
         <p className="text-white/50 text-sm">
           I am a nutrition coach, not a doctor or a registered dietitian. This page is general education, not medical advice. If you are pregnant, take medication, or have a medical or eating disorder history, talk to your doctor first.

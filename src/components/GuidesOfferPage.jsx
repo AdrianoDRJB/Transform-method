@@ -4,7 +4,7 @@ import { CheckCircle, Shield, BookOpen } from 'lucide-react';
 
 // Link de pagamento do Stripe do produto de $9.90 (5 guias completos, pagamento unico).
 const GUIDES_CHECKOUT_LINK = 'https://buy.stripe.com/3cI14m9vNfzxdyf4571Jm0Q';
-const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/free-20-min-discovery-call';
+const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/new-meeting';
 
 const points = [
   { title: 'Nutrition', text: 'How I stopped chasing diets and started building a system I can keep.' },
@@ -75,7 +75,7 @@ const GuidesOfferPage = () => (
       </div>
 
       <p className="text-center text-white/60">
-        Prefer to talk first? <a className="text-[#49c274] underline" href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">Book a free 20 minute call</a>, or <Link className="text-[#49c274] underline" to="/ebooks">grab the free short guides</Link>.
+        Prefer to talk first? <a className="text-[#49c274] underline" href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer">Book a call</a>, or <Link className="text-[#49c274] underline" to="/ebooks">grab the free short guides</Link>.
       </p>
     </div>
   </div>

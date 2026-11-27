@@ -7,7 +7,7 @@ import { isOctoberPromo } from '../lib/promo.js';
 import { trackEmailSignup } from '../lib/tracking';
 
 const EbooksPage = () => {
-  const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/free-20-min-discovery-call';
+  const CALENDLY_LINK = 'https://calendly.com/adriano-nutrition/new-meeting';
   const BASE_KIT_LINK = 'https://buy.stripe.com/aFa7sKfUb2ML79R9pr1Jm0G';
 
   // Quem chega pelo anuncio da Meta ou por ?promo=4years recebe 40% automaticamente,
@@ -238,7 +238,7 @@ const EbooksPage = () => {
                 className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-[#2e9e4f] text-[#49c274] hover:bg-[#2e9e4f]/10 font-semibold py-2.5 px-4 text-sm transition-colors"
               >
                 <PhoneCall className="w-4 h-4" />
-                Prefer to talk first? Book a free call
+                Prefer to talk first? Book a call
               </a>
             </CardFooter>
           </Card>
